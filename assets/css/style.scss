@@ -1,0 +1,846 @@
+/*------------------------------------------------------
+
+	Craig Baldwin SCSS
+		Coded by Craig Baldwin for Intermedia
+
+--------------------------------------------------------
+	SASS
+------------------------------------------------------*/
+
+$slab:			'Roboto Slab', Helvetica, Arial, sans-serif;
+$sans:			'Roboto', Helvetica, Arial, sans-serif;
+$slab-weight:	300;
+$sans-weight:	700;
+$font-size:		19px;
+
+$black:			#1c1c1c;
+// old $colour:	#a6e0eb;
+$colour:		#3498db;
+$grey:			#999;
+$darkgrey:		#666;
+$lightgrey:		#ebebeb;
+
+$link-colour:	mix($colour,#fff,50%);
+
+$navbar:		68px;
+$gutter:		20px;
+
+$medium:		630px;
+$small:			450px;
+
+/*-------------------------------------------------------------
+	SASS MIXINS - DEPENDENCY-FREE BREAKPOINT MIXIN
+-------------------------------------------------------------*/
+
+$min: min-width;
+$max: max-width;
+	@mixin at-query ($constraint_, $viewport1_, $viewport2_:null) {
+		$constraint: $constraint_; $viewport1: $viewport1_; $viewport2: $viewport2_;
+	@if type-of($constraint_) == number {
+		$viewport1 : $constraint_; $viewport2 : $viewport1_; $constraint : null;
+	}
+	@if $constraint == $min {
+		@media screen and ($min: $viewport1) {
+			@content;
+		}
+		} @else if $constraint == $max {
+		@media screen and ($max: $viewport1) {
+			@content;
+		}
+		} @else {
+		@media screen and ($min: $viewport1) and ($max: $viewport2) {
+			@content;
+		}
+	}
+}
+
+@mixin transition--in() { transition: all ease-out .2s; }
+@mixin transition--out() { transition: all ease-in .2s; }
+@mixin transition--long() { transition: all ease-out .6s; }
+
+@mixin cf() { 
+	*zoom: 1;
+
+	&:before,
+	&:after {
+		content: " ";
+		display: table; }
+
+	&:after { clear: both; }
+}
+
+/*------------------------------------------------------
+	RESET
+------------------------------------------------------*/
+
+a,abbr,acronym,address,applet,b,big,blockquote,body,caption,center,cite,code,dd,del,dfn,div,dl,dt,em,fieldset,font,form,h1,h2,h3,h4,h5,h6,html,i,iframe,img,ins,kbd,label,legend,li,object,ol,p,pre,q,s,samp,small,span,strike,strong,sub,sup,table,tbody,td,tfoot,th,thead,tr,tt,u,ul,var{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:0 0}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+/*------------------------------------------------------
+	GENERAL
+------------------------------------------------------*/
+
+* { 
+	box-sizing: 		border-box;
+	-moz-box-sizing: 	border-box;
+	-webkit-box-sizing:	border-box; }
+	
+// html, body { height: 100% !important; }
+
+body { 
+	background: #fff;
+	font-size: 100%;
+	overflow: auto !important; 
+	overflow-x: hidden !important;
+
+	//&.open { overflow: hidden !important; }
+}
+
+button { 
+	border: 0;
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	text-align: left; 
+
+	&:active,
+	&:focus { outline: none; }
+}
+
+::selection { background: rgba(darken($colour,10%),0.6); color: #000; }
+::-moz-selection { background: rgba(darken($colour,10%),0.6); color: #000; }
+
+ul, li { list-style: none; }
+
+abbr {
+	border-bottom: 1px dashed $lightgrey;
+	cursor: help;
+}
+
+/*------------------------------------------------------
+	STANDARD CLASSES
+------------------------------------------------------*/
+
+.no-margin { 
+	margin-top: 0 !important; 
+	margin-bottom: 0 !important;
+}
+
+.no-padding { 
+	padding-top: 0 !important;
+	padding-bottom: 0 !important; 
+}
+
+.colour, .blue { color: $colour !important; }
+.black { color: $black !important; }
+
+.medium-down--show { display: none !important; }
+
+@include at-query ($max, $medium) {
+	.medium--hide { display: none !important; }
+	.medium-down--show { display: block !important; }
+}
+
+@include at-query ($max, $small) { 
+	.small--hide { display: none !important; }
+}
+
+/*------------------------------------------------------
+	TYPOGRAPHY
+------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6, li, div, span, p, a, button {
+	color: $black;
+	font-family: $slab;
+	font-weight: $slab-weight;
+	letter-spacing: -0.3px;
+	line-height: 1.6;
+}
+
+h1 { font-size: 1.8*$font-size; }
+
+h2 { font-size: 1.4*$font-size; }
+
+h3 { 
+	font-size: 1.2*$font-size; 
+	line-height: 1.3;
+
+	span { 
+		display: inline-block;
+		font-size: 0.8*$font-size; 
+		margin-left: 0.5*$gutter;
+		text-transform: uppercase;
+	}
+}
+
+p+h2,
+p+p { 
+	margin-top: $gutter; 
+}
+
+p { 
+	font-size: $font-size; 
+
+	&.big {
+		font-size: 1.2*$font-size;
+		line-height: 1.4;
+
+		@include at-query ($min, $small) { font-size: 1.6*$font-size; }
+
+		span { line-height: 1.4; }
+
+		a {	box-shadow: inset 0 -10px 0 $link-colour; }
+
+		&.home { 
+			font-size: 1.2*$font-size; 
+
+			@include at-query ($min, $small) { font-size: 1.6*$font-size; }
+			@include at-query ($min, $medium) {	font-size: 1.8*$font-size; }
+
+			a {	box-shadow: inset 0 -13px 0 $link-colour; }
+		}
+	}
+
+	&.home { 
+		font-size: 1*$font-size; 
+
+		@include at-query ($min, $small) { font-size: 1.1*$font-size; }
+		@include at-query ($min, $medium) {	font-size: 1.2*$font-size; }
+
+		a { box-shadow: inset 0 -7px 0 $link-colour; }
+	}
+}
+
+a {
+	@include transition--in;
+	box-shadow: inset 0 -5px 0 $link-colour;
+	color: $black;
+	position: relative;
+	text-decoration: none; 
+
+	&:after {
+		@include transition--out;
+		background-color: $link-colour;
+		bottom: 0;
+		content: '';
+		display: block;
+		height: 0;
+		left: 0;
+		position: absolute;
+		width: 100%;
+		z-index: -1;
+	}
+
+	&:hover { 
+		color: $black; 
+	}
+
+	&:hover:after {
+		@include transition--in;
+		height: 100%;
+	}
+}
+
+/*------------------------------------------------------
+	NAVIGATION
+------------------------------------------------------*/
+
+.navigation {
+	background-color: rgba(#fff,0.9);
+	// border-bottom: 1px solid #fff;
+	height: $navbar;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+
+	h1,a,span { 
+		color: $black; 
+		font-family: $sans;
+		font-size: 0.7*$font-size;
+		font-weight: $sans-weight;
+		text-transform: uppercase;
+	}
+
+	.nav {
+		@include cf;
+		@extend .container;
+		@include transition--in; 
+		height: $navbar;
+		position: relative;
+
+		&.active { @include transition--out; }
+	}
+
+	.nav__logo {
+		height: ($navbar / 2);
+		line-height: ($navbar / 2 + 7px);
+		text-align: center;
+		width: 100%;
+
+		a { 
+			box-shadow: none; 
+
+			&.nav__index { color: $colour; }
+
+			&:after { display: none; }
+		}
+
+		span { padding-left: 3px; }
+
+		@include at-query ($max, $small) { 
+			& > span { display: none; }
+		}
+	}
+
+	nav {
+		@include cf;
+		position: absolute;
+		top: ($navbar / 2);
+		width: 100%;
+
+		li {
+			float: left;
+			width: calc(100% / 3);
+
+			a {
+				box-shadow: none;
+				display: block;
+				padding: 0 0.7*$gutter;
+				text-align: center;
+
+				span {
+					display: block;
+					height: ($navbar / 2);
+					line-height: ($navbar / 2 - 7px); 
+					position: relative;
+					width: 100%;
+				}
+
+				&:hover {
+					&:after { display: none; }
+
+					span:after {
+						@include transition--out;
+						width: 100%;
+
+						@include at-query ($max, $medium) {
+							height: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include at-query($min, $medium) {
+		.nav__logo {
+			height: $navbar;
+			line-height: ($navbar - 3px);
+			text-align: left;
+			width: auto;
+
+			a:after { display: block; }
+		}
+
+		nav {
+			right: -0.7*$gutter;
+			top: 0;
+			width: auto;
+
+			li {
+				width: auto;
+
+				a {
+					text-align: left;
+
+					span {
+						height: ($navbar - 1px);
+						line-height: ($navbar - 3px);
+
+						&:after {
+							background-color: $colour;
+							content: '';
+							display: block;
+							left: 50%;
+							height: 3px;
+							top: ($navbar - 26px);
+							position: absolute;
+							transform: translateX(-50%);
+							@include transition--in;
+							width: 0;
+						}
+					}
+
+					&:hover span:after { height: 3px; }
+				}
+			}
+		}
+	}
+}
+
+.navigation-block {
+	height: $navbar;
+	position: relative;
+	top: 0;
+	z-index: 1;
+}
+
+/*------------------------------------------------------
+	MOBILE NAV
+------------------------------------------------------*/
+
+.mobile-nav {
+	box-shadow: none;
+	display: block;
+	font-size: 0.8*$font-size;
+	height: $navbar;
+	padding: 0 1.5*$gutter;
+	position: absolute;
+	right: -1.5*$gutter;
+	top: 0;
+
+	&:after { display: none; }
+
+	span {
+		display: block;
+		height: ($navbar - 1px);
+		line-height: ($navbar - 3px);
+		position: relative;
+		width: 100%;
+	}
+}
+
+/*------------------------------------------------------
+	FOOTNOTE
+------------------------------------------------------*/
+
+.footnote {
+	bottom: 0.75*$gutter;
+	color: $grey;
+	font-size: 0.6*$font-size;
+	left: 7%;
+	position: fixed;
+	// text-shadow: 0 0 10px rgba(#fff,1);
+	z-index: 5;
+
+	a {
+		box-shadow: none;
+		color: $grey;
+	}
+
+	@include at-query ($min, $medium) { left: 0.75*$gutter; }
+}
+
+/*------------------------------------------------------
+	STRUCTURE
+------------------------------------------------------*/
+
+.container {
+	margin: 0 auto;
+	width: 86%;
+	max-width: 800px;
+}
+
+.content {
+	@extend .container;
+	padding-top: $gutter;
+	padding-bottom: 4*$gutter;
+	position: relative;
+	z-index: 2;
+}
+
+.layer {
+	padding-top: 2*$gutter;
+	padding-bottom: 2*$gutter;
+	width: 100%;
+
+	&.blue { background-color: $colour; }
+	&.black { 
+		background-color: $black; 
+
+		h1,h2,h3,h4,h5,p,li { color: #fff !important; }
+	}
+}
+
+/*------------------------------------------------------
+	BLOCKS
+------------------------------------------------------*/
+
+ul.blocks {
+	@include cf;
+	margin-top: 2.5*$gutter;
+	margin-left: -$gutter;
+
+	li { 		
+		float: left;
+		margin-bottom: $gutter;
+		padding-left: $gutter; 
+		width: 100%;
+
+		@include at-query ($min, $medium) { width: 50%; }
+
+		&:last-child { margin-bottom: 0; }
+
+		> a, 
+		> div {
+			box-shadow: none;
+			font-family: $sans;
+			font-weight: $sans-weight;
+			display: block;
+			padding: $gutter;
+			width: 100%;
+		}
+
+		.details {
+			margin-top: 0.5*$gutter; 
+
+			span { 
+				display: inline-block; 
+				font-size: 0.8*$font-size;
+				font-family: $sans;
+				font-weight: $sans-weight;
+				margin-right: 0.5*$gutter;
+			}
+
+			p { 
+				display: inline-block; 
+				margin-right: $gutter;
+			}
+		}
+
+		.fells { 
+			margin-top: 0.5*$gutter; 
+
+			p { }
+		}
+	}
+
+	&.one-col li { width: 100%; }
+
+	&.home li a {
+		margin-bottom: -5px;
+		padding: 0;
+		position: relative;
+
+		&:after { display: none; }
+
+		&:hover {
+			background-color: transparent;
+			box-shadow: none;
+		}
+
+		img { width: 100%; }
+
+		span { 
+			color: #fff;
+			font: {
+				family: $sans;
+				weight: $sans-weight;
+			}
+			left: $gutter;
+			position: absolute;
+			top: $gutter;
+		}
+	}
+
+	&.lakes li>div {
+		border-top: 1px solid $grey;
+		padding: 0;
+		padding-top: 1.5*$gutter;
+		padding-bottom: $gutter;
+	}
+}
+
+/*------------------------------------------------------
+	GRID (LAKES / WORK)
+------------------------------------------------------*/
+
+hr {
+	border: 1px solid transparent;
+	clear: both;
+	height: 0;
+	margin: $gutter 0;
+	width: 100%;
+
+	&.hr--small { margin: 0.25*$gutter 0; }
+}
+
+ul.grid {
+	@include cf;
+	margin: 2*$gutter 0 0 -2*$gutter;
+	position: relative;
+	z-index: 2;
+
+	&.work-index { margin-top: 0; }
+
+	li { 
+		margin-bottom: $gutter; 
+		padding-left: 2*$gutter;
+
+		&.last { margin-bottom: 0; }
+	}
+
+	li.border {
+		clear: both;
+		display: none;
+		margin-bottom: 1.5*$gutter;
+
+		div {
+			background-color: $grey;
+			height: 1px;
+			display: block;
+			width: 100%;
+		}
+	}
+
+	li.text {
+		width: 100%;
+
+		a, strong {
+			background-color: $colour;
+			border-radius: 2px;
+			color: #fff;
+			display: inline-block;
+			font-size: 0.6*$font-size;
+			font-family: $sans;
+			font-weight: $sans-weight;
+			margin-bottom: 6px;
+			padding: 2px 5px 1px 5px;
+			text-transform: uppercase;
+		}
+
+		&.other strong { background-color: $black; }
+
+		a {
+			background-color: $black;
+			border: 1px solid $black;
+			box-shadow: none;
+			margin-top: 0.75*$gutter; 
+			padding: 1px 4px 0 4px;
+			transition: none;
+
+			&.inactive { 
+				background-color: transparent; 
+				color: $black;
+				cursor: default;
+			}
+
+			&:after { display: none; }
+
+			&:hover { 
+				background-color: #fff; 
+				color: $black;
+			}
+		}
+
+		span.icon {
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			background-size: contain;
+			display: inline-block;
+			height: 18px;
+			margin: 0;
+			margin-right: 8px;
+			margin-bottom: -3px;
+			width: 18px;
+
+			&.lakes--base { background-image: url('/assets/img/icons/base.svg'); }
+			&.lakes--miles { background-image: url('/assets/img/icons/miles.svg'); }
+			&.lakes--steps { background-image: url('/assets/img/icons/steps.svg'); }
+			&.lakes--fells { background-image: url('/assets/img/icons/fells.svg'); }
+		}
+
+		.details { 
+			font-family: $sans;
+			font-size: 0.8*$font-size;
+			font-weight: $sans-weight;
+
+			&+p { margin-top: 3px; }
+		}
+
+		.details { margin-bottom: 7px; }
+
+		h2 { 
+			font-size: $font-size; 
+			padding-bottom: 0.5*$gutter;
+		}
+
+		p { 
+			font-size: 0.8*$font-size; 
+
+			&+p { margin-top: 0.75*$gutter; }
+
+			&+h2,
+			&+h3 { margin-top: $gutter; }
+		}
+
+		@include at-query ($min, $medium) { 
+			float: left;
+			width: 35%;
+		}
+	}
+
+	li.image {
+		margin-bottom: 0.5*$gutter;
+		width: 100%;
+
+		img { 
+			width: 100%; 
+
+			&+img { margin-top: $gutter; }
+		}
+
+		a {
+			background-color: transparent;
+			border: 0;
+			box-shadow: none;
+			display: block;
+			margin-bottom: -3px;
+			position: relative;
+
+			&:hover:after { display: none; }
+
+			div {
+				background-color: $colour;
+				height: calc(100% - 6px);
+				opacity: 0;
+				position: absolute;
+				top: 0;
+				@include transition--out;
+				width: 100%;
+				z-index: 2;
+			}
+
+			&:hover div { 
+				opacity: 0.6; 
+				@include transition--in;
+			}
+		}
+
+		@include at-query ($min, $medium) { 
+			float: right;
+			width: 65% 
+		}
+	}
+}
+/*------------------------------------------------------
+	LAKES
+------------------------------------------------------*/
+
+@import "leaflet";
+
+#map {
+	background-color: #ebebeb;
+	height: 450px;
+	position: relative;
+	width: 100%;
+	z-index: 1;
+
+	a { 
+		box-shadow: none;
+		color: #333;
+
+		&:after { display: none; }
+	}
+
+	.leaflet-popup-content-wrapper {
+		background-color: $black;
+		border-radius: 0; 
+		box-shadow: none;
+
+		.leaflet-popup-content {
+			color: #fff;
+			font-size: 0.6*$font-size;
+			margin: 0.5*$gutter;
+			text-align: center;
+		}
+	}
+
+	.leaflet-popup-tip-container .leaflet-popup-tip {
+		background-color: $black;
+		box-shadow: none;
+	}
+}
+
+.progress-container {
+	background-color: $black;
+	height: 50px;
+	position: relative;
+	width: 100%;
+
+	.progress-bar {
+		background-color: $colour;
+		height: 100%;
+		left: 0;
+		line-height: 50px;
+		padding-right: $gutter;
+		position: absolute;
+		text-align: right;
+		top: 0;
+		transition: all ease .8s;
+		width: 0;
+		z-index: 2;
+
+		span { 
+			color: #fff; 
+			font-family: $sans;
+			font-weight: $sans-weight;
+		}
+
+		&.active {
+			width: calc(66/214 * 100%);
+		}
+	}
+
+	span {
+		color: #999;
+		font-family: $sans;
+		font-weight: $sans-weight;
+		line-height: 50px;
+		position: absolute;
+		right: $gutter;
+		z-index: 1;
+	}
+}
+
+.fells p { font-size: 0.8*$font-size; }
+
+/*------------------------------------------------------
+	WORK
+------------------------------------------------------*/
+
+.content--work {
+	background-color: $lightgrey;
+	padding-top: 3.5*$gutter;
+	padding-bottom: 3.5*$gutter;
+	position: relative;
+	z-index: 1;
+}
+
+/*------------------------------------------------------
+	BLACK PAGE
+------------------------------------------------------*/
+
+.black { color: $black; }
+
+// .black {
+// 	background-color: $black;
+// 	color: #fff;
+
+// 	h1,h2,h3,h4,h5,h6,li,div,span,p,a,button { color: #fff; }
+
+// 	.content--work { 
+// 		background-color: #fff; 
+
+// 		p,a {
+// 			color: $black;
+// 		}
+// 	}
+
+// 	.footnote { 
+// 		color: $grey;
+// 	}
+// }
+
+	

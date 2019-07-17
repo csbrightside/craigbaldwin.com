@@ -6,17 +6,14 @@
 
 @font-face {
   font-family: Writer;
-  src:  url('/fonts/iAWriterQuattroS-Regular.eot');
-  src:  url('/fonts/iAWriterQuattroS-Regular.eot#iefix') format("embedded-opentype"),
-        url('/fonts/iAWriterQuattroS-Regular.woff') format("woff2"),
-        url('/fonts/iAWriterQuattroS-Regular.woff') format("woff"),
-        url('/fonts/iAWriterQuattroS-Regular.ttf') format("truetype");
   font-style: normal;
   font-weight: 400;
+  src: url('/fonts/iAWriterQuattroS-Regular.eot');
+  src: url('/fonts/iAWriterQuattroS-Regular.eot#iefix') format('embedded-opentype'), url('/fonts/iAWriterQuattroS-Regular.woff') format('woff2'), url('/fonts/iAWriterQuattroS-Regular.woff') format('woff'), url('/fonts/iAWriterQuattroS-Regular.ttf') format('truetype');
 }
 
 html,
 body {
-  font-family: 'Writer';
+  font-family: Writer, Arial, sans-serif;
   height: 100%;
 }

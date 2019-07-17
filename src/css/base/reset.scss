@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: Writer;
+  src:  url('/fonts/iAWriterQuattroS-Regular.eot');
+  src:  url('/fonts/iAWriterQuattroS-Regular.eot#iefix') format("embedded-opentype"),
+        url('/fonts/iAWriterQuattroS-Regular.woff') format("woff2"),
+        url('/fonts/iAWriterQuattroS-Regular.woff') format("woff"),
+        url('/fonts/iAWriterQuattroS-Regular.ttf') format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+html,
+body {
+  font-family: 'Writer';
+  height: 100%;
+}

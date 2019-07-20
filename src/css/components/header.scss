@@ -1,8 +1,15 @@
+/**
+ * Header.
+ * ------------------------------------------------------------------------------
+ * Header and site navigation.
+ *
+ */
 .header {
   background-color: $COLOR_WHITE;
-  padding: 20px 0;
+  font-size: ms(-1);
+  padding: $BORDER_WIDTH 0;
 
-  &__logo {
-    font-size: 14px;
+  @include mq($from: large) {
+    font-size: ms(1);
   }
 }

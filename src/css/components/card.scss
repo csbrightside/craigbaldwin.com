@@ -1,0 +1,14 @@
+/**
+ * Card.
+ * ------------------------------------------------------------------------------
+ * Title card styles.
+ *
+ */
+.card {
+  align-items: center;
+  background-color: $COLOR_BLUE;
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  width: 100%;
+}

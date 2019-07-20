@@ -1,19 +1,22 @@
-* {
+/**
+ * Reset.
+ * ------------------------------------------------------------------------------
+ * Resets styles to base.
+ *
+ */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-@font-face {
-  font-family: Writer;
-  font-style: normal;
-  font-weight: 400;
-  src: url('/fonts/iAWriterQuattroS-Regular.eot');
-  src: url('/fonts/iAWriterQuattroS-Regular.eot#iefix') format('embedded-opentype'), url('/fonts/iAWriterQuattroS-Regular.woff') format('woff2'), url('/fonts/iAWriterQuattroS-Regular.woff') format('woff'), url('/fonts/iAWriterQuattroS-Regular.ttf') format('truetype');
-}
-
-html,
-body {
-  font-family: Writer, Arial, sans-serif;
+body,
+html {
   height: 100%;
 }

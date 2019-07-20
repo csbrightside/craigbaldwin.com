@@ -1,0 +1,45 @@
+/**
+ * Typography.
+ * ------------------------------------------------------------------------------
+ * All typography styles.
+ *
+ */
+@import '~mathsass';
+@import '~modularscale-sass/stylesheets/modularscale';
+
+/**
+ * Font scale configuration.
+ */
+$modularscale: (
+  base: 16px,
+  ratio: 1.2,
+);
+
+@font-face {
+  font-family: Wremena;
+  font-style: normal;
+  font-weight: 300;
+  src: url('/fonts/WremenaLight.woff') format('woff'), url('/fonts/WremenaLight.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Writer;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/iAWriterQuattroS-Regular.eot');
+  src: url('/fonts/iAWriterQuattroS-Regular.eot#iefix') format('embedded-opentype'), url('/fonts/iAWriterQuattroS-Regular.woff') format('woff2'), url('/fonts/iAWriterQuattroS-Regular.woff') format('woff'), url('/fonts/iAWriterQuattroS-Regular.ttf') format('truetype');
+}
+
+html,
+body {
+  font-family: Wremena, Arial, sans-serif;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: ms(5);
+
+  @include mq($from: large) {
+    font-size: ms(8);
+  }
+}

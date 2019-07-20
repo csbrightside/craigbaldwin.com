@@ -1,4 +1,4 @@
-import "./css/main.scss";
+import "./css/theme.scss";
 
 console.log('Test');
 /**

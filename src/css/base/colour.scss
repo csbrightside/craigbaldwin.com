@@ -1,0 +1,11 @@
+/**
+ * Colours.
+ * ------------------------------------------------------------------------------
+ * Colour variables.
+ *
+ */
+
+$COLOR_BLUE: rgb(52, 152, 219);
+$COLOR_WHITE: rgb(255, 255, 255);
+
+$COLOR_BLUE: mix($COLOR_BLUE, $COLOR_WHITE, 30%);

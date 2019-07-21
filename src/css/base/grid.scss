@@ -19,8 +19,18 @@ $GUTTER_WIDTH: 1rem !default;
 $ELEMENT_TOP_MARGIN: 1rem !default;
 $ELEMENT_BOTTOM_MARGIN: 1rem !default;
 
-$BORDER_WIDTH: 1rem;
+/**
+ * Spacing.
+ */
+$SPACING_S: 1rem;
+$SPACING_M: 1.5rem;
+$SPACING_L: 2rem;
 
+$BORDER_WIDTH: $SPACING_S;
+
+/**
+ * Element styling.
+ */
 body {
   padding: 0 $BORDER_WIDTH;
 }

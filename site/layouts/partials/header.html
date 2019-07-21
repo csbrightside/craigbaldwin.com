@@ -1,13 +1,21 @@
+{{ $url := .URL }}
+
 <header class="header">
   <a class="header__logo" href="{{ "/" | relURL }}">
     Craig Baldwin [dot] com
   </a>
 
+
   <nav class="header__navigation">
-    <li class="header__list-item">
-      <a class="header__link" href="{{ "/about" | relURL }}">
-        About
-      </a>
-    </li>
+    {{ range .Site.Menus.main }}
+      <li class="header__list-item">
+        <a
+          class="header__link {{ if eq $url .URL }}is-active{{ end }}"
+          href="{{ .URL }}"
+        >
+          {{ .Title }}
+        </a>
+      </li>
+    {{ end }}
   </nav>
 </header>

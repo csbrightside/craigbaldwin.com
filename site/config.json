@@ -1,0 +1,29 @@
+{
+  "baseurl": "/",
+  "languageCode": "en-gb",
+  "languageLang": "en",
+  "title": "Craig Baldwin [dot] com",
+  "disableKinds": ["RSS", "taxonomy", "taxonomyTerm"],
+  "menu": {
+    "main": [
+      {
+        "identifier": "about",
+        "title": "About",
+        "url": "/about/",
+        "weight": -100
+      },
+      {
+        "identifier": "work",
+        "title": "Work",
+        "url": "/work/",
+        "weight": -75
+      },
+      {
+        "identifier": "contact",
+        "title": "Contact",
+        "url": "/contact/",
+        "weight": -50
+      }
+    ]
+  }
+}

@@ -5,9 +5,28 @@
  *
  */
 .header {
+  align-items: center;
   background-color: $COLOR_WHITE;
+  display: flex;
   font-size: ms(-1);
+  justify-content: space-between;
   padding: $BORDER_WIDTH 0;
+
+  &__navigation {
+    display: flex;
+  }
+
+  &__list-item {
+    &:not(:last-child) {
+      margin-right: $SPACING_S;
+    }
+  }
+
+  &__link {
+    &.is-active {
+      color: red;
+    }
+  }
 
   @include mq($from: large) {
     font-size: ms(1);

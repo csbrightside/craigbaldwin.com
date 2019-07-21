@@ -8,7 +8,12 @@
   align-items: center;
   background-color: $COLOR_BLUE;
   display: flex;
+  flex-direction: column;
   height: 80vh;
   justify-content: center;
   width: 100%;
+
+  &__title {
+    margin-bottom: $SPACING_S;
+  }
 }

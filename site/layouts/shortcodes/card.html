@@ -1,9 +1,5 @@
 <div class="card">
-  <h1 class="card__title">{{ .Get "title" }}</h1>
-
-  <p class="card__text">
-    {{ if .Get "text" }}
-      {{ .Get "text" }}
-    {{ end }}
+  <p class="card__copy">
+    {{ .Get "copy" }}
   </p>
 </div>

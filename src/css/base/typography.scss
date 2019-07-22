@@ -8,13 +8,21 @@
 @import '~modularscale-sass/stylesheets/modularscale';
 
 /**
- * Font scale configuration.
+ * Variables.
  */
 $modularscale: (
   base: 16px,
   ratio: 1.2,
 );
 
+$LINE_HEIGHT_S: 1;
+$LINE_HEIGHT_M: 1.4em; // stylelint-disable-line
+
+$LETTER_SPACING_S: 0.01em; // stylelint-disable-line
+
+/**
+ * Font face.
+ */
 @font-face {
   font-family: Wremena;
   font-style: normal;
@@ -30,10 +38,16 @@ $modularscale: (
   src: url('/fonts/iAWriterQuattroS-Regular.eot#iefix') format('embedded-opentype'), url('/fonts/iAWriterQuattroS-Regular.woff') format('woff2'), url('/fonts/iAWriterQuattroS-Regular.woff') format('woff'), url('/fonts/iAWriterQuattroS-Regular.ttf') format('truetype');
 }
 
+/**
+ * Element styling.
+ */
 html,
 body {
   font-family: Wremena, Arial, sans-serif;
+  font-size: ms(0);
   font-weight: 300;
+  letter-spacing: $LETTER_SPACING_S;
+  line-height: $LINE_HEIGHT_S;
 }
 
 h1 {
@@ -42,4 +56,9 @@ h1 {
   @include mq($from: large) {
     font-size: ms(8);
   }
+}
+
+p, .body-1 {
+  font-size: ms(0);
+  line-height: $LINE_HEIGHT_M;
 }

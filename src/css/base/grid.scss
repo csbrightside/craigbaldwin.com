@@ -6,6 +6,9 @@
  */
 @import '~sass-mq';
 
+/**
+ * Variables.
+ */
 $mq-breakpoints: (
   tiny: 320px,
   small: 576px,
@@ -26,11 +29,16 @@ $SPACING_S: 1rem;
 $SPACING_M: 1.5rem;
 $SPACING_L: 2rem;
 
-$BORDER_WIDTH: $SPACING_S;
+$BORDER_WIDTH_S: $SPACING_S;
+$BORDER_WIDTH_L: $SPACING_M;
 
 /**
  * Element styling.
  */
 body {
-  padding: 0 $BORDER_WIDTH;
+  padding: 0 $BORDER_WIDTH_S;
+
+  @include mq($from: large) {
+    padding: 0 $BORDER_WIDTH_L;
+  }
 }

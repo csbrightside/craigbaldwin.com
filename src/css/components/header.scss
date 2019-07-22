@@ -10,7 +10,7 @@
   display: flex;
   font-size: ms(-1);
   justify-content: space-between;
-  padding: $BORDER_WIDTH 0;
+  padding: $BORDER_WIDTH_S 0;
 
   &__navigation {
     display: flex;
@@ -29,6 +29,13 @@
   }
 
   @include mq($from: large) {
-    font-size: ms(1);
+    font-size: ms(0);
+    padding: $BORDER_WIDTH_L 0;
+
+    &__list-item {
+      &:not(:last-child) {
+        margin-right: $SPACING_M;
+      }
+    }
   }
 }

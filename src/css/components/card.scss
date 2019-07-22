@@ -11,9 +11,13 @@
   flex-direction: column;
   height: 80vh;
   justify-content: center;
+  padding: $SPACING_S;
+  text-align: center;
   width: 100%;
 
-  &__title {
+  &__copy {
+    font-size: ms(3);
     margin-bottom: $SPACING_S;
+    max-width: 600px;
   }
 }

@@ -1,0 +1,36 @@
+/**
+ * Components > Footer.
+ * ------------------------------------------------------------------------------
+ * Footer partial.
+ *
+ */
+.footer {
+  display: flex;
+  margin-bottom: $SPACING_S;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: $SPACING_S;
+    }
+  }
+
+  @include mq($from: medium) {
+    margin-bottom: $SPACING_M;
+
+    &__item {
+      &:not(:last-child) {
+        margin-right: $SPACING_M;
+      }
+    }
+  }
+
+  @include mq($from: large) {
+    margin-bottom: $SPACING_L;
+
+    &__item {
+      &:not(:last-child) {
+        margin-right: $SPACING_L;
+      }
+    }
+  }
+}

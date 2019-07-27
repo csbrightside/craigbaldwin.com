@@ -8,14 +8,14 @@
       {{ $.Site.Params.siteTitle }}
     </a>
 
-    <button class="header__menu" js-header="menu">
+    <button class="header__menu" js-header="menuButton">
       <span class="burger burger--top"></span>
       <span class="burger burger--bottom"></span>
 
       <span class="visually-hidden">Menu</span>
     </button>
 
-    <nav class="header__navigation">
+    <nav class="header__navigation" js-header="navigationDrawer">
       {{ range .Site.Menus.main }}
         <li class="header__list-item">
           <a

@@ -16,15 +16,11 @@
 @import 'base/typography';
 
 /**
- * Partials
- */
-@import 'partials/footer';
-@import 'partials/footnotes';
-@import 'partials/header';
-
-/**
  * Components.
  */
 @import 'components/burger';
 @import 'components/card';
+@import 'components/footer';
 @import 'components/footnote';
+@import 'components/footnotes';
+@import 'components/header';

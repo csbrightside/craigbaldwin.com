@@ -4,27 +4,13 @@
  * Entry point JavaScript file.
  *
  */
-
-/**
- * Stylesheet.
- */
 import "../styles/theme.scss";
 
-
 /**
- * Global modules.
+ * Global component imports.
  */
-import {on} from './helpers/utils';
+import header from './components/header';
 
-console.log('Test');
-
-const menu = document.querySelector('[js-header="menu"]');
-
-on('click', menu, () => {
-  if (menu.classList.contains('is-active')) {
-    menu.classList.remove('is-active');
-    return;
-  }
-
-  menu.classList.add('is-active');
+document.addEventListener('DOMContentLoaded', () => {
+  header().init();
 });

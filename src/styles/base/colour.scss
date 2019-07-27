@@ -17,6 +17,9 @@ $COLOR_BLACK: rgb(44, 62, 80);
   @return mix($color, $COLOR_WHITE, $mix);
 }
 
+$COLOR_DARK_GREY: fade-colour($COLOR_BLACK, 50%);
+$COLOR_LIGHT_GREY: fade-colour($COLOR_BLACK, 20%);
+
 ::selection {
   background-color: $COLOR_BLUE;
   color: $COLOR_WHITE;

@@ -1,3 +1,5 @@
-{{ define "main" }} {{ $section := .Site.GetPage "section" .Section }}
+{{ define "main" }}
+  {{ $section := .Site.GetPage "section" .Section }}
+
   {{- .Content -}}
 {{ end }}

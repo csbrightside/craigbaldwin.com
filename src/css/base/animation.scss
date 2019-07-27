@@ -1,0 +1,13 @@
+/**
+ * Base > Animation.
+ * ------------------------------------------------------------------------------
+ * Animation timing, easing, and mixins.
+ *
+ */
+$TIMING_SHORT: 0.3s;
+
+$EASING: ease;
+
+@mixin transition($property: transform) {
+  transition: $property $TIMING_SHORT $EASING;
+}

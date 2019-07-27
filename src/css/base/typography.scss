@@ -1,5 +1,5 @@
 /**
- * Typography.
+ * Base > Typography.
  * ------------------------------------------------------------------------------
  * All typography styles.
  *
@@ -20,14 +20,24 @@ $LINE_HEIGHT_M: 1.4em; // stylelint-disable-line
 
 $LETTER_SPACING_S: 0.01em; // stylelint-disable-line
 
+$WEIGHT_REGULAR: 400;
+$WEIGHT_BOLD: 700;
+
 /**
  * Font face.
  */
 @font-face {
-  font-family: Wremena;
+  font-family: SpaceGrotesk;
   font-style: normal;
-  font-weight: 300;
-  src: url('/fonts/WremenaLight.woff') format('woff'), url('/fonts/WremenaLight.ttf') format('truetype');
+  font-weight: 400;
+  src: url('/fonts/SpaceGrotesk-Regular.woff') format('woff'), url('/fonts/SpaceGrotesk-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: SpaceGrotesk;
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/SpaceGrotesk-Bold.woff') format('woff'), url('/fonts/SpaceGrotesk-Bold.woff2') format('woff2');
 }
 
 /**
@@ -35,22 +45,36 @@ $LETTER_SPACING_S: 0.01em; // stylelint-disable-line
  */
 html,
 body {
-  font-family: Wremena, Arial, sans-serif;
+  font-family: SpaceGrotesk, Arial, sans-serif;
   font-size: ms(0);
-  font-weight: 300;
+  font-weight: $WEIGHT_REGULAR;
   letter-spacing: $LETTER_SPACING_S;
   line-height: $LINE_HEIGHT_S;
+}
+
+h1, h2, h3 {
+  font-weight: $WEIGHT_BOLD;
 }
 
 h1 {
   font-size: ms(5);
 
   @include mq($from: large) {
-    font-size: ms(8);
+    font-size: ms(6);
   }
 }
 
 p, .body-1 {
   font-size: ms(0);
   line-height: $LINE_HEIGHT_M;
+}
+
+.text-link {
+  border-bottom: 1px solid $COLOR_BLACK;
+  color: $COLOR_BLACK;
+  text-decoration: none;
+
+  &:hover {
+    border-bottom: 1px solid rgba($COLOR_BLACK, 0);
+  }
 }

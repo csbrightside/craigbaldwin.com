@@ -1,5 +1,5 @@
 /**
- * Header.
+ * Components > Header.
  * ------------------------------------------------------------------------------
  * Header and site navigation.
  *
@@ -24,7 +24,7 @@
 
   &__link {
     &.is-active {
-      color: red;
+      color: $COLOR_BRIGHT_BLUE;
     }
   }
 

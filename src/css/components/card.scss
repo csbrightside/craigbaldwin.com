@@ -1,5 +1,5 @@
 /**
- * Card.
+ * Components > Card.
  * ------------------------------------------------------------------------------
  * Title card styles.
  *
@@ -15,9 +15,12 @@
   text-align: center;
   width: 100%;
 
+  &__title {
+    margin-bottom: $SPACING_S;
+  }
+
   &__copy {
     font-size: ms(3);
-    margin-bottom: $SPACING_S;
     max-width: 600px;
   }
 }

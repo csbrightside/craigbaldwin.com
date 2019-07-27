@@ -6,7 +6,11 @@
   <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">
 
   <title>
-    {{ $.Site.Title }} &ndash; {{ .Title }}
+    {{ if (eq .Title "Home") }}
+      {{ $.Site.Title }} &ndash; {{ $.Site.Params.tagline }}
+    {{ else }}
+      {{ $.Site.Title }} &ndash; {{ .Title }}
+    {{ end }}
   </title>
 
   {{ $stylesheet := .Site.Data.webpack.main }}

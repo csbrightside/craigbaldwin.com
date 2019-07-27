@@ -4,6 +4,9 @@
   "languageLang": "en",
   "title": "Craig Baldwin [dot] com",
   "disableKinds": ["RSS", "taxonomy", "taxonomyTerm"],
+  "params": {
+    "tagline": "Front-end developer"
+  },
   "menu": {
     "main": [
       {

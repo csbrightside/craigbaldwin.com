@@ -4,10 +4,12 @@
  * Animation timing, easing, and mixins.
  *
  */
-$TIMING_SHORT: 0.3s;
+$TIMING_S: 0.2s;
+$TIMING_M: 0.4s;
+$TIMING_L: 0.6s;
 
-$EASING: ease;
+$EASING: cubic-bezier(0.645, 0.045, 0.355, 1);
 
 @mixin transition($property: transform) {
-  transition: $property $TIMING_SHORT $EASING;
+  transition: $property $TIMING_S $EASING;
 }

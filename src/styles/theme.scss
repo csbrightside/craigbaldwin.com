@@ -9,16 +9,22 @@
  * Base styles.
  */
 @import 'base/reset';
+@import 'base/helpers';
 @import 'base/animation';
 @import 'base/colour';
 @import 'base/layout';
 @import 'base/typography';
 
 /**
- * Components (partials/shortcodes).
+ * Partials
  */
+@import 'partials/footer';
+@import 'partials/footnotes';
+@import 'partials/header';
+
+/**
+ * Components.
+ */
+@import 'components/burger';
 @import 'components/card';
-@import 'components/footer';
 @import 'components/footnote';
-@import 'components/footnotes';
-@import 'components/header';

@@ -1,0 +1,75 @@
+/**
+ * Base > Helper.
+ * ------------------------------------------------------------------------------
+ * Utility and helper classes.
+ *
+ */
+
+/**
+ * Forces an element to self-clear its children.
+ *
+ * Usage:
+ * .selector {
+ *   @include clearfix;
+ * }
+ */
+@mixin clearfix() {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+  // stylelint-disable-next-line
+  *zoom: 1;
+}
+
+/**
+ * Hide element but make it accessible to screen readers.
+ *
+ * Usage:
+ * .selector {
+ *   @include visually-hidden;
+ * }
+ */
+@mixin visually-hidden() {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/**
+ * Reverse the properties applied by @mixin visually-hidden.
+ *
+ * Accepts:
+ * - $position: {String} Positioning method for element
+ *
+ * Usage:
+ * .selector {
+ *   @include visually-shown(relative);
+ * }
+ */
+@mixin visually-shown($position: inherit) {
+  clip: auto;
+  clip-path: unset;
+  height: auto;
+  margin: 0;
+  overflow: auto;
+  // stylelint-disable-next-line
+  position: $position !important;
+  width: auto;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}

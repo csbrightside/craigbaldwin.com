@@ -4,9 +4,26 @@
  * Colour variables.
  *
  */
-$COLOR_BRIGHT_BLUE: rgb(52, 152, 219);
+$COLOR_BLUE: rgb(52, 152, 219);
+$COLOR_GREEN: rgb(46, 204, 113);
+$COLOR_PURPLE: rgb(155, 89, 182);
+$COLOR_ORANGE: rgb(230, 126, 34);
+$COLOR_RED: rgb(231, 76, 60);
 
 $COLOR_WHITE: rgb(255, 255, 255);
 $COLOR_BLACK: rgb(44, 62, 80);
 
-$COLOR_BLUE: mix($COLOR_BRIGHT_BLUE, $COLOR_WHITE, 30%);
+@function fade-colour($color, $mix: 40%) {
+  @return mix($color, $COLOR_WHITE, $mix);
+}
+
+::selection {
+  background-color: $COLOR_BLUE;
+  color: $COLOR_WHITE;
+}
+
+// stylelint-disable-next-line
+::-moz-selection {
+  background-color: $COLOR_BLUE;
+  color: $COLOR_WHITE;
+}

@@ -4,7 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">
-  <title>{{ $.Site.Title }}</title>
+
+  <title>
+    {{ $.Site.Title }} &ndash; {{ .Title }}
+  </title>
 
   {{ $stylesheet := .Site.Data.webpack.main }}
   {{ with $stylesheet.css }}
@@ -12,14 +15,22 @@
   {{ end }}
 </head>
 
-<body>
-  {{ block "header" . }}{{ partial "header" . }}{{end}}
+<body class="template template--{{ lower .Title }}">
+  {{ block "header" . }}
+    {{ partial "header" . }}
+  {{end}}
 
   <main class="main">
     {{ block "main" . }}{{end}}
   </main>
 
-  {{ block "footer" . }}{{ partial "footer" . }}{{end}}
+  {{ block "footnotes" . }}
+    {{ partial "footnotes" . }}
+  {{end}}
+
+  {{ block "footer" . }}
+    {{ partial "footer" . }}
+  {{end}}
 
   {{ $script := .Site.Data.webpack.main }}
   {{ with $script.js }}

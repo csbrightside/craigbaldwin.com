@@ -3,20 +3,22 @@
 {{ $url := .URL }}
 
 <header class="header">
-  <a class="header__logo text-link" href="{{ "/" | relURL }}">
-    Craig Baldwin [dot] com
-  </a>
+  <div class="header__container container">
+    <a class="header__logo text-link" href="{{ "/" | relURL }}">
+      {{ $.Site.Title }}
+    </a>
 
-  <nav class="header__navigation">
-    {{ range .Site.Menus.main }}
-      <li class="header__list-item">
-        <a
-          class="header__link text-link {{ if eq $url .URL }}is-active{{ end }}"
-          href="{{ .URL }}"
-        >
-          {{ .Title }}
-        </a>
-      </li>
-    {{ end }}
-  </nav>
+    <nav class="header__navigation">
+      {{ range .Site.Menus.main }}
+        <li class="header__list-item">
+          <a
+            class="header__link text-link {{ if eq $url .URL }}is-active{{ end }}"
+            href="{{ .URL }}"
+          >
+            {{ .Title }}
+          </a>
+        </li>
+      {{ end }}
+    </nav>
+  </div>
 </header>

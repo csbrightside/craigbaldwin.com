@@ -1,0 +1,25 @@
+<!-- Partials > Footer. -->
+<!-- Site footer. -->
+{{ $url := .URL }}
+{{ $page := .Title }}
+
+<div class="footnotes container">
+  {{ range .Site.Menus.main }}
+    <a
+      class="
+       footnotes__footnote footnote footnote--{{ .Identifier }}
+       {{ if (eq $url .URL) }}is-hidden{{ end }}
+       {{ if and (eq $page "Home") (eq .Title "Contact") }}is-hidden{{ end }}
+      "
+      href="{{ .URL }}"
+    >
+      <span class="footnote__content">
+        <h2 class="footnote__title">{{ .Pre }} {{ .Title }}</h2>
+
+        <p class="footnote__copy">
+          {{ .Post }}
+        </p>
+      </span>
+    </a>
+  {{ end }}
+</div>

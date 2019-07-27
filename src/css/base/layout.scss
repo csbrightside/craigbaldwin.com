@@ -1,5 +1,5 @@
 /**
- * Base > Grid.
+ * Base > Layout.
  * ------------------------------------------------------------------------------
  * Layout grid and media breakpoint.
  *
@@ -17,28 +17,47 @@ $mq-breakpoints: (
   wide: 1328px
 );
 
+/**
+ * Grid.
+ */
 $NUM_COLS: 12 !default;
-$GUTTER_WIDTH: 1rem !default;
-$ELEMENT_TOP_MARGIN: 1rem !default;
-$ELEMENT_BOTTOM_MARGIN: 1rem !default;
+$SITE_WIDTH: 1320px;
 
 /**
  * Spacing.
  */
-$SPACING_S: 1rem;
+$SPACING_2XS: 0.5rem;
+$SPACING_XS: 1rem;
+$SPACING_S: 1.25rem;
 $SPACING_M: 1.5rem;
 $SPACING_L: 2rem;
 
-$BORDER_WIDTH_S: $SPACING_S;
-$BORDER_WIDTH_L: $SPACING_M;
+/**
+ * Layers.
+ */
+$LAYER_BASE: 1;
+$LAYER_RAISED: 2;
 
 /**
  * Element styling.
  */
 body {
-  padding: 0 $BORDER_WIDTH_S;
+  padding: 0 $SPACING_S;
+
+  @include mq($from: medium) {
+    padding: 0 $SPACING_M;
+  }
 
   @include mq($from: large) {
-    padding: 0 $BORDER_WIDTH_L;
+    padding: 0 $SPACING_L;
   }
+}
+
+/**
+ * Helpers.
+ */
+.container {
+  margin: 0 auto;
+  max-width: $SITE_WIDTH;
+  width: 100%;
 }

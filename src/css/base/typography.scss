@@ -16,7 +16,7 @@ $modularscale: (
 );
 
 $LINE_HEIGHT_S: 1;
-$LINE_HEIGHT_M: 1.4em; // stylelint-disable-line
+$LINE_HEIGHT_L: 1.4em; // stylelint-disable-line
 
 $LETTER_SPACING_S: 0.01em; // stylelint-disable-line
 
@@ -45,6 +45,7 @@ $WEIGHT_BOLD: 700;
  */
 html,
 body {
+  color: $COLOR_BLACK;
   font-family: SpaceGrotesk, Arial, sans-serif;
   font-size: ms(0);
   font-weight: $WEIGHT_REGULAR;
@@ -52,29 +53,55 @@ body {
   line-height: $LINE_HEIGHT_S;
 }
 
+/**
+ * Headings.
+ */
 h1, h2, h3 {
   font-weight: $WEIGHT_BOLD;
 }
 
 h1 {
-  font-size: ms(5);
+  font-size: ms(4);
+  margin-bottom: $SPACING_XS;
+
+  @include mq($from: small) {
+    font-size: ms(5);
+  }
 
   @include mq($from: large) {
     font-size: ms(6);
   }
 }
 
+/**
+ * Text.
+ */
 p, .body-1 {
   font-size: ms(0);
-  line-height: $LINE_HEIGHT_M;
+  line-height: $LINE_HEIGHT_L;
 }
 
+.stand-out {
+  font-size: ms(1);
+
+  @include mq($from: small) {
+    font-size: ms(2);
+  }
+
+  @include mq($from: large) {
+    font-size: ms(3);
+  }
+}
+
+/**
+ * Helpers.
+ */
 .text-link {
   border-bottom: 1px solid $COLOR_BLACK;
   color: $COLOR_BLACK;
   text-decoration: none;
 
   &:hover {
-    border-bottom: 1px solid rgba($COLOR_BLACK, 0);
+    border-bottom-color: $COLOR_BLUE;
   }
 }

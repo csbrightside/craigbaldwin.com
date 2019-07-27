@@ -11,11 +11,13 @@
 @import 'base/reset';
 @import 'base/animation';
 @import 'base/colour';
-@import 'base/grid';
+@import 'base/layout';
 @import 'base/typography';
 
 /**
  * Components (partials/shortcodes).
  */
 @import 'components/card';
+@import 'components/footnote';
+@import 'components/footnotes';
 @import 'components/header';

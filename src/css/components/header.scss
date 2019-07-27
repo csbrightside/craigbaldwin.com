@@ -5,12 +5,14 @@
  *
  */
 .header {
-  align-items: center;
   background-color: $COLOR_WHITE;
-  display: flex;
-  font-size: ms(-1);
-  justify-content: space-between;
-  padding: $BORDER_WIDTH_S 0;
+  padding: $SPACING_M 0;
+
+  &__container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
 
   &__navigation {
     display: flex;
@@ -24,13 +26,12 @@
 
   &__link {
     &.is-active {
-      color: $COLOR_BRIGHT_BLUE;
+      color: $COLOR_BLUE;
     }
   }
 
   @include mq($from: large) {
-    font-size: ms(0);
-    padding: $BORDER_WIDTH_L 0;
+    padding: $SPACING_L 0;
 
     &__list-item {
       &:not(:last-child) {

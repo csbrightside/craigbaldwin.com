@@ -9,20 +9,34 @@
       {
         "identifier": "about",
         "title": "About",
+        "pre": "😶",
+        "post": "Craig",
         "url": "/about/",
         "weight": -100
       },
       {
         "identifier": "work",
         "title": "Work",
+        "pre": "💻",
+        "post": "Showcase",
         "url": "/work/",
         "weight": -75
       },
       {
+        "identifier": "mountains",
+        "title": "Mountains",
+        "pre": "🗻",
+        "post": "+ Lakes",
+        "url": "/mountains/",
+        "weight": -50
+      },
+      {
         "identifier": "contact",
         "title": "Contact",
+        "pre": "📧",
+        "post": "+ Social",
         "url": "/contact/",
-        "weight": -50
+        "weight": -25
       }
     ]
   }

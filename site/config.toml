@@ -26,11 +26,11 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
     weight = -75
 
   [[menu.main]]
-    identifier = "mountains"
-    title = "Mountains"
-    pre = "🗻"
-    post = "+ Lakes"
-    url = "/mountains/"
+    identifier = "stats"
+    title = "Stats"
+    pre = "📊"
+    post = "+ Mountains"
+    url = "/stats/"
     weight = -50
 
   [[menu.main]]

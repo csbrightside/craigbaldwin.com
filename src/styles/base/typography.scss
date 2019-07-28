@@ -16,7 +16,8 @@ $modularscale: (
 );
 
 $LINE_HEIGHT_S: 1;
-$LINE_HEIGHT_L: 1.4em; // stylelint-disable-line
+$LINE_HEIGHT_M: 1.4;
+$LINE_HEIGHT_L: 1.6;
 
 $LETTER_SPACING_S: 0.01em; // stylelint-disable-line
 
@@ -73,16 +74,25 @@ h1 {
   }
 }
 
+h2 {
+  margin-bottom: $SPACING_XS;
+}
+
 /**
  * Text.
  */
 p, .body-1 {
   font-size: ms(0);
   line-height: $LINE_HEIGHT_L;
+
+  &:not(:last-child) {
+    margin-bottom: $SPACING_XS;
+  }
 }
 
 .stand-out {
   font-size: ms(1);
+  line-height: $LINE_HEIGHT_M;
 
   @include mq($from: small) {
     font-size: ms(2);
@@ -96,7 +106,8 @@ p, .body-1 {
 /**
  * Helpers.
  */
-.text-link {
+.text-link,
+%text-link {
   border-bottom: 1px solid $COLOR_BLACK;
   color: $COLOR_BLACK;
   text-decoration: none;

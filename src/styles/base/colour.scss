@@ -1,7 +1,7 @@
 /**
  * Base > Colours.
  * ------------------------------------------------------------------------------
- * Colour variables.
+ * Colour variables and classes.
  *
  */
 $COLOR_BLUE: rgb(52, 152, 219);
@@ -20,6 +20,9 @@ $COLOR_BLACK: rgb(44, 62, 80);
 $COLOR_DARK_GREY: fade-colour($COLOR_BLACK, 50%);
 $COLOR_LIGHT_GREY: fade-colour($COLOR_BLACK, 20%);
 
+/**
+ * Selection.
+ */
 ::selection {
   background-color: $COLOR_BLUE;
   color: $COLOR_WHITE;
@@ -29,4 +32,27 @@ $COLOR_LIGHT_GREY: fade-colour($COLOR_BLACK, 20%);
 ::-moz-selection {
   background-color: $COLOR_BLUE;
   color: $COLOR_WHITE;
+}
+
+/**
+ * Helpers.
+ */
+.background-color {
+  background-color: fade-colour($COLOR_BLUE);
+
+  &#{&}--about {
+    background-color: fade-colour($COLOR_ORANGE);
+  }
+
+  &#{&}--work {
+    background-color: fade-colour($COLOR_PURPLE);
+  }
+
+  &#{&}--stats {
+    background-color: fade-colour($COLOR_GREEN);
+  }
+
+  &#{&}--contact {
+    background-color: fade-colour($COLOR_RED);
+  }
 }

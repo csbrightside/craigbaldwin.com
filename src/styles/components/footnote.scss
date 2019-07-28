@@ -44,22 +44,6 @@
     display: none;
   }
 
-  &#{&}--about {
-    background-color: fade-colour($COLOR_ORANGE);
-  }
-
-  &#{&}--work {
-    background-color: fade-colour($COLOR_PURPLE);
-  }
-
-  &#{&}--mountains {
-    background-color: fade-colour($COLOR_GREEN);
-  }
-
-  &#{&}--contact {
-    background-color: fade-colour($COLOR_RED);
-  }
-
   @include mq($from: large) {
     &__content {
       padding: $SPACING_L;

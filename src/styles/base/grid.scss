@@ -1,0 +1,41 @@
+/**
+ * Base > Grid.
+ * ------------------------------------------------------------------------------
+ * Layout grid and media breakpoints.
+ *
+ */
+@import '~sass-mq';
+
+/**
+ * Variables.
+ */
+$mq-breakpoints: (
+  tiny: 320px,
+  small: 576px,
+  medium: 768px,
+  large: 1024px,
+  wide: 1328px
+);
+
+/**
+ * Grid.
+ */
+$NUM_COLS: 12 !default;
+$SITE_WIDTH: 1320px;
+
+/**
+ * Spacing.
+ */
+$SPACING_2XS: 0.5rem;
+$SPACING_XS: 1rem;
+$SPACING_S: 1.25rem;
+$SPACING_M: 1.5rem;
+$SPACING_L: 2rem;
+
+/**
+ * Layers.
+ */
+$LAYER_BASE: 1;
+$LAYER_RAISED: 2;
+$LAYER_DRAWER: 3;
+$LAYER_HEADER: 4;

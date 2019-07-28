@@ -7,7 +7,8 @@
   {{ range .Site.Menus.main }}
     <a
       class="
-       footnotes__footnote footnote footnote--{{ .Identifier }}
+       footnotes__footnote footnote
+       background-color background-color--{{ .Identifier }}
        {{ if (eq $url .URL) }}is-hidden{{ end }}
        {{ if and (eq $page "Home") (eq .Title "Contact") }}is-hidden{{ end }}
       "

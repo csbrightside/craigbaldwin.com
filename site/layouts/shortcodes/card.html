@@ -1,6 +1,11 @@
 <!-- Shortcodes > Card. -->
 <!-- Coloured card block. -->
-<div class="card">
+<div
+  class="
+    card card--{{ lower $.Page.Title }}
+    background-color background-color--{{ lower $.Page.Title }}
+  "
+>
   {{ if .Get "title" }}
     <h1 class="card__title">{{ .Get "title" }}</h1>
   {{ end }}

@@ -1,6 +1,6 @@
 ---
 title: "Home"
-draft: false
+description: "Front-end developer and pod development lead at We Make Websites developing advanced Shopify eCommerce stores."
 ---
 
 {{<

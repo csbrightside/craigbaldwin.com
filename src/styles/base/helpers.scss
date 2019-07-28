@@ -44,6 +44,10 @@
   width: 1px;
 }
 
+.clearfix {
+  @include clearfix;
+}
+
 /**
  * Reverse the properties applied by @mixin visually-hidden.
  *
@@ -66,10 +70,15 @@
   width: auto;
 }
 
-.clearfix {
-  @include clearfix;
-}
-
 .visually-hidden {
   @include visually-hidden;
+}
+
+/**
+ * Other helpers.
+ */
+.container {
+  margin: 0 auto;
+  max-width: $SITE_WIDTH;
+  width: 100%;
 }

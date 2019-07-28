@@ -9,10 +9,11 @@
  * Base styles.
  */
 @import 'base/reset';
-@import 'base/helpers';
 @import 'base/animation';
 @import 'base/colour';
+@import 'base/grid';
 @import 'base/layout';
+@import 'base/helpers';
 @import 'base/typography';
 
 /**

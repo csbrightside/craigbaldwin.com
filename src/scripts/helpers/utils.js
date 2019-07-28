@@ -38,3 +38,9 @@ export function on(event, elem = window, callback, capture = false) {
   elem.addEventListener(event, callback, capture);
 }
 
+/**
+ * Determine page type to load correct JS.
+ */
+export function pageType() {
+  return document.querySelector('[js-page-type]').getAttribute('content');
+}

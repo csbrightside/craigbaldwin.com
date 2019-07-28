@@ -7,8 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="{{ .Description }}">
 
+  <meta name="pageType" content="{{ .Type }}" js-page-type>
+
   <title>
-    {{ if (eq .Title "Home") }}
+    {{ if (eq .Title "Index") }}
       {{ $.Site.Title }} &ndash; {{ $.Site.Params.tagline }}
     {{ else }}
       {{ $.Site.Title }} &ndash; {{ .Title }}
@@ -21,22 +23,22 @@
   {{ end }}
 </head>
 
-<body class="template template--{{ lower .Title }}">
+<body class="template template--{{ .Type }}">
   {{ block "header" . }}
     {{ partial "header" . }}
-  {{end}}
+  {{ end }}
 
   <main class="main">
-    {{ block "main" . }}{{end}}
+    {{ block "main" . }}{{ end }}
   </main>
 
   {{ block "footnotes" . }}
     {{ partial "footnotes" . }}
-  {{end}}
+  {{ end }}
 
   {{ block "footer" . }}
     {{ partial "footer" . }}
-  {{end}}
+  {{ end }}
 
   {{ $script := .Site.Data.webpack.main }}
   {{ with $script.js }}

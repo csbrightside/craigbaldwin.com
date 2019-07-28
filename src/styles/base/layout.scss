@@ -22,7 +22,8 @@ main {
   margin-bottom: $SPACING_S;
 
   > h2,
-  > p {
+  > p,
+  > ul {
     grid-column: content;
   }
 
@@ -30,7 +31,7 @@ main {
     margin-top: $SPACING_XS;
   }
 
-  p a {
+  a {
     @extend %text-link;
   }
 

@@ -10,7 +10,8 @@
        footnotes__footnote footnote
        background-color background-color--{{ .Identifier }}
        {{ if (eq $url .URL) }}is-hidden{{ end }}
-       {{ if and (eq $page "Home") (eq .Title "Contact") }}is-hidden{{ end }}
+       {{ if and (eq $page "Index") (eq .Title "Contact") }}is-hidden{{ end }}
+       {{ if and (eq $page "Info") (eq .Title "Contact") }}is-hidden{{ end }}
       "
       href="{{ .URL }}"
     >

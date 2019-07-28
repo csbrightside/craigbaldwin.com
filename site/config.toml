@@ -12,7 +12,7 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
   [[menu.main]]
     identifier = "about"
     title = "About"
-    pre = "😶"
+    pre = "👋"
     post = "Craig"
     url = "/about/"
     weight = -100
@@ -36,7 +36,19 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
   [[menu.main]]
     identifier = "contact"
     title = "Contact"
-    pre = "📧"
+    pre = "📫"
     post = "+ Social"
     url = "/contact/"
+    weight = -25
+
+  [[menu.footer]]
+    identifier = "info"
+    title = "Info"
+    url = "/about/info/"
+    weight = -50
+
+  [[menu.footer]]
+    identifier = "repo"
+    title = "Repo"
+    url = "https://github.com/csbrightside/craigbaldwin.com"
     weight = -25

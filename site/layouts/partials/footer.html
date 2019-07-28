@@ -5,17 +5,12 @@
     &copy; 2008-{{ now.Format "2006"}} Craig Baldwin
   </span>
 
-  <a
-    class="footer__item footer__link text-link"
-    href="{{ "/about/info" | relURL }}"
-  >
-    Info
-  </a>
-
-  <a
-    class="footer__item footer__link text-link"
-    href="https://github.com/csbrightside/craigbaldwin.com"
-  >
-    Repo
-  </a>
+  {{ range .Site.Menus.footer }}
+    <a
+      class="footer__item footer__link text-link"
+      href="{{ .URL }}"
+    >
+      {{ .Title }}
+    </a>
+  {{ end }}
 </footer>

@@ -104,6 +104,20 @@ p, .body-1 {
 }
 
 /**
+ * Lists
+ */
+ul {
+  line-height: $LINE_HEIGHT_M;
+}
+
+li {
+  main & {
+    list-style: disc inside;
+    margin-bottom: $SPACING_3XS;
+  }
+}
+
+/**
  * Helpers.
  */
 .text-link,

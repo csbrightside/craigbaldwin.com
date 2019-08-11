@@ -1,7 +1,9 @@
 ---
 title: "About"
 description: "I live in London and work at We Make Websites. I'm a front-end developer, pod development lead, Shopify expert, and avid runner."
-type: "about"
+handle: "about"
+layout: "text"
+colour: "orange"
 ---
 
 {{<

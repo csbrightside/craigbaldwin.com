@@ -1,9 +1,9 @@
 ---
 title: "Contact"
 description: "Get in touch and social sites."
-type: "contact"
-card: "Get in touch"
-copy: "Test"
+handle: "contact"
+layout: "text"
+colour: "red"
 ---
 
 {{<

@@ -109,6 +109,10 @@ p, .body-1 {
 ul {
   line-height: $LINE_HEIGHT_M;
 
+  &:not(:last-child) {
+    margin-bottom: $SPACING_XS;
+  }
+
   .template--contact & {
     columns: 2;
   }

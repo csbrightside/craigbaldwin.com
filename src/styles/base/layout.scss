@@ -42,5 +42,9 @@ main {
   @include mq($from: large) {
     grid-template-columns: [gutter] 1fr [content] 700px [gutter] 1fr;
     margin-bottom: $SPACING_L;
+
+    .template--blocks & {
+      grid-template-columns: [gutter] 1fr [content] 800px [gutter] 1fr;
+    }
   }
 }

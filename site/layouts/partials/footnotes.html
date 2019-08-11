@@ -12,6 +12,7 @@
        {{ if (eq $url .URL) }}is-hidden{{ end }}
        {{ if and (eq $page "Index") (eq .Title "Contact") }}is-hidden{{ end }}
        {{ if and (eq $page "Info") (eq .Title "Contact") }}is-hidden{{ end }}
+       {{ if and (eq $page "Mountains") (eq .Title "Stats") }}is-hidden{{ end }}
       "
       href="{{ .URL }}"
     >

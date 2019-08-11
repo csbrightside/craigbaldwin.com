@@ -1,0 +1,52 @@
+/**
+ * Components > Block.
+ * ------------------------------------------------------------------------------
+ * A block contains an image with text side-by-side.
+ *
+ */
+.block {
+  $parent: &;
+  display: flex;
+  flex-direction: column;
+
+  &__image-container {
+    margin-bottom: $SPACING_S;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+  }
+
+  @include mq($from: medium) {
+    &__image-container {
+      margin-bottom: $SPACING_M;
+    }
+  }
+
+  @include mq($from: large) {
+    flex-direction: row;
+
+    &__image-container {
+      flex: 0 1 percentage(5 / 8);
+      margin-bottom: 0;
+      order: 1;
+    }
+
+    &__meta {
+      flex: 1 0 percentage(3 / 8);
+      padding-right: $SPACING_L;
+    }
+
+    &:nth-child(even) {
+      #{$parent}__image-container {
+        order: 0;
+      }
+
+      #{$parent}__meta {
+        padding-left: $SPACING_L;
+        padding-right: 0;
+      }
+    }
+  }
+}

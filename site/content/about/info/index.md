@@ -1,7 +1,9 @@
 ---
 title: "Info"
 description: "This is version 12 of the site."
-type: "info"
+handle: "info"
+layout: "text"
+colour: "orange"
 ---
 
 {{<

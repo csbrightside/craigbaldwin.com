@@ -23,7 +23,7 @@
   {{ end }}
 </head>
 
-<body class="template template--{{ .Type }}">
+<body class="template template--{{ .Layout }} template--{{ .Params.handle }}">
   {{ block "header" . }}
     {{ partial "header" . }}
   {{ end }}

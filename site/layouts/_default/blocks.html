@@ -1,0 +1,43 @@
+{{ define "main" }}
+  {{- .Content -}}
+
+  <div class="blocks">
+    {{ range .Pages.ByDate.Reverse }}
+      <div class="blocks__block block">
+        <div class="block__image-container">
+          <img
+            class="block__image"
+            alt="{{ .Params.location }} {{ .Title }}"
+            src="/images/{{ $.Page.Params.handle }}/{{ .Params.handle }}.jpg"
+          >
+        </div>
+
+        <div class="block__meta">
+          <h2 class="block__title">{{ .Title }}</h2>
+
+          <ul class="block__stats">
+            <li class="block__stat block__stat--location">
+              {{ .Params.location }} ({{ .Params.duration }} nights)
+            </li>
+
+            <li class="block__stat block__stat--distance">
+              {{ .Params.distance }} miles
+            </li>
+
+            <li class="block__stat block__stat--mountains">
+              {{ .Params.mountains }} ({{ .Params.mountains_new }} new)
+            </li>
+
+            <li class="block__stat block__stat--steps">
+              {{ .Params.steps }} steps
+            </li>
+          </ul>
+
+          <div class="block__content">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+{{ end }}

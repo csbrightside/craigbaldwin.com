@@ -1,7 +1,9 @@
 ---
 title: "Index"
 description: "Front-end developer and pod development lead at We Make Websites developing advanced Shopify eCommerce stores."
-type: "index"
+handle: "index"
+layout: "index"
+colour: "blue"
 ---
 
 {{<

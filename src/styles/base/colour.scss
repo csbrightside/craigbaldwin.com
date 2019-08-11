@@ -40,18 +40,22 @@ $COLOR_LIGHT_GREY: fade-colour($COLOR_BLACK, 20%);
 .background-color {
   background-color: fade-colour($COLOR_BLUE);
 
-  &#{&}--about {
-    background-color: fade-colour($COLOR_ORANGE);
-  }
-
-  &#{&}--work {
-    background-color: fade-colour($COLOR_PURPLE);
-  }
-
+  &#{&}--green,
   &#{&}--stats {
     background-color: fade-colour($COLOR_GREEN);
   }
 
+  &#{&}--orange,
+  &#{&}--about {
+    background-color: fade-colour($COLOR_ORANGE);
+  }
+
+  &#{&}--purple,
+  &#{&}--work {
+    background-color: fade-colour($COLOR_PURPLE);
+  }
+
+  &#{&}--red,
   &#{&}--contact {
     background-color: fade-colour($COLOR_RED);
   }

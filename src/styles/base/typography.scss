@@ -108,6 +108,10 @@ p, .body-1 {
  */
 ul {
   line-height: $LINE_HEIGHT_M;
+
+  .template--contact & {
+    columns: 2;
+  }
 }
 
 li {

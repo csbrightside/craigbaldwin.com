@@ -37,16 +37,5 @@
       flex: 1 0 percentage(3 / 8);
       padding-right: $SPACING_L;
     }
-
-    &:nth-child(even) {
-      #{$parent}__image-container {
-        order: 0;
-      }
-
-      #{$parent}__meta {
-        padding-left: $SPACING_L;
-        padding-right: 0;
-      }
-    }
   }
 }

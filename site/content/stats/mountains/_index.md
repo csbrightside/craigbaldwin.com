@@ -2,7 +2,7 @@
 title: "Mountains"
 description: "My journeys in the mountains."
 handle: "mountains"
-layout: "blocks"
+layout: "mountains"
 colour: "green"
 ---
 

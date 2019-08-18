@@ -39,8 +39,8 @@ export function on(event, elem = window, callback, capture = false) {
 }
 
 /**
- * Determine page type to load correct JS.
+ * Determine page handle to load correct JS.
  */
-export function pageType() {
-  return document.querySelector('[js-page-type]').getAttribute('content');
+export function pageHandle() {
+  return document.querySelector('[js-page="handle"]').getAttribute('content');
 }

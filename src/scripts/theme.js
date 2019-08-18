@@ -9,24 +9,33 @@ import "../styles/theme.scss";
 /**
  * Global helper imports.
  */
-import {pageType} from './helpers/utils';
+import {pageHandle} from './helpers/utils';
 
 /**
  * Global component imports.
  */
+import counter from './components/counter';
 import header from './components/header';
+import map from './components/map';
 
 /**
- * Global template imports.
+ * Init based on page handle.
  */
-import infoPage from './layouts/info';
-
 document.addEventListener('DOMContentLoaded', () => {
   header().init();
 
-  switch (pageType()) {
+  console.log(pageHandle());
+
+  switch (pageHandle()) {
     case 'info':
-      infoPage().init();
+      counter().init();
+      break;
+
+    case 'mountains':
+      map().init();
+      break;
+
+    default:
       break;
   }
 });

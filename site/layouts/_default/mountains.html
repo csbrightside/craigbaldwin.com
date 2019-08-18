@@ -1,10 +1,11 @@
 {{ define "main" }}
   {{- .Content -}}
+  {{ partial "map" . }}
 
   <div class="blocks">
     {{ range .Pages.ByDate.Reverse }}
       <div class="blocks__block block">
-        <div class="block__image-container">
+        <div class="block__image-container responsive-margin-bottom">
           <img
             class="block__image"
             alt="{{ .Params.location }} {{ .Title }}"

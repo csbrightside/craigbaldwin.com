@@ -12,7 +12,7 @@ colour: "orange"
   copy="This is version 12 of the site."
 >}}
 
-This version has been online for <span data-launch="2019-07-01" js-info="counter">0</span> days.
+This version has been online for <span data-launch="2019-07-01" js-counter="number">0</span> days.
 
 This site uses cookies for Google Analytics tracking.
 

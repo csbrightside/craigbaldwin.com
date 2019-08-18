@@ -1,16 +1,16 @@
 /**
- * Layouts > Info.
+ * Components > Counter.
  * ------------------------------------------------------------------------------
- * Version counter functionality.
+ * Online counter functionality.
  *
- * @namespace infoPage
+ * @namespace counter
  */
 
 /**
  * DOM selectors.
  */
 const selectors = {
-  counter: '[js-info="counter"]',
+  counter: '[js-counter="number"]',
 };
 
 /**

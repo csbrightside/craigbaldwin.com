@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="{{ .Description }}">
 
-  <meta name="pageType" content="{{ .Type }}" js-page-type>
+  <meta name="pageHandle" content="{{ .Params.handle }}" js-page="handle">
 
   <title>
     {{ if (eq .Title "Index") }}

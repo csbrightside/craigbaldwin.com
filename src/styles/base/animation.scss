@@ -7,9 +7,10 @@
 $TIMING_S: 0.2s;
 $TIMING_M: 0.4s;
 $TIMING_L: 0.6s;
+$TIMING_XL: 1.2s;
 
 $EASING: cubic-bezier(0.645, 0.045, 0.355, 1);
 
-@mixin transition($property: transform, $timing: $TIMING_L) {
-  transition: $property $timing $EASING;
+@mixin transition($property: transform, $timing: $TIMING_L, $easing: $EASING) {
+  transition: $property $timing $easing;
 }

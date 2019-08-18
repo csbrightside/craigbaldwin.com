@@ -1,0 +1,49 @@
+/**
+ * Components > Map.
+ * ------------------------------------------------------------------------------
+ * Map and progress bar displayed on the mountains page.
+ *
+ */
+.map {
+  &__progress {
+    background-color: $COLOR_BLACK;
+    height: 50px;
+    position: relative;
+    width: 100%;
+  }
+
+  &__progress-bar {
+    @include transition(width, $TIMING_XL, ease);
+    background-color: $COLOR_GREEN;
+    height: 100%;
+    left: 0;
+    padding-right: $SPACING_S;
+    position: absolute;
+    text-align: right;
+    top: 0;
+    width: 0;
+    z-index: 3;
+  }
+
+  &__progress-text {
+    position: absolute;
+    right: $SPACING_XS;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+
+    &#{&}--count {
+      @include transition(opacity, ease);
+      color: $COLOR_WHITE;
+      opacity: 0;
+
+      &.is-active {
+        opacity: 1;
+      }
+    }
+
+    &#{&}--total {
+      color: $COLOR_DARK_GREY;
+    }
+  }
+}

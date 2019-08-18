@@ -7,16 +7,13 @@
 .footnotes {
   display: grid;
   grid-gap: $SPACING_S;
-  margin-bottom: $SPACING_S;
 
   @include mq($from: medium) {
     grid-gap: $SPACING_M;
     grid-template-columns: repeat(3, 1fr);
-    margin-bottom: $SPACING_M;
   }
 
   @include mq($from: large) {
     grid-gap: $SPACING_L;
-    margin-bottom: $SPACING_L;
   }
 }

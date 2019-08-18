@@ -82,3 +82,15 @@
   max-width: $SITE_WIDTH;
   width: 100%;
 }
+
+.responsive-margin-bottom {
+  margin-bottom: $SPACING_S;
+
+  @include mq($from: medium) {
+    margin-bottom: $SPACING_M;
+  }
+
+  @include mq($from: large) {
+    margin-bottom: $SPACING_L;
+  }
+}

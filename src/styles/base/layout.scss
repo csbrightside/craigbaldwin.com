@@ -19,7 +19,14 @@ body {
 main {
   display: grid;
   grid-template-columns: [content] 1fr;
-  margin-bottom: $SPACING_S;
+
+  .layout-span {
+    grid-column: span 3;
+  }
+
+  .layout-center {
+    grid-column: content;
+  }
 
   > h2,
   > p,
@@ -35,15 +42,11 @@ main {
     @extend %text-link;
   }
 
-  @include mq($from: medium) {
-    margin-bottom: $SPACING_M;
-  }
-
   @include mq($from: large) {
     grid-template-columns: [gutter] 1fr [content] 700px [gutter] 1fr;
-    margin-bottom: $SPACING_L;
 
-    .template--blocks & {
+    .template--blocks &,
+    .template--mountains & {
       grid-template-columns: [gutter] 1fr [content] 800px [gutter] 1fr;
     }
   }

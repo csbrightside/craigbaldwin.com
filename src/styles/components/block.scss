@@ -9,19 +9,9 @@
   display: flex;
   flex-direction: column;
 
-  &__image-container {
-    margin-bottom: $SPACING_S;
-  }
-
   &__image {
     display: block;
     width: 100%;
-  }
-
-  @include mq($from: medium) {
-    &__image-container {
-      margin-bottom: $SPACING_M;
-    }
   }
 
   @include mq($from: large) {

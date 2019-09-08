@@ -5,6 +5,11 @@
  *
  */
 .map {
+  &__display {
+    height: 0;
+    padding-bottom: 100%;
+  }
+
   &__progress {
     background-color: $COLOR_BLACK;
     height: 50px;
@@ -44,6 +49,24 @@
 
     &#{&}--total {
       color: $COLOR_DARK_GREY;
+    }
+  }
+
+  @include mq($from: small) {
+    &__display {
+      padding-bottom: 75%;
+    }
+  }
+
+  @include mq($from: medium) {
+    &__display {
+      padding-bottom: 45%;
+    }
+  }
+
+  @include mq($from: wide) {
+    &__display {
+      padding-bottom: 30%;
     }
   }
 }

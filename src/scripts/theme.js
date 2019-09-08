@@ -24,8 +24,6 @@ import map from './components/map';
 document.addEventListener('DOMContentLoaded', () => {
   header().init();
 
-  console.log(pageHandle());
-
   switch (pageHandle()) {
     case 'info':
       counter().init();

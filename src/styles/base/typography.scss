@@ -139,3 +139,13 @@ li {
     color: $COLOR_BLUE;
   }
 }
+
+/**
+ * External link icon.
+ */
+// stylelint-disable-next-line
+a:not([href*='craigbaldwin.com']):not([href^='#']):not([href^='/'])::after {
+  content: ' ↗';
+  font-size: ms(-1);
+  vertical-align: super;
+}

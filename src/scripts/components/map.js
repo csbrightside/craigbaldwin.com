@@ -1,24 +1,13 @@
 /**
  * Components > Map.
  * ------------------------------------------------------------------------------
- * Map and progress bar functionality.
+ * Mountains map functionality.
  *
  * @namespace map
  */
 import Leaflet from 'leaflet';
-import {CountUp} from 'countup.js';
 
 import {mapData} from '../helpers/map-data';
-import cssClasses from '../helpers/cssClasses';
-
-/**
- * DOM selectors.
- */
-const selectors = {
-  progressBar: '[js-map="progressBar"]',
-  count: '[js-map="count"]',
-  total: '[js-map="total"]',
-};
 
 /**
  * Create a new header object.
@@ -31,20 +20,10 @@ export default () => {
   let map = {};
 
   /**
-   * DOM node selectors.
-   */
-  const nodeSelectors = {
-    progressBar: document.querySelector(selectors.progressBar),
-    count: document.querySelector(selectors.count),
-    total: document.querySelector(selectors.total),
-  };
-
-  /**
    * Initialise component.
    */
   function init() {
     buildMap();
-    updateProgress();
   }
 
   /**
@@ -87,28 +66,6 @@ export default () => {
         icon,
       }).bindPopup(location.name, {closeButton: false}).addTo(map);
     });
-  }
-
-  /**
-   * Update the progress bar and count.
-   */
-  function updateProgress() {
-    const mountains = nodeSelectors.count.getAttribute('data-value');
-    const total = nodeSelectors.total.getAttribute('data-value');
-
-    const countUp = new CountUp(nodeSelectors.count, mountains, {
-      duration: 1.2,
-      useEasing: false,
-    });
-
-    if (!countUp.error) {
-      nodeSelectors.count.classList.add(cssClasses.active);
-      countUp.start();
-    }
-
-    const completion = `${((mountains / total) * 100)}%`;
-
-    nodeSelectors.progressBar.style.width = completion;
   }
 
   /**

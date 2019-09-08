@@ -16,7 +16,9 @@ import {pageHandle} from './helpers/utils';
  */
 import counter from './components/counter';
 import header from './components/header';
+import charts from './components/charts';
 import map from './components/map';
+import progress from './components/progress';
 
 /**
  * Init based on page handle.
@@ -29,8 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
       counter().init();
       break;
 
+    case 'distances':
+      charts().init();
+      break;
+
     case 'mountains':
       map().init();
+      progress().init();
       break;
 
     default:

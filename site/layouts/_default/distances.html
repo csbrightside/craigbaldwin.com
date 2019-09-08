@@ -1,0 +1,15 @@
+{{ define "main" }}
+  {{- .Content -}}
+
+  <div class="blocks">
+    <div class="blocks__block chart">
+      <h2 class="chart__title">Distance By Foot</h2>
+      <canvas js-chart="walking"></canvas>
+    </div>
+
+    <div class="blocks__block chart">
+      <h2 class="chart__title">Total Distances</h2>
+      <canvas js-chart="total"></canvas>
+    </div>
+  </div>
+{{ end }}

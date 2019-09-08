@@ -3,7 +3,7 @@
   {{ partial "map" . }}
 
   <div class="blocks">
-    {{ range .Pages.ByDate.Reverse }}
+    {{ range (.Pages.ByParam "handle").Reverse }}
       <div class="blocks__block block">
         <div class="block__image-container responsive-margin-bottom">
           <img

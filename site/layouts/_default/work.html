@@ -1,0 +1,26 @@
+{{ define "main" }}
+  {{- .Content -}}
+
+  <div class="clients clients--selected responsive-margin-bottom">
+    <h2 class="clients__title">Selected</h2>
+
+    {{ range .Pages.ByWeight }}
+      {{ if (eq .Params.type "selected") }}
+        <div class="clients__client client">
+          <h3 class="client__title">{{ .Title }}</h3>
+        </div>
+      {{ end }}
+    {{ end }}
+  </div>
+
+  <div class="clients clients--list responsive-margin-bottom">
+    <h2 class="clients__title visually-hidden">Others</h2>
+    {{ range .Pages.ByTitle }}
+      {{ if (eq .Params.type "list") }}
+        <div class="clients__client client">
+          <h3 class="client__title">{{ .Title }}</h3>
+        </div>
+      {{ end }}
+    {{ end }}
+  </div>
+{{ end }}

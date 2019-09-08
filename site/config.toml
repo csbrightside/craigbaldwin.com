@@ -10,6 +10,14 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 
 [menu]
   [[menu.main]]
+    identifier = "home"
+    title = "Home"
+    pre = "🏡"
+    post = "Start again"
+    url = "/"
+    weight = -125
+
+  [[menu.main]]
     identifier = "about"
     title = "About"
     pre = "👋"

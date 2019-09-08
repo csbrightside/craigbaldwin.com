@@ -44,6 +44,14 @@
     display: none;
   }
 
+  &#{&}--home {
+    display: none;
+
+    .template-- & {
+      display: block;
+    }
+  }
+
   @include mq($from: large) {
     &__content {
       padding: $SPACING_L;

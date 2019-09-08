@@ -37,6 +37,10 @@
     &.is-active {
       color: $COLOR_BLUE;
     }
+
+    &#{&}--home {
+      display: none;
+    }
   }
 
   /**

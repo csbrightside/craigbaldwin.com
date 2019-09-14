@@ -5,5 +5,44 @@
  *
  */
 .client {
-  background-color: $COLOR_LIGHT_GREY;
+  $parent: &;
+  display: grid;
+  grid-gap: $SPACING_S;
+  grid-template-columns: repeat(2, 1fr);
+  position: relative;
+
+  &__image {
+    border: 1px solid $COLOR_LIGHT_GREY;
+    cursor: pointer;
+    display: block;
+    height: 0;
+    padding-bottom: 100%;
+    width: 100%;
+
+    &::after {
+      display: none;
+    }
+
+    &:hover {
+      border-color: $COLOR_BLUE;
+    }
+  }
+
+  .clients--list & {
+    grid-template-columns: 1fr;
+    height: 0;
+
+    #{$parent}__title,
+    #{$parent}__meta {
+      @include visually-hidden;
+    }
+  }
+
+  @include mq($from: small) {
+    grid-template-columns: repeat(4, 1fr);
+
+    &__meta {
+      grid-column: span 3;
+    }
+  }
 }

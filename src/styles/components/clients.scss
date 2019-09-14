@@ -5,13 +5,36 @@
  *
  */
 .clients {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   grid-column: content;
-  grid-column-gap: $SPACING_S;
-  grid-template-columns: repeat(4, 25%);
   width: 100%;
 
-  &__title {
-    grid-column: span 4;
+  &__client {
+    &:not(:last-child) {
+      margin-bottom: $SPACING_S;
+    }
+
+    .clients--list & {
+      padding-bottom: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &#{&}--list {
+    display: grid;
+    grid-gap: $SPACING_S $SPACING_S;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mq($from: small) {
+    &#{&}--list {
+      display: grid;
+      grid-gap: $SPACING_S $SPACING_S;
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 }

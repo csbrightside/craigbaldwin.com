@@ -1,0 +1,19 @@
+<!-- Partials > Client. -->
+<!-- Individual client display. -->
+<div class="clients__client client">
+  <a
+    class="client__image"
+    href="{{ .Params.link }}"
+    target="blank"
+  ></a>
+
+  <div class="client__meta">
+    <h3 class="client__title">{{ .Title }}</h3>
+
+    {{ if .Content }}
+      <div class="client__text">
+        {{ .Content }}
+      </div>
+    {{ end }}
+  </div>
+</div>

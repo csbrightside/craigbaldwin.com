@@ -11,23 +11,16 @@
   width: 100%;
 
   &__client {
-    &:not(:last-child) {
-      margin-bottom: $SPACING_S;
-    }
-
     .clients--list & {
+      margin-bottom: 0;
       padding-bottom: 100%;
-
-      &:not(:last-child) {
-        margin-bottom: 0;
-      }
     }
   }
 
   &#{&}--list {
     display: grid;
     grid-gap: $SPACING_S $SPACING_S;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   @include mq($from: small) {

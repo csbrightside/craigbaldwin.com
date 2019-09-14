@@ -8,7 +8,7 @@
   $parent: &;
   display: grid;
   grid-gap: $SPACING_S;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   position: relative;
 
   &__image {
@@ -26,6 +26,10 @@
     &:hover {
       border-color: $COLOR_BLUE;
     }
+  }
+
+  &__meta {
+    grid-column: span 2;
   }
 
   .clients--list & {

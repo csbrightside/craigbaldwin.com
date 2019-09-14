@@ -86,6 +86,12 @@
     &__navigation {
       display: flex;
     }
+
+    &__list-item {
+      &:not(:last-child) {
+        margin-right: $SPACING_S;
+      }
+    }
   }
 
   @include mq($from: large) {

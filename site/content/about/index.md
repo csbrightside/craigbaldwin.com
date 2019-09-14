@@ -21,10 +21,10 @@ I regularly work with HTML, SCSS, vanilla JavaScript, jQuery, APIs, Shopify Liqu
 
 ## Responsibilities
 
-As pod development lead I manage a small group of developers, providing them code review feedback and development guidance. I liaise with project managers to create briefs, provide estimates, and maintain client documentation. I also oversee We Make Websites' internal documentation and coding guidelines.
+As pod development lead I manage a small team of developers, providing code review feedback and development guidance. I liaise with project managers to create briefs, solve technical hurdles, provide estimates, and maintain client documentation. I also oversee We Make Websites' internal documentation and coding guidelines.
 
 ## Experience
-Studied Graphic Design and Photography at the [Winchester School of Art](http://www.southampton.ac.uk/wsa/index.page) and graduated in 2010 with a 2:1. In 2017 started working at We Make Websites as a front-end developer. Previously worked for [Intermedia](https://intermediasolutions.com/), [RocketBase](http://rocketbase.co.uk/), and [ais London](https://www.linkedin.com/company/ais-london/). For more detail please view my [LinkedIn](http://uk.linkedin.com/in/craigbaldwin/) page. For references please [contact me](/contact).
+Studied Graphic Design and Photography at the [Winchester School of Art](http://www.southampton.ac.uk/wsa/index.page), graduated in 2010 with a 2:1. In 2017 started working at We Make Websites as a front-end developer. Previously worked for [Intermedia](https://intermediasolutions.com/), [RocketBase](http://rocketbase.co.uk/), and [ais London](https://www.linkedin.com/company/ais-london/). For more detail please view my [LinkedIn](http://uk.linkedin.com/in/craigbaldwin/) page. For references please [contact me](/contact).
 
 ## Personal
 In my spare time I enjoy [running](https://www.strava.com/athletes/craigbaldwin), swimming, and [walking](/stats/mountains). I like to keep track of all my [stats](/stats). I'm most at home on the fells of the Lake District which I try to visit as often as possible. I hope to one day have climbed all 214 fells described by Alfred Wainwright.

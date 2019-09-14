@@ -6,4 +6,4 @@ type: "selected"
 weight: 10
 ---
 
-Hello there
+Sole designer/developer for one of the most complex builds We Make Websites had undertaken. Re-developed existing company framework to handle complicated product builder supporting thousands of products and improve maintainability.

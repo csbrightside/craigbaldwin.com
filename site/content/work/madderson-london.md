@@ -2,8 +2,6 @@
 title: "Madderson London"
 handle: "madderson-london"
 link: "https://maddersonlondon.com/"
-type: "selected"
+type: "list"
 weight: 10
 ---
-
-Hello there

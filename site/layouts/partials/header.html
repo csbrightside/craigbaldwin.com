@@ -2,8 +2,12 @@
 <!-- Header with logo and links. -->
 {{ $url := .URL }}
 
-<header class="header">
+<header class="header" role="header">
   <div class="header__container container">
+    <a class="header__skip-link" href="{{ .URL }}#MainContent">
+      Skip to content
+    </a>
+
     <a class="header__logo text-link" href="{{ "/" | relURL }}">
       {{ $.Site.Params.siteTitle }}
     </a>
@@ -15,7 +19,11 @@
       <span class="visually-hidden">Menu</span>
     </button>
 
-    <nav class="header__navigation" js-header="navigationDrawer">
+    <nav
+      class="header__navigation"
+      role="navigation"
+      js-header="navigationDrawer"
+    >
       <ul class="header__list">
         {{ range .Site.Menus.main }}
           <li class="header__list-item header__list-item--{{ .Identifier }}">

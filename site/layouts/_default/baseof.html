@@ -58,17 +58,19 @@
     {{ partial "header" . }}
   {{ end }}
 
-  <main class="main responsive-margin-bottom">
+  <main id="MainContent" class="main responsive-margin-bottom">
     {{ block "main" . }}{{ end }}
   </main>
 
-  {{ block "footnotes" . }}
-    {{ partial "footnotes" . }}
-  {{ end }}
+  <footer role="footer">
+    {{ block "footnotes" . }}
+      {{ partial "footnotes" . }}
+    {{ end }}
 
-  {{ block "footer" . }}
-    {{ partial "footer" . }}
-  {{ end }}
+    {{ block "footer" . }}
+      {{ partial "footer" . }}
+    {{ end }}
+  </footer>
 
   {{ $script := .Site.Data.webpack.main }}
   {{ with $script.js }}

@@ -15,6 +15,25 @@
     justify-content: space-between;
   }
 
+  &__skip-link {
+    background-color: $COLOR_LIGHT_GREY;
+    color: $COLOR_BLACK;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    padding: $SPACING_M $SPACING_XL;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+
+    &:focus {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: $LAYER_POPUP;
+    }
+  }
+
   &__logo {
     position: relative;
     z-index: $LAYER_HEADER;
@@ -64,6 +83,7 @@
       width: 100%;
       z-index: $LAYER_DRAWER;
 
+      &:focus-within,
       &.is-active {
         transform: translateX(0);
       }
@@ -98,6 +118,11 @@
 
   @include mq($from: large) {
     padding: $SPACING_L 0;
+
+    &__skip-link {
+      // Aligning skip link with logo link
+      padding-top: calc(#{$SPACING_L} + 4px);
+    }
 
     &__list-item {
       &:not(:last-child) {

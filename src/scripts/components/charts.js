@@ -168,7 +168,7 @@ export default () => {
             data: [3226, 4181.3, 7937, 5228.8, 6021.6, 3633.9, 2977.3, 5903.8, 8103.9, 4324.3],
             backgroundColor: 'rgba(196,77,88,1.0)',
             borderWidth: 0,
-          }
+          },
         ],
       },
       options: {
@@ -179,12 +179,12 @@ export default () => {
                 display: false,
               },
               stacked: true,
-            }
+            },
           ],
           yAxes: [
             {
               stacked: true,
-            }
+            },
           ],
         },
       },

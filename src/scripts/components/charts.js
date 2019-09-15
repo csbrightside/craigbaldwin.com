@@ -5,9 +5,8 @@
  *
  * @namespace charts
  */
-import Chart from 'chart.js';
 
-/**
+ /**
  * DOM selectors.
  */
 const selectors = {
@@ -16,28 +15,28 @@ const selectors = {
 };
 
 /**
- * Chart.js global configuration.
- */
-Chart.defaults.global.defaultFontColor = '#1c1c1c';
-Chart.defaults.global.defaultFontFamily = " SpaceGrotesk, Arial, sans-serif";
-Chart.defaults.global.defaultFontSize = 12;
-Chart.defaults.global.legend.display = false;
-Chart.defaults.global.tooltips.backgroundColor = '#1c1c1c';
-Chart.defaults.global.tooltips.position = 'nearest';
-Chart.defaults.global.tooltips.titleFontStyle = 700;
-Chart.defaults.global.tooltips.titleMarginBottom = 6;
-Chart.defaults.global.tooltips.xPadding = 10;
-Chart.defaults.global.tooltips.yPadding = 10;
-Chart.defaults.global.tooltips.cornerRadius = 0;
-Chart.defaults.global.tooltips.borderWidth = 0;
-Chart.defaults.global.tooltips.caretSize = 10;
-Chart.defaults.global.tooltips.caretPadding = 5;
-Chart.defaults.global.tooltips.displayColors = false;
-
-/**
  * Create a new header object.
  */
 export default () => {
+
+  /**
+   * Chart.js global configuration.
+   */
+  Chart.defaults.global.defaultFontColor = '#1c1c1c';
+  Chart.defaults.global.defaultFontFamily = " SpaceGrotesk, Arial, sans-serif";
+  Chart.defaults.global.defaultFontSize = 12;
+  Chart.defaults.global.legend.display = false;
+  Chart.defaults.global.tooltips.backgroundColor = '#1c1c1c';
+  Chart.defaults.global.tooltips.position = 'nearest';
+  Chart.defaults.global.tooltips.titleFontStyle = 700;
+  Chart.defaults.global.tooltips.titleMarginBottom = 6;
+  Chart.defaults.global.tooltips.xPadding = 10;
+  Chart.defaults.global.tooltips.yPadding = 10;
+  Chart.defaults.global.tooltips.cornerRadius = 0;
+  Chart.defaults.global.tooltips.borderWidth = 0;
+  Chart.defaults.global.tooltips.caretSize = 10;
+  Chart.defaults.global.tooltips.caretPadding = 5;
+  Chart.defaults.global.tooltips.displayColors = false;
 
   /**
    * DOM node selectors.

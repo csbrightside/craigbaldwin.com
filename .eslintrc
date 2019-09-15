@@ -43,5 +43,7 @@
     "document": true,
     "window": true,
     "theme": true,
+    "Chart": true,
+    "L": true,
   }
 }

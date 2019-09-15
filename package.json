@@ -53,9 +53,7 @@
   },
   "dependencies": {
     "body-scroll-lock": "^2.6.4",
-    "chart.js": "^2.8.0",
-    "countup.js": "^2.0.4",
-    "leaflet": "^1.5.1"
+    "countup.js": "^2.0.4"
   },
   "resolutions": {
     "natives": "1.1.6"

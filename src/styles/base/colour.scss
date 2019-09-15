@@ -5,13 +5,14 @@
  *
  */
 $COLOR_BLUE: rgb(52, 152, 219);
+$COLOR_DARK_BLUE: rgb(23, 91, 125);
 $COLOR_GREEN: rgb(46, 204, 113);
 $COLOR_PURPLE: rgb(155, 89, 182);
 $COLOR_ORANGE: rgb(230, 126, 34);
 $COLOR_RED: rgb(231, 76, 60);
 
 $COLOR_WHITE: rgb(255, 255, 255);
-$COLOR_BLACK: rgb(44, 62, 80);
+$COLOR_BLACK: rgb(27, 34, 41);
 
 @function fade-colour($color, $mix: 40%) {
   @return mix($color, $COLOR_WHITE, $mix);
@@ -19,6 +20,8 @@ $COLOR_BLACK: rgb(44, 62, 80);
 
 $COLOR_DARK_GREY: fade-colour($COLOR_BLACK, 50%);
 $COLOR_LIGHT_GREY: fade-colour($COLOR_BLACK, 20%);
+
+$COLOR_LINK: $COLOR_DARK_BLUE;
 
 /**
  * Selection.

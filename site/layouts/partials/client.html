@@ -7,6 +7,7 @@
         client__image
         client__image--{{ .Params.handle }}
       "
+      aria-labelledby="{{ .Params.handle}}-label"
       href="{{ .Params.link }}"
       style="background-image: url('{{ $.Site.BaseURL }}/images/clients/{{ .Params.handle }}.svg');"
       target="blank"
@@ -19,12 +20,14 @@
         client__image--{{ .Params.handle }}
         client__image--no-link
       "
-      style="background-image: url('{{ $.Site.BaseURL }}/images/clients/{{ .Params.handle }}.svg');"
+      {{ if (ne .Title "Undisclosed client") }}
+        style="background-image: url('{{ $.Site.BaseURL }}/images/clients/{{ .Params.handle }}.svg');"
+      {{ end }}
     ></div>
   {{ end }}
 
   <div class="client__meta">
-    <h3 class="client__title">{{ .Title }}</h3>
+    <h3 id="{{ .Params.handle}}-label" class="client__title">{{ .Title }}</h3>
 
     {{ if .Content }}
       <div class="client__text">

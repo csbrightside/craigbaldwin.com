@@ -39,7 +39,7 @@
 
     &#{&}--count {
       @include transition(opacity, ease);
-      color: $COLOR_WHITE;
+      color: $COLOR_BLACK;
       opacity: 0;
 
       &.is-active {
@@ -48,7 +48,7 @@
     }
 
     &#{&}--total {
-      color: $COLOR_DARK_GREY;
+      color: $COLOR_LIGHT_GREY;
     }
   }
 

@@ -140,8 +140,12 @@ li {
   text-decoration: none;
 
   &:hover {
-    border-bottom-color: $COLOR_BLUE;
-    color: $COLOR_BLUE;
+    border-bottom-color: $COLOR_LINK;
+    color: $COLOR_LINK;
+  }
+
+  &.is-active {
+    color: $COLOR_LINK;
   }
 }
 

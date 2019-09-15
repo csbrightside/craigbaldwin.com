@@ -6,6 +6,11 @@
  */
 
 /**
+* Site base URL used for relative paths.
+*/
+$BASE_URL: '/new';
+
+/**
  * Base styles.
  */
 @import 'base/reset';

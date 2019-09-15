@@ -2,15 +2,15 @@
 	"name": "Craig Baldwin",
 	"icons": [
 		{
-			"src": "\/assets\/favicon\/android-chrome-192x192.png",
+			"src": "\/new\/images\/favicon\/android-chrome-192x192.png",
 			"sizes": "192x192",
 			"type": "image\/png"
 		},
 		{
-			"src": "\/assets\/favicon\/android-chrome-512x512.png",
+			"src": "\/new\/images\/favicon\/android-chrome-512x512.png",
 			"sizes": "512x512",
 			"type": "image\/png"
 		}
 	],
-	"theme_color": "#a6e0eb"
+	"theme_color": "#aed6f1"
 }

@@ -16,19 +16,21 @@
     </button>
 
     <nav class="header__navigation" js-header="navigationDrawer">
-      {{ range .Site.Menus.main }}
-        <li class="header__list-item">
-          <a
-            class="
-              header__link header__link--{{ .Identifier }}
-              text-link
-              {{ if in $url .URL }}is-active{{ end }}"
-            href="{{ .URL }}"
-          >
-            {{ .Title }}
-          </a>
-        </li>
-      {{ end }}
+      <ul class="header__list">
+        {{ range .Site.Menus.main }}
+          <li class="header__list-item header__list-item--{{ .Identifier }}">
+            <a
+              class="
+                header__link
+                text-link
+                {{ if in $url .URL }}is-active{{ end }}"
+              href="{{ .URL }}"
+            >
+              {{ .Title }}
+            </a>
+          </li>
+        {{ end }}
+      </ul>
     </nav>
   </div>
 </header>

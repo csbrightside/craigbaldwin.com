@@ -33,13 +33,15 @@
     z-index: $LAYER_HEADER;
   }
 
+  &__list-item {
+    &#{&}--home {
+      display: none;
+    }
+  }
+
   &__link {
     &.is-active {
       color: $COLOR_BLUE;
-    }
-
-    &#{&}--home {
-      display: none;
     }
   }
 
@@ -83,7 +85,7 @@
       display: none;
     }
 
-    &__navigation {
+    &__list {
       display: flex;
     }
 

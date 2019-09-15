@@ -21,6 +21,11 @@ import map from './components/map';
 import progress from './components/progress';
 
 /**
+* Site base URL used for relative paths.
+*/
+window.baseUrl = '/new';
+
+/**
  * Init based on page handle.
  */
 document.addEventListener('DOMContentLoaded', () => {

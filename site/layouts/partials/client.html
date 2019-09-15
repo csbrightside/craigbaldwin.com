@@ -1,11 +1,27 @@
 <!-- Partials > Client. -->
 <!-- Individual client display. -->
 <div class="clients__client client responsive-margin-bottom">
-  <a
-    class="client__image"
-    href="{{ .Params.link }}"
-    target="blank"
-  ></a>
+  {{ if .Params.link }}
+    <a
+      class="
+        client__image
+        client__image--{{ .Params.handle }}
+      "
+      href="{{ .Params.link }}"
+      style="background-image: url('/images/clients/{{ .Params.handle }}.svg');"
+      target="blank"
+    ></a>
+
+  {{ else }}
+    <div
+      class="
+        client__image
+        client__image--{{ .Params.handle }}
+        client__image--no-link
+      "
+      style="background-image: url('/images/clients/{{ .Params.handle }}.svg');"
+    ></div>
+  {{ end }}
 
   <div class="client__meta">
     <h3 class="client__title">{{ .Title }}</h3>

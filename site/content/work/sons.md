@@ -1,5 +1,5 @@
 ---
-title: "Sons"
+title: "Sons (coming soon)"
 handle: "sons"
 type: "selected"
 weight: 10

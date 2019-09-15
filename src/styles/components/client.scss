@@ -12,6 +12,9 @@
   position: relative;
 
   &__image {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 60% auto;
     border: 1px solid $COLOR_LIGHT_GREY;
     cursor: pointer;
     display: block;
@@ -25,6 +28,31 @@
 
     &:hover {
       border-color: $COLOR_BLUE;
+    }
+
+    &#{&}--no-link {
+      &:hover {
+        border-color: $COLOR_LIGHT_GREY;
+        cursor: default;
+      }
+    }
+
+    &#{&}--direct-doors,
+    &#{&}--hummingbird-bakery,
+    &#{&}--lightbox {
+      background-size: 88% auto;
+    }
+
+    &#{&}--sons {
+      background-size: 55% auto;
+    }
+
+    &#{&}--lightbox {
+      background-position: 50% 56%;
+    }
+
+    &#{&}--newbie {
+      background-size: 70% auto;
     }
   }
 

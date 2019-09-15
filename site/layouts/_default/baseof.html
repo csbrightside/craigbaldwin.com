@@ -4,10 +4,40 @@
   <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">
 
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="{{ .Description }}">
-
   <meta name="pageHandle" content="{{ .Params.handle }}" js-page="handle">
+
+  {{ if (eq .Title "Index") }}
+    <meta property="og:title" content="{{ $.Site.Title }} &ndash; {{ $.Site.Params.tagline }}">
+  {{ else }}
+    <meta property="og:title" content="{{ $.Site.Title }} &ndash; {{ .Title }}">
+  {{ end }}
+	<meta property="og:description" content="{{ .Description }}">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="Craig Baldwin">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://craigbaldwin.com/">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/images/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicon/manifest.json">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#aed6f1">
+  <link rel="shortcut icon" href="/images/favicon/favicon.ico">
+  <meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#aed6f1">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-9975162-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-9975162-1');
+  </script>
 
   <title>
     {{ if (eq .Title "Index") }}

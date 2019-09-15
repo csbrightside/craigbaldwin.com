@@ -47,6 +47,7 @@ $WEIGHT_BOLD: 700;
 html,
 body {
   color: $COLOR_BLACK;
+  font-display: auto;
   font-family: SpaceGrotesk, Arial, sans-serif;
   font-size: ms(0);
   font-weight: $WEIGHT_REGULAR;
@@ -151,5 +152,6 @@ li {
 a:not([href*='craigbaldwin.com']):not([href^='#']):not([href^='/'])::after {
   content: ' ↗';
   font-size: ms(-1);
+  opacity: 0.6;
   vertical-align: super;
 }

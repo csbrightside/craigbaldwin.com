@@ -22,7 +22,7 @@ To see the changelog visit the [GitHub repo](https://github.com/csbrightside/cra
 
 ## Tech stack
 
-This site has been built on [Hugo](https://gohugo.io/) and the [Victor Hugo](https://github.com/netlify-templates/victor-hugo) template. It has been developed using HTML, SCSS, vanilla JS, and markdown. The source code can be viewed on [GitHub](https://github.com/csbrightside/craigbaldwin.com).
+This site has been built on [Hugo](https://gohugo.io/) and the [Victor Hugo](https://github.com/netlify-templates/victor-hugo) template, it does not support Internet Explorer 11. It has been developed using HTML, SCSS, vanilla JS, and markdown. The source code can be viewed on [GitHub](https://github.com/csbrightside/craigbaldwin.com).
 
 Code quality standards follow [We Make Websites'](https://github.com/we-make-websites/wmw-coding-guidelines) (which I wrote).
 

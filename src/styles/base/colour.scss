@@ -70,7 +70,7 @@ $COLOR_LINK: $COLOR_DARK_BLUE;
     background-color: fade-colour($COLOR_GREEN);
 
     &::before {
-      background-image: url('#{$BASE_URL}/images/patterns/topography.png');
+      background-image: url('/images/patterns/topography.png');
       background-size: 350px auto;
       opacity: 0.6;
     }
@@ -86,7 +86,7 @@ $COLOR_LINK: $COLOR_DARK_BLUE;
     background-color: fade-colour($COLOR_PURPLE);
 
     &::before {
-      background-image: url('#{$BASE_URL}/images/patterns/graph.png');
+      background-image: url('/images/patterns/graph.png');
       background-size: 21px auto;
     }
   }

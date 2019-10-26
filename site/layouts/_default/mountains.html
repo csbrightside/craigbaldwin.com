@@ -11,7 +11,7 @@
             alt="{{ .Params.location }} {{ .Title }}"
             height="600"
             loading="lazy"
-            src="{{ $.Site.BaseURL }}/images/{{ $.Page.Params.handle }}/{{ .Params.handle }}.jpg"
+            src="/images/{{ $.Page.Params.handle }}/{{ .Params.handle }}.jpg"
             width="900"
           >
         </div>
@@ -45,6 +45,6 @@
     {{ end }}
   </div>
 
-  <link href="{{ $.Site.BaseURL }}/vendors/leaflet.min.css" rel="stylesheet">
-  <script src="{{ $.Site.BaseURL }}/vendors/leaflet.min.js"></script>
+  <link href="/vendors/leaflet.min.css" rel="stylesheet">
+  <script src="/vendors/leaflet.min.js"></script>
 {{ end }}

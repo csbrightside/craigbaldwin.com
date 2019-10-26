@@ -31,14 +31,14 @@ $WEIGHT_BOLD: 700;
   font-family: SpaceGrotesk;
   font-style: normal;
   font-weight: 400;
-  src: url('#{$BASE_URL}/fonts/SpaceGrotesk-Regular.woff') format('woff'), url('#{$BASE_URL}/fonts/SpaceGrotesk-Regular.woff2') format('woff2');
+  src: url('/fonts/SpaceGrotesk-Regular.woff') format('woff'), url('/fonts/SpaceGrotesk-Regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: SpaceGrotesk;
   font-style: normal;
   font-weight: 700;
-  src: url('#{$BASE_URL}/fonts/SpaceGrotesk-Bold.woff') format('woff'), url('#{$BASE_URL}/fonts/SpaceGrotesk-Bold.woff2') format('woff2');
+  src: url('/fonts/SpaceGrotesk-Bold.woff') format('woff'), url('/fonts/SpaceGrotesk-Bold.woff2') format('woff2');
 }
 
 /**

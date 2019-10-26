@@ -9,7 +9,7 @@
       "
       aria-labelledby="{{ .Params.handle}}-label"
       href="{{ .Params.link }}"
-      style="background-image: url('{{ $.Site.BaseURL }}/images/clients/{{ .Params.handle }}.svg');"
+      style="background-image: url('/images/clients/{{ .Params.handle }}.svg');"
       target="blank"
     ></a>
 
@@ -21,7 +21,7 @@
         client__image--no-link
       "
       {{ if (ne .Title "Undisclosed client") }}
-        style="background-image: url('{{ $.Site.BaseURL }}/images/clients/{{ .Params.handle }}.svg');"
+        style="background-image: url('/images/clients/{{ .Params.handle }}.svg');"
       {{ end }}
     ></div>
   {{ end }}

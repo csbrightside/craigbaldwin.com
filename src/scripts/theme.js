@@ -23,7 +23,7 @@ import progress from './components/progress';
 /**
 * Site base URL used for relative paths.
 */
-window.baseUrl = '/new';
+window.baseUrl = '/';
 
 /**
  * Init based on page handle.

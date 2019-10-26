@@ -48,7 +48,7 @@ body {
 /**
  * Headings.
  */
-h1, h2, h3 {
+h1, h2, .h2, h3, .h3 {
   font-weight: $WEIGHT_BOLD;
 }
 
@@ -56,9 +56,16 @@ h1 {
   font-size: 3rem;
 }
 
-h2 {
+h2,
+.h2 {
   font-size: 2rem;
-  margin-bottom: $SPACING_2XS;
+  line-height: $LINE_HEIGHT_M;
+}
+
+h3,
+.h3 {
+  font-size: 1.4rem;
+  line-height: $LINE_HEIGHT_M;
 }
 
 /**
@@ -80,13 +87,38 @@ p, .body-1 {
 
 .navigation {
   @extend %text-link;
+  font-size: 1.4rem;
+  line-height: $LINE_HEIGHT_S;
+}
+
+.sub-text {
+  font-size: 1.4rem;
+}
+
+.button {
+  cursor: pointer;
+  font-family: $FONT;
+  font-weight: $WEIGHT_REGULAR;
+  line-height: $LINE_HEIGHT_S;
+  text-decoration: none;
+
+  &#{&}--text {
+    background: none;
+    border: 0;
+    color: inherit;
+    padding: 0;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 /**
  * Lists
  */
 ul {
-  line-height: $LINE_HEIGHT_L;
+  line-height: $LINE_HEIGHT_S;
 }
 
 li {
@@ -102,10 +134,15 @@ li {
 %text-link,
 p > a {
   color: currentColor;
+  display: inline-block;
   text-decoration: underline;
 
   &:hover {
     color: $COLOR_LINK;
+    text-decoration: none;
+  }
+
+  &:focus {
     text-decoration: none;
   }
 

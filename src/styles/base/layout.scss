@@ -13,7 +13,8 @@ body {
 }
 
 .template {
-  &#{&}--about {
+  &#{&}--about,
+  &#{&}--info {
     background-color: rgba($COLOR_ORANGE, 0.25);
   }
 }

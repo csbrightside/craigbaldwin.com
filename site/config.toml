@@ -12,7 +12,6 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
   [[menu.main]]
     identifier = "home"
     title = "Home"
-    pre = "🏡"
     post = "Start again"
     url = "/"
     weight = -125
@@ -20,7 +19,6 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
   [[menu.main]]
     identifier = "about"
     title = "About"
-    pre = "👋"
     post = "Craig"
     url = "/about/"
     weight = -100
@@ -28,7 +26,6 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
   [[menu.main]]
     identifier = "work"
     title = "Work"
-    pre = "💻"
     post = "Showcase"
     url = "/work/"
     weight = -75
@@ -36,7 +33,6 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
   [[menu.main]]
     identifier = "stats"
     title = "Stats"
-    pre = "📊"
     post = "+ Mountains"
     url = "/stats/"
     weight = -50
@@ -44,7 +40,6 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
   [[menu.main]]
     identifier = "contact"
     title = "Contact"
-    pre = "📫"
     post = "+ Social"
     url = "/contact/"
     weight = -25

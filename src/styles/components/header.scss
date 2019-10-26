@@ -61,6 +61,15 @@
     }
   }
 
+  &__link.is-active {
+    font-weight: $WEIGHT_BOLD;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   /**
    * Navigation is a drawer on mobile devices.
    */

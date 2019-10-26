@@ -6,6 +6,7 @@
  */
 .footer {
   display: flex;
+  padding-bottom: $SPACING_S;
 
   &__item {
     &:not(:last-child) {
@@ -14,17 +15,11 @@
   }
 
   @include mq($from: medium) {
+    padding-bottom: $SPACING_M;
+
     &__item {
       &:not(:last-child) {
         margin-right: $SPACING_M;
-      }
-    }
-  }
-
-  @include mq($from: large) {
-    &__item {
-      &:not(:last-child) {
-        margin-right: $SPACING_L;
       }
     }
   }

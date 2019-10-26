@@ -1,19 +1,88 @@
 /**
- * Components > Footnotes.
+ * Components > Footnote.
  * ------------------------------------------------------------------------------
- * End of page navigation to other pages.
+ * Individual footnote.
  *
  */
 .footnotes {
-  display: grid;
-  grid-gap: $SPACING_S;
+  margin-bottom: $SPACING_M;
+}
 
-  @include mq($from: medium) {
-    grid-gap: $SPACING_M;
-    grid-template-columns: repeat(3, 1fr);
+.footnote {
+  align-items: center;
+  color: $COLOR_BLACK;
+  display: flex;
+  height: 60px;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+
+  &::before {
+    background-color: $COLOR_BLACK;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1px;
   }
 
-  @include mq($from: large) {
-    grid-gap: $SPACING_L;
+  &__content {
+    padding-left: $SPACING_S;
+  }
+
+  &.is-active,
+  &:hover {
+    &::before {
+      width: 3px;
+    }
+
+    &.footnote--about {
+      background-color: rgba($COLOR_ORANGE, 0.25);
+
+      &::before {
+        background-color: $COLOR_ORANGE;
+      }
+    }
+
+    &.footnote--work {
+      background-color: rgba($COLOR_PURPLE, 0.25);
+
+      &::before {
+        background-color: $COLOR_PURPLE;
+      }
+    }
+
+    &.footnote--stats {
+      background-color: rgba($COLOR_GREEN, 0.25);
+
+      &::before {
+        background-color: $COLOR_GREEN;
+      }
+    }
+
+    &.footnote--contact {
+      background-color: rgba($COLOR_RED, 0.25);
+
+      &::before {
+        background-color: $COLOR_RED;
+      }
+    }
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+
+  &#{&}--home {
+    display: none;
+
+    .template-- & {
+      display: block;
+    }
+  }
+
+  @include mq($from: medium) {
+    height: 80px;
   }
 }

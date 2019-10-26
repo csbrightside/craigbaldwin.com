@@ -1,0 +1,39 @@
+/**
+ * Base > Icon.
+ * ------------------------------------------------------------------------------
+ * Base styling of icons.
+ *
+ */
+.icon {
+  $parent: &;
+  // Icon width + spacing
+  padding-left: calc(16px + #{$SPACING_XS});
+  position: relative;
+
+  &__image {
+    display: inline-block;
+    fill: $COLOR_BLACK;
+    height: 16px;
+    left: 0;
+    margin-top: -1px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+
+    &#{&}--dark-mode {
+      // stylelint-disable-next-line
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMy40NDUyNSAxMi4zMTUzQzguMzQzOTggMTIuMzE1MyAxMi4zMTUyIDguMzQ0MDkgMTIuMzE1MiAzLjQ0NTM2QzEyLjMxNTIgMi42MjcxIDEyLjIwNDMgMS44MzQyMiAxMS45OTY1IDEuMDgxMjFDMTQuMTA5NiAyLjQ5Mjg2IDE1LjUwMDIgNC44OTk0MSAxNS41MDAyIDcuNjI5OTlDMTUuNTAwMiAxMS45NzY0IDExLjk3NjcgMTUuNDk5OSA3LjYzMDI3IDE1LjQ5OTlDNC44OTk5NiAxNS40OTk5IDIuNDkzNjEgMTQuMTA5NSAxLjA4MTkxIDExLjk5NjhDMS44MzQ2OCAxMi4yMDQ1IDIuNjI3MjkgMTIuMzE1MyAzLjQ0NTI1IDEyLjMxNTNaIiBzdHJva2U9IiMxQjIyMjkiLz48L3N2Zz4=);
+    }
+  }
+
+  &__text {
+    display: inline-block;
+  }
+
+  &:hover {
+    #{$parent}__text {
+      text-decoration: underline;
+    }
+  }
+}

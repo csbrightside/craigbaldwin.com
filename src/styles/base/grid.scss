@@ -50,11 +50,19 @@ $LAYER_POPUP: 5;
   gap: $SPACING_S;
   grid-template-columns: repeat(4, 1fr);
 
+  .s2 {
+    grid-column-end: span 2;
+  }
+
   .s4 {
     grid-column-end: span 4;
   }
 
   @include mq($from: medium) {
+    .m1 {
+      grid-column-end: span 1;
+    }
+
     .m2 {
       grid-column-end: span 2;
     }

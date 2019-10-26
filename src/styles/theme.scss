@@ -12,8 +12,9 @@
 @import 'base/animation';
 @import 'base/grid';
 @import 'base/colour';
-@import 'base/layout';
 @import 'base/helpers';
+@import 'base/layout';
+@import 'base/icon';
 @import 'base/typography';
 
 /**
@@ -26,8 +27,7 @@
 // @import 'components/chart';
 // @import 'components/client';
 // @import 'components/clients';
-// @import 'components/footer';
-// @import 'components/footnote';
-// @import 'components/footnotes';
+@import 'components/footer';
+@import 'components/footnotes';
 @import 'components/header';
 // @import 'components/map';

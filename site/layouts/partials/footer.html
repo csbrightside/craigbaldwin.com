@@ -1,16 +1,26 @@
 <!-- Partials > Footer. -->
 <!-- Site footer. -->
 <div class="footer container">
-  <span class="footer__item">
+  <span class="footer__item sub-text">
     &copy; 2008-{{ now.Format "2006" }} Craig Baldwin
   </span>
 
   {{ range .Site.Menus.footer }}
     <a
-      class="footer__item footer__link text-link responsive-margin-bottom"
+      class="footer__item footer__link text-link sub-text"
       href="{{ .URL }}"
     >
       {{ .Title }}
     </a>
   {{ end }}
+
+  <button
+    class="footer__item footer__link sub-text button button--text"
+    js-mode="toggle"
+  >
+    <span class="icon">
+      <span class="icon__image icon__image--dark-mode" js-mode="icon"></span>
+      <span class="icon__text" js-mode="text">Enable dark mode</span>
+    </span>
+  </button>
 </div>

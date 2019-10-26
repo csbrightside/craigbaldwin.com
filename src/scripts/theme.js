@@ -14,10 +14,11 @@ import {pageHandle} from './helpers/utils';
 /**
  * Global component imports.
  */
+import charts from './components/charts';
 import counter from './components/counter';
 import header from './components/header';
-import charts from './components/charts';
 import map from './components/map';
+import mode from './components/mode';
 import progress from './components/progress';
 
 /**
@@ -25,6 +26,7 @@ import progress from './components/progress';
  */
 document.addEventListener('DOMContentLoaded', () => {
   header().init();
+  mode().init();
 
   switch (pageHandle()) {
     case 'info':

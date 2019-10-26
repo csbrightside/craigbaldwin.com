@@ -5,7 +5,12 @@
  *
  */
 html {
+  @include transition(background-color);
   background-color: $COLOR_WHITE;
+
+  &.is-dark {
+    background-color: $COLOR_BLACK;
+  }
 }
 
 body {

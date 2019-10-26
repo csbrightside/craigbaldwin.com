@@ -1,5 +1,9 @@
 <!doctype html>
-<html lang="{{ $.Site.Language.Lang }}">
+<html
+  lang="{{ $.Site.Language.Lang }}"
+  data-mode="light"
+  js-mode="container"
+>
 <head>
   <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ end }}">
 

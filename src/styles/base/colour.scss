@@ -25,12 +25,27 @@ $COLOR_LINK: $COLOR_BLACK;
  * Selection.
  */
 ::selection {
+  @include transition(background-color, color);
   background-color: $COLOR_BLACK;
   color: $COLOR_WHITE;
 }
 
 // stylelint-disable-next-line
 ::-moz-selection {
+  @include transition(background-color, color);
   background-color: $COLOR_BLACK;
   color: $COLOR_WHITE;
+}
+
+.is-dark {
+  ::selection {
+    background-color: $COLOR_WHITE;
+    color: $COLOR_BLACK;
+  }
+
+  // stylelint-disable-next-line
+  ::-moz-selection {
+    background-color: $COLOR_WHITE;
+    color: $COLOR_BLACK;
+  }
 }

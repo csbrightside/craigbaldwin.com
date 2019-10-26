@@ -8,7 +8,7 @@ colour: "orange"
 
 {{<
   card
-  title="Hello 👋"
+  title="Hello"
   copy="I'm Craig Baldwin, I live in London and work at We Make Websites. I'm a front-end developer, pod development lead, Shopify expert, and avid runner."
 >}}
 

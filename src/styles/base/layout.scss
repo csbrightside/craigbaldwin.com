@@ -1,54 +1,39 @@
 /**
  * Base > Layout.
  * ------------------------------------------------------------------------------
- * Determines layout styling.
+ * Determines base layout styling.
  *
  */
+html {
+  background-color: $COLOR_WHITE;
+}
+
 body {
-  padding: 0 $SPACING_S;
+  margin: $SPACING_S;
+}
 
-  @include mq($from: medium) {
-    padding: 0 $SPACING_M;
-  }
-
-  @include mq($from: large) {
-    padding: 0 $SPACING_L;
+.template {
+  &#{&}--about {
+    background-color: rgba($COLOR_ORANGE, 0.25);
   }
 }
 
-main {
-  display: grid;
-  grid-template-columns: [content] 1fr;
+.container {
+  margin: 0 auto;
+  max-width: ($SITE_WIDTH + (2 * $SPACING_S));
+  padding: 0 $SPACING_S;
+  width: 100%;
 
-  .layout-span {
-    grid-column: span 3;
+  @include mq($from: medium) {
+    max-width: ($SITE_WIDTH + (2 * $SPACING_M));
+    padding: 0 $SPACING_M;
   }
+}
 
-  .layout-center {
-    grid-column: content;
-  }
+.main {
+  margin-bottom: $SPACING_L;
 
-  > h1,
-  > h2,
-  > p,
-  > ul {
-    grid-column: content;
-  }
-
-  p + h2 {
-    margin-top: $SPACING_XS;
-  }
-
-  a {
-    @extend %text-link;
-  }
-
-  @include mq($from: large) {
-    grid-template-columns: [gutter] 1fr [content] 700px [gutter] 1fr;
-
-    .template--blocks &,
-    .template--mountains & {
-      grid-template-columns: [gutter] 1fr [content] 800px [gutter] 1fr;
-    }
+  @include mq($from: medium) {
+    margin-bottom: $SPACING_XL;
   }
 }

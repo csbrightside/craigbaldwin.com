@@ -4,42 +4,33 @@
  * All typography styles.
  *
  */
-@import '~mathsass';
-@import '~modularscale-sass/stylesheets/modularscale';
 
 /**
- * Variables.
+ * Font.
  */
-$modularscale: (
-  base: 16px,
-  ratio: 1.2,
-);
+$FONT: 'Eczar', serif;
 
+/**
+ * Line height.
+ */
 $LINE_HEIGHT_S: 1;
-$LINE_HEIGHT_M: 1.4;
-$LINE_HEIGHT_L: 1.6;
+$LINE_HEIGHT_M: 1.35;
+$LINE_HEIGHT_L: 1.5;
 
-$LETTER_SPACING_S: 0.01em; // stylelint-disable-line
-
+/**
+ * Font weight.
+ */
 $WEIGHT_REGULAR: 400;
 $WEIGHT_BOLD: 700;
+
+:root {
+  font-size: 62.5%;
+}
 
 /**
  * Font face.
  */
-@font-face {
-  font-family: SpaceGrotesk;
-  font-style: normal;
-  font-weight: 400;
-  src: url('/fonts/SpaceGrotesk-Regular.woff') format('woff'), url('/fonts/SpaceGrotesk-Regular.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: SpaceGrotesk;
-  font-style: normal;
-  font-weight: 700;
-  src: url('/fonts/SpaceGrotesk-Bold.woff') format('woff'), url('/fonts/SpaceGrotesk-Bold.woff2') format('woff2');
-}
+@import url('https://fonts.googleapis.com/css?family=Eczar:400,700&display=swap');
 
 /**
  * Element styling.
@@ -48,10 +39,9 @@ html,
 body {
   color: $COLOR_BLACK;
   font-display: auto;
-  font-family: SpaceGrotesk, Arial, sans-serif;
-  font-size: ms(0);
+  font-family: $FONT;
+  font-size: 1.4rem;
   font-weight: $WEIGHT_REGULAR;
-  letter-spacing: $LETTER_SPACING_S;
   line-height: $LINE_HEIGHT_S;
 }
 
@@ -63,70 +53,45 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: ms(4);
-  margin-bottom: $SPACING_XS;
-
-  @include mq($from: small) {
-    font-size: ms(5);
-  }
-
-  @include mq($from: large) {
-    font-size: ms(6);
-  }
+  font-size: 3rem;
 }
 
 h2 {
-  margin-bottom: $SPACING_XS;
-}
-
-h3 {
-  margin-bottom: $SPACING_XS;
+  font-size: 2rem;
+  margin-bottom: $SPACING_2XS;
 }
 
 /**
  * Text.
  */
 p, .body-1 {
-  font-size: ms(0);
+  font-size: 1.8rem;
   line-height: $LINE_HEIGHT_L;
 
   &:not(:last-child) {
-    margin-bottom: $SPACING_XS;
+    margin-bottom: 2.5rem;
   }
 }
 
-.stand-out {
-  font-size: ms(1);
+.standfirst {
+  font-size: 2rem;
   line-height: $LINE_HEIGHT_M;
+}
 
-  @include mq($from: small) {
-    font-size: ms(2);
-  }
-
-  @include mq($from: large) {
-    font-size: ms(3);
-  }
+.navigation {
+  @extend %text-link;
 }
 
 /**
  * Lists
  */
 ul {
-  line-height: $LINE_HEIGHT_M;
-
-  &:not(:last-child) {
-    margin-bottom: $SPACING_XS;
-  }
-
-  .template--contact & {
-    columns: 2;
-  }
+  line-height: $LINE_HEIGHT_L;
 }
 
 li {
   main & {
     list-style: disc inside;
-    margin-bottom: $SPACING_3XS;
   }
 }
 
@@ -134,14 +99,14 @@ li {
  * Helpers.
  */
 .text-link,
-%text-link {
-  border-bottom: 1px solid $COLOR_BLACK;
+%text-link,
+p > a {
   color: currentColor;
-  text-decoration: none;
+  text-decoration: underline;
 
   &:hover {
-    border-bottom-color: $COLOR_LINK;
     color: $COLOR_LINK;
+    text-decoration: none;
   }
 
   &.is-active {
@@ -153,9 +118,9 @@ li {
  * External link icon.
  */
 // stylelint-disable-next-line
-a:not([href*='craigbaldwin.com']):not([href^='#']):not([href^='/'])::after {
-  content: ' ↗';
-  font-size: ms(-1);
-  opacity: 0.6;
-  vertical-align: super;
-}
+// a:not([href*='craigbaldwin.com']):not([href^='#']):not([href^='/'])::after {
+//   content: ' ↗';
+//   font-size: 1rem;
+//   text-decoration: none;
+//   vertical-align: super;
+// }

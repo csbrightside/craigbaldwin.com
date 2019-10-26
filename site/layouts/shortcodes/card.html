@@ -11,7 +11,9 @@
     <h1 class="card__title">{{ .Get "title" }}</h1>
   {{ end }}
 
-  <p class="card__copy stand-out">
-    {{ .Get "copy" }}
-  </p>
+  <div class="row">
+    <p class="card__copy standfirst col s4 m3">
+      {{ .Get "copy" }}
+    </p>
+  </div>
 </div>

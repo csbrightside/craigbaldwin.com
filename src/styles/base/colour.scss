@@ -4,95 +4,33 @@
  * Colour variables and classes.
  *
  */
+$COLOR_RED: rgb(231, 76, 60);
+$COLOR_ORANGE: rgb(230, 126, 34);
+$COLOR_GREEN: rgb(46, 204, 113);
 $COLOR_BLUE: rgb(52, 152, 219);
 $COLOR_DARK_BLUE: rgb(23, 91, 125);
-$COLOR_GREEN: rgb(46, 204, 113);
 $COLOR_PURPLE: rgb(155, 89, 182);
-$COLOR_ORANGE: rgb(230, 126, 34);
-$COLOR_RED: rgb(231, 76, 60);
 
-$COLOR_WHITE: rgb(255, 255, 255);
+/**
+ * Standard.
+ */
 $COLOR_BLACK: rgb(27, 34, 41);
+$COLOR_WHITE: rgb(255, 255, 255);
+$COLOR_DARK_GREY: rgb(124, 124, 124);
+$COLOR_LIGHT_GREY: rgb(242, 242, 242);
 
-@function fade-colour($color, $mix: 40%) {
-  @return mix($color, $COLOR_WHITE, $mix);
-}
-
-$COLOR_DARK_GREY: fade-colour($COLOR_BLACK, 50%);
-$COLOR_LIGHT_GREY: fade-colour($COLOR_BLACK, 20%);
-
-$COLOR_LINK: $COLOR_DARK_BLUE;
+$COLOR_LINK: $COLOR_BLACK;
 
 /**
  * Selection.
  */
 ::selection {
-  background-color: $COLOR_BLUE;
+  background-color: $COLOR_BLACK;
   color: $COLOR_WHITE;
 }
 
 // stylelint-disable-next-line
 ::-moz-selection {
-  background-color: $COLOR_BLUE;
+  background-color: $COLOR_BLACK;
   color: $COLOR_WHITE;
-}
-
-/**
- * Helpers.
- */
-.background-color {
-  background-color: fade-colour($COLOR_BLUE);
-  position: relative;
-
-  /**
-   * Enable texture.
-   */
-  &#{&}--texture {
-    &::before {
-      content: '';
-      height: 100%;
-      mix-blend-mode: multiply;
-      position: absolute;
-      width: 100%;
-      z-index: $LAYER_BELOW;
-    }
-
-    > * {
-      z-index: $LAYER_BASE;
-    }
-  }
-
-  /**
-   * Colour settings.
-   */
-  &#{&}--green,
-  &#{&}--stats {
-    background-color: fade-colour($COLOR_GREEN);
-
-    &::before {
-      background-image: url('/images/patterns/topography.png');
-      background-size: 350px auto;
-      opacity: 0.6;
-    }
-  }
-
-  &#{&}--orange,
-  &#{&}--about {
-    background-color: fade-colour($COLOR_ORANGE);
-  }
-
-  &#{&}--purple,
-  &#{&}--work {
-    background-color: fade-colour($COLOR_PURPLE);
-
-    &::before {
-      background-image: url('/images/patterns/graph.png');
-      background-size: 21px auto;
-    }
-  }
-
-  &#{&}--red,
-  &#{&}--contact {
-    background-color: fade-colour($COLOR_RED);
-  }
 }

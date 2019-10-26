@@ -5,32 +5,36 @@
  *
  */
 .card {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 64vh;
-  padding: $SPACING_S;
-  text-align: center;
+  margin-bottom: $SPACING_M;
   width: 100%;
+
+  &__title {
+    margin-bottom: $SPACING_S;
+    padding-bottom: $SPACING_S;
+    position: relative;
+
+    &::after {
+      background-color: $COLOR_BLACK;
+      bottom: 0;
+      content: '';
+      height: 3px;
+      left: 0;
+      position: absolute;
+      width: 30px;
+    }
+  }
 
   &__copy {
     max-width: 700px;
   }
 
-  &#{&}--index {
-    margin-bottom: 0;
+  .template--about & {
+    &__title::after {
+      background-color: $COLOR_ORANGE;
+    }
   }
 
   @include mq($from: medium) {
-    padding: $SPACING_M;
-  }
-
-  @include mq($from: large) {
-    padding: $SPACING_L;
-  }
-
-  @media (orientation: portrait) {
-    min-height: 50vh;
+    margin-bottom: $SPACING_L;
   }
 }

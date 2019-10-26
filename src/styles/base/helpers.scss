@@ -6,24 +6,6 @@
  */
 
 /**
- * Forces an element to self-clear its children.
- *
- * Usage:
- * .selector {
- *   @include clearfix;
- * }
- */
-@mixin clearfix() {
-  &::after {
-    clear: both;
-    content: '';
-    display: table;
-  }
-  // stylelint-disable-next-line
-  *zoom: 1;
-}
-
-/**
  * Hide element but make it accessible to screen readers.
  *
  * Usage:
@@ -44,8 +26,8 @@
   width: 1px;
 }
 
-.clearfix {
-  @include clearfix;
+.visually-hidden {
+  @include visually-hidden;
 }
 
 /**
@@ -68,29 +50,4 @@
   // stylelint-disable-next-line
   position: $position !important;
   width: auto;
-}
-
-.visually-hidden {
-  @include visually-hidden;
-}
-
-/**
- * Other helpers.
- */
-.container {
-  margin: 0 auto;
-  max-width: $SITE_WIDTH;
-  width: 100%;
-}
-
-.responsive-margin-bottom {
-  margin-bottom: $SPACING_S;
-
-  @include mq($from: medium) {
-    margin-bottom: $SPACING_M;
-  }
-
-  @include mq($from: large) {
-    margin-bottom: $SPACING_L;
-  }
 }

@@ -5,18 +5,16 @@
  *
  */
 .blocks {
-  grid-column: content;
-
   &__block {
     &:not(:last-child) {
-      margin-bottom: $SPACING_M;
+      margin-bottom: $SPACING_L;
     }
   }
 
   @include mq($from: medium) {
     &__block {
       &:not(:last-child) {
-        margin-bottom: $SPACING_L;
+        margin-bottom: $SPACING_XL;
       }
     }
   }

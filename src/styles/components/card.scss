@@ -35,6 +35,14 @@
     }
   }
 
+  .template--stats &,
+  .template--distances &,
+  .template--mountains & {
+    &__title::after {
+      background-color: $COLOR_GREEN;
+    }
+  }
+
   @include mq($from: medium) {
     margin-bottom: $SPACING_L;
   }

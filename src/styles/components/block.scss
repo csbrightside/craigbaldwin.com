@@ -6,27 +6,65 @@
  */
 .block {
   $parent: &;
-  display: flex;
-  flex-direction: column;
+
+  &__image-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $SPACING_S;
+    position: relative;
+  }
 
   &__image {
-    display: block;
-    height: auto;
+    order: 1;
     width: 100%;
   }
 
-  @include mq($from: large) {
-    flex-direction: row;
+  &__meta {
+    padding-bottom: $SPACING_S;
+    padding-right: $SPACING_S;
+  }
 
+  &__title {
+    margin-bottom: $SPACING_XS;
+  }
+
+  &__stats {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__stat {
+    &:not(:last-child) {
+      margin-bottom: $SPACING_XS;
+    }
+  }
+
+  &__content {
+    border-left: 3px solid $COLOR_GREEN;
+    padding-left: $SPACING_S;
+  }
+
+  @include mq($from: medium) {
     &__image-container {
-      flex: 0 1 percentage(5 / 8);
-      margin-bottom: 0;
-      order: 1;
+      display: block;
+      margin-bottom: $SPACING_M;
+    }
+
+    &__meta-container {
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
     }
 
     &__meta {
-      flex: 1 0 percentage(3 / 8);
-      padding-right: $SPACING_L;
+      background-color: mix($COLOR_GREEN, $COLOR_WHITE, 25%);
+      padding-bottom: $SPACING_M;
+      padding-right: $SPACING_M;
+    }
+
+    &__content {
+      padding-left: $SPACING_M;
     }
   }
 }

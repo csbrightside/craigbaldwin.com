@@ -8,6 +8,6 @@ colour: "green"
 
 {{<
   card
-  title="Mountains 🗻"
+  title="Mountains"
   copy="I enjoy walking, a lot. And if it involves walking up a mountain then I'm all for it."
 >}}

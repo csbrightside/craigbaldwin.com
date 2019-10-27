@@ -49,27 +49,39 @@ $LAYER_POPUP: 5;
 .row {
   display: grid;
   gap: $SPACING_S;
-  grid-template-columns: repeat(4, 1fr);
-
-  .s2 {
-    grid-column-end: span 2;
-  }
+  grid-template-columns: repeat(8, 1fr);
 
   .s4 {
     grid-column-end: span 4;
   }
 
-  @include mq($from: medium) {
-    .m1 {
-      grid-column-end: span 1;
-    }
+  .s6 {
+    grid-column-end: span 6;
+  }
 
+  .s8 {
+    grid-column-end: span 8;
+  }
+
+  @include mq($from: medium) {
     .m2 {
       grid-column-end: span 2;
     }
 
     .m3 {
       grid-column-end: span 3;
+    }
+
+    .m4 {
+      grid-column-end: span 4;
+    }
+
+    .m6 {
+      grid-column-end: span 6;
+    }
+
+    .offset-m2 {
+      grid-column-start: 3;
     }
   }
 }

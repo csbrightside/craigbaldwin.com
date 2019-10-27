@@ -9,6 +9,7 @@ import "../styles/theme.scss";
 /**
  * Global helper imports.
  */
+import {keyboardTabbable} from './helpers/a11y';
 import {pageHandle} from './helpers/utils';
 
 /**
@@ -25,6 +26,7 @@ import progress from './components/progress';
  * Init based on page handle.
  */
 document.addEventListener('DOMContentLoaded', () => {
+  keyboardTabbable().init();
   header().init();
   darkMode().init();
 

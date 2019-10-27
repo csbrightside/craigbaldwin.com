@@ -1,0 +1,58 @@
+/**
+ * Helpers: a11y
+ * -----------------------------------------------------------------------------
+ * Utility classes to aid in creating visually accessibile components.
+ *
+ */
+
+/**
+ * Default focus styling for browsers.
+ */
+@mixin focus-ring() {
+  outline: 2px solid $COLOR_BLACK;
+}
+
+/**
+ * Skip to content button.
+ * - Overrides .visually-hidden when focused.
+ */
+.skip-link {
+  @include visually-hidden;
+  align-items: center;
+  background-color: $COLOR_WHITE;
+  color: $COLOR_BLACK;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  top: 0;
+
+  &:focus {
+    @include visually-shown(absolute);
+    height: 100%;
+    width: 100%;
+    z-index: $LAYER_POPUP;
+  }
+}
+
+/**
+ * Reset focus state on tabbable elements.
+ */
+[tabindex],
+[draggable],
+a[href],
+area,
+button:enabled,
+input:not([type=hidden]):enabled,
+object,
+select:enabled,
+textarea:enabled {
+  &:focus {
+    outline: 0;
+  }
+
+  .is-tabbable & {
+    &:focus {
+      @include focus-ring;
+    }
+  }
+}

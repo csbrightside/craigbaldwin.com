@@ -9,4 +9,5 @@ export default {
   dark: 'is-dark',
   hidden: 'is-hidden',
   disableTransition: 'no-transition',
+  tabbable: 'is-tabbable',
 };

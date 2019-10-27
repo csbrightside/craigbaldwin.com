@@ -57,7 +57,14 @@
   {{ end }}
 </head>
 
-<body class="template template--{{ .Layout }} template--{{ .Params.handle }}">
+<body
+  class="
+    template
+    template--{{ .Layout }}
+    template--{{ .Params.handle }}
+    no-js
+  "
+>
   {{ block "header" . }}
     {{ partial "header" . }}
   {{ end }}
@@ -75,6 +82,8 @@
       {{ partial "footer" . }}
     {{ end }}
   </footer>
+
+  {{ partial "theme-strings" . }}
 
   {{ $script := .Site.Data.webpack.main }}
   {{ with $script.js }}

@@ -19,7 +19,10 @@
     js-mode="toggle"
   >
     <span class="icon">
-      <span class="icon__image icon__image--dark-mode" js-mode="icon"></span>
+      <span class="icon__image" js-mode="icon">
+        {{ partial "icons/light-mode.svg" . }}
+      </span>
+
       <span class="icon__text" js-mode="text">Enable dark mode</span>
     </span>
   </button>

@@ -1,0 +1,12 @@
+<!-- Partials > Theme strings. -->
+<!-- Render strings in JavaScript. -->
+<script>
+  document.documentElement.className = document.documentElement.className.replace('no-js', '');
+
+  window.theme = {
+    icons: {
+      lightMode: '{{ partial "icons/light-mode.svg" . }}',
+      darkMode: '{{ partial "icons/dark-mode.svg" . }}',
+    },
+  };
+</script>

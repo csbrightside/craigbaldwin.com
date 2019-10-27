@@ -61,7 +61,9 @@ html {
   &.no-transition {
     transition: none !important;
 
-    * {
+    *,
+    *::before,
+    *::after {
       transition: none !important;
     }
   }
@@ -69,7 +71,9 @@ html {
   @media (prefers-reduced-motion: reduce) {
     transition: none !important;
 
-    * {
+    *,
+    *::before,
+    *::after {
       transition: none !important;
     }
   }

@@ -62,6 +62,10 @@ export default () => {
     ) {
       nodeSelectors.container.classList.add(cssClasses.disableTransition);
       enableDarkMode();
+
+      window.setTimeout(() => {
+        nodeSelectors.container.classList.remove(cssClasses.disableTransition);
+      }, 0);
     }
   }
 

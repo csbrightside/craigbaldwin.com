@@ -16,15 +16,16 @@
 @import 'base/layout';
 @import 'base/icon';
 @import 'base/typography';
+@import 'base/a11y';
 
 /**
  * Components.
  */
-// @import 'components/block';
-// @import 'components/blocks';
+@import 'components/block';
+@import 'components/blocks';
 @import 'components/burger';
 @import 'components/card';
-// @import 'components/chart';
+@import 'components/chart';
 // @import 'components/client';
 // @import 'components/clients';
 @import 'components/footer';

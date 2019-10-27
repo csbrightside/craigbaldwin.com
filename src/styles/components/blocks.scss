@@ -9,19 +9,11 @@
 
   &__block {
     &:not(:last-child) {
-      margin-bottom: $SPACING_S;
+      margin-bottom: $SPACING_M;
     }
   }
 
   @include mq($from: medium) {
-    &__block {
-      &:not(:last-child) {
-        margin-bottom: $SPACING_M;
-      }
-    }
-  }
-
-  @include mq($from: large) {
     &__block {
       &:not(:last-child) {
         margin-bottom: $SPACING_L;

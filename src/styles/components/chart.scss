@@ -6,26 +6,14 @@
  */
 .chart {
   &__title {
-    margin-bottom: $SPACING_M;
+    margin-bottom: $SPACING_P;
   }
 
   &__chart {
     height: 0;
-    max-width: calc(100vw - (#{$SPACING_S} * 2));
+    max-width: 100%;
     padding-bottom: 50%;
     position: relative;
     width: 100%;
-  }
-
-  @include mq($from: medium) {
-    &__chart {
-      max-width: calc(100vw - (#{$SPACING_M} * 2));
-    }
-  }
-
-  @include mq($from: large) {
-    &__chart {
-      max-width: calc(100vw - (#{$SPACING_L} * 2));
-    }
   }
 }

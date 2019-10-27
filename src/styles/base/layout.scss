@@ -54,6 +54,12 @@ body {
   &#{&}--info {
     background-color: rgba($COLOR_ORANGE, 0.25);
   }
+
+  &#{&}--stats,
+  &#{&}--distances,
+  &#{&}--mountains, {
+    background-color: rgba($COLOR_GREEN, 0.25);
+  }
 }
 
 .container {

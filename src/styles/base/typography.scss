@@ -76,7 +76,7 @@ p, .body-1 {
   line-height: $LINE_HEIGHT_L;
 
   &:not(:last-child) {
-    margin-bottom: 2.5rem;
+    margin-bottom: $SPACING_P;
   }
 }
 
@@ -132,6 +132,7 @@ li {
  */
 .text-link,
 %text-link,
+h2 > a,
 p > a {
   color: currentColor;
   display: inline-block;

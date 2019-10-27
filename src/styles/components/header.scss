@@ -5,6 +5,7 @@
  *
  */
 .header {
+  $parent: &;
   margin-bottom: $SPACING_M;
   padding: $SPACING_S 0;
   position: relative;
@@ -75,7 +76,7 @@
    */
   @include mq($until: medium) {
     &__navigation {
-      @include transition;
+      @include transition(background-color, transform);
       background-color: $COLOR_LIGHT_GREY;
       display: flex;
       flex-direction: column;
@@ -108,6 +109,12 @@
 
       &:hover {
         text-decoration: underline;
+      }
+    }
+
+    .is-dark & {
+      #{$parent}__navigation {
+        background-color: $COLOR_BLACK;
       }
     }
   }

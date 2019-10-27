@@ -7,13 +7,17 @@
 .burger,
 .burger::before,
 .burger::after {
+  @include transition(background-color, opacity $TIMING_M, transform);
   background-color: $COLOR_BLACK;
   content: '';
   height: 2px;
   position: absolute;
   transform-origin: 50% 50%;
-  transition: opacity $TIMING_M $EASING, transform $TIMING_L $EASING;
   width: 28px;
+
+  .is-dark & {
+    background-color: $COLOR_DARK_MODE_WHITE;
+  }
 }
 
 .burger {

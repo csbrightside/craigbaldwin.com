@@ -9,6 +9,7 @@
 }
 
 .footnote {
+  @include transition(color);
   align-items: center;
   color: $COLOR_BLACK;
   display: flex;
@@ -18,6 +19,7 @@
   width: 100%;
 
   &::before {
+    @include transition(background-color);
     background-color: $COLOR_BLACK;
     content: '';
     height: 100%;
@@ -34,6 +36,7 @@
   &.is-active,
   &:hover {
     &::before {
+      transition: none;
       width: 3px;
     }
 
@@ -79,6 +82,14 @@
 
     .template-- & {
       display: block;
+    }
+  }
+
+  .is-dark & {
+    color: $COLOR_DARK_MODE_WHITE;
+
+    &::before {
+      background-color: $COLOR_DARK_MODE_WHITE;
     }
   }
 

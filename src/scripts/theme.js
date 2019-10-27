@@ -18,7 +18,7 @@ import charts from './components/charts';
 import counter from './components/counter';
 import header from './components/header';
 import map from './components/map';
-import mode from './components/mode';
+import darkMode from './components/dark-mode';
 import progress from './components/progress';
 
 /**
@@ -26,7 +26,7 @@ import progress from './components/progress';
  */
 document.addEventListener('DOMContentLoaded', () => {
   header().init();
-  mode().init();
+  darkMode().init();
 
   switch (pageHandle()) {
     case 'info':

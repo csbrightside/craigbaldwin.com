@@ -138,16 +138,11 @@ p > a {
   text-decoration: underline;
 
   &:hover {
-    color: $COLOR_LINK;
     text-decoration: none;
   }
 
   &:focus {
     text-decoration: none;
-  }
-
-  &.is-active {
-    color: $COLOR_LINK;
   }
 }
 
@@ -156,6 +151,6 @@ p > a {
  */
 .is-dark {
   body {
-    color: $COLOR_WHITE;
+    color: $COLOR_DARK_MODE_WHITE;
   }
 }

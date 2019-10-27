@@ -1,9 +1,9 @@
 /**
- * Components > Mode.
+ * Components > Dark mode.
  * ------------------------------------------------------------------------------
- * Light and dark mode detection and toggle.
+ * Dark mode detection and toggle.
  *
- * @namespace mode
+ * @namespace darkMode
  */
 import cssClasses from '../helpers/cssClasses';
 import {on} from '../helpers/utils';
@@ -56,7 +56,7 @@ export default () => {
       return;
     }
 
-    enableLightMode();
+    disableDarkMode();
   }
 
   /**
@@ -66,18 +66,18 @@ export default () => {
     nodeSelectors.container.setAttribute('data-mode', 'dark');
     nodeSelectors.container.classList.add(cssClasses.dark);
 
-    nodeSelectors.icon.classList = 'icon__image icon__image--light-mode';
-    nodeSelectors.text.innerText = 'Enable light mode';
+    nodeSelectors.icon.innerHTML = theme.icons.darkMode;
+    nodeSelectors.text.innerText = 'Disable dark mode';
   }
 
   /**
    * Enable light mode.
    */
-  function enableLightMode() {
+  function disableDarkMode() {
     nodeSelectors.container.setAttribute('data-mode', 'light');
     nodeSelectors.container.classList.remove(cssClasses.dark);
 
-    nodeSelectors.icon.classList = 'icon__image icon__image--dark-mode';
+    nodeSelectors.icon.innerHTML = theme.icons.lightMode;
     nodeSelectors.text.innerText = 'Enable dark mode';
   }
 

@@ -52,7 +52,8 @@
   },
   "dependencies": {
     "body-scroll-lock": "^2.6.4",
-    "countup.js": "^2.0.4"
+    "countup.js": "^2.0.4",
+    "js-cookie": "^2.2.1"
   },
   "resolutions": {
     "natives": "1.1.6"

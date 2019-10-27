@@ -8,4 +8,5 @@ export default {
   active: 'is-active',
   dark: 'is-dark',
   hidden: 'is-hidden',
+  disableTransition: 'no-transition',
 };

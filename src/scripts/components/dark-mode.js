@@ -5,6 +5,8 @@
  *
  * @namespace darkMode
  */
+import Cookies from 'js-cookie';
+
 import cssClasses from '../helpers/cssClasses';
 import {on} from '../helpers/utils';
 
@@ -38,6 +40,7 @@ export default () => {
    */
   function init() {
     setEventListeners();
+    checkForSetting();
   }
 
   /**
@@ -45,6 +48,21 @@ export default () => {
    */
   function setEventListeners() {
     on('click', nodeSelectors.toggle, () => handleModeToggle());
+  }
+
+  /**
+   * Checks for cookie or OS setting.
+   */
+  function checkForSetting() {
+    const darkModeCookie = Cookies.get('darkMode');
+
+    if (
+      darkModeCookie === 'true' ||
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    ) {
+      nodeSelectors.container.classList.add(cssClasses.disableTransition);
+      enableDarkMode();
+    }
   }
 
   /**
@@ -63,6 +81,7 @@ export default () => {
    * Enable dark mode.
    */
   function enableDarkMode() {
+    Cookies.set('darkMode', true, {expires: 30});
     nodeSelectors.container.setAttribute('data-mode', 'dark');
     nodeSelectors.container.classList.add(cssClasses.dark);
 
@@ -74,6 +93,7 @@ export default () => {
    * Enable light mode.
    */
   function disableDarkMode() {
+    Cookies.set('darkMode', false, {expires: 30});
     nodeSelectors.container.setAttribute('data-mode', 'light');
     nodeSelectors.container.classList.remove(cssClasses.dark);
 

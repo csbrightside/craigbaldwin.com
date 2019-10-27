@@ -57,23 +57,21 @@ $EASING: cubic-bezier(0.645, 0.045, 0.355, 1);
 // stylelint-enable
 
 html {
+  // stylelint-disable
   &.no-transition {
-    // stylelint-disable-next-line
     transition: none !important;
 
     * {
-      // stylelint-disable-next-line
       transition: none !important;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    // stylelint-disable-next-line
     transition: none !important;
 
     * {
-      // stylelint-disable-next-line
       transition: none !important;
     }
   }
+  // stylelint-enable
 }

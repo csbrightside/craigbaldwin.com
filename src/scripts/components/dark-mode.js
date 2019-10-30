@@ -14,10 +14,10 @@ import {on} from '../helpers/utils';
  * DOM selectors.
  */
 const selectors = {
-  container: '[js-mode="container"]',
-  toggle: '[js-mode="toggle"]',
-  icon: '[js-mode="icon"]',
-  text: '[js-mode="text"]',
+  container: '[js-dark-mode="container"]',
+  toggle: '[js-dark-mode="toggle"]',
+  icon: '[js-dark-mode="icon"]',
+  text: '[js-dark-mode="text"]',
 };
 
 /**
@@ -30,9 +30,9 @@ export default () => {
    */
   const nodeSelectors = {
     container: document.querySelector(selectors.container),
-    toggle: document.querySelector(selectors.toggle),
-    icon: document.querySelector(selectors.icon),
-    text: document.querySelector(selectors.text),
+    toggle: [...document.querySelectorAll(selectors.toggle)],
+    icon: [...document.querySelectorAll(selectors.icon)],
+    text: [...document.querySelectorAll(selectors.text)],
   };
 
   /**
@@ -47,7 +47,9 @@ export default () => {
    * Set event listeners.
    */
   function setEventListeners() {
-    on('click', nodeSelectors.toggle, () => handleModeToggle());
+    nodeSelectors.toggle.forEach((element) => {
+      on('click', element, () => handleModeToggle());
+    });
   }
 
   /**
@@ -93,8 +95,13 @@ export default () => {
     nodeSelectors.container.setAttribute('data-mode', 'dark');
     nodeSelectors.container.classList.add(cssClasses.dark);
 
-    nodeSelectors.icon.classList.add(cssClasses.active);
-    nodeSelectors.text.innerText = 'Disable dark mode';
+    nodeSelectors.icon.forEach((element) => {
+      element.classList.add(cssClasses.active);
+    });
+
+    nodeSelectors.text.forEach((element) => {
+      element.innerText = 'Disable dark mode';
+    });
   }
 
   /**
@@ -102,11 +109,17 @@ export default () => {
    */
   function disableDarkMode() {
     Cookies.set('darkMode', false, {expires: 30});
+
     nodeSelectors.container.setAttribute('data-mode', 'light');
     nodeSelectors.container.classList.remove(cssClasses.dark);
 
-    nodeSelectors.icon.classList.remove(cssClasses.active);
-    nodeSelectors.text.innerText = 'Enable dark mode';
+    nodeSelectors.icon.forEach((element) => {
+      element.classList.remove(cssClasses.active);
+    });
+
+    nodeSelectors.text.forEach((element) => {
+      element.innerText = 'Enable dark mode';
+    });
   }
 
   /**

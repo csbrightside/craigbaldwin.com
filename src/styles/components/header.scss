@@ -76,6 +76,10 @@
       }
     }
 
+    &__list {
+      margin-top: auto;
+    }
+
     &__list-item {
       &:not(:last-child) {
         margin-bottom: $SPACING_M;
@@ -89,6 +93,10 @@
       &:hover {
         text-decoration: underline;
       }
+    }
+
+    &__dark-mode {
+      margin-top: auto;
     }
 
     .is-dark & {
@@ -119,6 +127,10 @@
       &:not(:last-child) {
         margin-right: $SPACING_M;
       }
+    }
+
+    &__dark-mode {
+      display: none;
     }
   }
 }

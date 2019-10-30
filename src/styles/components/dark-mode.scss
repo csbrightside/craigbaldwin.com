@@ -1,0 +1,27 @@
+/**
+ * Component > Dark mode.
+ * ------------------------------------------------------------------------------
+ * Dark mode toggle and icon styling.
+ *
+ */
+.dark-mode {
+  $parent: &;
+
+  &__icon {
+    overflow: hidden;
+  }
+
+  &__slide {
+    @include transition(transform);
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateY(0);
+  }
+
+  &.is-active {
+    #{$parent}__slide {
+      transform: translateY(-50%);
+    }
+  }
+}

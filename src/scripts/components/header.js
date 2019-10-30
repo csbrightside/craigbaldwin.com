@@ -8,7 +8,7 @@
 import {disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
 
 import cssClasses from '../helpers/cssClasses';
-import {on} from '../helpers/utils';
+import {debounce, on} from '../helpers/utils';
 
 /**
  * DOM selectors.
@@ -43,6 +43,7 @@ export default () => {
    */
   function setEventListeners() {
     on('click', nodeSelectors.menuButton, () => handleMenuToggle());
+    on('resize', () => debounce(closeNavigationDrawer()));
   }
 
   /**

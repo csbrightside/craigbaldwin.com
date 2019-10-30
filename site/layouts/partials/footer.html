@@ -14,19 +14,7 @@
     </a>
   {{ end }}
 
-  <button
-    class="footer__item footer__link sub-text button button--text"
-    js-mode="toggle"
-  >
-    <span class="icon">
-      <span class="icon__image footer__icon" js-mode="icon">
-        <span class="footer__icon-slide">
-          {{ partial "icons/dark-mode.svg" . }}
-          {{ partial "icons/light-mode.svg" . }}
-        </span>
-      </span>
-
-      <span class="icon__text" js-mode="text">Enable dark mode</span>
-    </span>
-  </button>
+  <span class="footer__item footer__link">
+    {{ partial "dark-mode" . }}
+  </span>
 </div>

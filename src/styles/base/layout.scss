@@ -79,6 +79,6 @@ html {
   margin-bottom: $SPACING_L;
 
   @include mq($from: medium) {
-    margin-bottom: $SPACING_XL;
+    margin-bottom: $SPACING_2XL;
   }
 }

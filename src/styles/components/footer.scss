@@ -16,6 +16,22 @@
     }
   }
 
+  &__icon {
+    overflow: hidden;
+  }
+
+  &__icon-slide {
+    @include transition(transform);
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateY(0);
+
+    .is-active > & {
+      transform: translateY(-50%);
+    }
+  }
+
   @include mq($from: medium) {
     &__item {
       margin-bottom: $SPACING_M;

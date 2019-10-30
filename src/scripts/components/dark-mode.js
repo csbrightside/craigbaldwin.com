@@ -61,7 +61,7 @@ export default () => {
       window.matchMedia('(prefers-color-scheme: dark)').matches
     ) {
       nodeSelectors.container.classList.add(cssClasses.disableTransition);
-      enableDarkMode();
+      enableDarkMode(!window.matchMedia('(prefers-color-scheme: dark)').matches);
 
       window.setTimeout(() => {
         nodeSelectors.container.classList.remove(cssClasses.disableTransition);
@@ -83,13 +83,17 @@ export default () => {
 
   /**
    * Enable dark mode.
+   * @param {Boolean} cookie - Whether to set a cookie, optional.
    */
-  function enableDarkMode() {
-    Cookies.set('darkMode', true, {expires: 30});
+  function enableDarkMode(cookie = true) {
+    if (cookie) {
+      Cookies.set('darkMode', true, {expires: 30});
+    }
+
     nodeSelectors.container.setAttribute('data-mode', 'dark');
     nodeSelectors.container.classList.add(cssClasses.dark);
 
-    nodeSelectors.icon.innerHTML = theme.icons.darkMode;
+    nodeSelectors.icon.classList.add(cssClasses.active);
     nodeSelectors.text.innerText = 'Disable dark mode';
   }
 
@@ -101,7 +105,7 @@ export default () => {
     nodeSelectors.container.setAttribute('data-mode', 'light');
     nodeSelectors.container.classList.remove(cssClasses.dark);
 
-    nodeSelectors.icon.innerHTML = theme.icons.lightMode;
+    nodeSelectors.icon.classList.remove(cssClasses.active);
     nodeSelectors.text.innerText = 'Enable dark mode';
   }
 

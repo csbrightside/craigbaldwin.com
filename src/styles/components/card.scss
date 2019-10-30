@@ -28,10 +28,25 @@
     max-width: 700px;
   }
 
+  /**
+   * Colours.
+   */
+  .template--index & {
+    &__title::after {
+      background-color: $COLOR_BLUE;
+    }
+  }
+
   .template--about &,
   .template--info & {
     &__title::after {
       background-color: $COLOR_ORANGE;
+    }
+  }
+
+  .template--work & {
+    &__title::after {
+      background-color: $COLOR_PURPLE;
     }
   }
 
@@ -43,6 +58,15 @@
     }
   }
 
+  .template--contact & {
+    &__title::after {
+      background-color: $COLOR_RED;
+    }
+  }
+
+  /**
+   * Media queries.
+   */
   @include mq($from: medium) {
     margin-bottom: $SPACING_L;
   }

@@ -51,15 +51,27 @@ html {
   margin: $SPACING_S;
   min-height: calc(100vh - (2 * #{$SPACING_S}));
 
+  &#{&}--index {
+    background-color: rgba($COLOR_MID_GREY, 0.25);
+  }
+
   &#{&}--about,
   &#{&}--info {
     background-color: rgba($COLOR_ORANGE, 0.25);
+  }
+
+  &#{&}--work {
+    background-color: rgba($COLOR_PURPLE, 0.25);
   }
 
   &#{&}--stats,
   &#{&}--distances,
   &#{&}--mountains {
     background-color: rgba($COLOR_GREEN, 0.25);
+  }
+
+  &#{&}--contact {
+    background-color: rgba($COLOR_RED, 0.25);
   }
 }
 

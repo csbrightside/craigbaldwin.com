@@ -8,7 +8,7 @@ colour: "red"
 
 {{<
   card
-  title="Get in touch 📫"
+  title="Get in touch"
   copy="I'm currently working full-time at We Make Websites but if you have something interesting then use the details to get in touch."
 >}}
 

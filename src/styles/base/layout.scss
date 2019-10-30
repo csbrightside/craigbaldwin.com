@@ -45,11 +45,12 @@ html {
 /**
  * Body layout.
  */
-body {
-  margin: $SPACING_S;
-}
-
 .template {
+  display: flex;
+  flex-direction: column;
+  margin: $SPACING_S;
+  min-height: calc(100vh - (2 * #{$SPACING_S}));
+
   &#{&}--about,
   &#{&}--info {
     background-color: rgba($COLOR_ORANGE, 0.25);

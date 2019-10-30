@@ -4,10 +4,6 @@
  * Individual footnote.
  *
  */
-.footnotes {
-  margin-bottom: $SPACING_M;
-}
-
 .footnote {
   @include transition(color);
   align-items: center;

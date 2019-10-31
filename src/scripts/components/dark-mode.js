@@ -102,6 +102,8 @@ export default () => {
     nodeSelectors.text.forEach((element) => {
       element.innerText = 'Disable dark mode';
     });
+
+    site.eventBus.emit('darkMode:updated', true);
   }
 
   /**
@@ -120,6 +122,8 @@ export default () => {
     nodeSelectors.text.forEach((element) => {
       element.innerText = 'Enable dark mode';
     });
+
+    site.eventBus.emit('darkMode:updated', false);
   }
 
   /**

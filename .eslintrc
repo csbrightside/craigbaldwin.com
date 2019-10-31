@@ -42,7 +42,7 @@
   "globals": {
     "document": true,
     "window": true,
-    "theme": true,
+    "site": true,
     "Chart": true,
     "L": true
   }

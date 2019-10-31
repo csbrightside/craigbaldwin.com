@@ -5,6 +5,7 @@
  *
  * @namespace charts
  */
+import Cookies from 'js-cookie';
 
  /**
  * DOM selectors.
@@ -20,13 +21,20 @@ const selectors = {
 export default () => {
 
   /**
+   * DOM node selectors.
+   */
+  const nodeSelectors = {
+    walkingChart: document.querySelector(selectors.walkingChart).getContext('2d'),
+    totalChart: document.querySelector(selectors.totalChart).getContext('2d'),
+  };
+
+  /**
    * Chart.js global configuration.
    */
-  Chart.defaults.global.defaultFontColor = '#1c1c1c';
-  Chart.defaults.global.defaultFontFamily = " SpaceGrotesk, Arial, sans-serif";
+  Chart.defaults.global.defaultFontColor = 'rgba(27, 34, 41, 1)';
+  Chart.defaults.global.defaultFontFamily = "SpaceGrotesk, Arial, sans-serif";
   Chart.defaults.global.defaultFontSize = 12;
-  Chart.defaults.global.legend.display = false;
-  Chart.defaults.global.tooltips.backgroundColor = '#1c1c1c';
+  Chart.defaults.global.tooltips.backgroundColor = 'rgba(27, 34, 41, 1)';
   Chart.defaults.global.tooltips.position = 'nearest';
   Chart.defaults.global.tooltips.titleFontStyle = 700;
   Chart.defaults.global.tooltips.titleMarginBottom = 6;
@@ -39,12 +47,12 @@ export default () => {
   Chart.defaults.global.tooltips.displayColors = false;
 
   /**
-   * DOM node selectors.
+   * Global variables.
    */
-  const nodeSelectors = {
-    walkingChart: document.querySelector(selectors.walkingChart).getContext('2d'),
-    totalChart: document.querySelector(selectors.totalChart).getContext('2d'),
-  };
+  let walkingChart = {};
+  let walkingChartSettings = {};
+  let totalChart = {};
+  let totalChartSettings = {};
 
   /**
    * Initialise component.
@@ -52,13 +60,27 @@ export default () => {
   function init() {
     buildWalkingChart();
     buildTotalChart();
+
+    if (isDarkMode()) {
+      setDarkModeSettings();
+
+      walkingChart.update();
+      totalChart.update();
+    }
+
+    /**
+     * Avoids the first emit when page loads.
+     */
+    window.setTimeout(() => {
+      setEventBusListeners();
+    }, 0);
   }
 
   /**
    * Build walking chart using Chart.js
    */
   function buildWalkingChart() {
-    new Chart(nodeSelectors.walkingChart, {
+    walkingChartSettings = {
       type: 'bar',
       data: {
         labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018'],
@@ -120,14 +142,16 @@ export default () => {
           ],
         },
       },
-    });
+    };
+
+    walkingChart = new Chart(nodeSelectors.walkingChart, walkingChartSettings);
   }
 
   /**
    * Build total distances chart using Chart.js
    */
   function buildTotalChart() {
-    new Chart(nodeSelectors.totalChart, {
+    totalChartSettings = {
       type: 'bar',
       data: {
         labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018'],
@@ -187,7 +211,83 @@ export default () => {
           ],
         },
       },
-    });
+    };
+
+    totalChart = new Chart(nodeSelectors.totalChart, totalChartSettings);
+  }
+
+  /**
+   * Is dark mode active.
+   * @returns {Boolean}
+   */
+  function isDarkMode() {
+    const darkModeCookie = Cookies.get('darkMode');
+
+    return (
+      darkModeCookie === 'true' ||
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    );
+  }
+
+  /**
+   * Set eventBus listeners.
+   */
+  function setEventBusListeners() {
+    site.eventBus.listen('darkMode:updated', (darkMode) => handleDarkModeEvent(darkMode));
+  }
+
+  /**
+   * Handle dark mode updated event.
+   * @param {Boolean} darkMode - Whether dark mode is active.
+   */
+  function handleDarkModeEvent(darkMode) {
+    walkingChart.destroy();
+    totalChart.destroy();
+
+    if (darkMode) {
+      setDarkModeSettings();
+    } else {
+      setLightModeSettings();
+    }
+
+    walkingChart = new Chart(nodeSelectors.walkingChart, walkingChartSettings);
+    totalChart = new Chart(nodeSelectors.totalChart, totalChartSettings);
+  }
+
+  /**
+   * Enable chart dark mode.
+   */
+  function setDarkModeSettings() {
+    walkingChartSettings.options.scales.xAxes[0].ticks.fontColor = 'rgba(242,242,242,1)';
+    walkingChartSettings.options.scales.yAxes[0].ticks.fontColor = 'rgba(242,242,242,1)';
+    walkingChartSettings.options.scales.yAxes[0].gridLines.color = 'rgba(242,242,242,0.1)';
+    walkingChartSettings.options.scales.yAxes[0].gridLines.zeroLineColor = 'rgba(242,242,242,0.25)';
+    walkingChartSettings.options.scales.yAxes[1].ticks.fontColor = 'rgba(242,242,242,1)';
+    walkingChartSettings.options.scales.yAxes[1].gridLines.color = 'rgba(242,242,242,0.1)';
+    walkingChartSettings.options.scales.yAxes[1].gridLines.zeroLineColor = 'rgba(242,242,242,0.25)';
+
+    totalChartSettings.options.scales.xAxes[0].ticks.fontColor = 'rgba(242,242,242,1)';
+    totalChartSettings.options.scales.yAxes[0].ticks.fontColor = 'rgba(242,242,242,1)';
+    totalChartSettings.options.scales.yAxes[0].gridLines.color = 'rgba(242,242,242,0.1)';
+    totalChartSettings.options.scales.yAxes[0].gridLines.zeroLineColor = 'rgba(242,242,242,0.25)';
+  }
+
+  /**
+   * Enable chart light mode.
+   */
+  function setLightModeSettings() {
+    walkingChartSettings.options.scales.xAxes[0].ticks.fontColor = 'rgba(27,34,41,1)';
+    walkingChartSettings.options.scales.yAxes[0].ticks.fontColor = 'rgba(27,34,41,1)';
+    walkingChartSettings.options.scales.yAxes[0].gridLines.color = 'rgba(27,34,41,0.1)';
+    walkingChartSettings.options.scales.yAxes[0].gridLines.zeroLineColor = 'rgba(27,34,41,0.25)';
+    walkingChartSettings.options.scales.yAxes[1].ticks.fontColor = 'rgba(27,34,41,1)';
+    walkingChartSettings.options.scales.yAxes[1].gridLines.color = 'rgba(27,34,41,0.1)';
+    walkingChartSettings.options.scales.yAxes[1].gridLines.zeroLineColor = 'rgba(27,34,41,0.25)';
+
+    totalChartSettings.options.scales.xAxes[0].ticks.fontColor = 'rgba(27,34,41,1)';
+    totalChartSettings.options.scales.yAxes[0].ticks.fontColor = 'rgba(27,34,41,1)';
+    totalChartSettings.options.scales.yAxes[0].gridLines.color = 'rgba(27,34,41,0.1)';
+    totalChartSettings.options.scales.yAxes[0].gridLines.zeroLineColor = 'rgba(27,34,41,0.25)';
   }
 
   /**

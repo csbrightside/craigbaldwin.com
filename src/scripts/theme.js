@@ -10,6 +10,7 @@ import "../styles/theme.scss";
  * Global helper imports.
  */
 import {keyboardTabbable} from './helpers/a11y';
+import eventBus from './helpers/event-bus';
 import {pageHandle} from './helpers/utils';
 
 /**
@@ -21,6 +22,12 @@ import header from './components/header';
 import map from './components/map';
 import darkMode from './components/dark-mode';
 import progress from './components/progress';
+
+/**
+ * Global utils.
+ */
+window.site = window.site || {};
+window.site.eventBus = eventBus();
 
 /**
  * Init based on page handle.

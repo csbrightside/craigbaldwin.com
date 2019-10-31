@@ -8,6 +8,6 @@ colour: "green"
 
 {{<
   card
-  title="Distances 🚶‍"
+  title="Distances‍"
   copy="Keeping track of my distance data."
 >}}

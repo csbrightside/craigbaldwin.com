@@ -5,12 +5,15 @@
  *
  */
 .footer {
-  display: flex;
-  flex-wrap: wrap;
   margin-top: auto;
 
   &__footnotes {
     margin-bottom: $SPACING_M;
+  }
+
+  &__base {
+    display: flex;
+    flex-wrap: wrap;
   }
 
   &__item {

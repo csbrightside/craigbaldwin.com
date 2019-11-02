@@ -32,6 +32,11 @@ export default () => {
   };
 
   /**
+   * Global variables.
+   */
+  let initWidth = window.innerWidth;
+
+  /**
    * Initialise component.
    */
   function init() {
@@ -43,7 +48,7 @@ export default () => {
    */
   function setEventListeners() {
     on('click', nodeSelectors.menuButton, () => handleMenuToggle());
-    on('resize', () => debounce(closeNavigationDrawer()));
+    on('resize', () => debounce(checkResizeWidth()));
   }
 
   /**
@@ -59,6 +64,16 @@ export default () => {
   }
 
   /**
+   * Open the navigation drawer.
+   */
+  function openNavigationDrawer() {
+    nodeSelectors.menuButton.classList.add(cssClasses.active);
+    nodeSelectors.navigationDrawer.classList.add(cssClasses.active);
+
+    disableBodyScroll(document.body);
+  }
+
+  /**
    * Close the navigation drawer.
    */
   function closeNavigationDrawer() {
@@ -69,13 +84,16 @@ export default () => {
   }
 
   /**
-   * Open the navigation drawer.
+   * Checks to see if window width has changed.
+   * - Triggers navigation drawer close if it has.
    */
-  function openNavigationDrawer() {
-    nodeSelectors.menuButton.classList.add(cssClasses.active);
-    nodeSelectors.navigationDrawer.classList.add(cssClasses.active);
+  function checkResizeWidth() {
+    const newWidth = window.innerWidth;
 
-    disableBodyScroll(document.body);
+    if (newWidth !== initWidth) {
+      closeNavigationDrawer();
+      initWidth = window.innerWidth;
+    }
   }
 
   /**

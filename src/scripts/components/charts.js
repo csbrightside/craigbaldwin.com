@@ -63,9 +63,6 @@ export default () => {
 
     if (isDarkMode()) {
       setDarkModeSettings();
-
-      walkingChart.update();
-      totalChart.update();
     }
 
     /**
@@ -241,17 +238,11 @@ export default () => {
    * @param {Boolean} darkMode - Whether dark mode is active.
    */
   function handleDarkModeEvent(darkMode) {
-    walkingChart.destroy();
-    totalChart.destroy();
-
     if (darkMode) {
       setDarkModeSettings();
     } else {
       setLightModeSettings();
     }
-
-    walkingChart = new Chart(nodeSelectors.walkingChart, walkingChartSettings);
-    totalChart = new Chart(nodeSelectors.totalChart, totalChartSettings);
   }
 
   /**
@@ -270,6 +261,8 @@ export default () => {
     totalChartSettings.options.scales.yAxes[0].ticks.fontColor = 'rgba(242,242,242,1)';
     totalChartSettings.options.scales.yAxes[0].gridLines.color = 'rgba(242,242,242,0.1)';
     totalChartSettings.options.scales.yAxes[0].gridLines.zeroLineColor = 'rgba(242,242,242,0.25)';
+
+    resetCharts();
   }
 
   /**
@@ -288,6 +281,19 @@ export default () => {
     totalChartSettings.options.scales.yAxes[0].ticks.fontColor = 'rgba(27,34,41,1)';
     totalChartSettings.options.scales.yAxes[0].gridLines.color = 'rgba(27,34,41,0.1)';
     totalChartSettings.options.scales.yAxes[0].gridLines.zeroLineColor = 'rgba(27,34,41,0.25)';
+
+    resetCharts();
+  }
+
+  /**
+   * Resets the charts.
+   */
+  function resetCharts() {
+    walkingChart.destroy();
+    totalChart.destroy();
+
+    walkingChart = new Chart(nodeSelectors.walkingChart, walkingChartSettings);
+    totalChart = new Chart(nodeSelectors.totalChart, totalChartSettings);
   }
 
   /**

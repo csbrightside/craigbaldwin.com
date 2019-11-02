@@ -35,6 +35,10 @@
     z-index: $LAYER_HEADER;
   }
 
+  &__list {
+    line-height: $LINE_HEIGHT_S;
+  }
+
   &__list-item {
     &#{&}--home {
       display: none;

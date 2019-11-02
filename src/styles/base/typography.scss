@@ -4,6 +4,7 @@
  * All typography styles.
  *
  */
+// stylelint-disable unit-blacklist
 
 /**
  * Font.
@@ -88,6 +89,10 @@ p, .body-1 {
   }
 }
 
+strong {
+  font-weight: $WEIGHT_BOLD;
+}
+
 .standfirst {
   font-size: 2rem;
   line-height: $LINE_HEIGHT_M;
@@ -126,12 +131,36 @@ p, .body-1 {
  * Lists
  */
 ul {
-  line-height: $LINE_HEIGHT_S;
+  font-size: 1.8rem;
+  line-height: $LINE_HEIGHT_L;
+
+  main & {
+    &:not(:last-child) {
+      margin-bottom: $SPACING_P;
+    }
+  }
 }
 
 li {
   main & {
-    list-style: disc inside;
+    padding-left: $SPACING_S;
+    position: relative;
+
+    &::before {
+      background-color: currentColor;
+      content: '';
+      display: inline-block;
+      height: 0.35em;
+      left: 0;
+      position: absolute;
+      top: 0.5em;
+      transform: rotate(45deg);
+      width: 0.35em;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: $SPACING_3XS;
+    }
   }
 }
 
@@ -141,7 +170,9 @@ li {
 .text-link,
 %text-link,
 h2 > a,
-p > a {
+p > a,
+li > a,
+strong > a {
   color: currentColor;
   display: inline-block;
   text-decoration: underline;

@@ -1,13 +1,15 @@
 # Craig Baldwin [dot] com
 
-Personal website of front-end developer Craig Baldwin currently working at leading Shopify experts We Make Websites.
+Personal website of front-end developer Craig Baldwin currently working at We Make Websites.
 
-Built on [Hugo](https://gohugo.io/) using the [Victor Hugo template](https://github.com/netlify-templates/victor-hugo).
+This site has been built using [Hugo](https://gohugo.io/) and the [Victor Hugo](https://github.com/netlify-templates/victor-hugo) template. It has been developed using HTML, SCSS, vanilla JS, and markdown. It does not support Internet Explorer 11.
 
 See _package.json_ for full list of dependencies.
 
 ## Page Layouts
 
-* **index** &ndash; Homepage
-* **mountains** &ndash; Mountains page
-* **text** &ndash; All other pages
+* **index** – Homepage
+* **distances** – Distances page
+* **mountains** – Mountains page
+* **work** – Work page
+* **text** – All other pages

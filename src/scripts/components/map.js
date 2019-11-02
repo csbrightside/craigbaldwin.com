@@ -33,11 +33,11 @@ export default () => {
       scrollWheelZoom: false,
     }).setView([54.518, -3.05], 10);
 
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiaW50ZXJtZWRpYXNvbHV0aW9ucyIsImEiOiJjaWtudXJvY2swMDhnd2ptNHB6NXBjMW4yIn0.BZeUbqCxxu6YbiIzpRU8QQ', {
-      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-      id: 'mapbox.outdoors',
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiY3JhaWdiYWxkd2luIiwiYSI6ImNrMmhyZXV4bjA4ajMzbW52ejF5c2ppd3oifQ.l_5II-ZwhXVtIcCsgNIwqw', {
+      attribution: 'Map &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+      id: 'mapbox.high-contrast',
       maxZoom: 13,
-      accessToken: 'pk.eyJ1IjoiaW50ZXJtZWRpYXNvbHV0aW9ucyIsImEiOiJjaWtudXJvY2swMDhnd2ptNHB6NXBjMW4yIn0.BZeUbqCxxu6YbiIzpRU8QQ',
+      accessToken: 'pk.eyJ1IjoiY3JhaWdiYWxkd2luIiwiYSI6ImNrMmhyZXV4bjA4ajMzbW52ejF5c2ppd3oifQ.l_5II-ZwhXVtIcCsgNIwqw',
     }).addTo(map);
 
     L.control.zoom({position: 'topright'}).addTo(map);

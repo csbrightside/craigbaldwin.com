@@ -5,21 +5,49 @@
  *
  */
 .map {
+  margin-bottom: $SPACING_L;
+  mix-blend-mode: darken;
+
   &__display {
+    border: 1px solid $COLOR_BLACK;
     height: 0;
     padding-bottom: 100%;
+
+    .leaflet-popup-content-wrapper {
+      background-color: $COLOR_BLACK;
+      border-radius: 0;
+      box-shadow: none;
+      color: $COLOR_DARK_MODE_WHITE;
+    }
+
+    .leaflet-popup-content {
+      margin: $SPACING_XS;
+    }
+
+    .leaflet-popup-tip {
+      background-color: $COLOR_BLACK;
+      box-shadow: none;
+    }
+
+    .leaflet-control-attribution a {
+      color: $COLOR_BLACK;
+      font-family: $FONT;
+    }
   }
 
   &__progress {
-    background-color: $COLOR_BLACK;
+    // stylelint-disable-next-line
+    background-image: url('data:image/svg+xml,%3Csvg width="4" height="4" viewBox="0 0 4 4" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23000000" fill-opacity="1" fill-rule="evenodd"%3E%3Ccircle cx="1" cy="1" r="1"/%3E%3Ccircle cx="1" cy="1" r="1"/%3E%3C/g%3E%3C/svg%3E');
+    border: 1px solid $COLOR_BLACK;
+    border-top: 0;
     height: 50px;
     position: relative;
     width: 100%;
   }
 
   &__progress-bar {
-    @include transition(width, $TIMING_XL, ease);
-    background-color: $COLOR_GREEN;
+    @include transition(width $TIMING_XL ease);
+    background-color: $COLOR_BLACK;
     height: 100%;
     left: 0;
     padding-right: $SPACING_S;
@@ -31,6 +59,9 @@
   }
 
   &__progress-text {
+    font-weight: $WEIGHT_BOLD;
+    line-height: $LINE_HEIGHT_S;
+    padding: $SPACING_2XS $SPACING_XS $SPACING_3XS;
     position: absolute;
     right: $SPACING_XS;
     top: 50%;
@@ -39,7 +70,7 @@
 
     &#{&}--count {
       @include transition(opacity, ease);
-      color: $COLOR_BLACK;
+      color: $COLOR_WHITE;
       opacity: 0;
 
       &.is-active {
@@ -48,7 +79,8 @@
     }
 
     &#{&}--total {
-      color: $COLOR_LIGHT_GREY;
+      background-color: $COLOR_WHITE;
+      color: $COLOR_BLACK;
     }
   }
 
@@ -59,6 +91,8 @@
   }
 
   @include mq($from: medium) {
+    margin-bottom: $SPACING_XL;
+
     &__display {
       padding-bottom: 45%;
     }

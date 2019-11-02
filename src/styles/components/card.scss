@@ -5,7 +5,7 @@
  *
  */
 .card {
-  margin-bottom: $SPACING_M;
+  margin-bottom: $SPACING_L;
   width: 100%;
 
   &__title {
@@ -62,12 +62,5 @@
     &__title::after {
       background-color: $COLOR_RED;
     }
-  }
-
-  /**
-   * Media queries.
-   */
-  @include mq($from: medium) {
-    margin-bottom: $SPACING_L;
   }
 }

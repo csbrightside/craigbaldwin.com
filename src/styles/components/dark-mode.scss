@@ -24,4 +24,10 @@
       transform: translateY(-50%);
     }
   }
+
+  .no-transition & {
+    &__slide {
+      transition: none;
+    }
+  }
 }

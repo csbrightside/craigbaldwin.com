@@ -32,10 +32,16 @@
       text-decoration: underline;
     }
   }
-}
 
-.is-dark {
-  .icon__image {
-    color: $COLOR_DARK_MODE_WHITE;
+  .is-dark & {
+    &__image {
+      color: $COLOR_DARK_MODE_WHITE;
+    }
+  }
+
+  .no-transition & {
+    &__image {
+      transition: none;
+    }
   }
 }

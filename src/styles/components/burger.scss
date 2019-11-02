@@ -18,6 +18,10 @@
   .is-dark & {
     background-color: $COLOR_DARK_MODE_WHITE;
   }
+
+  .no-transition {
+    @include transition(opacity $TIMING_M, transform);
+  }
 }
 
 .burger {

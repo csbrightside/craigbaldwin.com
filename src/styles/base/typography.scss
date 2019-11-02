@@ -43,6 +43,14 @@ body {
   font-size: 1.4rem;
   font-weight: $WEIGHT_REGULAR;
   line-height: $LINE_HEIGHT_S;
+
+  .is-dark & {
+    color: $COLOR_DARK_MODE_WHITE;
+  }
+
+  .no-transition & {
+    transition: none;
+  }
 }
 
 /**
@@ -144,14 +152,5 @@ p > a {
 
   &:focus {
     text-decoration: none;
-  }
-}
-
-/**
- * Dark mode.
- */
-.is-dark {
-  body {
-    color: $COLOR_DARK_MODE_WHITE;
   }
 }

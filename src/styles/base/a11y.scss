@@ -17,6 +17,7 @@
  * - Overrides .visually-hidden when focused.
  */
 .skip-link {
+  @include transition(background-color, color);
   @include visually-hidden;
   align-items: center;
   background-color: $COLOR_WHITE;
@@ -31,6 +32,11 @@
     height: 100%;
     width: 100%;
     z-index: $LAYER_POPUP;
+  }
+
+  .is-dark & {
+    background-color: $COLOR_BLACK;
+    color: $COLOR_DARK_MODE_WHITE;
   }
 }
 

@@ -11,6 +11,10 @@ html {
   &.is-dark {
     background-color: $COLOR_BLACK;
   }
+
+  &.no-transition {
+    transition: none;
+  }
 }
 
 /**

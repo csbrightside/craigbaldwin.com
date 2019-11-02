@@ -58,16 +58,6 @@ $EASING: cubic-bezier(0.645, 0.045, 0.355, 1);
 
 html {
   // stylelint-disable
-  &.no-transition {
-    transition: none !important;
-
-    *,
-    *::before,
-    *::after {
-      transition: none !important;
-    }
-  }
-
   @media (prefers-reduced-motion: reduce) {
     transition: none !important;
 

@@ -53,7 +53,7 @@ export default () => {
 
     data.forEach((location) => {
       const icon = L.icon({
-        iconUrl: `/images/icons/marker-${location.region}.svg`,
+        iconUrl: '/images/icons/map-marker.svg',
         iconSize: [34, 28],
         iconAnchor: [17, 25],
       });

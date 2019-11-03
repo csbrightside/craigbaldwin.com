@@ -10,6 +10,7 @@
   &__image-container {
     display: flex;
     flex-direction: column;
+    line-height: 0;
     margin-bottom: $SPACING_S;
     position: relative;
   }
@@ -20,6 +21,7 @@
   }
 
   &__meta {
+    line-height: $LINE_HEIGHT_S;
     padding-bottom: $SPACING_S;
     padding-right: $SPACING_S;
   }

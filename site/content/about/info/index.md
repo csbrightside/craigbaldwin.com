@@ -28,4 +28,4 @@ Code quality standards follow [We Make Websites'](https://github.com/we-make-web
 
 ## Legal bit
 
-Unless otherwise stated, all photographs are copyright myself and may not be reproduced without my permission.
+Unless otherwise stated, all non-work related photographs are copyright myself and may not be reproduced without my permission.

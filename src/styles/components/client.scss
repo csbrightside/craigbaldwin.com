@@ -6,12 +6,9 @@
  */
 .client {
   $parent: &;
-  display: grid;
-  grid-gap: $SPACING_S;
-  grid-template-columns: repeat(3, 1fr);
   position: relative;
 
-  &__image {
+  &__image-container {
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: 60% auto;
@@ -22,23 +19,6 @@
     padding-bottom: 100%;
     position: relative;
     width: 100%;
-
-    &::after {
-      position: absolute;
-      right: calc(#{$SPACING_3XS} - 1px);
-      top: calc(#{$SPACING_3XS} - 4px);
-    }
-
-    &:hover {
-      border-color: $COLOR_LINK;
-    }
-
-    &#{&}--no-link {
-      &:hover {
-        border-color: $COLOR_LIGHT_GREY;
-        cursor: default;
-      }
-    }
 
     &#{&}--direct-doors,
     &#{&}--hummingbird-bakery,
@@ -56,28 +36,6 @@
 
     &#{&}--newbie {
       background-size: 70% auto;
-    }
-  }
-
-  &__meta {
-    grid-column: span 2;
-  }
-
-  .clients--list & {
-    grid-template-columns: 1fr;
-    height: 0;
-
-    #{$parent}__title,
-    #{$parent}__meta {
-      @include visually-hidden;
-    }
-  }
-
-  @include mq($from: small) {
-    grid-template-columns: repeat(4, 1fr);
-
-    &__meta {
-      grid-column: span 3;
     }
   }
 }

@@ -1,38 +1,44 @@
 <!-- Partials > Client. -->
 <!-- Individual client display. -->
-<div class="clients__client client responsive-margin-bottom">
-  {{ if .Params.link }}
-    <a
-      class="
-        client__image
-        client__image--{{ .Params.handle }}
+{{ $logoPath := printf "logos/%s%s" .Params.handle ".svg" }}
+
+<div class="clients__client client">
+  <div
+    class="client__image-container"
+    href="{{ .Params.link }}"
+    style="background-image: url('');"
+    target="blank"
+  >
+    <img
+      class="client__image"
+      alt=""
+      sizes="auto"
+      src="/images/clients/{{ .Params.handle }}-background-500x.jpg"
+      srcset="
+        /images/clients/{{ .Params.handle }}-background-500x.jpg 500w,
+        /images/clients/{{ .Params.handle }}-background-1000x.jpg 1000w
       "
-      aria-labelledby="{{ .Params.handle}}-label"
-      href="{{ .Params.link }}"
-      style="background-image: url('/images/clients/{{ .Params.handle }}.svg');"
-      target="blank"
-    ></a>
+    >
+
+    {{ partial $logoPath . }}
+  </div>
+
+  {{ if .Params.link }}
+    <h3 class="client__title h2">
+      <a href="{{ .Params.link }}">
+        {{ .Title }}
+      </a>
+    </h3>
 
   {{ else }}
-    <div
-      class="
-        client__image
-        client__image--{{ .Params.handle }}
-        client__image--no-link
-      "
-      {{ if (ne .Title "Undisclosed client") }}
-        style="background-image: url('/images/clients/{{ .Params.handle }}.svg');"
-      {{ end }}
-    ></div>
+    <h3 class="client__title h2">{{ .Title }}</h3>
   {{ end }}
 
-  <div class="client__meta">
-    <h3 id="{{ .Params.handle}}-label" class="client__title">{{ .Title }}</h3>
-
-    {{ if .Content }}
+  {{ if .Content }}
+    <div class="client__content">
       <div class="client__text">
         {{ .Content }}
       </div>
-    {{ end }}
-  </div>
+    </div>
+  {{ end }}
 </div>

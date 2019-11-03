@@ -2,7 +2,7 @@
   {{- .Content -}}
 
   <div class="clients clients--selected">
-    <h2 class="clients__title">Selected</h2>
+    <h2 class="clients__title visually-hidden">Selected</h2>
 
     {{ range .Pages.ByWeight }}
       {{ if (eq .Params.type "selected") }}
@@ -13,6 +13,7 @@
 
   <div class="clients clients--list">
     <h2 class="clients__title visually-hidden">More</h2>
+
     {{ range .Pages.ByTitle }}
       {{ if (eq .Params.type "list") }}
         {{ partial "client" . }}

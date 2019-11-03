@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{- .Content -}}
 
-  <div class="clients clients--selected">
+  <div class="clients clients--selected row">
     <h2 class="clients__title visually-hidden">Selected</h2>
 
     {{ range .Pages.ByWeight }}
@@ -11,7 +11,7 @@
     {{ end }}
   </div>
 
-  <div class="clients clients--list">
+  <div class="clients clients--list row">
     <h2 class="clients__title visually-hidden">More</h2>
 
     {{ range .Pages.ByTitle }}

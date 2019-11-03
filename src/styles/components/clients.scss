@@ -5,29 +5,37 @@
  *
  */
 .clients {
-  display: flex;
-  flex-direction: column;
-  grid-column: content;
-  width: 100%;
+  $parent: &;
+
+  &:not(:last-child) {
+    margin-bottom: $SPACING_S;
+  }
 
   &__client {
-    .clients--list & {
-      margin-bottom: 0;
-      padding-bottom: 100%;
-    }
+    // Desired padding - grid-gap
+    margin-bottom: ($SPACING_L - $SPACING_S);
   }
 
   &#{&}--list {
-    display: grid;
-    grid-gap: $SPACING_S $SPACING_S;
-    grid-template-columns: repeat(3, 1fr);
+    #{$parent}__client {
+      margin-bottom: 0;
+    }
   }
 
-  @include mq($from: small) {
-    &#{&}--list {
-      display: grid;
-      grid-gap: $SPACING_S $SPACING_S;
-      grid-template-columns: repeat(4, 1fr);
+  @include mq($from: medium) {
+    &:not(:last-child) {
+      margin-bottom: $SPACING_XL;
+    }
+
+    &__client {
+      // Desired padding - odd column offset - grid-gap
+      margin-bottom: ($SPACING_XL - $SPACING_L - $SPACING_S);
+    }
+
+    &#{&}--selected {
+      #{$parent}__client:nth-child(odd) {
+        margin-top: $SPACING_L;
+      }
     }
   }
 }

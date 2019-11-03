@@ -8,6 +8,6 @@ colour: "purple"
 
 {{<
   card
-  title="Work"
-  copy="Below is a selection of projects I've worked on and clients I've worked with."
+  title="Selected work"
+  copy="Below is a selection of projects I've worked on and a few of the clients I've been involved with."
 >}}

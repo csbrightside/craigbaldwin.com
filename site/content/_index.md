@@ -1,6 +1,6 @@
 ---
 title: "Index"
-description: "Front-end developer and pod development lead at We Make Websites developing advanced Shopify eCommerce stores."
+description: "Front-end developer and pod development lead at We Make Websites developing Shopify eCommerce stores."
 handle: "index"
 layout: "index"
 colour: "blue"
@@ -8,6 +8,6 @@ colour: "blue"
 
 {{<
   card
-  title="I build websites"
-  copy="I'm Craig Baldwin, front-end developer and pod development lead at We Make Websites developing advanced Shopify eCommerce stores."
+  title="I make websites"
+  copy="Front-end developer and pod development lead at We Make Websites developing Shopify eCommerce stores."
 >}}

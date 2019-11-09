@@ -1,5 +1,5 @@
 ---
-block_type: "logo"
+block_type: "logos"
 title: "CLUSE"
 handle: "cluse"
 link: "https://cluse.com/"

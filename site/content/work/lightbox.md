@@ -1,5 +1,5 @@
 ---
-block_type: "logo"
+block_type: "logos"
 title: "Lightbox"
 handle: "lightbox"
 link: "https://lightboxjewelry.com/"

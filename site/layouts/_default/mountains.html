@@ -2,7 +2,7 @@
   {{- .Content -}}
   {{ partial "map" . }}
 
-  <div class="blocks">
+  <div class="blocks row">
     {{ range (.Pages.ByParam "handle").Reverse }}
       {{ partial "block" . }}
     {{ end }}

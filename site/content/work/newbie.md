@@ -1,5 +1,5 @@
 ---
-block_type: "logo"
+block_type: "logos"
 title: "Newbie"
 handle: "newbie"
 link: "https://newbiestore.com/"

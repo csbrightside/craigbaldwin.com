@@ -1,5 +1,5 @@
 ---
-block_type: "logp"
+block_type: "logos"
 title: "Hummingbird Bakery"
 handle: "hummingbird-bakery"
 link: "https://hummingbirdbakery.com/"

@@ -1,6 +1,10 @@
 <!-- Partials > Block. -->
-<!-- Individual block (mountains, clients) display. -->
-<div class="blocks__block block">
+<!-- Individual block display. -->
+<!-- Supported types: mountains, clients, logos -->
+{{ $logoPath := printf "logos/%s%s" .Params.handle ".svg" }}
+{{ $classes := cond (eq .Params.block_type "logos") "block--logos s4 m2" "s8" }}
+
+<div class="blocks__block block {{ $classes }}">
   <div class="block__image-container">
     <img
       class="block__image"
@@ -9,51 +13,59 @@
       src="/images/{{ .Params.block_type }}/{{ .Params.handle }}.jpg"
     >
 
+    {{ if or (eq .Params.block_type "clients") (eq .Params.block_type "logos")}}
+      <div class="block__logo">
+        {{ partial $logoPath . }}
+      </div>
+    {{ end }}
+
     <div class="block__meta-container row">
       <div class="block__meta s6 m3">
         <h2 class="block__title">{{ .Title }}</h2>
 
-        <div class="block__stats sub-text">
-          <div class="block__stat icon">
-            <span class="icon__image">
-              {{ partial "icons/location.svg" . }}
-            </span>
+        {{ if or (eq .Params.block_type "clients") (eq .Params.block_type "mountains")}}
+          <div class="block__stats sub-text">
+            <div class="block__stat icon">
+              <span class="icon__image">
+                {{ partial "icons/location.svg" . }}
+              </span>
 
-            <span class="icon__text">
-              {{ .Params.location }} ({{ .Params.duration }} nights)
-            </span>
+              <span class="icon__text">
+                {{ .Params.location }} ({{ .Params.duration }} nights)
+              </span>
+            </div>
+
+            <div class="block__stat icon">
+              <span class="icon__image">
+                {{ partial "icons/distance.svg" . }}
+              </span>
+
+              <span class="icon__text">
+                {{ .Params.distance }} miles
+              </span>
+            </div>
+
+            <div class="block__stat icon">
+              <span class="icon__image">
+                {{ partial "icons/mountains.svg" . }}
+              </span>
+
+              <span class="icon__text">
+                {{ .Params.mountains }} ({{ .Params.mountains_new }} new)
+              </span>
+            </div>
+
+            <div class="block__stat icon">
+              <span class="icon__image">
+                {{ partial "icons/steps.svg" . }}
+              </span>
+
+              <span class="icon__text">
+                {{ .Params.steps }} steps
+              </span>
+            </div>
           </div>
-
-          <div class="block__stat icon">
-            <span class="icon__image">
-              {{ partial "icons/distance.svg" . }}
-            </span>
-
-            <span class="icon__text">
-              {{ .Params.distance }} miles
-            </span>
-          </div>
-
-          <div class="block__stat icon">
-            <span class="icon__image">
-              {{ partial "icons/mountains.svg" . }}
-            </span>
-
-            <span class="icon__text">
-              {{ .Params.mountains }} ({{ .Params.mountains_new }} new)
-            </span>
-          </div>
-
-          <div class="block__stat icon">
-            <span class="icon__image">
-              {{ partial "icons/steps.svg" . }}
-            </span>
-
-            <span class="icon__text">
-              {{ .Params.steps }} steps
-            </span>
-          </div>
-        </div>
+        {{ end }}
       </div>
     </div>
   </div>

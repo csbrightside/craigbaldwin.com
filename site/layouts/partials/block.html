@@ -25,45 +25,54 @@
 
         {{ if or (eq .Params.block_type "clients") (eq .Params.block_type "mountains")}}
           <div class="block__stats sub-text">
-            <div class="block__stat icon">
-              <span class="icon__image">
-                {{ partial "icons/location.svg" . }}
-              </span>
+            <!-- Mountains stats -->
+            {{ if .Params.location }}
+              <div class="block__stat icon">
+                <span class="icon__image">
+                  {{ partial "icons/location.svg" . }}
+                </span>
 
-              <span class="icon__text">
-                {{ .Params.location }} ({{ .Params.duration }} nights)
-              </span>
-            </div>
+                <span class="icon__text">
+                  {{ .Params.location }} ({{ .Params.duration }} nights)
+                </span>
+              </div>
+            {{ end }}
 
-            <div class="block__stat icon">
-              <span class="icon__image">
-                {{ partial "icons/distance.svg" . }}
-              </span>
+            {{ if .Params.location }}
+              <div class="block__stat icon">
+                <span class="icon__image">
+                  {{ partial "icons/distance.svg" . }}
+                </span>
 
-              <span class="icon__text">
-                {{ .Params.distance }} miles
-              </span>
-            </div>
+                <span class="icon__text">
+                  {{ .Params.distance }} miles
+                </span>
+              </div>
+            {{ end }}
 
-            <div class="block__stat icon">
-              <span class="icon__image">
-                {{ partial "icons/mountains.svg" . }}
-              </span>
+            {{ if .Params.location }}
+              <div class="block__stat icon">
+                <span class="icon__image">
+                  {{ partial "icons/mountains.svg" . }}
+                </span>
 
-              <span class="icon__text">
-                {{ .Params.mountains }} ({{ .Params.mountains_new }} new)
-              </span>
-            </div>
+                <span class="icon__text">
+                  {{ .Params.mountains }} ({{ .Params.mountains_new }} new)
+                </span>
+              </div>
+            {{ end }}
 
-            <div class="block__stat icon">
-              <span class="icon__image">
-                {{ partial "icons/steps.svg" . }}
-              </span>
+            {{ if .Params.location }}
+              <div class="block__stat icon">
+                <span class="icon__image">
+                  {{ partial "icons/steps.svg" . }}
+                </span>
 
-              <span class="icon__text">
-                {{ .Params.steps }} steps
-              </span>
-            </div>
+                <span class="icon__text">
+                  {{ .Params.steps }} steps
+                </span>
+              </div>
+            {{ end }}
           </div>
         {{ end }}
       </div>

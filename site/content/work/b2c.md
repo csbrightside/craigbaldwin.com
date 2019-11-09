@@ -1,7 +1,7 @@
 ---
 block_type: "clients"
 title: "B2C client"
-handle: "b2c-client"
+handle: "b2c"
 weight: 3
 ---
 

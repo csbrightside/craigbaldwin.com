@@ -27,12 +27,6 @@
     display: inline-block;
   }
 
-  &:hover {
-    #{$parent}__text {
-      text-decoration: underline;
-    }
-  }
-
   .is-dark & {
     &__image {
       color: $COLOR_DARK_MODE_WHITE;

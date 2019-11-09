@@ -2,6 +2,7 @@
 block_type: "clients"
 title: "Sons"
 handle: "sons"
+link: "https://sons.co.uk"
 weight: 2
 ---
 

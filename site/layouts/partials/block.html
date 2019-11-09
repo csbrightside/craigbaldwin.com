@@ -5,6 +5,10 @@
 {{ $classes := cond (eq .Params.block_type "logos") "block--logos s4 m2" "s8" }}
 
 <div class="blocks__block block {{ $classes }}">
+  {{ if .Params.link }}
+    <a class="block__link" href="{{ .Params.link }}">
+  {{ end }}
+
   <div class="block__image-container">
     <img
       class="block__image"
@@ -78,6 +82,9 @@
       </div>
     </div>
   </div>
+  {{ if .Params.link }}
+    </a>
+  {{ end }}
 
   <div class="row">
     <div class="block__content s8 m6 offset-m2">

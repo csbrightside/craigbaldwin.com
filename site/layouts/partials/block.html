@@ -1,0 +1,66 @@
+<!-- Partials > Block. -->
+<!-- Individual block (mountains, clients) display. -->
+<div class="blocks__block block">
+  <div class="block__image-container">
+    <img
+      class="block__image"
+      alt="{{ .Params.alt }}"
+      loading="lazy"
+      src="/images/{{ .Params.block_type }}/{{ .Params.handle }}.jpg"
+    >
+
+    <div class="block__meta-container row">
+      <div class="block__meta s6 m3">
+        <h2 class="block__title">{{ .Title }}</h2>
+
+        <div class="block__stats sub-text">
+          <div class="block__stat icon">
+            <span class="icon__image">
+              {{ partial "icons/location.svg" . }}
+            </span>
+
+            <span class="icon__text">
+              {{ .Params.location }} ({{ .Params.duration }} nights)
+            </span>
+          </div>
+
+          <div class="block__stat icon">
+            <span class="icon__image">
+              {{ partial "icons/distance.svg" . }}
+            </span>
+
+            <span class="icon__text">
+              {{ .Params.distance }} miles
+            </span>
+          </div>
+
+          <div class="block__stat icon">
+            <span class="icon__image">
+              {{ partial "icons/mountains.svg" . }}
+            </span>
+
+            <span class="icon__text">
+              {{ .Params.mountains }} ({{ .Params.mountains_new }} new)
+            </span>
+          </div>
+
+          <div class="block__stat icon">
+            <span class="icon__image">
+              {{ partial "icons/steps.svg" . }}
+            </span>
+
+            <span class="icon__text">
+              {{ .Params.steps }} steps
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="block__content s8 m6 offset-m2">
+      {{ .Content }}
+    </div>
+  </div>
+</div>

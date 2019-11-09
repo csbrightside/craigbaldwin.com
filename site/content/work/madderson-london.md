@@ -1,6 +1,6 @@
 ---
+block_type: "logo"
 title: "Madderson London"
 handle: "madderson-london"
-type: "list"
 weight: 0
 ---

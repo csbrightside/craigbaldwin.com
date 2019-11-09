@@ -1,7 +1,7 @@
 ---
+block_type: "clients"
 title: "B2C client"
 handle: "b2c-client"
-type: "selected"
 weight: 3
 ---
 

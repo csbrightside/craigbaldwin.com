@@ -1,7 +1,7 @@
 ---
+block_type: "clients"
 title: "Sons"
 handle: "sons"
-type: "selected"
 weight: 2
 ---
 

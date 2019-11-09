@@ -1,21 +1,21 @@
 {{ define "main" }}
   {{- .Content -}}
 
-  <div class="clients clients--selected row">
-    <h2 class="clients__title visually-hidden">Selected</h2>
+  <div class="blocks">
+    <h2 class="visually-hidden">Selected</h2>
 
     {{ range .Pages.ByWeight }}
-      {{ if (eq .Params.type "selected") }}
-        {{ partial "client" . }}
+      {{ if (eq .Params.block_type "clients") }}
+        {{ partial "block" . }}
       {{ end }}
     {{ end }}
   </div>
 
   <div class="clients clients--list row">
-    <h2 class="clients__title visually-hidden">More</h2>
+    <h2 class="visually-hidden">More</h2>
 
     {{ range .Pages.ByTitle }}
-      {{ if (eq .Params.type "list") }}
+      {{ if (eq .Params.block_type "logo") }}
         {{ partial "client" . }}
       {{ end }}
     {{ end }}

@@ -21,6 +21,7 @@
   }
 
   &__meta {
+    @include transition(background-color);
     line-height: $LINE_HEIGHT_S;
     padding-bottom: $SPACING_S;
     padding-right: $SPACING_S;
@@ -42,8 +43,40 @@
   }
 
   &__content {
-    border-left: 3px solid $COLOR_GREEN;
+    border-left: 3px solid currentColor;
     padding-left: $SPACING_S;
+  }
+
+  .template--mountains & {
+    #{$parent}__meta {
+      background-color: mix($COLOR_GREEN, $COLOR_WHITE, 25%);
+    }
+
+    #{$parent}__content {
+      border-color: $COLOR_GREEN;
+    }
+  }
+
+  .template--work & {
+    #{$parent}__meta {
+      background-color: mix($COLOR_PURPLE, $COLOR_WHITE, 25%);
+    }
+
+    #{$parent}__content {
+      border-color: $COLOR_PURPLE;
+    }
+  }
+
+  .is-dark .template--mountains & {
+    &__meta {
+      background-color: mix($COLOR_GREEN, $COLOR_BLACK, 25%);
+    }
+  }
+
+  .is-dark .template--work & {
+    &__meta {
+      background-color: mix($COLOR_PURPLE, $COLOR_BLACK, 25%);
+    }
   }
 
   @include mq($from: medium) {
@@ -60,20 +93,12 @@
     }
 
     &__meta {
-      @include transition(background-color);
-      background-color: mix($COLOR_GREEN, $COLOR_WHITE, 25%);
       padding-bottom: $SPACING_M;
       padding-right: $SPACING_M;
     }
 
     &__content {
       padding-left: $SPACING_M;
-    }
-
-    .is-dark & {
-      &__meta {
-        background-color: mix($COLOR_GREEN, $COLOR_BLACK, 25%);
-      }
     }
 
     .no-transition & {

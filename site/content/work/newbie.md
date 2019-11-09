@@ -1,7 +1,7 @@
 ---
+block_type: "logo"
 title: "Newbie"
 handle: "newbie"
 link: "https://newbiestore.com/"
-type: "list"
 weight: 0
 ---

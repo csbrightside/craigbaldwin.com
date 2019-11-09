@@ -1,7 +1,7 @@
 ---
+block_type: "clients"
 title: "Clothing client"
 handle: "clothing-client"
-type: "selected"
 weight: 4
 ---
 

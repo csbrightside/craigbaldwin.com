@@ -1,9 +1,14 @@
 {{ define "main" }}
-  <h1>Nothing here...</h1>
+  <div class="card card--{{ lower $.Page.Title }}">
+    <h1 class="card__title">Nothing's here</h1>
 
-  <p>
-    My site has recently been re-built from scratch so it's possible that the page you're looking for has moved or been deleted.
-  </p>
+    <div class="row">
+      <p class="card__copy standfirst col s8 m6">
+        My site has recently been re-built from scratch so it's possible that the page you're looking for has moved or been
+        deleted.
+      </p>
+    </div>
+  </div>
 
   <p>
     Try <a class="text-link" href="{{ "/" | relURL }}">going home</a> and starting again.

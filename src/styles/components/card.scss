@@ -14,7 +14,7 @@
     position: relative;
 
     &::after {
-      background-color: $COLOR_BLACK;
+      background-color: $COLOR_BLUE;
       bottom: 0;
       content: '';
       height: 3px;
@@ -31,12 +31,6 @@
   /**
    * Colours.
    */
-  .template--index & {
-    &__title::after {
-      background-color: $COLOR_BLUE;
-    }
-  }
-
   .template--about &,
   .template--info & {
     &__title::after {

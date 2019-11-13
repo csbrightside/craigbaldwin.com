@@ -2,29 +2,49 @@
 <!-- Individual block display. -->
 <!-- Supported types: mountains, clients, logos -->
 {{ $logoPath := printf "logos/%s%s" .Params.handle ".svg" }}
-{{ $classes := cond (eq .Params.block_type "logos") "block--logos s4 m2" "s8" }}
+{{ $blockClasses := cond (eq .Params.block_type "logos") "s4 m2" "s8" }}
 
-<div class="blocks__block block {{ $classes }}">
+<!-- Set classes based on hide_image -->
+{{ $imageClasses := cond (eq .Params.hide_image true) "s8 m2" "" }}
+{{ $metaContainerClasses := cond (eq .Params.hide_image true) "" "row" }}
+{{ $metaClasses := cond (eq .Params.hide_image true) "" "s8 m3" }}
+{{ $contentRowClasses := cond (eq .Params.hide_image true) "s8 m6" "row" }}
+{{ $contentClasses := cond (eq .Params.hide_image true) "" "s8 m6 offset-m2" }}
+
+<div
+  class="
+    blocks__block
+    block
+    block--{{ .Params.block_type }}
+    {{ if (eq .Params.hide_image true)}}
+      block--no-image
+      row
+    {{ end }}
+    {{ $blockClasses }}
+  "
+>
   {{ if .Params.link }}
     <a class="block__link" href="{{ .Params.link }}">
   {{ end }}
 
-  <div class="block__image-container">
-    <img
-      class="block__image"
-      alt="{{ .Params.alt }}"
-      loading="lazy"
-      src="/images/{{ .Params.block_type }}/{{ .Params.handle }}.jpg"
-    >
+  <div class="block__image-container {{ $imageClasses }}">
+    {{ if (ne .Params.hide_image true)}}
+      <img
+        class="block__image"
+        alt="{{ .Params.alt }}"
+        loading="lazy"
+        src="/images/{{ .Params.block_type }}/{{ .Params.handle }}.jpg"
+      >
 
-    {{ if or (eq .Params.block_type "clients") (eq .Params.block_type "logos")}}
-      <div class="block__logo">
-        {{ partial $logoPath . }}
-      </div>
+      {{ if or (eq .Params.block_type "clients") (eq .Params.block_type "logos")}}
+        <div class="block__logo">
+          {{ partial $logoPath . }}
+        </div>
+      {{ end }}
     {{ end }}
 
-    <div class="block__meta-container row">
-      <div class="block__meta s6 m3">
+    <div class="block__meta-container {{ $metaContainerClasses }}">
+      <div class="block__meta {{ $metaClasses }}">
         <h2 class="block__title">{{ .Title }}</h2>
 
         {{ if or (eq .Params.block_type "clients") (eq .Params.block_type "mountains")}}
@@ -86,8 +106,8 @@
     </a>
   {{ end }}
 
-  <div class="row">
-    <div class="block__content s8 m6 offset-m2">
+  <div class="{{ $contentRowClasses }}">
+    <div class="block__content {{ $contentClasses }}">
       {{ .Content }}
     </div>
   </div>

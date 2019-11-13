@@ -109,6 +109,21 @@
   }
 
   /**
+   * No image customisation.
+   */
+  &#{&}--no-image {
+    #{$parent}__meta-container {
+      display: block;
+      position: relative;
+    }
+
+    #{$parent}__meta {
+      background-color: transparent;
+      padding: 0;
+    }
+  }
+
+  /**
    * Logo customisation.
    */
   &#{&}--logos {

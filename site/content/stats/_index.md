@@ -8,7 +8,7 @@ colour: "green"
 
 {{<
   card
-  title="Stats"
+  title="Statistics"
   copy="I'm a numbers person; I like to keep track of all the distances I've travelled and mountains I've climbed."
 >}}
 

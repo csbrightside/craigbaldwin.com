@@ -84,34 +84,6 @@
     z-index: $LAYER_BASE;
   }
 
-  .logo {
-    height: auto;
-    width: 62%;
-
-    &--direct-doors {
-      color: rgb(230, 30, 38);
-      width: 75%;
-    }
-
-    &--sons {
-      color: rgb(238, 250, 213);
-      width: 35%;
-    }
-
-    &--hummingbird-bakery,
-    &--lightbox {
-      width: 88%;
-    }
-
-    &--lightbox {
-      margin-top: 7%;
-    }
-
-    &--newbie {
-      width: 70%;
-    }
-  }
-
   &__content {
     border-left: 3px solid currentColor;
     padding-left: $SPACING_S;
@@ -249,16 +221,6 @@
 
     &__logo {
       height: 100%;
-    }
-
-    .logo {
-      &--direct-doors {
-        width: 46%;
-      }
-
-      &--sons {
-        width: 20%;
-      }
     }
 
     &__content {

@@ -1,0 +1,47 @@
+/**
+ * Components > Logo.
+ * ------------------------------------------------------------------------------
+ * Brand specific styles for each logo.
+ *
+ */
+.logo {
+  height: auto;
+  width: 62%;
+
+  &#{&}--direct-doors {
+    color: rgb(230, 30, 38);
+    width: 75%;
+  }
+
+  &#{&}--hasbro {
+    width: 55%;
+  }
+
+  &#{&}--hummingbird-bakery,
+  &#{&}--lightbox {
+    width: 88%;
+  }
+
+  &#{&}--lightbox {
+    margin-top: 7%;
+  }
+
+  &#{&}--newbie {
+    width: 70%;
+  }
+
+  &#{&}--sons {
+    color: rgb(238, 250, 213);
+    width: 35%;
+  }
+
+  @include mq($from: medium) {
+    &#{&}--direct-doors {
+      width: 46%;
+    }
+
+    &#{&}--sons {
+      width: 20%;
+    }
+  }
+}

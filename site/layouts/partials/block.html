@@ -28,21 +28,6 @@
   {{ end }}
 
   <div class="block__image-container {{ $imageClasses }}">
-    {{ if (ne .Params.hide_image true)}}
-      <img
-        class="block__image"
-        alt="{{ .Params.alt }}"
-        loading="lazy"
-        src="/images/{{ .Params.block_type }}/{{ .Params.handle }}.jpg"
-      >
-
-      {{ if or (eq .Params.block_type "clients") (eq .Params.block_type "logos")}}
-        <div class="block__logo">
-          {{ partial $logoPath . }}
-        </div>
-      {{ end }}
-    {{ end }}
-
     <div class="block__meta-container {{ $metaContainerClasses }}">
       <div class="block__meta {{ $metaClasses }}">
         <h2 class="block__title">{{ .Title }}</h2>
@@ -101,14 +86,48 @@
         {{ end }}
       </div>
     </div>
+
+    {{ if (ne .Params.hide_image true)}}
+      {{ if .Params.copyright }}
+        <div class="block__copyright block__copyright--desktop sub-text">
+          {{ .Params.copyright }}
+        </div>
+      {{ end }}
+
+      <img
+        class="block__image"
+        {{ if .Params.alt }}
+          alt="{{ .Params.alt }}"
+        {{ else }}
+          role="decorative"
+        {{ end }}
+        loading="lazy"
+        src="/images/{{ .Params.block_type }}/{{ .Params.handle }}.jpg"
+      >
+
+      {{ if or (eq .Params.block_type "clients") (eq .Params.block_type "logos")}}
+        <div class="block__logo" role="decorative">
+          {{ partial $logoPath . }}
+        </div>
+      {{ end }}
+    {{ end }}
   </div>
+
   {{ if .Params.link }}
     </a>
   {{ end }}
 
   <div class="{{ $contentRowClasses }}">
-    <div class="block__content {{ $contentClasses }}">
-      {{ .Content }}
-    </div>
+    <div class="{{ $contentClasses }}">
+      <div class="block__content ">
+        {{ .Content }}
+      </div>
+
+      {{ if .Params.copyright }}
+        <div class="block__copyright block__copyright--mobile sub-text">
+          {{ .Params.copyright }}
+        </div>
+      {{ end }}
+      </div>
   </div>
 </div>

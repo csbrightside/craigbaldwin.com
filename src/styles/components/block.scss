@@ -7,13 +7,6 @@
 .block {
   $parent: &;
 
-  &__image-container {
-    display: flex;
-    flex-direction: column;
-    line-height: 0;
-    position: relative;
-  }
-
   &__link {
     @include transition(color);
     color: $COLOR_BLACK;
@@ -21,6 +14,13 @@
     #{$parent}__title {
       text-decoration: underline;
     }
+  }
+
+  &__image-container {
+    display: flex;
+    flex-direction: column;
+    line-height: 0;
+    position: relative;
   }
 
   &__link:hover {
@@ -99,7 +99,6 @@
     }
 
     #{$parent}__meta {
-      background-color: transparent;
       padding: 0;
     }
   }
@@ -124,13 +123,13 @@
       padding-bottom: 100%;
     }
 
+    #{$parent}__title {
+      @include visually-hidden;
+    }
+
     #{$parent}__logo {
       bottom: 0;
       height: 100%;
-    }
-
-    #{$parent}__title {
-      @include visually-hidden;
     }
   }
 
@@ -238,7 +237,10 @@
     }
 
     .no-transition & {
-      &__meta {
+      &__link,
+      &__image-container,
+      &__meta,
+      &__title {
         transition: none;
       }
     }

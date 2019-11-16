@@ -1,0 +1,23 @@
+{{ define "main" }}
+  {{- .Content -}}
+
+  <div class="blocks">
+    <div class="blocks__block chart">
+      <h2 class="chart__title">Distance By Foot (miles)</h2>
+
+      <div class="chart__chart">
+        <canvas js-chart="walking"></canvas>
+      </div>
+    </div>
+
+    <div class="blocks__block chart">
+      <h2 class="chart__title">Total Distances (miles)</h2>
+
+      <div class="chart__chart">
+        <canvas js-chart="total"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="/vendors/chart.min.js"></script>
+{{ end }}

@@ -1,0 +1,41 @@
+/**
+ * Base > Icon.
+ * ------------------------------------------------------------------------------
+ * Base styling of icons.
+ *
+ */
+.icon {
+  $parent: &;
+  // Icon width + spacing
+  padding-left: calc(16px + #{$SPACING_XS});
+  position: relative;
+
+  &__image {
+    @include transition(color);
+    color: $COLOR_BLACK;
+    display: inline-block;
+    height: 16px;
+    left: 0;
+    margin-top: -1px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+  }
+
+  &__text {
+    display: inline-block;
+  }
+
+  .is-dark & {
+    &__image {
+      color: $COLOR_DARK_MODE_WHITE;
+    }
+  }
+
+  .no-transition & {
+    &__image {
+      transition: none;
+    }
+  }
+}

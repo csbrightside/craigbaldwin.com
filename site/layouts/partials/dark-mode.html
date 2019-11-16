@@ -1,0 +1,16 @@
+<!-- Partials > Dark mode. -->
+<!-- Dark mode toggle. -->
+<button class="sub-text button button--text" js-dark-mode="toggle">
+  <span class="icon dark-mode" js-dark-mode="icon">
+    <span class="icon__image dark-mode__icon">
+      <span class="dark-mode__slide">
+        {{ partial "icons/dark-mode.svg" . }}
+        {{ partial "icons/light-mode.svg" . }}
+      </span>
+    </span>
+
+    <span class="icon__text dark-mode__text" js-dark-mode="text">
+      Enable dark mode
+    </span>
+  </span>
+</button>

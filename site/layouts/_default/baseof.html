@@ -1,0 +1,85 @@
+<!doctype html>
+<html
+  lang="{{ $.Site.Language.Lang }}"
+  data-mode="light"
+  js-dark-mode="container"
+>
+<head>
+  <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ end }}">
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="{{ .Description }}">
+  <meta name="pageHandle" content="{{ .Params.handle }}" js-page="handle">
+
+  {{ if (eq .Title "Index") }}
+    <meta property="og:title" content="{{ $.Site.Title }} &ndash; {{ $.Site.Params.tagline }}">
+  {{ else }}
+    <meta property="og:title" content="{{ $.Site.Title }} &ndash; {{ .Title }}">
+  {{ end }}
+	<meta property="og:description" content="{{ .Description }}">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="Craig Baldwin">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://craigbaldwin.com/">
+
+  <link href="/images/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="/images/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="/images/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <link href="/images/favicon/site.webmanifest" rel="manifest">
+  <link color="#1b2229" href="/images/favicon/safari-pinned-tab.svg" rel="mask-icon">
+  <link href="/images/favicon/favicon.ico" rel="shortcut icon">
+  <meta content="#1b2229" name="msapplication-TileColor">
+  <meta content="/images/favicon/browserconfig.xml" name="msapplication-config">
+  <meta content="#1b2229" name="theme-color">
+
+  <title>
+    {{ if (eq .Title "Index") }}
+      {{ $.Site.Title }} &ndash; {{ $.Site.Params.tagline }}
+    {{ else }}
+      {{ $.Site.Title }} &ndash; {{ .Title }}
+    {{ end }}
+  </title>
+
+  {{ $stylesheet := .Site.Data.webpack.main }}
+  {{ with $stylesheet.css }}
+    <link href="{{ relURL . }}" rel="stylesheet">
+  {{ end }}
+</head>
+
+<body
+  class="
+    template
+    template--{{ .Layout }}
+    template--{{ .Params.handle }}
+    template--{{ .Params.colour }}
+    no-js
+  "
+>
+  {{ block "header" . }}
+    {{ partial "header" . }}
+  {{ end }}
+
+  <main id="MainContent" class="main container">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    {{ block "footnotes" . }}
+      {{ partial "footnotes" . }}
+    {{ end }}
+
+    {{ block "footer" . }}
+      {{ partial "footer" . }}
+    {{ end }}
+  </footer>
+
+  {{ partial "theme-strings" . }}
+
+  {{ $script := .Site.Data.webpack.main }}
+  {{ with $script.js }}
+    <script src="{{ relURL . }}"></script>
+  {{ end }}
+</body>
+</html>

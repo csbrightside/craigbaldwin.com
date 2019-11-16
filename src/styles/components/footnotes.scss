@@ -1,0 +1,103 @@
+/**
+ * Components > Footnote.
+ * ------------------------------------------------------------------------------
+ * Individual footnote.
+ *
+ */
+.footnote {
+  @include transition(color);
+  align-items: center;
+  color: $COLOR_BLACK;
+  display: flex;
+  height: 60px;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+
+  &::before {
+    @include transition(background-color);
+    background-color: $COLOR_BLACK;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1px;
+  }
+
+  &__content {
+    padding-left: $SPACING_S;
+  }
+
+  &.is-active,
+  &:hover {
+    &::before {
+      transition: none;
+      width: 3px;
+    }
+
+    &.footnote--about {
+      background-color: rgba($COLOR_ORANGE, 0.25);
+
+      &::before {
+        background-color: $COLOR_ORANGE;
+      }
+    }
+
+    &.footnote--work {
+      background-color: rgba($COLOR_PURPLE, 0.25);
+
+      &::before {
+        background-color: $COLOR_PURPLE;
+      }
+    }
+
+    &.footnote--stats {
+      background-color: rgba($COLOR_GREEN, 0.25);
+
+      &::before {
+        background-color: $COLOR_GREEN;
+      }
+    }
+
+    &.footnote--contact {
+      background-color: rgba($COLOR_RED, 0.25);
+
+      &::before {
+        background-color: $COLOR_RED;
+      }
+    }
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+
+  &#{&}--home {
+    display: none;
+
+    .template-- & {
+      display: block;
+    }
+  }
+
+  .is-dark & {
+    color: $COLOR_DARK_MODE_WHITE;
+
+    &::before {
+      background-color: $COLOR_DARK_MODE_WHITE;
+    }
+  }
+
+  .no-transition & {
+    transition: none;
+
+    &::before {
+      transition: none;
+    }
+  }
+
+  @include mq($from: medium) {
+    height: 80px;
+  }
+}

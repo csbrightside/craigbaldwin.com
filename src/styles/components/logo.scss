@@ -1,0 +1,60 @@
+/**
+ * Components > Logo.
+ * ------------------------------------------------------------------------------
+ * Brand specific styles for each logo.
+ *
+ */
+.logo {
+  height: auto;
+  width: 62%;
+
+  &#{&}--crabtree-evelyn,
+  &#{&}--direct-doors,
+  &#{&}--sons {
+    color: rgb(255, 255, 255);
+  }
+
+  &#{&}--crabtree-evelyn {
+    width: 40%;
+  }
+
+  &#{&}--direct-doors {
+    width: 75%;
+  }
+
+  &#{&}--emma-bridgewater,
+  &#{&}--hummingbird-bakery,
+  &#{&}--lightbox {
+    width: 88%;
+  }
+
+  &#{&}--hasbro {
+    width: 51%;
+  }
+
+  &#{&}--lightbox {
+    margin-top: 7%;
+  }
+
+  &#{&}--newbie {
+    width: 70%;
+  }
+
+  &#{&}--sons {
+    width: 35%;
+  }
+
+  @include mq($from: medium) {
+    &#{&}--crabtree-evelyn {
+      width: 28%;
+    }
+
+    &#{&}--direct-doors {
+      width: 46%;
+    }
+
+    &#{&}--sons {
+      width: 20%;
+    }
+  }
+}

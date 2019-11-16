@@ -1,0 +1,137 @@
+<!-- Partials > Block. -->
+<!-- Individual block display. -->
+<!-- Supported types: mountains, clients, logos -->
+{{ $logoPath := printf "logos/%s%s" .Params.handle ".svg" }}
+{{ $blockClasses := cond (eq .Params.block_type "logos") "s4 m2" "s8" }}
+
+<!-- Set classes based on hide_image -->
+{{ $imageClasses := cond (eq .Params.hide_image true) "s8 m2" "" }}
+{{ $metaContainerClasses := cond (eq .Params.hide_image true) "" "row" }}
+{{ $metaClasses := cond (eq .Params.hide_image true) "" "s8 m3" }}
+{{ $contentRowClasses := cond (eq .Params.hide_image true) "s8 m6" "row" }}
+{{ $contentClasses := cond (eq .Params.hide_image true) "" "s8 m6 offset-m2" }}
+
+<div
+  class="
+    blocks__block
+    block
+    block--{{ .Params.block_type }}
+    {{ if (eq .Params.hide_image true)}}
+      block--no-image
+      row
+    {{ end }}
+    {{ $blockClasses }}
+  "
+>
+  {{ if .Params.link }}
+    <a class="block__link" href="{{ .Params.link }}">
+  {{ end }}
+
+  <div class="block__image-container {{ $imageClasses }}">
+    {{ if (ne .Params.block_type "logos")}}
+      <div class="block__meta-container {{ $metaContainerClasses }}">
+        <div class="block__meta {{ $metaClasses }}">
+          <h2 class="block__title">{{ .Title }}</h2>
+
+          {{ if or (eq .Params.block_type "clients") (eq .Params.block_type "mountains")}}
+            <div class="block__stats sub-text">
+              <!-- Mountains stats -->
+              {{ if .Params.location }}
+                <div class="block__stat icon">
+                  <span class="icon__image">
+                    {{ partial "icons/location.svg" . }}
+                  </span>
+
+                  <span class="icon__text">
+                    {{ .Params.location }} ({{ .Params.duration }} nights)
+                  </span>
+                </div>
+              {{ end }}
+
+              {{ if .Params.location }}
+                <div class="block__stat icon">
+                  <span class="icon__image">
+                    {{ partial "icons/distance.svg" . }}
+                  </span>
+
+                  <span class="icon__text">
+                    {{ .Params.distance }} miles
+                  </span>
+                </div>
+              {{ end }}
+
+              {{ if .Params.location }}
+                <div class="block__stat icon">
+                  <span class="icon__image">
+                    {{ partial "icons/mountains.svg" . }}
+                  </span>
+
+                  <span class="icon__text">
+                    {{ .Params.mountains }} ({{ .Params.mountains_new }} new)
+                  </span>
+                </div>
+              {{ end }}
+
+              {{ if .Params.location }}
+                <div class="block__stat icon">
+                  <span class="icon__image">
+                    {{ partial "icons/steps.svg" . }}
+                  </span>
+
+                  <span class="icon__text">
+                    {{ .Params.steps }} steps
+                  </span>
+                </div>
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+
+    {{ if (ne .Params.hide_image true)}}
+      {{ if .Params.copyright }}
+        <div class="block__copyright block__copyright--desktop sub-text">
+          {{ .Params.copyright }}
+        </div>
+      {{ end }}
+
+      {{ if (ne .Params.block_type "logos")}}
+        <img
+          class="block__image"
+          {{ if .Params.alt }}
+            alt="{{ .Params.alt }}"
+          {{ else }}
+            role="decorative"
+          {{ end }}
+          loading="lazy"
+          src="/images/{{ .Params.block_type }}/{{ .Params.handle }}.jpg"
+        >
+      {{ end }}
+
+      {{ if or (eq .Params.block_type "clients") (eq .Params.block_type "logos")}}
+        <div class="block__logo" role="decorative">
+          {{ partial $logoPath . }}
+        </div>
+      {{ end }}
+    {{ end }}
+  </div>
+
+  {{ if .Params.link }}
+    </a>
+  {{ end }}
+
+  <div class="{{ $contentRowClasses }}">
+    <div class="{{ $contentClasses }}">
+      <div class="block__content ">
+        {{ .Content }}
+      </div>
+
+      {{ if .Params.copyright }}
+        <div class="block__copyright block__copyright--mobile sub-text">
+          {{ .Params.copyright }}
+        </div>
+      {{ end }}
+      </div>
+  </div>
+</div>

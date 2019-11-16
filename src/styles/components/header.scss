@@ -1,0 +1,140 @@
+/**
+ * Components > Header.
+ * ------------------------------------------------------------------------------
+ * Header and site navigation.
+ *
+ */
+.header {
+  $parent: &;
+  margin-bottom: $SPACING_M;
+  padding: $SPACING_S 0;
+  position: relative;
+
+  &__container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    position: relative;
+    z-index: $LAYER_HEADER;
+  }
+
+  &__menu {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    height: 54px;
+    // Negative margin so padding rests on title height instead
+    margin: -20px 0;
+    position: relative;
+    transform: translateX($SPACING_S);
+    // Force menu button to touch edge of page
+    width: calc(50px + #{$SPACING_S} - 10px);
+    z-index: $LAYER_HEADER;
+  }
+
+  &__list {
+    line-height: $LINE_HEIGHT_S;
+  }
+
+  &__list-item {
+    &#{&}--home {
+      display: none;
+    }
+  }
+
+  &__link.is-active {
+    font-weight: $WEIGHT_BOLD;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  /**
+   * Navigation is a drawer on mobile devices.
+   */
+  @include mq($until: medium) {
+    &__navigation {
+      @include transition(background-color, transform);
+      background-color: $COLOR_LIGHT_GREY;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+      // Border + padding
+      padding: ($SPACING_S + $SPACING_S);
+      position: fixed;
+      right: 0;
+      top: 0;
+      transform: translateX(100%);
+      width: 100%;
+      z-index: $LAYER_DRAWER;
+
+      &:focus-within,
+      &.is-active {
+        transform: translateX(0);
+      }
+    }
+
+    &__list {
+      margin-top: auto;
+    }
+
+    &__list-item {
+      &:not(:last-child) {
+        margin-bottom: $SPACING_M;
+      }
+    }
+
+    &__link {
+      font-size: 2rem;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &__dark-mode {
+      margin-top: auto;
+    }
+
+    .is-dark & {
+      #{$parent}__navigation {
+        background-color: $COLOR_BLACK;
+      }
+    }
+  }
+
+  @include mq($from: medium) {
+    margin-bottom: $SPACING_L;
+    padding: $SPACING_M 0;
+
+    &__skip-link {
+      // Aligning skip link with logo link
+      padding-top: calc(#{$SPACING_L} + 4px);
+    }
+
+    &__menu {
+      display: none;
+    }
+
+    &__list {
+      display: flex;
+    }
+
+    &__list-item {
+      &:not(:last-child) {
+        margin-right: $SPACING_M;
+      }
+    }
+
+    &__dark-mode {
+      display: none;
+    }
+  }
+}

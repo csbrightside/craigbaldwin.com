@@ -1,0 +1,248 @@
+/**
+ * Components > Block.
+ * ------------------------------------------------------------------------------
+ * A block contains an image with text side-by-side.
+ *
+ */
+.block {
+  $parent: &;
+
+  &__link {
+    @include transition(color);
+    color: $COLOR_BLACK;
+
+    #{$parent}__title {
+      text-decoration: underline;
+    }
+  }
+
+  &__image-container {
+    display: flex;
+    flex-direction: column;
+    line-height: 0;
+    position: relative;
+  }
+
+  &__link:hover {
+    #{$parent}__title {
+      text-decoration: none;
+    }
+  }
+
+  &__meta-container {
+    position: relative;
+    z-index: $LAYER_RAISED;
+  }
+
+  &__meta {
+    @include transition(background-color);
+    line-height: $LINE_HEIGHT_S;
+    padding-bottom: $SPACING_S;
+    padding-right: $SPACING_S;
+  }
+
+  &__copyright {
+    line-height: $LINE_HEIGHT_S;
+    margin-top: $SPACING_S;
+
+    &#{&}--desktop {
+      display: none;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__stat {
+    &:first-child {
+      margin-top: $SPACING_XS;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: $SPACING_XS;
+    }
+  }
+
+  &__image {
+    margin-bottom: $SPACING_S;
+    order: 1;
+    width: 100%;
+  }
+
+  &__logo {
+    align-items: center;
+    bottom: $SPACING_S;
+    display: flex;
+    // Full height - height of title - image bottom margin
+    height: calc(100% - 47px - #{$SPACING_S});
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: $LAYER_BASE;
+  }
+
+  &__content {
+    border-left: 3px solid currentColor;
+    padding-left: $SPACING_S;
+  }
+
+  /**
+   * No image customisation.
+   */
+  &#{&}--no-image {
+    #{$parent}__meta-container {
+      display: block;
+      position: relative;
+    }
+
+    #{$parent}__meta {
+      padding: 0;
+    }
+  }
+
+  /**
+   * Logo customisation.
+   */
+  &#{&}--logos {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+
+    #{$parent}__link:hover #{$parent}__image-container {
+      box-shadow: 2px 2px 0 0 currentColor;
+    }
+
+    #{$parent}__image-container {
+      @include transition(border-color);
+      border: 1px solid currentColor;
+      height: 0;
+      margin-bottom: 0;
+      padding-bottom: 100%;
+    }
+
+    #{$parent}__title {
+      @include visually-hidden;
+    }
+
+    #{$parent}__logo {
+      bottom: 0;
+      height: 100%;
+    }
+  }
+
+  /**
+   * Template colours.
+   */
+  .template--green & {
+    &__meta {
+      background-color: mix($COLOR_GREEN, $COLOR_WHITE, 25%);
+    }
+
+    &__content {
+      border-color: $COLOR_GREEN;
+    }
+  }
+
+  .template--purple & {
+    &__meta {
+      background-color: mix($COLOR_PURPLE, $COLOR_WHITE, 25%);
+    }
+
+    &__content {
+      border-color: $COLOR_PURPLE;
+    }
+  }
+
+  /**
+   * Dark mode.
+   */
+  .is-dark & {
+    &__link {
+      color: $COLOR_DARK_MODE_WHITE;
+    }
+  }
+
+  .is-dark .template--green & {
+    &__meta {
+      background-color: mix($COLOR_GREEN, $COLOR_BLACK, 25%);
+    }
+  }
+
+  .is-dark .template--purple & {
+    &__meta {
+      background-color: mix($COLOR_PURPLE, $COLOR_BLACK, 25%);
+    }
+  }
+
+  /**
+   * Media queries.
+   */
+  @include mq($from: medium) {
+    &__image-container {
+      display: block;
+    }
+
+    &__meta-container {
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    &__meta {
+      padding-bottom: $SPACING_M;
+      padding-right: $SPACING_M;
+    }
+
+    &__copyright {
+      margin-top: 0;
+      padding-bottom: $SPACING_2XS;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: rotate(90deg) translate(100%, -100%);
+      transform-origin: 100% 0%;
+
+      &#{&}--mobile {
+        display: none;
+      }
+
+      &#{&}--desktop {
+        display: block;
+      }
+    }
+
+    &__image {
+      margin-bottom: $SPACING_M;
+    }
+
+    &__logo {
+      bottom: $SPACING_M;
+      // Height - image bottom margin
+      height: calc(100% - #{$SPACING_M});
+    }
+
+    &__content {
+      padding-left: $SPACING_M;
+    }
+
+    &#{&}--logos {
+      #{$parent}__logo {
+        bottom: 0;
+        height: 100%;
+      }
+    }
+
+    .no-transition & {
+      &__link,
+      &__image-container,
+      &__meta,
+      &__title {
+        transition: none;
+      }
+    }
+  }
+}

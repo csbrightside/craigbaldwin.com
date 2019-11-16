@@ -1,0 +1,48 @@
+<!-- Partials > Header. -->
+<!-- Header with logo and links. -->
+{{ $url := .URL }}
+
+<header class="header" role="banner">
+  <div class="header__container container">
+    <a class="skip-link" href="{{ .URL }}#MainContent">
+      Skip to content
+    </a>
+
+    <a class="header__logo text-link" href="{{ "/" | relURL }}">
+      {{ $.Site.Params.siteTitle }}
+    </a>
+
+    <button class="header__menu" js-header="menuButton">
+      <span class="burger burger--top"></span>
+      <span class="burger burger--bottom"></span>
+
+      <span class="visually-hidden">Menu</span>
+    </button>
+
+    <nav
+      class="header__navigation"
+      role="navigation"
+      js-header="navigationDrawer"
+    >
+      <ul class="header__list">
+        {{ range .Site.Menus.main }}
+          <li class="header__list-item header__list-item--{{ .Identifier }}">
+            <a
+              class="
+                header__link
+                navigation
+                {{ if in $url .URL }}is-active{{ end }}"
+              href="{{ .URL }}"
+            >
+              {{ .Title }}
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+
+      <div class="header__dark-mode">
+        {{ partial "dark-mode" . }}
+      </div>
+    </nav>
+  </div>
+</header>

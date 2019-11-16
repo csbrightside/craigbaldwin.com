@@ -1,0 +1,13 @@
+<!-- Shortcodes > Card. -->
+<!-- Card title block. -->
+<div class="card card--{{ lower $.Page.Title }}">
+  {{ if .Get "title" }}
+    <h1 class="card__title">{{ .Get "title" }}</h1>
+  {{ end }}
+
+  <div class="row">
+    <p class="card__copy standfirst col s8 m6">
+      {{ .Get "copy" }}
+    </p>
+  </div>
+</div>

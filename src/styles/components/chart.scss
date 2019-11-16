@@ -1,0 +1,25 @@
+/**
+ * Componeont > Chart.
+ * ------------------------------------------------------------------------------
+ * Chart blocks.
+ *
+ */
+.chart {
+  &__title {
+    margin-bottom: $SPACING_P;
+  }
+
+  &__chart {
+    height: 0;
+    max-width: 100%;
+    padding-bottom: 47%;
+    position: relative;
+    width: 100%;
+  }
+
+  @include mq($from: medium) {
+    &__chart {
+      padding-bottom: 49%;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+/**
+ * Components > Blocks.
+ * ------------------------------------------------------------------------------
+ * Blocks contain multiple block elements.
+ *
+ */
+.blocks {
+  &__block {
+    &:not(:last-child) {
+      // Desired margin - grid gap
+      margin-bottom: ($SPACING_L - $SPACING_S);
+    }
+  }
+
+  @include mq($from: medium) {
+    &__block {
+      &:not(:last-child) {
+        // Desired margin - grid gap
+        margin-bottom: ($SPACING_XL - $SPACING_S);
+      }
+    }
+  }
+}

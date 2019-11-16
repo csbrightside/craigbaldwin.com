@@ -1,0 +1,84 @@
+/**
+ * Components > Burger.
+ * ------------------------------------------------------------------------------
+ * The burger menu and its animation.
+ *
+ */
+.burger,
+.burger::before,
+.burger::after {
+  @include transition(background-color, opacity $TIMING_M, transform);
+  background-color: $COLOR_BLACK;
+  content: '';
+  height: 2px;
+  position: absolute;
+  transform-origin: 50% 50%;
+  width: 28px;
+
+  .is-dark & {
+    background-color: $COLOR_DARK_MODE_WHITE;
+  }
+
+  .no-transition {
+    @include transition(opacity $TIMING_M, transform);
+  }
+}
+
+.burger {
+  left: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &::before {
+    left: 0;
+    top: 0;
+  }
+
+  &::after {
+    right: 0;
+    top: 0;
+  }
+
+  &#{&}--top {
+    background-color: transparent;
+  }
+
+  &#{&}--bottom {
+    $distance: 8px;
+    background-color: transparent;
+
+    &::before {
+      transform: translateY(-$distance);
+    }
+
+    &::after {
+      transform: translateY($distance);
+    }
+  }
+
+  .is-active & {
+    &--top {
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+
+    &--bottom {
+      $distance: 14px;
+
+      &::before {
+        opacity: 0;
+        transform: translateY(-$distance);
+      }
+
+      &::after {
+        opacity: 0;
+        transform: translateY($distance);
+      }
+    }
+  }
+}

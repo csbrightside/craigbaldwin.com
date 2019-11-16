@@ -1,0 +1,9 @@
+{{ define "main" }}
+  {{- .Content -}}
+
+  <div class="blocks">
+    {{ range .Pages }}
+      {{ .Title }}
+    {{ end }}
+  </div>
+{{ end }}

@@ -1,0 +1,187 @@
+/**
+ * Base > Typography.
+ * ------------------------------------------------------------------------------
+ * All typography styles.
+ *
+ */
+// stylelint-disable unit-blacklist
+
+/**
+ * Font.
+ */
+$FONT: 'Eczar', serif;
+
+/**
+ * Line height.
+ */
+$LINE_HEIGHT_S: 1;
+$LINE_HEIGHT_M: 1.35;
+$LINE_HEIGHT_L: 1.5;
+
+/**
+ * Font weight.
+ */
+$WEIGHT_REGULAR: 400;
+$WEIGHT_BOLD: 700;
+
+:root {
+  font-size: 62.5%;
+}
+
+/**
+ * Font face.
+ */
+@import url('https://fonts.googleapis.com/css?family=Eczar:400,700&display=swap');
+
+/**
+ * Element styling.
+ */
+body {
+  @include transition(color);
+  color: $COLOR_BLACK;
+  font-family: $FONT;
+  font-size: 1.4rem;
+  font-weight: $WEIGHT_REGULAR;
+  line-height: $LINE_HEIGHT_S;
+
+  .is-dark & {
+    color: $COLOR_DARK_MODE_WHITE;
+  }
+
+  .no-transition & {
+    transition: none;
+  }
+}
+
+/**
+ * Headings.
+ */
+h1, h2, .h2, h3, .h3 {
+  font-weight: $WEIGHT_BOLD;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2,
+.h2 {
+  font-size: 2rem;
+  line-height: $LINE_HEIGHT_M;
+}
+
+h3,
+.h3 {
+  font-size: 1.4rem;
+  line-height: $LINE_HEIGHT_M;
+}
+
+/**
+ * Text.
+ */
+p, .body-1 {
+  font-size: 1.8rem;
+  line-height: $LINE_HEIGHT_L;
+
+  &:not(:last-child) {
+    margin-bottom: $SPACING_P;
+  }
+}
+
+strong {
+  font-weight: $WEIGHT_BOLD;
+}
+
+.standfirst {
+  font-size: 2rem;
+  line-height: $LINE_HEIGHT_M;
+}
+
+.navigation {
+  @extend %text-link;
+  font-size: 1.4rem;
+  line-height: $LINE_HEIGHT_S;
+}
+
+.sub-text {
+  font-size: 1.4rem;
+}
+
+.button {
+  cursor: pointer;
+  font-family: $FONT;
+  font-weight: $WEIGHT_REGULAR;
+  line-height: $LINE_HEIGHT_S;
+  text-decoration: none;
+
+  &#{&}--text {
+    background: none;
+    border: 0;
+    color: inherit;
+    padding: 0;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/**
+ * Lists
+ */
+ul {
+  font-size: 1.8rem;
+  line-height: $LINE_HEIGHT_L;
+
+  main & {
+    &:not(:last-child) {
+      margin-bottom: $SPACING_P;
+    }
+  }
+}
+
+li {
+  main & {
+    padding-left: $SPACING_S;
+    position: relative;
+
+    &::before {
+      background-color: currentColor;
+      content: '';
+      display: inline-block;
+      height: 0.35em;
+      left: 0;
+      position: absolute;
+      top: 0.5em;
+      transform: rotate(45deg);
+      width: 0.35em;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: $SPACING_3XS;
+    }
+  }
+}
+
+/**
+ * Helpers.
+ */
+.text-link,
+%text-link,
+h2 > a,
+h3 > a,
+p > a,
+li > a,
+strong > a {
+  color: currentColor;
+  display: inline-block;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    text-decoration: none;
+  }
+}

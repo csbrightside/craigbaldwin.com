@@ -1,0 +1,71 @@
+/**
+ * Base > Animation.
+ * ------------------------------------------------------------------------------
+ * Animation timing, easing, and mixins.
+ *
+ */
+$TIMING_S: 0.2s;
+$TIMING_M: 0.4s;
+$TIMING_L: 0.6s;
+$TIMING_XL: 1.2s;
+
+$EASING: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+@mixin transition($transitions...) {
+  $output: ();
+
+  @each $transition in $transitions {
+    $output: append($output, get-transition-properties($transition), comma);
+  }
+  transition: $output;
+}
+
+/**
+ * Returns the transition properties in the correct format
+ * This function is used by @mixin transition($transitions...)
+ */
+// stylelint-disable
+@function get-transition-properties($transition) {
+  $property: transform;
+  $duration: $TIMING_L;
+  $easing: $EASING;
+  $delay: null;
+
+  $defaultProperties: (
+    $property,
+    $duration,
+    $easing,
+    $delay
+  );
+
+  $properties: ();
+
+  @for $i from 1 through length($defaultProperties) {
+    $p: null;
+
+    @if $i <= length($transition) {
+      $p: nth($transition, $i);
+    } @else {
+      $p: nth($defaultProperties, $i);
+    }
+
+    $properties: append($properties, $p);
+  }
+
+  @return $properties;
+}
+// stylelint-enable
+
+html {
+  // stylelint-disable
+  @media (prefers-reduced-motion: reduce) {
+    transition: none !important;
+
+    *,
+    *::before,
+    *::after {
+      transition: none !important;
+    }
+  }
+  // stylelint-enable
+}

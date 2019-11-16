@@ -1,0 +1,28 @@
+<!-- Partials > Footer. -->
+<!-- Site footer. -->
+{{ $url := .URL }}
+{{ $page := .Title }}
+
+<div class="footer__footnotes container row">
+  {{ range .Site.Menus.main }}
+    <a
+      class="
+        footer__footnote
+        footnote footnote--{{ .Identifier}}
+        s4 m2
+        {{ if (eq $url .URL) }}is-active{{ end }}
+        {{ if and (eq $page "Distances") (eq .Title "Stats") }}is-active{{ end }}
+        {{ if and (eq $page "Mountains") (eq .Title "Stats") }}is-active{{ end }}
+      "
+      href="{{ .URL }}"
+    >
+      <span class="footnote__content">
+        <h2 class="footnote__title h3">{{ .Title }}</h2>
+
+        <p class="footnote__copy sub-text">
+          {{ .Post }}
+        </p>
+      </span>
+    </a>
+  {{ end }}
+</div>

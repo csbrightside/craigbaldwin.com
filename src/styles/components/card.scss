@@ -31,28 +31,25 @@
   /**
    * Colours.
    */
-  .template--about &,
-  .template--info & {
+  .template--orange & {
     &__title::after {
       background-color: $COLOR_ORANGE;
     }
   }
 
-  .template--work & {
+  .template--purple & {
     &__title::after {
       background-color: $COLOR_PURPLE;
     }
   }
 
-  .template--stats &,
-  .template--distances &,
-  .template--mountains & {
+  .template--green & {
     &__title::after {
       background-color: $COLOR_GREEN;
     }
   }
 
-  .template--contact & {
+  .template--red & {
     &__title::after {
       background-color: $COLOR_RED;
     }

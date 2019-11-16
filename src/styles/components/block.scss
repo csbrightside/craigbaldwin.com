@@ -136,7 +136,7 @@
   /**
    * Template colours.
    */
-  .template--mountains & {
+  .template--green & {
     &__meta {
       background-color: mix($COLOR_GREEN, $COLOR_WHITE, 25%);
     }
@@ -146,7 +146,7 @@
     }
   }
 
-  .template--work & {
+  .template--purple & {
     &__meta {
       background-color: mix($COLOR_PURPLE, $COLOR_WHITE, 25%);
     }
@@ -165,13 +165,13 @@
     }
   }
 
-  .is-dark .template--mountains & {
+  .is-dark .template--green & {
     &__meta {
       background-color: mix($COLOR_GREEN, $COLOR_BLACK, 25%);
     }
   }
 
-  .is-dark .template--work & {
+  .is-dark .template--purple & {
     &__meta {
       background-color: mix($COLOR_PURPLE, $COLOR_BLACK, 25%);
     }

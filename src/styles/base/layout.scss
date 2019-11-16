@@ -56,22 +56,19 @@ html {
   margin: $SPACING_S;
   min-height: calc(100vh - (2 * #{$SPACING_S}));
 
-  &#{&}--about,
-  &#{&}--info {
+  &#{&}--orange {
     background-color: rgba($COLOR_ORANGE, 0.25);
   }
 
-  &#{&}--work {
+  &#{&}--purple {
     background-color: rgba($COLOR_PURPLE, 0.25);
   }
 
-  &#{&}--stats,
-  &#{&}--distances,
-  &#{&}--mountains {
+  &#{&}--green {
     background-color: rgba($COLOR_GREEN, 0.25);
   }
 
-  &#{&}--contact {
+  &#{&}--red {
     background-color: rgba($COLOR_RED, 0.25);
   }
 }

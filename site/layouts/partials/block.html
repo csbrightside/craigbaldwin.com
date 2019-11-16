@@ -94,16 +94,18 @@
         </div>
       {{ end }}
 
-      <img
-        class="block__image"
-        {{ if .Params.alt }}
-          alt="{{ .Params.alt }}"
-        {{ else }}
-          role="decorative"
-        {{ end }}
-        loading="lazy"
-        src="/images/{{ .Params.block_type }}/{{ .Params.handle }}.jpg"
-      >
+      {{ if (ne .Params.block_type "logos")}}
+        <img
+          class="block__image"
+          {{ if .Params.alt }}
+            alt="{{ .Params.alt }}"
+          {{ else }}
+            role="decorative"
+          {{ end }}
+          loading="lazy"
+          src="/images/{{ .Params.block_type }}/{{ .Params.handle }}.jpg"
+        >
+      {{ end }}
 
       {{ if or (eq .Params.block_type "clients") (eq .Params.block_type "logos")}}
         <div class="block__logo" role="decorative">

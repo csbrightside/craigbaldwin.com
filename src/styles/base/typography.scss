@@ -39,7 +39,6 @@ $WEIGHT_BOLD: 700;
 body {
   @include transition(color);
   color: $COLOR_BLACK;
-  font-display: auto;
   font-family: $FONT;
   font-size: 1.4rem;
   font-weight: $WEIGHT_REGULAR;

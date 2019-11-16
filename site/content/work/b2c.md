@@ -2,7 +2,7 @@
 block_type: "clients"
 title: "B2C client"
 handle: "b2c"
-weight: 3
+weight: 4
 hide_image: true
 ---
 

@@ -8,18 +8,28 @@
   height: auto;
   width: 62%;
 
+  &#{&}--crabtree-evelyn,
+  &#{&}--direct-doors,
+  &#{&}--sons {
+    color: rgb(255, 255, 255);
+  }
+
+  &#{&}--crabtree-evelyn {
+    width: 40%;
+  }
+
   &#{&}--direct-doors {
-    color: rgb(230, 30, 38);
     width: 75%;
   }
 
-  &#{&}--hasbro {
-    width: 55%;
-  }
-
+  &#{&}--emma-bridgewater,
   &#{&}--hummingbird-bakery,
   &#{&}--lightbox {
     width: 88%;
+  }
+
+  &#{&}--hasbro {
+    width: 51%;
   }
 
   &#{&}--lightbox {
@@ -31,11 +41,14 @@
   }
 
   &#{&}--sons {
-    color: rgb(238, 250, 213);
     width: 35%;
   }
 
   @include mq($from: medium) {
+    &#{&}--crabtree-evelyn {
+      width: 28%;
+    }
+
     &#{&}--direct-doors {
       width: 46%;
     }

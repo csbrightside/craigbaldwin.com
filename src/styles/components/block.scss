@@ -73,10 +73,10 @@
 
   &__logo {
     align-items: center;
-    bottom: 0;
+    bottom: $SPACING_S;
     display: flex;
-    // Full height - height of title
-    height: calc(100% - 47px);
+    // Full height - height of title - image bottom margin
+    height: calc(100% - 47px - #{$SPACING_S});
     justify-content: center;
     left: 0;
     position: absolute;
@@ -125,6 +125,7 @@
     }
 
     #{$parent}__logo {
+      bottom: 0;
       height: 100%;
     }
 
@@ -220,11 +221,20 @@
     }
 
     &__logo {
-      height: 100%;
+      bottom: $SPACING_M;
+      // Height - image bottom margin
+      height: calc(100% - #{$SPACING_M});
     }
 
     &__content {
       padding-left: $SPACING_M;
+    }
+
+    &#{&}--logos {
+      #{$parent}__logo {
+        bottom: 0;
+        height: 100%;
+      }
     }
 
     .no-transition & {

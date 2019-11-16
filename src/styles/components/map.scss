@@ -116,10 +116,4 @@
       padding-bottom: 45%;
     }
   }
-
-  @include mq($from: wide) {
-    &__display {
-      padding-bottom: 30%;
-    }
-  }
 }

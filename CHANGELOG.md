@@ -1,10 +1,6 @@
 # Version 12
 
-## 12.0.0 – 2019-08-24
+## 12.0.0 – 2019-11-16
 
 * Initial launch
-* Site completely rebuilt using Hugo
-
-# Previous Versions
-
-See the previous versions section on the [info](/about/info) page.
+* Site completely rebuilt using Hugo and deployed using Netlify

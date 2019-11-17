@@ -11,6 +11,7 @@
  */
 const selectors = {
   counter: '[js-counter="number"]',
+  days: '[js-counter="days"]',
 };
 
 /**
@@ -23,6 +24,7 @@ export default () => {
    */
   const nodeSelectors = {
     counter: document.querySelector(selectors.counter),
+    days: document.querySelector(selectors.days),
   };
 
   /**
@@ -44,6 +46,10 @@ export default () => {
     difference = Math.ceil(difference / 1000 / 60 / 60 / 24);
 
     nodeSelectors.counter.innerText = difference;
+
+    if (difference === 1) {
+      nodeSelectors.days.innerText = 'day';
+    }
   }
 
   /**

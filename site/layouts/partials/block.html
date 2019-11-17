@@ -24,7 +24,11 @@
   "
 >
   {{ if .Params.link }}
-    <a class="block__link" href="{{ .Params.link }}">
+    <a
+      class="block__link"
+      href="{{ .Params.link }}"
+      aria-label="Visit the {{ .Title }} store"
+    >
   {{ end }}
 
   <div class="block__image-container {{ $imageClasses }}">
@@ -102,7 +106,7 @@
           {{ if .Params.alt }}
             alt="{{ .Params.alt }}"
           {{ else }}
-            role="decorative"
+            role="presentation"
           {{ end }}
           loading="lazy"
           src="/images/{{ .Params.block_type }}/{{ .Params.handle }}.jpg"
@@ -110,7 +114,7 @@
       {{ end }}
 
       {{ if or (eq .Params.block_type "clients") (eq .Params.block_type "logos")}}
-        <div class="block__logo" role="decorative">
+        <div class="block__logo" role="presentation">
           {{ partial $logoPath . }}
         </div>
       {{ end }}

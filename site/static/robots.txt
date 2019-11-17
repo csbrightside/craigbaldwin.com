@@ -1,6 +1,2 @@
 User-agent: *
-Disallow: /old
 Disallow: /assets
-Disallow: /404.html
-Disallow: /work/*
-Disallow: /stats/mountains/*

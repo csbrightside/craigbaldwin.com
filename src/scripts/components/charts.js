@@ -32,7 +32,7 @@ export default () => {
    * Chart.js global configuration.
    */
   Chart.defaults.global.defaultFontColor = 'rgba(27, 34, 41, 1)';
-  Chart.defaults.global.defaultFontFamily = "SpaceGrotesk, Arial, sans-serif";
+  Chart.defaults.global.defaultFontFamily = "Eczar, serif";
   Chart.defaults.global.defaultFontSize = 12;
   Chart.defaults.global.tooltips.backgroundColor = 'rgba(27, 34, 41, 1)';
   Chart.defaults.global.tooltips.position = 'nearest';

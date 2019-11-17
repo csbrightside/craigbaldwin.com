@@ -1,6 +1,6 @@
 ---
 title: "Info"
-description: "This is version 12 of the site."
+description: "You are viewing version 12.0.1 of the site."
 handle: "info"
 layout: "text"
 colour: "orange"
@@ -9,10 +9,10 @@ colour: "orange"
 {{<
   card
   title="Info"
-  copy="This is version 12 of the site."
+  copy="You are viewing version 12.0.1 of the site."
 >}}
 
-This version has been online for <span data-launch="2019-11-16" js-counter="number">0</span> <span js-counter="days">days</span>.
+This version has been online for <span data-launch="2019-11-16" js-counter="number">0</span> <span js-counter="days">days</span>. It launched on 16/11/2019.
 
 ## Changelog
 
@@ -20,7 +20,7 @@ To see the changelog visit the [GitHub repo](https://github.com/csbrightside/cra
 
 ## Tech stack
 
-This site has been built using [Hugo](https://gohugo.io/) and the [Victor Hugo](https://github.com/netlify-templates/victor-hugo) template. It has been developed using HTML, SCSS, vanilla JS, and markdown. It does not support Internet Explorer 11. The source code can be viewed on [GitHub](https://github.com/csbrightside/craigbaldwin.com).
+This site has been built using [Hugo](https://gohugo.io/) and the [Victor Hugo](https://github.com/netlify-templates/victor-hugo) template. It has been developed using HTML, SCSS, vanilla JS, and markdown. The font used is [Eczar](https://fonts.google.com/specimen/Eczar). It does not support Internet Explorer 11. The source code can be viewed on [GitHub](https://github.com/csbrightside/craigbaldwin.com).
 
 The repo is continuously deployed using [Netlify](https://www.netlify.com/).
 

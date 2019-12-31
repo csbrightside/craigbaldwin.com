@@ -86,6 +86,10 @@ p, .body-1 {
   &:not(:last-child) {
     margin-bottom: $SPACING_P;
   }
+
+  .body-2 & {
+    font-size: 1.4rem;
+  }
 }
 
 strong {

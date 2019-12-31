@@ -17,6 +17,23 @@
         <canvas js-chart="total"></canvas>
       </div>
     </div>
+
+    <!-- Year summaries -->
+    <div class="blocks__block articles">
+      <h2 class="articles__title">Of Note</h2>
+
+      {{ range (.Pages.ByParam "handle").Reverse }}
+        <div class="articles__article article">
+          <h3 class="article__title">
+            {{ .Params.Handle }}
+          </h3>
+
+          <div class="article__body body-2">
+            {{ .Content }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
   </div>
 
   <script src="/vendors/chart.min.js"></script>

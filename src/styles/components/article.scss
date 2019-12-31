@@ -1,0 +1,11 @@
+/**
+ * Components > Article
+ * ------------------------------------------------------------------------------
+ * An article is generally text and its title.
+ *
+ */
+.article {
+  &__title {
+    margin-bottom: $SPACING_3XS;
+  }
+}

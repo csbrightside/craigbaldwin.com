@@ -1,4 +1,4 @@
-# Craig Baldwin [dot] com
+# [Craig Baldwin [dot] com](https://craigbaldwin.com)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a84b60d8-a9e3-451a-bc1c-1cf156b7b85f/deploy-status)](https://app.netlify.com/sites/tender-shaw-bc6f22/deploys)
 

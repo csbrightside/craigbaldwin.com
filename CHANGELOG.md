@@ -7,6 +7,7 @@ This changelog only provides headline changes, see the commit history for all ch
 * Added yearly summaries to distances page
 * Updated distances graphs with 2019
 * Linked README to the site
+* Fixed non-HTTPS and out-of-date links
 
 ## 12.0.1 - 2019-11-17
 

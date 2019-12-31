@@ -1,0 +1,27 @@
+/**
+ * Components > Articles
+ * ------------------------------------------------------------------------------
+ * Articles contain multiple article elements.
+ *
+ */
+.articles {
+  &__article {
+    &:not(:last-child) {
+      // Desired margin - grid gap
+      margin-bottom: ($SPACING_M - $SPACING_S);
+    }
+  }
+
+  &__title {
+    margin-bottom: $SPACING_P;
+  }
+
+  @include mq($from: medium) {
+    &__article {
+      &:not(:last-child) {
+        // Desired margin - grid gap
+        margin-bottom: ($SPACING_M - $SPACING_S);
+      }
+    }
+  }
+}

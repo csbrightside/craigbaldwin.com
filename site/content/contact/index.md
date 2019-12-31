@@ -13,10 +13,10 @@ colour: "red"
 >}}
 
 * [Email](mailto:craigsbaldwin@gmail.com) – going to have to be interesting to get a response
-* [Daytum](http://daytum.com/CraigBaldwin) – statistics tracking of my travels
+* [Daytum](https://daytum.com/CraigBaldwin) – statistics tracking of my travels
 * [GitHub](https://github.com/csbrightside) – personal coding projects
 * [Instagram](https://www.instagram.com/craigsbaldwin/) – photos from my wanders
-* [Last.fm](http://www.last.fm/user/CSBrightside) – music listening habits
-* [LinkedIn](http://uk.linkedin.com/in/craigbaldwin/) – professional networking
+* [Last.fm](https://www.last.fm/user/CSBrightside) – music listening habits
+* [LinkedIn](https://uk.linkedin.com/in/craigbaldwin/) – professional networking
 * [Strava](https://www.strava.com/athletes/craigbaldwin) – running and swimming
 * [Twitter](https://twitter.com/CraigBaldwin) – nothing much anymore

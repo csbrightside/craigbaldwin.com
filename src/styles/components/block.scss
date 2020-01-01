@@ -178,6 +178,20 @@
   }
 
   /**
+   * a11y.
+   */
+  .is-tabbable & {
+    #{$parent}__link:focus #{$parent}__title {
+      @include focus-ring;
+      text-decoration: none;
+    }
+
+    &#{$parent}--logos #{$parent}__link:focus #{$parent}__image-container {
+      @include focus-ring;
+    }
+  }
+
+  /**
    * Media queries.
    */
   @include mq($from: medium) {

@@ -1,6 +1,7 @@
 <!-- Partials > Header. -->
 <!-- Header with logo and links. -->
 {{ $url := .URL }}
+{{ $page := .Title }}
 
 <header class="header" role="banner">
   <div class="header__container container">
@@ -8,9 +9,17 @@
       Skip to content
     </a>
 
+    {{ if (eq $page "Index") }}
+      <h1 class="header__heading">
+    {{ end }}
+
     <a class="header__logo text-link" href="{{ "/" | relURL }}">
       {{ $.Site.Params.siteTitle }}
     </a>
+
+    {{ if (eq $page "Index") }}
+      </h1>
+    {{ end }}
 
     <button class="header__menu" js-header="menuButton">
       <span class="burger burger--middle"></span>
@@ -35,6 +44,8 @@
               href="{{ .URL }}"
             >
               {{ .Title }}
+
+              <span class="visually-hidden"> {{ .Post }}</span>
             </a>
           </li>
         {{ end }}

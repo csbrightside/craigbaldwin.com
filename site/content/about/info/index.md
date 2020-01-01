@@ -1,6 +1,6 @@
 ---
 title: "Info"
-description: "You are viewing version 12.1.0 of the site."
+description: "You are viewing version 12.1.1 of the site."
 handle: "info"
 layout: "text"
 colour: "orange"
@@ -9,7 +9,7 @@ colour: "orange"
 {{<
   card
   title="Info"
-  copy="You are viewing version 12.1.0 of the site."
+  copy="You are viewing version 12.1.1 of the site."
 >}}
 
 This version has been online for <span data-launch="2019-11-16" js-counter="number">0</span> <span js-counter="days">days</span>. It launched on 16/11/2019.

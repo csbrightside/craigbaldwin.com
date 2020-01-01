@@ -4,6 +4,8 @@
 {{ $page := .Title }}
 
 <div class="footer__footnotes container row">
+  <h2 class="visually-hidden">Other pages</h2>
+
   {{ range .Site.Menus.main }}
     <a
       class="
@@ -17,7 +19,7 @@
       href="{{ .URL }}"
     >
       <span class="footnote__content">
-        <h2 class="footnote__title h3">{{ .Title }}</h2>
+        <h3 class="footnote__title">{{ .Title }}</h3>
 
         <p class="footnote__copy sub-text">
           {{ .Post }}

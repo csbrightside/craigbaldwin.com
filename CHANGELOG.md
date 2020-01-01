@@ -2,6 +2,12 @@
 
 This changelog only provides headline changes, see the commit history for all changes.
 
+## 12.1.1 - 2020-01-01
+
+* Updated about page content
+* Updated work page content
+* Fixed more accessibility issues across the site
+
 ## 12.1.0 - 2020-01-01
 
 * Added yearly summaries to distances page

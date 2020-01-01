@@ -19,7 +19,7 @@
     background-color: $COLOR_DARK_MODE_WHITE;
   }
 
-  .no-transition {
+  .no-transition & {
     @include transition(opacity $TIMING_M, transform);
   }
 }
@@ -39,11 +39,11 @@
     top: 0;
   }
 
-  &#{&}--top {
+  &#{&}--middle {
     background-color: transparent;
   }
 
-  &#{&}--bottom {
+  &#{&}--outside {
     $distance: 8px;
     background-color: transparent;
 
@@ -57,7 +57,7 @@
   }
 
   .is-active & {
-    &--top {
+    &--middle {
       &::before {
         transform: rotate(45deg);
       }
@@ -67,7 +67,7 @@
       }
     }
 
-    &--bottom {
+    &--outside {
       $distance: 14px;
 
       &::before {

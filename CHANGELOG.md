@@ -1,6 +1,14 @@
 # Changelog
 
-This changelog only provides a headline changes, see the commit history for all changes.
+This changelog only provides headline changes, see the commit history for all changes.
+
+## 12.1.0 - 2020-01-01
+
+* Added yearly summaries to distances page
+* Updated distances graphs with 2019
+* Linked README to the site
+* Fixed non-HTTPS and out-of-date links
+* Fixed header menu and burger transitions
 
 ## 12.0.1 - 2019-11-17
 

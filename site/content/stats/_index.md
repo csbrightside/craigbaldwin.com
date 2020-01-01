@@ -14,8 +14,8 @@ colour: "green"
 
 ## [Distances](/stats/distances)
 
-I like to keep track of as much data as possible using [Daytum](http://daytum.com/CraigBaldwin), Fitbit and a bit of manual calculation too.
+I like to keep track of as much data as possible using [Daytum](https://daytum.com/CraigBaldwin), Fitbit and a bit of manual calculation too.
 
 ## [Mountains](/stats/mountains)
 
-I hope to climb all 214 of the fells described by [Wainwright](http://www.wainwright.org.uk/about_aw.html) one day, and I'm keeping track of my progress here.
+I hope to climb all of the 214 Lake District fells described by [Wainwright](https://www.wainwright.org.uk/about-aw/) one day, and I'm keeping track of my progress here.

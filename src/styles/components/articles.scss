@@ -1,0 +1,17 @@
+/**
+ * Components > Articles
+ * ------------------------------------------------------------------------------
+ * Articles contain multiple article elements.
+ *
+ */
+.articles {
+  &__title {
+    margin-bottom: $SPACING_P;
+  }
+
+  &__article {
+    &:not(:last-child) {
+      margin-bottom: $SPACING_P;
+    }
+  }
+}

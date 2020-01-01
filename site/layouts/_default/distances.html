@@ -3,7 +3,7 @@
 
   <div class="blocks">
     <div class="blocks__block chart">
-      <h2 class="chart__title">Distance By Foot (miles)</h2>
+      <h2 class="chart__title">Distance by foot (miles)</h2>
 
       <div class="chart__chart">
         <canvas js-chart="walking"></canvas>
@@ -11,11 +11,30 @@
     </div>
 
     <div class="blocks__block chart">
-      <h2 class="chart__title">Total Distances (miles)</h2>
+      <h2 class="chart__title">Total distances (miles)</h2>
 
       <div class="chart__chart">
         <canvas js-chart="total"></canvas>
       </div>
+    </div>
+
+    <!-- Year summaries -->
+    <div class="blocks__block articles">
+      <h2 class="articles__title">Year in review</h2>
+
+      {{ range (.Pages.ByParam "handle").Reverse }}
+        <div class="articles__article article">
+          <h3 class="article__title">
+            <a href="https://daytum.com/CraigBaldwin/page/{{ .Params.Page }}">
+              {{ .Params.Handle }}
+            </a>
+          </h3>
+
+          <div class="article__body body-2">
+            {{ .Content }}
+          </div>
+        </div>
+      {{ end }}
     </div>
   </div>
 

@@ -25,7 +25,9 @@
       {{ range (.Pages.ByParam "handle").Reverse }}
         <div class="articles__article article">
           <h3 class="article__title">
-            {{ .Params.Handle }}
+            <a href="https://daytum.com/CraigBaldwin/page/{{ .Params.Page }}">
+              {{ .Params.Handle }}
+            </a>
           </h3>
 
           <div class="article__body body-2">

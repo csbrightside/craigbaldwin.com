@@ -11,8 +11,7 @@
 
   &__article {
     &:not(:last-child) {
-      // Desired margin - grid gap
-      margin-bottom: ($SPACING_L - $SPACING_S);
+      margin-bottom: $SPACING_P;
     }
   }
 }

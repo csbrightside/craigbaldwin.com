@@ -23,7 +23,7 @@
 
     <button
       class="header__menu"
-      aria-expanded="false"
+      aria-expanded="true"
       js-header="menuButton"
     >
       <span class="burger burger--middle"></span>
@@ -35,7 +35,7 @@
     <nav
       class="header__navigation"
       role="navigation"
-      aria-hidden="true"
+      aria-hidden="false"
       js-header="navigationDrawer"
     >
       <ul class="header__list">
@@ -47,7 +47,6 @@
                 navigation
                 {{ if in $url .URL }}is-active{{ end }}"
               href="{{ .URL }}"
-              tabindex="-1"
               js-header="navigationLink"
             >
               {{ .Title }}

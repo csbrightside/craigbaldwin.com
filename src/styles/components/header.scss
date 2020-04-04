@@ -80,7 +80,6 @@
       width: 100%;
       z-index: $LAYER_DRAWER;
 
-      &:focus-within,
       &.is-active {
         transform: translateX(0);
       }

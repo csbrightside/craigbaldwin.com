@@ -84,13 +84,12 @@ p, .body-1 {
   font-size: 1.8rem;
   line-height: $LINE_HEIGHT_L;
 
-  + p,
-  + .body-1 {
-    margin-top: $SPACING_P;
+  &:not(:last-child) {
+    margin-bottom: $SPACING_P;
   }
 
   + .body-2 {
-    margin-top: $SPACING_XS;
+    margin-top: -$SPACING_2XS;
   }
 }
 

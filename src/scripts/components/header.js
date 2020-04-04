@@ -7,6 +7,7 @@
  */
 import {disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
 
+import breakpoints from '../helpers/breakpoints';
 import cssClasses from '../helpers/cssClasses';
 import {debounce, on} from '../helpers/utils';
 
@@ -46,7 +47,10 @@ export default () => {
    * Initialise component.
    */
   function init() {
-    closeNavigationDrawer();
+    if (!window.matchMedia(`(min-width: ${breakpoints.medium})`).matches) {
+      closeNavigationDrawer();
+    }
+
     setEventListeners();
   }
 
@@ -56,7 +60,7 @@ export default () => {
   function setEventListeners() {
     on('click', nodeSelectors.menuButton, () => handleMenuToggle());
     on('blur', nodeSelectors.navigationDrawer, () => closeNavigationDrawer());
-    on('resize', () => debounce(checkResizeWidth()));
+    on('resize', () => debounce(handleResize()));
   }
 
   /**
@@ -73,8 +77,9 @@ export default () => {
 
   /**
    * Open the navigation drawer.
+   * @param {Boolean} trapFocusInside - Whether to trap focus.
    */
-  function openNavigationDrawer() {
+  function openNavigationDrawer(trapFocusInside = true) {
     nodeSelectors.menuButton.classList.add(cssClasses.active);
     nodeSelectors.menuButton.setAttribute('aria-expanded', true);
 
@@ -85,7 +90,10 @@ export default () => {
     nodeSelectors.navigationDrawer.querySelector(selectors.darkMode).setAttribute('tabindex', 0);
 
     disableBodyScroll(document.body);
-    document.addEventListener('keydown', trapFocus);
+
+    if (trapFocusInside) {
+      document.addEventListener('keydown', trapFocus);
+    }
   }
 
   /**
@@ -154,12 +162,18 @@ export default () => {
    * Checks to see if window width has changed.
    * - Triggers navigation drawer close if it has.
    */
-  function checkResizeWidth() {
+  function handleResize() {
     const newWidth = window.innerWidth;
 
     if (newWidth !== initWidth) {
       closeNavigationDrawer();
       initWidth = window.innerWidth;
+    }
+
+    if (window.matchMedia(`(min-width: ${breakpoints.medium})`).matches) {
+      openNavigationDrawer(false);
+    } else {
+      closeNavigationDrawer();
     }
   }
 

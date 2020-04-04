@@ -40,7 +40,8 @@
   }
 
   &.is-active,
-  &:hover {
+  &:hover,
+  &:focus {
     &::before {
       display: none;
     }

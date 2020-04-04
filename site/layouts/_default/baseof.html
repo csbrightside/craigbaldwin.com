@@ -4,7 +4,7 @@
   data-mode="light"
   js-dark-mode="container"
 >
-<head>
+<head class="no-js">
   <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ end }}">
 
   <meta charset="utf-8">
@@ -54,7 +54,6 @@
     template--{{ .Layout }}
     template--{{ .Params.handle }}
     template--{{ .Params.colour }}
-    no-js
   "
 >
   {{ block "header" . }}

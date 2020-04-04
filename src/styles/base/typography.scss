@@ -88,9 +88,13 @@ p, .body-1 {
     margin-bottom: $SPACING_P;
   }
 
-  .body-2 & {
-    font-size: 1.4rem;
+  + .body-2 {
+    margin-top: -$SPACING_2XS;
   }
+}
+
+.body-2 {
+  font-size: 1.4rem;
 }
 
 strong {

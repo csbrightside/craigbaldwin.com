@@ -5,7 +5,25 @@
  *
  */
 .article {
-  &__title {
+  $parent: &;
+
+  &__button {
+    @include button-reset;
+    width: 100%;
+  }
+
+  &__title,
+  &__title:not(:last-child) {
     margin-bottom: $SPACING_3XS;
+  }
+
+  &__content {
+    display: none;
+  }
+
+  &.is-active {
+    #{$parent}__content {
+      display: block;
+    }
   }
 }

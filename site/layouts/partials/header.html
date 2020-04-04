@@ -21,7 +21,11 @@
       </h1>
     {{ end }}
 
-    <button class="header__menu" js-header="menuButton">
+    <button
+      class="header__menu"
+      aria-expanded="true"
+      js-header="menuButton"
+    >
       <span class="burger burger--middle"></span>
       <span class="burger burger--outside"></span>
 
@@ -31,6 +35,7 @@
     <nav
       class="header__navigation"
       role="navigation"
+      aria-hidden="false"
       js-header="navigationDrawer"
     >
       <ul class="header__list">
@@ -42,6 +47,7 @@
                 navigation
                 {{ if in $url .URL }}is-active{{ end }}"
               href="{{ .URL }}"
+              js-header="navigationLink"
             >
               {{ .Title }}
 

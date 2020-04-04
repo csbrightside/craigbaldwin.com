@@ -19,19 +19,32 @@
     </div>
 
     <!-- Year summaries -->
-    <div class="blocks__block articles">
+    <div id="SummariesAccordion" class="blocks__block articles">
       <h2 class="articles__title">Year in review</h2>
 
       {{ range (.Pages.ByParam "handle").Reverse }}
-        <div class="articles__article article">
-          <h3 class="article__title">
-            <a href="https://daytum.com/CraigBaldwin/page/{{ .Params.Page }}">
-              {{ .Params.Handle }}
-            </a>
-          </h3>
+        <div class="articles__article article" js-accordion="container">
+          <button
+            class="article__button"
+            aria-expanded="false"
+            js-accordion="button"
+          >
+            <h3 class="article__title body-1">{{ .Params.Handle }}</h3>
+          </button>
 
-          <div class="article__body body-2">
+          <div
+            class="article__content body-1"
+            aria-hidden="true"
+            js-accordion="content"
+          >
             {{ .Content }}
+
+            <p class="body-2">
+              <strong>Data in full:</strong>
+              <a href="https://daytum.com/CraigBaldwin/page/{{ .Params.Page }}">
+                {{ .Params.Handle }}
+              </a>
+            </p>
           </div>
         </div>
       {{ end }}

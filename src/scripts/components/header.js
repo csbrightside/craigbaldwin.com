@@ -7,6 +7,7 @@
  */
 import {disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
 
+import breakpoints from '../helpers/breakpoints';
 import cssClasses from '../helpers/cssClasses';
 import {debounce, on} from '../helpers/utils';
 
@@ -16,6 +17,8 @@ import {debounce, on} from '../helpers/utils';
 const selectors = {
   menuButton: '[js-header="menuButton"]',
   navigationDrawer: '[js-header="navigationDrawer"]',
+  navigationLink: '[js-header="navigationLink"]',
+  darkMode: '[js-dark-mode="toggle"]',
 };
 
 /**
@@ -29,17 +32,25 @@ export default () => {
   const nodeSelectors = {
     menuButton: document.querySelector(selectors.menuButton),
     navigationDrawer: document.querySelector(selectors.navigationDrawer),
+    navigationLink: [...document.querySelectorAll(selectors.navigationLink)],
   };
 
   /**
    * Global variables.
    */
   let initWidth = window.innerWidth;
+  const focusableElements = nodeSelectors.navigationDrawer.querySelectorAll('a[href]:not([disabled]), button:not([disabled])');
+  const firstElement = focusableElements[0];
+  const lastElement = focusableElements[focusableElements.length - 1];
 
   /**
    * Initialise component.
    */
   function init() {
+    if (!window.matchMedia(`(min-width: ${breakpoints.medium})`).matches) {
+      closeNavigationDrawer();
+    }
+
     setEventListeners();
   }
 
@@ -48,7 +59,8 @@ export default () => {
    */
   function setEventListeners() {
     on('click', nodeSelectors.menuButton, () => handleMenuToggle());
-    on('resize', () => debounce(checkResizeWidth()));
+    on('blur', nodeSelectors.navigationDrawer, () => closeNavigationDrawer());
+    on('resize', () => debounce(handleResize()));
   }
 
   /**
@@ -65,12 +77,23 @@ export default () => {
 
   /**
    * Open the navigation drawer.
+   * @param {Boolean} trapFocusInside - Whether to trap focus.
    */
-  function openNavigationDrawer() {
+  function openNavigationDrawer(trapFocusInside = true) {
     nodeSelectors.menuButton.classList.add(cssClasses.active);
+    nodeSelectors.menuButton.setAttribute('aria-expanded', true);
+
     nodeSelectors.navigationDrawer.classList.add(cssClasses.active);
+    nodeSelectors.navigationDrawer.setAttribute('aria-hidden', false);
+
+    nodeSelectors.navigationLink.forEach((element) => element.setAttribute('tabindex', 0));
+    nodeSelectors.navigationDrawer.querySelector(selectors.darkMode).setAttribute('tabindex', 0);
 
     disableBodyScroll(document.body);
+
+    if (trapFocusInside) {
+      document.addEventListener('keydown', trapFocus);
+    }
   }
 
   /**
@@ -78,21 +101,79 @@ export default () => {
    */
   function closeNavigationDrawer() {
     nodeSelectors.menuButton.classList.remove(cssClasses.active);
+    nodeSelectors.menuButton.setAttribute('aria-expanded', false);
+
     nodeSelectors.navigationDrawer.classList.remove(cssClasses.active);
+    nodeSelectors.navigationDrawer.setAttribute('aria-hidden', true);
+
+    nodeSelectors.navigationLink.forEach((element) => element.setAttribute('tabindex', -1));
+    nodeSelectors.navigationDrawer.querySelector(selectors.darkMode).setAttribute('tabindex', -1);
 
     enableBodyScroll(document.body);
+    document.removeEventListener('keydown', trapFocus);
+  }
+
+  /**
+   * Handles the keydown even and traps focus.
+   * @param {Object} event - Keydown event.
+   */
+  function trapFocus(event) {
+    handleEsc(event);
+
+    const isTabPressed = (event.key === 'Tab') || (event.keyCode === 9);
+
+    if (!isTabPressed) {
+      return;
+    }
+
+    if (event.shiftKey) {
+      if (document.activeElement === firstElement) {
+        event.preventDefault();
+        nodeSelectors.menuButton.focus();
+
+      } else if (document.activeElement === nodeSelectors.menuButton) {
+        event.preventDefault();
+        lastElement.focus();
+      }
+
+    } else if (document.activeElement === lastElement) {
+      event.preventDefault();
+      nodeSelectors.menuButton.focus();
+
+    } else if (document.activeElement === nodeSelectors.menuButton) {
+      event.preventDefault();
+      firstElement.focus();
+    }
+  }
+
+  /**
+   * Handles keydown event to close drawer on esc press.
+   * @param {Object} event - Keydown event.
+   */
+  function handleEsc(event) {
+    if (event.key !== 'Escape' || event.keyCode !== 27) {
+      return;
+    }
+
+    closeNavigationDrawer();
   }
 
   /**
    * Checks to see if window width has changed.
    * - Triggers navigation drawer close if it has.
    */
-  function checkResizeWidth() {
+  function handleResize() {
     const newWidth = window.innerWidth;
 
     if (newWidth !== initWidth) {
       closeNavigationDrawer();
       initWidth = window.innerWidth;
+    }
+
+    if (window.matchMedia(`(min-width: ${breakpoints.medium})`).matches) {
+      openNavigationDrawer(false);
+    } else {
+      closeNavigationDrawer();
     }
   }
 

@@ -15,7 +15,7 @@ const selectors = {
 };
 
 /**
- * Create a new header object.
+ * Create a new counter object.
  */
 export default () => {
 

@@ -5,5 +5,84 @@
  *
  */
 .article {
-  // Styles.
+  &__content {
+    margin-bottom: $SPACING_L;
+  }
+
+  &__link {
+    @include transition(color);
+    color: $COLOR_BLACK;
+    display: flex;
+    flex-direction: column;
+    padding: $SPACING_S;
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+
+    &::before,
+    &::after {
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 1px;
+    }
+
+    &::before {
+      @include transition(background-color);
+      background-color: $COLOR_BLACK;
+      width: 1px;
+    }
+
+    &::after {
+      background-color: $COLOR_BLUE;
+      display: none;
+      width: 3px;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: rgba($COLOR_BLUE, 0.25);
+
+      &::after {
+        display: block;
+      }
+    }
+
+    &#{&}--next {
+      align-items: flex-end;
+      margin-left: auto;
+
+      &::before,
+      &::after {
+        left: inherit;
+        right: 0;
+      }
+    }
+  }
+
+  .is-dark & {
+    &__link {
+      color: $COLOR_DARK_MODE_WHITE;
+
+      &::before {
+        background-color: $COLOR_DARK_MODE_WHITE;
+      }
+    }
+  }
+
+  @include mq($from: medium) {
+    &__navigation {
+      display: flex;
+    }
+
+    &__link {
+      width: 50%;
+
+      &#{&}--next {
+        order: 1;
+      }
+    }
+  }
 }

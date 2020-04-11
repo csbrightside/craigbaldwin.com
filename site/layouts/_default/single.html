@@ -13,5 +13,23 @@
     </div>
   </div>
 
-  {{- .Content -}}
+  <div class="article__content">
+    {{- .Content -}}
+  </div>
+
+  <div class="article__navigation">
+    {{ with .NextInSection }}
+      <a class="article__link article__link--next" href="{{ .Permalink }}">
+        <span class="h3">Next article</span>
+        <span class="sub-text">{{ .Title }}</span>
+      </a>
+    {{ end }}
+
+    {{ with .PrevInSection }}
+      <a class="article__link" href="{{ .Permalink }}">
+        <span class="h3">Previous article</span>
+        <span class="sub-text">{{ .Title }}</span>
+      </a>
+    {{ end }}
+  </div>
 {{ end }}

@@ -2,7 +2,9 @@ baseurl = "/"
 languageCode = "en-gb"
 languageLang = "en"
 title = "Craig Baldwin"
-disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+
+[taxonomies]
+  tag = "tags"
 
 [params]
   siteTitle = "Craig Baldwin [dot] com"

@@ -1,4 +1,17 @@
 {{ define "main" }}
-  <h1>{{ .Params.Title }}</h1>
+  <div class="card card--{{ lower $.Page.Title }}">
+    <h1 class="card__title">{{ .Params.Title }}</h1>
+
+    <div class="row">
+      <p class="card__copy standfirst col s8 m6">
+        {{ .Params.Excerpt }}
+      </p>
+
+      <p class="card__meta sub-text col s8 m6">
+        {{ partial "article-meta.html" . }}
+      </p>
+    </div>
+  </div>
+
   {{- .Content -}}
 {{ end }}

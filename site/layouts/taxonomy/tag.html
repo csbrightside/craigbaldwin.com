@@ -1,11 +1,27 @@
 {{ define "main" }}
-  {{- .Content -}}
+  <div class="card">
+    <span class="card__subtitle sub-text">
+      <a href="/tags">Tags</a> >
+    </span>
 
-  <ul>
-    {{ range .Data.Pages }}
-    <li>
-      <a href="{{.RelPermalink}}">{{ .Title }}</a>
-    </li>
+    <h1 class="card__title">{{ .Title }}</h1>
+  </div>
+
+  <div class="row">
+    {{ range .Pages.ByPublishDate.Reverse }}
+      <div class="articles s8">
+        <h2 class="articles__title">
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h2>
+
+        <p class="articles__excerpt body-1">
+          {{ .Params.Excerpt }}
+        </p>
+
+        <p class="articles__meta sub-text">
+          {{ partial "article-meta.html" . }}
+        </p>
+      </div>
     {{ end }}
-  </ul>
+  </div>
 {{ end }}

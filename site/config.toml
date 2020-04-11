@@ -57,3 +57,14 @@ title = "Craig Baldwin"
     title = "Repo"
     url = "https://github.com/csbrightside/craigbaldwin.com"
     weight = -25
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = false
+    noClasses = false
+    tabWidth = 2

@@ -111,14 +111,6 @@
     }
   }
 
-  .no-transition & {
-    transition: none;
-
-    &::before {
-      transition: none;
-    }
-  }
-
   @include mq($from: medium) {
     height: 80px;
   }

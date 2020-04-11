@@ -32,10 +32,4 @@
       color: $COLOR_DARK_MODE_WHITE;
     }
   }
-
-  .no-transition & {
-    &__image {
-      transition: none;
-    }
-  }
 }

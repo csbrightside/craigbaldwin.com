@@ -249,14 +249,5 @@
         height: 100%;
       }
     }
-
-    .no-transition & {
-      &__link,
-      &__image-container,
-      &__meta,
-      &__title {
-        transition: none;
-      }
-    }
   }
 }

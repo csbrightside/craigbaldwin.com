@@ -87,11 +87,4 @@
       color: $COLOR_DARK_MODE_WHITE;
     }
   }
-
-  .no-transition & {
-    #{$parent}__subtitle,
-    #{$parent}__subtitle a {
-      transition: none;
-    }
-  }
 }

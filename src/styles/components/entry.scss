@@ -105,14 +105,6 @@
     }
   }
 
-  .no-transition & {
-    #{$parent}__button::before,
-    #{$parent}__button::after,
-    #{$parent}__title {
-      transition: none;
-    }
-  }
-
   .no-js & {
     #{$parent}__button {
       border: 0;

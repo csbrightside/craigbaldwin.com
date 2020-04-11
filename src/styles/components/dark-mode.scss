@@ -28,10 +28,11 @@
       transform: translateY(-50%);
     }
   }
+}
 
-  .no-transition & {
-    &__slide {
-      transition: none;
-    }
-  }
+.no-transition *,
+.no-transition *::before,
+.no-transition *::after {
+  // stylelint-disable-next-line
+  transition: none !important;
 }

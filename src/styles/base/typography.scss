@@ -47,10 +47,6 @@ body {
   .is-dark & {
     color: $COLOR_DARK_MODE_WHITE;
   }
-
-  .no-transition & {
-    transition: none;
-  }
 }
 
 /**

@@ -17,6 +17,13 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
     weight = -100
 
   [[menu.main]]
+    identifier = "blog"
+    title = "Blog"
+    post = "+ Thoughts"
+    url = "/blog/"
+    weight = -90
+
+  [[menu.main]]
     identifier = "work"
     title = "Work"
     post = "showcase"

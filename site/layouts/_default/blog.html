@@ -1,0 +1,9 @@
+{{ define "main" }}
+  {{- .Content -}}
+
+  <div class="blocks row">
+    {{ range (.Pages.ByParam "handle") }}
+      <h2><a href="/blog/{{ .Params.Handle }}">{{ .Params.Title }}</a></h2>
+    {{ end }}
+  </div>
+{{ end }}

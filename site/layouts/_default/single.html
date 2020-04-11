@@ -1,4 +1,9 @@
 {{ define "main" }}
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
+    rel="stylesheet"
+  >
+
   <div class="card card--{{ lower $.Page.Title }}">
     <h1 class="card__title">{{ .Params.Title }}</h1>
 
@@ -13,7 +18,7 @@
     </div>
   </div>
 
-  <div class="article__content">
+  <div class="article__content rte">
     {{- .Content -}}
   </div>
 

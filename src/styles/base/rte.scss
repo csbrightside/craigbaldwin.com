@@ -1,0 +1,44 @@
+/**
+ * Base > RTE.
+ * ------------------------------------------------------------------------------
+ * Styles for elements in a single article.
+ *
+ */
+.rte {
+  .highlight {
+    &:not(:last-child) {
+      margin-bottom: $SPACING_P;
+    }
+  }
+
+  pre {
+    background-color: $COLOR_BLACK;
+    overflow-y: auto;
+    padding: $SPACING_S;
+    padding-right: 0;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $COLOR_BLUE;
+      border: 5px solid $COLOR_BLACK;
+    }
+  }
+
+  code {
+    color: $COLOR_DARK_MODE_WHITE;
+    display: block;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    min-width: fit-content;
+    padding-right: $SPACING_S;
+
+    &::selection {
+      background-color: $COLOR_BLUE;
+      color: $COLOR_DARK_MODE_WHITE;
+    }
+  }
+}

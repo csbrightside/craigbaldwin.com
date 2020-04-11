@@ -31,6 +31,25 @@ export default () => {
   let start = 0;
 
   /**
+   * Specific terms.
+   */
+  const jsTerms = {
+    operators: [
+      '=>',
+    ],
+    functions: [
+      'add',
+      'addEventListener',
+      'dataset',
+      'forEach',
+      'remove',
+      'removeAttribute',
+      'setAttribute',
+      'querySelector',
+    ],
+  };
+
+  /**
    * Initialise component.
    */
   function init() {
@@ -64,14 +83,17 @@ export default () => {
    */
   function applyJsHighlighting(element) {
     [...element.querySelectorAll('span')].forEach((code) => {
-      if (code.innerText.includes('setAttribute')) {
+      if (jsTerms.functions.includes(code.innerText)) {
         code.classList.add('function');
+        return;
+      }
+
+      if (jsTerms.operators.includes(code.innerText)) {
+        code.classList.add('operator');
       }
     });
 
-    const end = performance.now();
-
-    window.console.log('time', (end - start));
+    window.console.log('Performance:', (performance.now() - start));
   }
 
   /**

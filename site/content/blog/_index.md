@@ -9,5 +9,5 @@ colour: "blue"
 {{<
   card
   title="Blog"
-  copy="Random thoughts and feelings on development from a Shopify developer and wandering walker."
+  copy="Random thoughts, feelings, and bits of code from a Shopify developer and wandering walker. All opinions my own."
 >}}

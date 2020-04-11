@@ -5,16 +5,26 @@
  *
  */
 .articles {
-  &:not(:last-child) {
-    // Desired margin - grid gap
-    margin-bottom: ($SPACING_L - $SPACING_S);
-  }
+  $parent: &;
 
   &__excerpt {
     position: relative;
 
     &:not(:last-child) {
-      margin-bottom: $SPACING_S;
+      margin-bottom: $SPACING_SXS;
+    }
+  }
+
+  &#{&}--large {
+    &:not(:last-child) {
+      // Desired margin - grid gap
+      margin-bottom: ($SPACING_L - $SPACING_S);
+    }
+  }
+
+  &#{&}--small {
+    #{$parent}__title {
+      margin-bottom: $SPACING_2XS;
     }
   }
 }

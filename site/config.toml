@@ -3,6 +3,9 @@ languageCode = "en-gb"
 languageLang = "en"
 title = "Craig Baldwin"
 
+[author]
+  name = "Craig Baldwin"
+
 [taxonomies]
   tag = "tags"
 

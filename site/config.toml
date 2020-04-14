@@ -13,6 +13,11 @@ title = "Craig Baldwin"
   siteTitle = "Craig Baldwin [dot] com"
   tagline = "Front-end developer"
 
+[outputFormats]
+  [outputFormats.RSS]
+    baseName = "feed"
+    mediatype = "application/rss"
+
 [menu]
   [[menu.main]]
     identifier = "about"

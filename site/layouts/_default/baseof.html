@@ -36,9 +36,9 @@
 
   <title>
     {{ if (eq .Title "Index") }}
-      {{ $.Site.Title }} &ndash; {{ $.Site.Params.tagline }}
+      {{ $.Site.Title }} - {{ $.Site.Params.tagline }}
     {{ else }}
-      {{ $.Site.Title }} &ndash; {{ .Title }}
+      {{ .Title }} - {{ $.Site.Title }}
     {{ end }}
   </title>
 
@@ -47,7 +47,7 @@
     <link href="{{ relURL . }}" rel="stylesheet">
   {{ end }}
 
-  <link rel="alternate" type="application/rss+xml" href="/blog/index.xml" title="Blog - {{ $.Site.Title }}">
+  <link rel="alternate" type="application/rss+xml" href="/blog/feed.xml" title="Blog - {{ $.Site.Title }}">
 </head>
 
 <body

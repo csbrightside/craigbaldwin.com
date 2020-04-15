@@ -14,9 +14,9 @@
   <meta name="pageHandle" content="{{ .Params.handle }}" js-page="handle">
 
   {{ if (eq .Title "Index") }}
-    <meta property="og:title" content="{{ $.Site.Title }} &ndash; {{ $.Site.Params.tagline }}">
+    <meta property="og:title" content="{{ $.Site.Title }} - {{ $.Site.Params.tagline }}">
   {{ else }}
-    <meta property="og:title" content="{{ $.Site.Title }} &ndash; {{ .Title }}">
+    <meta property="og:title" content="{{ .Title }} - {{ $.Site.Title }}">
   {{ end }}
 	<meta property="og:description" content="{{ .Description }}">
   <meta property="og:locale" content="en_GB">
@@ -36,9 +36,9 @@
 
   <title>
     {{ if (eq .Title "Index") }}
-      {{ $.Site.Title }} &ndash; {{ $.Site.Params.tagline }}
+      {{ $.Site.Title }} - {{ $.Site.Params.tagline }}
     {{ else }}
-      {{ $.Site.Title }} &ndash; {{ .Title }}
+      {{ .Title }} - {{ $.Site.Title }}
     {{ end }}
   </title>
 
@@ -46,6 +46,8 @@
   {{ with $stylesheet.css }}
     <link href="{{ relURL . }}" rel="stylesheet">
   {{ end }}
+
+  <link rel="alternate" type="application/rss+xml" href="/blog/feed.xml" title="Blog - {{ $.Site.Title }}">
 </head>
 
 <body

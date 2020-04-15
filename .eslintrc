@@ -40,10 +40,11 @@
     ]
   },
   "globals": {
-    "document": true,
-    "window": true,
-    "site": true,
     "Chart": true,
-    "L": true
+    "document": true,
+    "L": true,
+    "performance": true,
+    "site": true,
+    "window": true
   }
 }

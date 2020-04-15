@@ -47,10 +47,6 @@ body {
   .is-dark & {
     color: $COLOR_DARK_MODE_WHITE;
   }
-
-  .no-transition & {
-    transition: none;
-  }
 }
 
 /**
@@ -66,9 +62,15 @@ h1,
 }
 
 h2,
-.h2 {
+.h2,
+%h2 {
   font-size: 2rem;
   line-height: $LINE_HEIGHT_M;
+  margin-bottom: $SPACING_3XS;
+}
+
+.h2-5 {
+  font-size: 1.8rem;
 }
 
 h3,

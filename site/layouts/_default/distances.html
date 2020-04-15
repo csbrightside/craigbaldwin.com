@@ -19,21 +19,21 @@
     </div>
 
     <!-- Year summaries -->
-    <div id="SummariesAccordion" class="blocks__block articles">
-      <h2 class="articles__title">Year in review</h2>
+    <div id="SummariesAccordion" class="blocks__block entries">
+      <h2 class="entries__title">Year in review</h2>
 
       {{ range (.Pages.ByParam "handle").Reverse }}
-        <div class="articles__article article" js-accordion="container">
+        <div class="entries__entry entry" js-accordion="container">
           <button
-            class="article__button"
+            class="entry__button"
             aria-expanded="false"
             js-accordion="button"
           >
-            <h3 class="article__title body-1">{{ .Params.Handle }}</h3>
+            <h3 class="entry__title body-1">{{ .Params.Handle }}</h3>
           </button>
 
           <div
-            class="article__content body-1"
+            class="entry__content body-1"
             aria-hidden="true"
             js-accordion="content"
           >

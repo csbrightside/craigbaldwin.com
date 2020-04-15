@@ -1,11 +1,11 @@
 <!-- Partials > Header. -->
 <!-- Header with logo and links. -->
-{{ $url := .URL }}
+{{ $url := .Permalink }}
 {{ $page := .Title }}
 
 <header class="header" role="banner">
   <div class="header__container container">
-    <a class="skip-link" href="{{ .URL }}#MainContent">
+    <a class="skip-link" href="{{ .Permalink }}#MainContent">
       Skip to content
     </a>
 
@@ -45,7 +45,9 @@
               class="
                 header__link
                 navigation
-                {{ if in $url .URL }}is-active{{ end }}"
+                {{ if in $url .URL }}is-active{{ end }}
+                {{ if and (in $url "/tags/") (eq .Title "Blog") }}is-active{{ end }}
+              "
               href="{{ .URL }}"
               js-header="navigationLink"
             >

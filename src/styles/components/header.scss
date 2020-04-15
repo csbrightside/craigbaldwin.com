@@ -114,12 +114,6 @@
         background-color: $COLOR_BLACK;
       }
     }
-
-    .no-transition & {
-      #{$parent}__navigation {
-        visibility: hidden;
-      }
-    }
   }
 
   @include mq($from: medium) {

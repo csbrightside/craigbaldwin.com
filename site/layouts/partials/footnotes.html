@@ -1,6 +1,6 @@
 <!-- Partials > Footer. -->
 <!-- Site footer. -->
-{{ $url := .URL }}
+{{ $url := .Permalink }}
 {{ $page := .Title }}
 
 <div class="footer__footnotes container row">
@@ -13,8 +13,10 @@
         footnote footnote--{{ .Identifier}}
         s4 m2
         {{ if (eq $url .URL) }}is-active{{ end }}
+        {{ if (eq .Title "Contact")}}is-hidden{{ end }}
         {{ if and (eq $page "Distances") (eq .Title "Stats") }}is-active{{ end }}
         {{ if and (eq $page "Mountains") (eq .Title "Stats") }}is-active{{ end }}
+        {{ if and (in $url "/tags/") (eq .Title "Blog") }}is-active{{ end }}
       "
       href="{{ .URL }}"
     >

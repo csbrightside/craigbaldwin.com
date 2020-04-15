@@ -1,3 +1,11 @@
 {{ define "main" }}
   {{- .Content -}}
+
+  <p class="body-1">
+    <strong>Latest post:</strong>
+
+    {{ range first 1 ($.Site.GetPage "section" "blog").Pages.ByPublishDate.Reverse }}
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    {{ end }}
+  </p>
 {{ end }}

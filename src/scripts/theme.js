@@ -19,9 +19,10 @@ import {pageHandle} from './helpers/utils';
 import accordion from './components/accordion';
 import charts from './components/charts';
 import counter from './components/counter';
-import header from './components/header';
-import map from './components/map';
 import darkMode from './components/dark-mode';
+import header from './components/header';
+import highlighter from './components/highlighter';
+import map from './components/map';
 import progress from './components/progress';
 
 /**
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   keyboardTabbable().init();
   header().init();
   darkMode().init();
+  highlighter().init();
 
   switch (pageHandle()) {
     case 'info':

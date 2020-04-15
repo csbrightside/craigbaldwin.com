@@ -41,6 +41,10 @@
     padding-right: $SPACING_S;
   }
 
+  &__title {
+    margin-bottom: 0;
+  }
+
   &__copyright {
     line-height: $LINE_HEIGHT_S;
     margin-top: $SPACING_S;
@@ -247,15 +251,6 @@
       #{$parent}__logo {
         bottom: 0;
         height: 100%;
-      }
-    }
-
-    .no-transition & {
-      &__link,
-      &__image-container,
-      &__meta,
-      &__title {
-        transition: none;
       }
     }
   }

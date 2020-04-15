@@ -1,0 +1,142 @@
+/**
+ * Base > Code.
+ * ------------------------------------------------------------------------------
+ * Styles for code markdown.
+ *
+ */
+// stylelint-disable color-no-hex
+
+$COLOR_CODE_BLACK: #1e1e1e;
+$COLOR_CODE_DARK_GREEN: #529949;
+$COLOR_CODE_LIGHT_GREEN: #93cea8;
+$COLOR_CODE_DARK_BLUE: #569cd6;
+$COLOR_CODE_LIGHT_BLUE: #9cdcfe;
+$COLOR_CODE_ORANGE: #ce9178;
+$COLOR_CODE_DARK_YELLOW: #d7ba7d;
+$COLOR_CODE_LIGHT_YELLOW: #dcdcaa;
+$COLOR_CODE_PURPLE: #c586c0;
+$COLOR_CODE_WHITE: #fff;
+
+.highlight {
+  background-color: $COLOR_CODE_BLACK;
+  overflow-y: auto;
+
+  &:not(:last-child) {
+    margin-bottom: $SPACING_P;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $COLOR_BLUE;
+    border: 5px solid $COLOR_CODE_BLACK;
+  }
+
+  pre {
+    padding: $SPACING_S;
+    padding-right: 0;
+  }
+}
+
+code {
+  color: $COLOR_DARK_MODE_WHITE;
+  display: block;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  min-width: fit-content;
+  padding-right: $SPACING_S;
+
+  &::selection,
+  span::selection {
+    background-color: $COLOR_BLUE;
+    color: $COLOR_DARK_MODE_WHITE;
+  }
+
+  .ln {
+    opacity: 0.5;
+    padding-right: $SPACING_S;
+  }
+}
+
+/**
+ * CSS.
+ */
+.language-css {
+  // Comments
+  .c {
+    color: $COLOR_CODE_DARK_GREEN;
+  }
+
+  // Properties
+  .k, .k + .o, .o + .kc {
+    color: $COLOR_CODE_LIGHT_BLUE;
+  }
+
+  // Class
+  .nc, .nt, {
+    color: $COLOR_CODE_DARK_YELLOW;
+  }
+
+  // Punctuation
+  .p {
+    color: $COLOR_CODE_WHITE;
+  }
+
+  // Value
+  .kt, .mf {
+    color: $COLOR_CODE_LIGHT_GREEN;
+  }
+
+  // Strings
+  .s1, .kc, .n {
+    color: $COLOR_CODE_ORANGE;
+  }
+
+  // SASS variables
+  .p + .err, .err + .n, .o + .err {
+    color: $COLOR_CODE_LIGHT_BLUE;
+  }
+}
+
+/**
+ * JS
+ */
+.language-js {
+  // Comments
+  .cm {
+    color: $COLOR_CODE_DARK_GREEN;
+  }
+
+  // Functions, boolean, operators
+  .kd, .kc, .operator {
+    color: $COLOR_CODE_DARK_BLUE;
+  }
+
+  // Selectors
+  .nx, .nb {
+    color: $COLOR_CODE_LIGHT_BLUE;
+  }
+
+  // If
+  .k {
+    color: $COLOR_CODE_PURPLE;
+  }
+
+  // Strings
+  .s1 {
+    color: $COLOR_CODE_ORANGE;
+  }
+
+  // Numbers
+  .mi {
+    color: $COLOR_CODE_LIGHT_GREEN;
+  }
+
+  // Function
+  .function {
+    color: $COLOR_CODE_LIGHT_YELLOW;
+  }
+}

@@ -58,6 +58,14 @@
       }
     }
 
+    &.footnote--blog {
+      background-color: rgba($COLOR_BLUE, 0.25);
+
+      &::after {
+        background-color: $COLOR_BLUE;
+      }
+    }
+
     &.footnote--work {
       background-color: rgba($COLOR_PURPLE, 0.25);
 
@@ -100,14 +108,6 @@
 
     &::before {
       background-color: $COLOR_DARK_MODE_WHITE;
-    }
-  }
-
-  .no-transition & {
-    transition: none;
-
-    &::before {
-      transition: none;
     }
   }
 

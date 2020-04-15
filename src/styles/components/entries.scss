@@ -1,0 +1,17 @@
+/**
+ * Components > Entries
+ * ------------------------------------------------------------------------------
+ * Entries contain multiple entry elements in the distances template.
+ *
+ */
+.entries {
+  &__title {
+    margin-bottom: $SPACING_P;
+  }
+
+  &__entry {
+    &:not(:last-child) {
+      margin-bottom: $SPACING_P;
+    }
+  }
+}

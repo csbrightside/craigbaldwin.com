@@ -1,17 +1,30 @@
 /**
- * Components > Articles
+ * Components > Articles.
  * ------------------------------------------------------------------------------
- * Articles contain multiple article elements.
+ * A list of blog articles.
  *
  */
 .articles {
-  &__title {
-    margin-bottom: $SPACING_P;
+  $parent: &;
+
+  &__excerpt {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: $SPACING_SXS;
+    }
   }
 
-  &__article {
+  &#{&}--large {
     &:not(:last-child) {
-      margin-bottom: $SPACING_P;
+      // Desired margin - grid gap
+      margin-bottom: ($SPACING_L - $SPACING_S);
+    }
+  }
+
+  &#{&}--small {
+    #{$parent}__title {
+      margin-bottom: $SPACING_2XS;
     }
   }
 }

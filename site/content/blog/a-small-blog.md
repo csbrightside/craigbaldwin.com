@@ -1,8 +1,8 @@
 ---
 title: "A small blog"
-date: 2020-05-20
+date: 2020-04-14
 tags: ["Misc"]
-draft: true
+draft: false
 excerpt: "Somewhere to publish my thoughts on development and share any useful snippets."
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: "Super simple scroll animations"
-date: 2020-05-21
+date: 2020-04-15
 tags: ["Development"]
-draft: true
+draft: false
 excerpt: "Dependency-free intersection observer-based CSS scroll animations package available now."
 ---
 

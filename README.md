@@ -11,11 +11,3 @@ The repo is continuously deployed using [Netlify](https://www.netlify.com/).
 Code quality standards follow [We Make Websites'](https://github.com/we-make-websites/wmw-coding-guidelines) (which I wrote).
 
 See _package.json_ for full list of dependencies.
-
-## Page Layouts
-
-* **index** – Homepage
-* **distances** – Distances page
-* **mountains** – Mountains page
-* **work** – Work page
-* **text** – All other pages

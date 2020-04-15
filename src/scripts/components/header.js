@@ -48,10 +48,50 @@ export default () => {
    */
   function init() {
     if (!window.matchMedia(`(min-width: ${breakpoints.medium})`).matches) {
-      closeNavigationDrawer();
+      setInitState();
     }
 
     setEventListeners();
+  }
+
+  /**
+   * Sets initial state based on screen size.
+   */
+  function setInitState() {
+    if (window.matchMedia(`(min-width: ${breakpoints.medium})`).matches) {
+      setTabindex(0);
+      clearAriaProperties(true);
+      return;
+    }
+
+    setTabindex(-1);
+    setAriaProperties(false);
+  }
+
+  /**
+   * Reset tabindex of header links.
+   * @param {Number} tabindex - Value to set.
+   */
+  function setTabindex(tabindex) {
+    nodeSelectors.navigationLink.forEach((element) => element.setAttribute('tabindex', tabindex));
+    nodeSelectors.navigationDrawer.querySelector(selectors.darkMode).setAttribute('tabindex', tabindex);
+  }
+
+  /**
+   * Sets aria-expanded and -hidden properties.
+   * @param {Boolean} expanded - If expanded is true then hidden is false.
+   */
+  function setAriaProperties(expanded) {
+    nodeSelectors.menuButton.setAttribute('aria-expanded', expanded);
+    nodeSelectors.navigationDrawer.setAttribute('aria-hidden', !expanded);
+  }
+
+  /**
+   * Clears aria properties.
+   */
+  function clearAriaProperties() {
+    nodeSelectors.menuButton.removeAttribute('aria-expanded');
+    nodeSelectors.navigationDrawer.removeAttribute('aria-hidden');
   }
 
   /**
@@ -77,23 +117,16 @@ export default () => {
 
   /**
    * Open the navigation drawer.
-   * @param {Boolean} trapFocusInside - Whether to trap focus.
    */
-  function openNavigationDrawer(trapFocusInside = true) {
+  function openNavigationDrawer() {
     nodeSelectors.menuButton.classList.add(cssClasses.active);
-    nodeSelectors.menuButton.setAttribute('aria-expanded', true);
-
     nodeSelectors.navigationDrawer.classList.add(cssClasses.active);
-    nodeSelectors.navigationDrawer.setAttribute('aria-hidden', false);
-
-    nodeSelectors.navigationLink.forEach((element) => element.setAttribute('tabindex', 0));
-    nodeSelectors.navigationDrawer.querySelector(selectors.darkMode).setAttribute('tabindex', 0);
 
     disableBodyScroll(document.body);
+    setTabindex(0);
+    setAriaProperties(true);
 
-    if (trapFocusInside) {
-      document.addEventListener('keydown', trapFocus);
-    }
+    document.addEventListener('keydown', trapFocus);
   }
 
   /**
@@ -101,15 +134,12 @@ export default () => {
    */
   function closeNavigationDrawer() {
     nodeSelectors.menuButton.classList.remove(cssClasses.active);
-    nodeSelectors.menuButton.setAttribute('aria-expanded', false);
-
     nodeSelectors.navigationDrawer.classList.remove(cssClasses.active);
-    nodeSelectors.navigationDrawer.setAttribute('aria-hidden', true);
-
-    nodeSelectors.navigationLink.forEach((element) => element.setAttribute('tabindex', -1));
-    nodeSelectors.navigationDrawer.querySelector(selectors.darkMode).setAttribute('tabindex', -1);
 
     enableBodyScroll(document.body);
+    setTabindex(-1);
+    setAriaProperties(false);
+
     document.removeEventListener('keydown', trapFocus);
   }
 
@@ -163,18 +193,18 @@ export default () => {
    * - Triggers navigation drawer close if it has.
    */
   function handleResize() {
+    setInitState();
+
     const newWidth = window.innerWidth;
 
-    if (newWidth !== initWidth) {
+    if (
+      !window.matchMedia(`(min-width: ${breakpoints.medium})`).matches &&
+      newWidth !== initWidth
+    ) {
       closeNavigationDrawer();
-      initWidth = window.innerWidth;
     }
 
-    if (window.matchMedia(`(min-width: ${breakpoints.medium})`).matches) {
-      openNavigationDrawer(false);
-    } else {
-      closeNavigationDrawer();
-    }
+    initWidth = window.innerWidth;
   }
 
   /**

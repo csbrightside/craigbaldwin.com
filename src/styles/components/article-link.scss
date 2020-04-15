@@ -5,5 +5,66 @@
  *
  */
 .article-link {
-  border: 1px solid $COLOR_MID_GREY;
+  $parent: &;
+  @include transition(color);
+  color: $COLOR_BLACK;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $SPACING_P;
+  padding: $SPACING_S;
+  position: relative;
+  text-decoration: none;
+
+  &::before,
+  &::after {
+    @include transition(border-color);
+    border-color: $COLOR_BLACK;
+    border-style: solid;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &::before {
+    border-width: 0 0 0 1px;
+  }
+
+  &::after {
+    border-width: 1px 1px 1px 0;
+    opacity: 0.1;
+  }
+
+  &__title {
+    @extend %h2;
+    font-weight: $WEIGHT_BOLD;
+    margin-bottom: $SPACING_2XS;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: rgba($COLOR_BLUE, 0.25);
+
+    &::before {
+      background-color: $COLOR_BLUE;
+      border-left: 0;
+      opacity: 1;
+      width: 3px;
+    }
+
+    &::after {
+      opacity: 0;
+    }
+  }
+
+  .is-dark & {
+    color: $COLOR_DARK_MODE_WHITE;
+
+    &::before,
+    &::after, {
+      border-color: $COLOR_DARK_MODE_WHITE;
+    }
+  }
 }

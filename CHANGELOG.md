@@ -2,6 +2,11 @@
 
 This changelog only provides headline changes, see the commit history for all changes.
 
+## 12.2.0 - 2020-04-15
+* Added blog section
+* Updated skip link styles
+* Fixed new accessibility issues with header and menu drawer
+
 ## 12.1.2 - 2020-04-04
 * Added accordions to yearly summaries on distances page
 * Fixed more accessibility issues with the header and menu drawer

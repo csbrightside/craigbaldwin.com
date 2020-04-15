@@ -1,0 +1,39 @@
+{{ define "main" }}
+  <div class="card">
+    <span class="card__subtitle sub-text">
+      <a href="/tags">Tags</a> >
+    </span>
+
+    <h1 class="card__title">{{ .Title }}</h1>
+  </div>
+
+  <div class="row">
+    {{ range $index, $element := .Pages.ByPublishDate.Reverse }}
+      {{ if (eq $index 0) }}
+        <div class="articles articles--large s8">
+          <h2 class="articles__title">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </h2>
+
+          <p class="articles__excerpt body-1">
+            {{ .Params.Excerpt }}
+          </p>
+
+          <p class="articles__meta sub-text">
+            {{ partial "article-meta.html" . }}
+          </p>
+        </div>
+      {{ else }}
+        <div class="articles articles--small s8">
+          <h2 class="articles__title h2-5">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </h2>
+
+          <p class="articles__meta sub-text">
+            {{ partial "article-meta.html" . }}
+          </p>
+        </div>
+      {{ end }}
+    {{ end }}
+  </div>
+{{ end }}

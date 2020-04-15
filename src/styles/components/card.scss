@@ -5,8 +5,27 @@
  *
  */
 .card {
+  $parent: &;
   margin-bottom: $SPACING_L;
   width: 100%;
+
+  &__subtitle {
+    @include transition(color);
+    color: $COLOR_BLACK;
+    display: block;
+    margin-bottom: $SPACING_XS;
+    text-decoration: none;
+
+    a {
+      @include transition(color);
+      color: $COLOR_BLACK;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 
   &__title {
     margin-bottom: $SPACING_S;
@@ -26,6 +45,10 @@
 
   &__copy {
     max-width: 700px;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
   }
 
   /**
@@ -52,6 +75,16 @@
   .template--red & {
     &__title::after {
       background-color: $COLOR_RED;
+    }
+  }
+
+  /**
+   * Dark mode.
+   */
+  .is-dark & {
+    #{$parent}__subtitle,
+    #{$parent}__subtitle a {
+      color: $COLOR_DARK_MODE_WHITE;
     }
   }
 }

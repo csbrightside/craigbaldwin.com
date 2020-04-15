@@ -2,11 +2,21 @@ baseurl = "/"
 languageCode = "en-gb"
 languageLang = "en"
 title = "Craig Baldwin"
-disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+
+[author]
+  name = "Craig Baldwin"
+
+[taxonomies]
+  tag = "tags"
 
 [params]
   siteTitle = "Craig Baldwin [dot] com"
   tagline = "Front-end developer"
+
+[outputFormats]
+  [outputFormats.RSS]
+    baseName = "feed"
+    mediatype = "application/rss"
 
 [menu]
   [[menu.main]]
@@ -15,6 +25,13 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
     post = "Craig"
     url = "/about/"
     weight = -100
+
+  [[menu.main]]
+    identifier = "blog"
+    title = "Blog"
+    post = "+ Thoughts"
+    url = "/blog/"
+    weight = -90
 
   [[menu.main]]
     identifier = "work"
@@ -48,3 +65,14 @@ disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
     title = "Repo"
     url = "https://github.com/csbrightside/craigbaldwin.com"
     weight = -25
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = false
+    noClasses = false
+    tabWidth = 2

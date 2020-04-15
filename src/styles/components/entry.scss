@@ -47,23 +47,6 @@
     padding-top: $SPACING_S;
   }
 
-  &:hover {
-    #{$parent}__button {
-      background-color: rgba($COLOR_GREEN, 0.15);
-
-      &::before {
-        background-color: $COLOR_GREEN;
-        border-left: 0;
-        opacity: 1;
-        width: 3px;
-      }
-
-      &::after {
-        opacity: 0;
-      }
-    }
-  }
-
   &:hover,
   &.is-active {
     #{$parent}__button {

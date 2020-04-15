@@ -13,39 +13,11 @@
 }
 
 /**
- * Skip to content button.
- * - Overrides .visually-hidden when focused.
- */
-.skip-link {
-  @include transition(background-color, color);
-  @include visually-hidden;
-  align-items: center;
-  background-color: $COLOR_WHITE;
-  color: $COLOR_BLACK;
-  display: flex;
-  justify-content: center;
-  left: 0;
-  top: 0;
-
-  &:focus {
-    @include visually-shown(absolute);
-    height: 100%;
-    width: 100%;
-    z-index: $LAYER_POPUP;
-  }
-
-  .is-dark & {
-    background-color: $COLOR_BLACK;
-    color: $COLOR_DARK_MODE_WHITE;
-  }
-}
-
-/**
  * Reset focus state on tabbable elements.
  */
 [tabindex],
 [draggable],
-a[href],
+a,
 area,
 button:enabled,
 input:not([type=hidden]):enabled,
@@ -59,6 +31,42 @@ textarea:enabled {
   .is-tabbable & {
     &:focus {
       @include focus-ring;
+    }
+  }
+}
+
+/**
+ * Skip to content button.
+ * - Overrides .visually-hidden when focused.
+ */
+.skip-link {
+  @include transition(background-color, color);
+  @include visually-hidden;
+  align-items: center;
+  background-color: $COLOR_BLACK;
+  color: $COLOR_DARK_MODE_WHITE;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  padding: $SPACING_S $SPACING_M;
+  text-decoration: none;
+  top: 0;
+
+  &:focus {
+    @include visually-shown(absolute);
+    height: auto;
+    width: auto;
+    z-index: $LAYER_POPUP;
+  }
+
+  .is-dark & {
+    background-color: $COLOR_DARK_MODE_WHITE;
+    color: $COLOR_BLACK;
+  }
+
+  .is-tabbable & {
+    &:focus {
+      outline: 0;
     }
   }
 }

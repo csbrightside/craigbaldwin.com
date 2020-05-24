@@ -1,7 +1,7 @@
 ---
 block_type: "logos"
-title: "This Works"
+title: "This Works CBD"
 handle: "this-works"
-link: "https://www.thisworks.com/"
+link: "https://www.thisworkscbd.com/"
 weight: 0
 ---

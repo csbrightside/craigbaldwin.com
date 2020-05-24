@@ -44,6 +44,10 @@
     width: 35%;
   }
 
+  &#{&}--this-works {
+    width: 78%;
+  }
+
   @include mq($from: medium) {
     &#{&}--crabtree-evelyn {
       width: 28%;

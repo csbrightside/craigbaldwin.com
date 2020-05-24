@@ -12,7 +12,7 @@ colour: "orange"
   copy="You are viewing version 12.2.0 of the site."
 >}}
 
-This version has been online for <span data-launch="2019-11-16" js-counter="number">0</span> <span js-counter="days">days</span>. It launched on 16/11/2019.
+This version has been online for {{< counter >}}. It launched on 16/11/2019.
 
 ## Changelog
 

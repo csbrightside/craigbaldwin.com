@@ -2,6 +2,9 @@
 
 This changelog only provides headline changes, see the commit history for all changes.
 
+## 12.2.1 - 2020-05-24
+* Updated work page content
+
 ## 12.2.0 - 2020-04-15
 * Added blog section
 * Updated skip link styles

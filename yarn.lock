@@ -798,10 +798,10 @@
     "@types/uglify-js" "*"
     source-map "^0.6.0"
 
-"@we-make-websites/stylelint-config@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@we-make-websites/stylelint-config/-/stylelint-config-1.0.2.tgz#b43848ffdbf1cdae5367b05df65474acbf717cdc"
-  integrity sha512-03My3CkTa5hhxFmdz5MPgA6vGOph4FaiiIlvpe4aCHpYrUsSlNKtCDSzy55K7VuEeZiOuBA+ku9FBKk+hsrQ2A==
+"@we-make-websites/stylelint-config@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@we-make-websites/stylelint-config/-/stylelint-config-1.0.3.tgz#839d3a255a8baa07cf3e0ed07b58606a7a334953"
+  integrity sha512-cPHOeDUUGyLzmWzDLFzGswwhcFKLXECMoCGLxWkhcoMeRL6XWBMTE2cQZKgMfepsLQ5/30IDn+jVyI1AJsPWeQ==
   dependencies:
     merge "1.2.x"
     stylelint-config-prettier "^4.0.0"

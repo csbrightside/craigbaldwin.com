@@ -12,7 +12,7 @@ colour: "orange"
   copy="You are viewing version 12.2.1 of the site."
 >}}
 
-This version has been online for {{< counter >}}. It launched on 16/11/2019.
+Version 12 has been online for {{< counter >}}. It launched on 16/11/2019.
 
 ## Changelog
 

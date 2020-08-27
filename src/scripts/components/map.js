@@ -33,7 +33,7 @@ export default () => {
       scrollWheelZoom: false,
     }).setView([54.518, -3.05], 10);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    L.tileLayer('https://api.mapbox.com/styles/v1/craigbaldwin/cked0xic42aoj19kiqh2ur9ga/tiles/256/{z}/{x}/{y}@2x?access_token={accessToken}', {
       accessToken: 'pk.eyJ1IjoiY3JhaWdiYWxkd2luIiwiYSI6ImNrMmhyZXV4bjA4ajMzbW52ejF5c2ppd3oifQ.l_5II-ZwhXVtIcCsgNIwqw',
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       maxZoom: 13,

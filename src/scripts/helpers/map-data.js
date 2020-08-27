@@ -112,7 +112,7 @@ export function mapData() {
     {name: "Glenridding Dodd", latLng: [54.54947, -2.95927], region: "lakes"},
     {name: "Place Fell", latLng: [54.54439, -2.92073], region: "lakes"},
     {name: "Hallin Fell", latLng: [54.56997, -2.87799], region: "lakes"},
-    {name: "Hartsop above How", latLng: [54.5003, -2.9512], region: "lakes"},
+    {name: "Hartsop Above How", latLng: [54.5003, -2.9512], region: "lakes"},
     {name: "Little Hart Crag", latLng: [54.48206, -2.947], region: "lakes"},
     {name: "High Hartsop Dodd", latLng: [54.48854, -2.93773], region: "lakes"},
 
@@ -132,6 +132,12 @@ export function mapData() {
     {name: "Starling Dodd", latLng: [54.52975, -3.32714], region: "lakes"},
     {name: "Fellbarrow", latLng: [54.60548, -3.34517], region: "lakes"},
     {name: "Low Fell", latLng: [54.59067, -3.33658], region: "lakes"},
+
+    {name: "Dale Head", latLng: [54.52686, -3.202171], region: "lakes"},
+    {name: "Knott Rigg", latLng: [54.558427, -3.242168], region: "lakes"},
+    {name: "Ard Crags", latLng: [54.566787, -3.228264], region: "lakes"},
+    {name: "Scar Crags", latLng: [54.574649, -3.226547], region: "lakes"},
+    {name: "Causey Pike", latLng: [54.57644, -3.209381], region: "lakes"},
   ];
 
   return data;

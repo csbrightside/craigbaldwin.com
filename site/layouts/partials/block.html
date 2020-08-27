@@ -52,7 +52,7 @@
                 </div>
               {{ end }}
 
-              {{ if .Params.location }}
+              {{ if .Params.distance }}
                 <div class="block__stat icon">
                   <span class="icon__image">
                     {{ partial "icons/distance.svg" . }}
@@ -64,7 +64,7 @@
                 </div>
               {{ end }}
 
-              {{ if .Params.location }}
+              {{ if .Params.mountains }}
                 <div class="block__stat icon">
                   <span class="icon__image">
                     {{ partial "icons/mountains.svg" . }}
@@ -76,7 +76,7 @@
                 </div>
               {{ end }}
 
-              {{ if .Params.location }}
+              {{ if .Params.steps }}
                 <div class="block__stat icon">
                   <span class="icon__image">
                     {{ partial "icons/steps.svg" . }}
@@ -110,6 +110,14 @@
           {{ end }}
           loading="lazy"
           src="/images/{{ .Params.block_type }}/{{ .Params.handle }}.jpg"
+          {{ if .Params.srcset }}
+            sizes="auto"
+            srcset="
+              /images/{{ .Params.block_type }}/{{ .Params.handle }}_600x.jpg 600w,
+              /images/{{ .Params.block_type }}/{{ .Params.handle }}.jpg 900w,
+              /images/{{ .Params.block_type }}/{{ .Params.handle }}_1200x.jpg 1200w,
+            "
+          {{ end }}
         >
       {{ end }}
 

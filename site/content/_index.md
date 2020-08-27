@@ -1,6 +1,6 @@
 ---
 title: "Index"
-description: "Front-end developer and pod development lead at We Make Websites developing Shopify eCommerce stores."
+description: "Development lead and front-end developer at We Make Websites developing Shopify e-commerce stores."
 handle: "index"
 layout: "index"
 colour: "blue"
@@ -9,5 +9,5 @@ colour: "blue"
 {{<
   card
   title="I make websites"
-  copy="Front-end developer and pod development lead at We Make Websites developing Shopify eCommerce stores."
+  copy="Development lead and front-end developer at We Make Websites developing Shopify e-commerce stores."
 >}}

@@ -15,6 +15,10 @@
     padding-bottom: 100%;
   }
 
+  .leaflet-popup-pane {
+    transform: translateY(-13px);
+  }
+
   .leaflet-popup-content-wrapper {
     background-color: $COLOR_BLACK;
     border-radius: 0;
@@ -24,11 +28,11 @@
 
   .leaflet-popup-content {
     margin: $SPACING_XS;
+    padding: 0;
   }
 
   .leaflet-popup-tip {
-    background-color: $COLOR_BLACK;
-    box-shadow: none;
+    display: none;
   }
 
   .leaflet-control-attribution,

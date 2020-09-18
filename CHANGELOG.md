@@ -2,6 +2,18 @@
 
 This changelog only provides headline changes, see the commit history for all changes.
 
+## 12.2.3 - 2020-09-18
+* Further updates to information about my new role
+* Added SofaSofa launch blog post
+* Fixed This Works logo not changing colour in dark mode
+
+## 12.2.2 - 2020-09-08
+* Updated content with information on new role at We Make Websites
+* Updated mountains page content
+* Added support for srcset images on mountains page
+* Dependencies versions update
+* Fixed mountains page map not loading
+
 ## 12.2.1 - 2020-05-24
 * Updated work page content
 * Fixed info page counter

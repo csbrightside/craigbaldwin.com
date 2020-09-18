@@ -1,6 +1,6 @@
 ---
 title: "About"
-description: "I live in London and work at We Make Websites as the development lead. I'm also a front-end developer, pod development lead, Shopify expert, and avid runner and walker."
+description: "We Make Websites' Development Lead, living in London. Also a front-end developer, pod development lead, Shopify expert, and avid runner and walker."
 handle: "about"
 layout: "text"
 colour: "orange"
@@ -9,7 +9,7 @@ colour: "orange"
 {{<
   card
   title="Hello"
-  copy="I'm Craig Baldwin, We Make Websites' Development Lead, living in London. Front-end developer, Shopify expert, avid runner and walker."
+  copy="I'm Craig Baldwin, We Make Websites' Development Lead, living in London. Also a front-end developer, Shopify expert, avid runner and walker."
 >}}
 
 I've worked at [We Make Websites](https://wemakewebsites.com/) for three years, specialising in the front-end development of Shopify e-commerce stores. I'm the Development Lead and help lead a team of 20-plus developers alongside the DevOps Lead. I've led the development of, and launched, six stores and supported the ongoing development of many more.

@@ -2,6 +2,9 @@
 
 This changelog only provides headline changes, see the commit history for all changes.
 
+## 12.2.4 - 2020-09-21
+* Correct Knott Rigg name on mountains page
+
 ## 12.2.3 - 2020-09-18
 * Further updates to information about my new role
 * Added SofaSofa launch blog post

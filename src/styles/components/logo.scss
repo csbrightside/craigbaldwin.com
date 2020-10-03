@@ -10,6 +10,7 @@
 
   &#{&}--crabtree-evelyn,
   &#{&}--direct-doors,
+  &#{&}--sofasofa,
   &#{&}--sons {
     color: rgb(255, 255, 255);
   }
@@ -40,6 +41,10 @@
     width: 70%;
   }
 
+  &#{&}--sofasofa {
+    width: 45%;
+  }
+
   &#{&}--sons {
     width: 35%;
   }
@@ -55,6 +60,10 @@
 
     &#{&}--direct-doors {
       width: 46%;
+    }
+
+    &#{&}--sofasofa {
+      width: 29%;
     }
 
     &#{&}--sons {

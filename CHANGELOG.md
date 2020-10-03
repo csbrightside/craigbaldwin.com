@@ -2,9 +2,18 @@
 
 This changelog only provides headline changes, see the commit history for all changes.
 
+## 12.2.5 - 2020-10-03
+* Added _Building SofaSofa_ blog post
+* Added SofaSofa to work page
+* Removed B2C project from work page
+* Updated blog post styles
+
+## 12.2.4 - 2020-09-21
+* Correct Knott Rigg name on mountains page
+
 ## 12.2.3 - 2020-09-18
 * Further updates to information about my new role
-* Added SofaSofa launch blog post
+* Added _SofaSofa launches_ blog post
 * Fixed This Works logo not changing colour in dark mode
 
 ## 12.2.2 - 2020-09-08

@@ -2,7 +2,7 @@
 block_type: "clients"
 title: "Crabtree & Evelyn"
 handle: "crabtree-evelyn"
-weight: 2
+weight: 4
 copyright: "Image © Crabtree & Evelyn 2019"
 ---
 

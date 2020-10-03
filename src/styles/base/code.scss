@@ -59,6 +59,18 @@ code {
     opacity: 0.5;
     padding-right: $SPACING_S;
   }
+
+  /**
+   * Inline code.
+   */
+  &:not([class]) {
+    background-color: transparent;
+    color: $COLOR_RED;
+    display: inline-block;
+    font-size: 1.3rem;
+    line-height: inherit;
+    padding: 0 $SPACING_2XS;
+  }
 }
 
 /**

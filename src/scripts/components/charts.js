@@ -35,10 +35,22 @@ export default () => {
   /**
    * Chart.js global configuration.
    */
-  Chart.defaults.global.defaultFontColor = 'rgba(27, 34, 41, 1)';
+  const darkModeColours = {
+    fontColour: 'rgba(242, 242, 242, 1)',
+    gridLinesColour: 'rgba(242, 242, 242, 0.1)',
+    zeroLineColour: 'rgba(242, 242, 242, 0.25)',
+  };
+
+  const lightModeColours = {
+    fontColour: 'rgba(27, 34, 41, 1)',
+    gridLinesColour: 'rgba(27, 34, 41, 0.1)',
+    zeroLineColour: 'rgba(27, 34, 41, 0.25)',
+  };
+
+  Chart.defaults.global.defaultFontColor = lightModeColours.fontColour;
   Chart.defaults.global.defaultFontFamily = "Eczar, serif";
   Chart.defaults.global.defaultFontSize = 12;
-  Chart.defaults.global.tooltips.backgroundColor = 'rgba(27, 34, 41, 1)';
+  Chart.defaults.global.tooltips.backgroundColor = lightModeColours.fontColour;
   Chart.defaults.global.tooltips.borderWidth = 0;
   Chart.defaults.global.tooltips.caretPadding = 5;
   Chart.defaults.global.tooltips.caretSize = 10;
@@ -80,7 +92,7 @@ export default () => {
     buildCharts();
 
     if (isDarkMode()) {
-      setDarkModeSettings();
+      setDarkModeColours();
     }
 
     /**
@@ -127,38 +139,31 @@ export default () => {
    */
   function handleDarkModeEvent(darkMode) {
     if (darkMode) {
-      setDarkModeSettings();
+      setDarkModeColours();
       return;
     }
 
-    setLightModeSettings();
+    setLightModeColours();
   }
 
   /**
    * Enable chart dark mode.
    */
-  function setDarkModeSettings() {
-    const fontColour = 'rgba(242,242,242,1)';
-    const gridLinesColour = 'rgba(242,242,242,0.1)';
-    const zeroLineColour = 'rgba(242,242,242,0.25)';
+  function setDarkModeColours() {
+    Object.keys(charts).forEach((key) => {
+      const chart = charts[key].data.options.scales;
 
-    charts.walking.data.options.scales.xAxes[0].ticks.fontColor = fontColour;
-    charts.walking.data.options.scales.yAxes[0].ticks.fontColor = fontColour;
-    charts.walking.data.options.scales.yAxes[0].gridLines.color = gridLinesColour;
-    charts.walking.data.options.scales.yAxes[0].gridLines.zeroLineColor = zeroLineColour;
-    charts.walking.data.options.scales.yAxes[1].ticks.fontColor = fontColour;
-    charts.walking.data.options.scales.yAxes[1].gridLines.color = gridLinesColour;
-    charts.walking.data.options.scales.yAxes[1].gridLines.zeroLineColor = zeroLineColour;
+      chart.xAxes[0].ticks.fontColor = darkModeColours.fontColour;
+      chart.yAxes[0].ticks.fontColor = darkModeColours.fontColour;
+      chart.yAxes[0].gridLines.color = darkModeColours.gridLinesColour;
+      chart.yAxes[0].gridLines.zeroLineColor = darkModeColours.zeroLineColour;
 
-    charts.total.data.options.scales.xAxes[0].ticks.fontColor = fontColour;
-    charts.total.data.options.scales.yAxes[0].ticks.fontColor = fontColour;
-    charts.total.data.options.scales.yAxes[0].gridLines.color = gridLinesColour;
-    charts.total.data.options.scales.yAxes[0].gridLines.zeroLineColor = zeroLineColour;
-
-    charts.elevation.data.options.scales.xAxes[0].ticks.fontColor = fontColour;
-    charts.elevation.data.options.scales.yAxes[0].ticks.fontColor = fontColour;
-    charts.elevation.data.options.scales.yAxes[0].gridLines.color = gridLinesColour;
-    charts.elevation.data.options.scales.yAxes[0].gridLines.zeroLineColor = zeroLineColour;
+      if (chart.yAxes.length > 1) {
+        chart.yAxes[1].ticks.fontColor = darkModeColours.fontColour;
+        chart.yAxes[1].gridLines.color = darkModeColours.gridLinesColour;
+        chart.yAxes[1].gridLines.zeroLineColor = darkModeColours.zeroLineColour;
+      }
+    });
 
     resetCharts();
   }
@@ -166,28 +171,21 @@ export default () => {
   /**
    * Enable chart light mode.
    */
-  function setLightModeSettings() {
-    const fontColour = 'rgba(27,34,41,1)';
-    const gridLinesColour = 'rgba(27,34,41,0.1)';
-    const zeroLineColour = 'rgba(27,34,41,0.25)';
+  function setLightModeColours() {
+    Object.keys(charts).forEach((key) => {
+      const chart = charts[key].data.options.scales;
 
-    charts.walking.data.options.scales.xAxes[0].ticks.fontColor = fontColour;
-    charts.walking.data.options.scales.yAxes[0].ticks.fontColor = fontColour;
-    charts.walking.data.options.scales.yAxes[0].gridLines.color = gridLinesColour;
-    charts.walking.data.options.scales.yAxes[0].gridLines.zeroLineColor = zeroLineColour;
-    charts.walking.data.options.scales.yAxes[1].ticks.fontColor = fontColour;
-    charts.walking.data.options.scales.yAxes[1].gridLines.color = gridLinesColour;
-    charts.walking.data.options.scales.yAxes[1].gridLines.zeroLineColor = zeroLineColour;
+      chart.xAxes[0].ticks.fontColor = darkModeColours.fontColour;
+      chart.yAxes[0].ticks.fontColor = darkModeColours.fontColour;
+      chart.yAxes[0].gridLines.color = darkModeColours.gridLinesColour;
+      chart.yAxes[0].gridLines.zeroLineColor = darkModeColours.zeroLineColour;
 
-    charts.total.data.options.scales.xAxes[0].ticks.fontColor = fontColour;
-    charts.total.data.options.scales.yAxes[0].ticks.fontColor = fontColour;
-    charts.total.data.options.scales.yAxes[0].gridLines.color = gridLinesColour;
-    charts.total.data.options.scales.yAxes[0].gridLines.zeroLineColor = zeroLineColour;
-
-    charts.elevation.data.options.scales.xAxes[0].ticks.fontColor = fontColour;
-    charts.elevation.data.options.scales.yAxes[0].ticks.fontColor = fontColour;
-    charts.elevation.data.options.scales.yAxes[0].gridLines.color = gridLinesColour;
-    charts.elevation.data.options.scales.yAxes[0].gridLines.zeroLineColor = zeroLineColour;
+      if (chart.yAxes.length > 1) {
+        chart.yAxes[1].ticks.fontColor = darkModeColours.fontColour;
+        chart.yAxes[1].gridLines.color = darkModeColours.gridLinesColour;
+        chart.yAxes[1].gridLines.zeroLineColor = darkModeColours.zeroLineColour;
+      }
+    });
 
     resetCharts();
   }

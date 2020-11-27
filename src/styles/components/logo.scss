@@ -8,15 +8,11 @@
   height: auto;
   width: 62%;
 
-  &#{&}--crabtree-evelyn,
   &#{&}--direct-doors,
+  &#{&}--paul-valentine,
   &#{&}--sofasofa,
   &#{&}--sons {
-    color: rgb(255, 255, 255);
-  }
-
-  &#{&}--crabtree-evelyn {
-    width: 40%;
+    color: $COLOR_WHITE;
   }
 
   &#{&}--direct-doors {
@@ -41,6 +37,10 @@
     width: 70%;
   }
 
+  &#{&}--paul-valentine {
+    width: 18%;
+  }
+
   &#{&}--sofasofa {
     width: 45%;
   }
@@ -54,12 +54,12 @@
   }
 
   @include mq($from: medium) {
-    &#{&}--crabtree-evelyn {
-      width: 28%;
-    }
-
     &#{&}--direct-doors {
       width: 46%;
+    }
+
+    &#{&}--paul-valentine {
+      width: 12%;
     }
 
     &#{&}--sofasofa {

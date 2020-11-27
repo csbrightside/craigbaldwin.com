@@ -3,7 +3,7 @@ block_type: "clients"
 title: "Direct Doors"
 handle: "direct-doors"
 link: "https://directdoors.com/"
-weight: 2
+weight: 3
 copyright: "Image © Direct Doors 2019"
 ---
 

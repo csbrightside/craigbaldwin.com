@@ -2,6 +2,13 @@
 
 This changelog only provides headline changes, see the commit history for all changes.
 
+## 12.2.6 - 2020-11-27
+* Added Paul Valentine to work page
+* Shuffled existing clients on work page
+* Updated about page content
+* Updated contact page content
+* Fixed lazy loading images above the fold
+
 ## 12.2.5 - 2020-10-03
 * Added _Building SofaSofa_ blog post
 * Added SofaSofa to work page
@@ -9,7 +16,7 @@ This changelog only provides headline changes, see the commit history for all ch
 * Updated blog post styles
 
 ## 12.2.4 - 2020-09-21
-* Correct Knott Rigg name on mountains page
+* Corrected Knott Rigg name on mountains page
 
 ## 12.2.3 - 2020-09-18
 * Further updates to information about my new role

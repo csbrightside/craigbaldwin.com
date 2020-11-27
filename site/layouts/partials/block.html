@@ -108,7 +108,9 @@
           {{ else }}
             role="presentation"
           {{ end }}
-          loading="lazy"
+          {{ if (ne .Params.weight 1) }}
+            loading="lazy"
+          {{ end }}
           src="/images/{{ .Params.block_type }}/{{ .Params.handle }}.jpg"
           {{ if .Params.srcset }}
             sizes="auto"

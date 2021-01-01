@@ -2,6 +2,13 @@
 
 This changelog only provides headline changes, see the commit history for all changes.
 
+## 12.3.0 - 2021-01-01
+* Added elevation chart to distances
+* Updated distances graphs with 2020
+* Updated distances chart colour palette
+* Updated about page content
+* Dependencies versions update
+
 ## 12.2.6 - 2020-11-27
 * Added Paul Valentine to work page
 * Shuffled existing clients on work page

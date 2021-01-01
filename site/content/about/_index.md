@@ -12,7 +12,9 @@ colour: "orange"
   copy="I'm Craig Baldwin, We Make Websites' Development Lead, living in London. Front-end developer, Shopify expert, avid runner and walker."
 >}}
 
-I've worked at [We Make Websites](https://wemakewebsites.com/) for three years, specialising in the front-end development of Shopify e-commerce stores. I'm the Development Lead and, alongside the DevOps Lead and Head of Technology, I support a team of 25-plus developers. I've led the development of, and launched, six stores and supported the ongoing development of many more.
+I've worked at [We Make Websites](https://wemakewebsites.com/) for over three years, specialising in the front-end development of Shopify e-commerce stores. I'm the Development Lead and, alongside the DevOps Lead and Head of Technology, I support a team of over 25 developers. I've led the development of seven stores and supported the ongoing development of many more.
+
+<!-- TP Toys, SofaSofa, This Works, Sons, Autonative, Underalls, Direct Doors -->
 
 I enjoy technically challenging briefs which require a degree of complex problem solving and have a tendency for perfectism in my code. My background in Graphic Design gives me an eye for design and I'm at my best when I have agency over the solution.
 

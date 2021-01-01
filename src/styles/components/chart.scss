@@ -17,6 +17,10 @@
     width: 100%;
   }
 
+  &__details {
+    margin-top: $SPACING_S;
+  }
+
   @include mq($from: medium) {
     &__chart {
       padding-bottom: 49%;

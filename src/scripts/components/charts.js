@@ -7,12 +7,15 @@
  */
 import Cookies from 'js-cookie';
 
+import {elevationData, totalData, walkingData} from '../helpers/chart-data';
+
  /**
  * DOM selectors.
  */
 const selectors = {
-  walkingChart: '[js-chart="walking"]',
-  totalChart: '[js-chart="total"]',
+  walking: '[js-chart="walking"]',
+  total: '[js-chart="total"]',
+  elevation: '[js-chart="elevation"]',
 };
 
 /**
@@ -24,17 +27,30 @@ export default () => {
    * DOM node selectors.
    */
   const nodeSelectors = {
-    walkingChart: document.querySelector(selectors.walkingChart).getContext('2d'),
-    totalChart: document.querySelector(selectors.totalChart).getContext('2d'),
+    walking: document.querySelector(selectors.walking).getContext('2d'),
+    total: document.querySelector(selectors.total).getContext('2d'),
+    elevation: document.querySelector(selectors.elevation).getContext('2d'),
   };
 
   /**
    * Chart.js global configuration.
    */
-  Chart.defaults.global.defaultFontColor = 'rgba(27, 34, 41, 1)';
+  const darkModeColours = {
+    fontColour: 'rgba(242, 242, 242, 1)',
+    gridLinesColour: 'rgba(242, 242, 242, 0.1)',
+    zeroLineColour: 'rgba(242, 242, 242, 0.25)',
+  };
+
+  const lightModeColours = {
+    fontColour: 'rgba(27, 34, 41, 1)',
+    gridLinesColour: 'rgba(27, 34, 41, 0.1)',
+    zeroLineColour: 'rgba(27, 34, 41, 0.25)',
+  };
+
+  Chart.defaults.global.defaultFontColor = lightModeColours.fontColour;
   Chart.defaults.global.defaultFontFamily = "Eczar, serif";
   Chart.defaults.global.defaultFontSize = 12;
-  Chart.defaults.global.tooltips.backgroundColor = 'rgba(27, 34, 41, 1)';
+  Chart.defaults.global.tooltips.backgroundColor = lightModeColours.fontColour;
   Chart.defaults.global.tooltips.borderWidth = 0;
   Chart.defaults.global.tooltips.caretPadding = 5;
   Chart.defaults.global.tooltips.caretSize = 10;
@@ -49,20 +65,34 @@ export default () => {
   /**
    * Global variables.
    */
-  let walkingChart = {};
-  let walkingChartSettings = {};
-  let totalChart = {};
-  let totalChartSettings = {};
+  const charts = {
+    elevation: {
+      id: 'elevation',
+      selector: nodeSelectors.elevation,
+      data: elevationData,
+    },
+    total: {
+      id: 'total',
+      selector: nodeSelectors.total,
+      data: totalData,
+    },
+    walking: {
+      id: 'walking',
+      selector: nodeSelectors.walking,
+      data: walkingData,
+    },
+  };
+
+  const render = {};
 
   /**
    * Initialise component.
    */
   function init() {
-    buildWalkingChart();
-    buildTotalChart();
+    buildCharts();
 
     if (isDarkMode()) {
-      setDarkModeSettings();
+      setDarkModeColours();
     }
 
     /**
@@ -74,143 +104,13 @@ export default () => {
   }
 
   /**
-   * Build walking chart using Chart.js
+   * Build all charts.
    */
-  function buildWalkingChart() {
-    walkingChartSettings = {
-      type: 'bar',
-      data: {
-        labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-        datasets: [
-          {
-            label: 'Run',
-            data: [0, 96.4, 548.4, 1104.9, 1148.2, 853.1, 710.2, 732.6, 701.2, 452.3, 261.1],
-            backgroundColor: 'rgba(85,98,112,0.5)',
-            borderWidth: 0,
-            yAxisID: 'A',
-          },
-          {
-            label: 'Walk',
-            data: [438.7, 858.9, 941.6, 1161.9, 1422.7, 1708.3, 1819.7, 1780.8, 1787.6, 1934.7, 1894.5],
-            backgroundColor: 'rgba(101,145,218,0.5)',
-            borderWidth: 0,
-            yAxisID: 'A',
-          },
-          {
-            label: 'Average Miles By Foot Per Day',
-            data: [1.2, 2.62, 4.08, 6.19, 7.03, 7, 6.91, 6.85, 6.8, 6.45, 5.89],
-            type: 'line',
-            backgroundColor: 'rgba(0,0,0,0)',
-            borderColor: '#3498db',
-            pointBackgroundColor: '#3498db',
-            yAxisID: 'B',
-          },
-        ],
-      },
-      options: {
-        scales: {
-          xAxes: [
-            {
-              gridLines: {
-                display: false,
-              },
-              stacked: true,
-            },
-          ],
-          yAxes: [
-            {
-              id: 'A',
-              position: 'left',
-              stacked: true,
-              ticks: {
-                beginAtZero: true,
-              },
-            },
-            {
-              id: 'B',
-              position: 'right',
-              ticks: {
-                beginAtZero: true,
-              },
-              gridLines: {
-                display: false,
-              },
-            },
-          ],
-        },
-      },
-    };
-
-    walkingChart = new Chart(nodeSelectors.walkingChart, walkingChartSettings);
-  }
-
-  /**
-   * Build total distances chart using Chart.js
-   */
-  function buildTotalChart() {
-    totalChartSettings = {
-      type: 'bar',
-      data: {
-        labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019'],
-        datasets: [
-          {
-            label: 'Walk',
-            data: [438.7, 858.9, 941.6, 1161.9, 1422.7, 1708.3, 1819.7, 1780.8, 1787.6, 1934.7, 1894.5],
-            backgroundColor: 'rgba(101,145,218,1.0)',
-            borderWidth: 0,
-          },
-          {
-            label: 'Run',
-            data: [0, 96.4, 548.4, 1104.9, 1148.2, 853.1, 710.2, 732.6, 701.2, 452.3, 261.1],
-            backgroundColor: 'rgba(85,98,112,1.0)',
-            borderWidth: 0,
-          },
-          {
-            label: 'Bike',
-            data: [0, 7.4, 12.4, 40.2, 116, 54, 0, 0],
-            backgroundColor: 'rgba(78,205,196,1.0)',
-            borderWidth: 0,
-          },
-          {
-            label: 'Bus',
-            data: [72.6, 74.4, 1449.4, 1645.1, 1500.1, 570, 37.4, 18.6, 13.5, 1.9],
-            backgroundColor: 'rgba(199,244,100,1.0)',
-            borderWidth: 0,
-          },
-          {
-            label: 'Train',
-            data: [1758.6, 1220, 5289.6, 1462.6, 1069.4, 2806.4, 3392.5, 1068.2, 1218.5, 5578, 4986.2],
-            backgroundColor: 'rgba(255,107,107,1.0)',
-            borderWidth: 0,
-          },
-          {
-            label: 'Car',
-            data: [3226, 4181.3, 7937, 5228.8, 6021.6, 3633.9, 2977.3, 5903.8, 8103.9, 4324.3, 5910.9],
-            backgroundColor: 'rgba(196,77,88,1.0)',
-            borderWidth: 0,
-          },
-        ],
-      },
-      options: {
-        scales: {
-          xAxes: [
-            {
-              gridLines: {
-                display: false,
-              },
-              stacked: true,
-            },
-          ],
-          yAxes: [
-            {
-              stacked: true,
-            },
-          ],
-        },
-      },
-    };
-
-    totalChart = new Chart(nodeSelectors.totalChart, totalChartSettings);
+  function buildCharts() {
+    Object.keys(charts).forEach((key) => {
+      const chart = charts[key];
+      render[chart.id] = new Chart(chart.selector, chart.data);
+    });
   }
 
   /**
@@ -239,28 +139,31 @@ export default () => {
    */
   function handleDarkModeEvent(darkMode) {
     if (darkMode) {
-      setDarkModeSettings();
-    } else {
-      setLightModeSettings();
+      setDarkModeColours();
+      return;
     }
+
+    setLightModeColours();
   }
 
   /**
    * Enable chart dark mode.
    */
-  function setDarkModeSettings() {
-    walkingChartSettings.options.scales.xAxes[0].ticks.fontColor = 'rgba(242,242,242,1)';
-    walkingChartSettings.options.scales.yAxes[0].ticks.fontColor = 'rgba(242,242,242,1)';
-    walkingChartSettings.options.scales.yAxes[0].gridLines.color = 'rgba(242,242,242,0.1)';
-    walkingChartSettings.options.scales.yAxes[0].gridLines.zeroLineColor = 'rgba(242,242,242,0.25)';
-    walkingChartSettings.options.scales.yAxes[1].ticks.fontColor = 'rgba(242,242,242,1)';
-    walkingChartSettings.options.scales.yAxes[1].gridLines.color = 'rgba(242,242,242,0.1)';
-    walkingChartSettings.options.scales.yAxes[1].gridLines.zeroLineColor = 'rgba(242,242,242,0.25)';
+  function setDarkModeColours() {
+    Object.keys(charts).forEach((key) => {
+      const chart = charts[key].data.options.scales;
 
-    totalChartSettings.options.scales.xAxes[0].ticks.fontColor = 'rgba(242,242,242,1)';
-    totalChartSettings.options.scales.yAxes[0].ticks.fontColor = 'rgba(242,242,242,1)';
-    totalChartSettings.options.scales.yAxes[0].gridLines.color = 'rgba(242,242,242,0.1)';
-    totalChartSettings.options.scales.yAxes[0].gridLines.zeroLineColor = 'rgba(242,242,242,0.25)';
+      chart.xAxes[0].ticks.fontColor = darkModeColours.fontColour;
+      chart.yAxes[0].ticks.fontColor = darkModeColours.fontColour;
+      chart.yAxes[0].gridLines.color = darkModeColours.gridLinesColour;
+      chart.yAxes[0].gridLines.zeroLineColor = darkModeColours.zeroLineColour;
+
+      if (chart.yAxes.length > 1) {
+        chart.yAxes[1].ticks.fontColor = darkModeColours.fontColour;
+        chart.yAxes[1].gridLines.color = darkModeColours.gridLinesColour;
+        chart.yAxes[1].gridLines.zeroLineColor = darkModeColours.zeroLineColour;
+      }
+    });
 
     resetCharts();
   }
@@ -268,19 +171,21 @@ export default () => {
   /**
    * Enable chart light mode.
    */
-  function setLightModeSettings() {
-    walkingChartSettings.options.scales.xAxes[0].ticks.fontColor = 'rgba(27,34,41,1)';
-    walkingChartSettings.options.scales.yAxes[0].ticks.fontColor = 'rgba(27,34,41,1)';
-    walkingChartSettings.options.scales.yAxes[0].gridLines.color = 'rgba(27,34,41,0.1)';
-    walkingChartSettings.options.scales.yAxes[0].gridLines.zeroLineColor = 'rgba(27,34,41,0.25)';
-    walkingChartSettings.options.scales.yAxes[1].ticks.fontColor = 'rgba(27,34,41,1)';
-    walkingChartSettings.options.scales.yAxes[1].gridLines.color = 'rgba(27,34,41,0.1)';
-    walkingChartSettings.options.scales.yAxes[1].gridLines.zeroLineColor = 'rgba(27,34,41,0.25)';
+  function setLightModeColours() {
+    Object.keys(charts).forEach((key) => {
+      const chart = charts[key].data.options.scales;
 
-    totalChartSettings.options.scales.xAxes[0].ticks.fontColor = 'rgba(27,34,41,1)';
-    totalChartSettings.options.scales.yAxes[0].ticks.fontColor = 'rgba(27,34,41,1)';
-    totalChartSettings.options.scales.yAxes[0].gridLines.color = 'rgba(27,34,41,0.1)';
-    totalChartSettings.options.scales.yAxes[0].gridLines.zeroLineColor = 'rgba(27,34,41,0.25)';
+      chart.xAxes[0].ticks.fontColor = darkModeColours.fontColour;
+      chart.yAxes[0].ticks.fontColor = darkModeColours.fontColour;
+      chart.yAxes[0].gridLines.color = darkModeColours.gridLinesColour;
+      chart.yAxes[0].gridLines.zeroLineColor = darkModeColours.zeroLineColour;
+
+      if (chart.yAxes.length > 1) {
+        chart.yAxes[1].ticks.fontColor = darkModeColours.fontColour;
+        chart.yAxes[1].gridLines.color = darkModeColours.gridLinesColour;
+        chart.yAxes[1].gridLines.zeroLineColor = darkModeColours.zeroLineColour;
+      }
+    });
 
     resetCharts();
   }
@@ -289,11 +194,12 @@ export default () => {
    * Resets the charts.
    */
   function resetCharts() {
-    walkingChart.destroy();
-    totalChart.destroy();
+    Object.keys(render).forEach((key) => {
+      const chart = render[key];
+      chart.destroy();
+    });
 
-    walkingChart = new Chart(nodeSelectors.walkingChart, walkingChartSettings);
-    totalChart = new Chart(nodeSelectors.totalChart, totalChartSettings);
+    buildCharts();
   }
 
   /**

@@ -20,17 +20,12 @@
   }
 
   &#{&}--emma-bridgewater,
-  &#{&}--hummingbird-bakery,
-  &#{&}--lightbox {
+  &#{&}--hummingbird-bakery {
     width: 88%;
   }
 
-  &#{&}--hasbro {
+  &#{&}--hasbro, {
     width: 51%;
-  }
-
-  &#{&}--lightbox {
-    margin-top: 7%;
   }
 
   &#{&}--newbie {
@@ -38,7 +33,7 @@
   }
 
   &#{&}--paul-valentine {
-    width: 18%;
+    width: 20%;
   }
 
   &#{&}--sofasofa {
@@ -53,6 +48,13 @@
     width: 78%;
   }
 
+  &#{&}--tp-toys {
+    width: 24%;
+  }
+
+  /**
+   * Media queries.
+   */
   @include mq($from: medium) {
     &#{&}--direct-doors {
       width: 46%;
@@ -63,11 +65,15 @@
     }
 
     &#{&}--sofasofa {
-      width: 29%;
+      width: 30%;
     }
 
     &#{&}--sons {
       width: 20%;
+    }
+
+    &#{&}--tp-toys {
+      width: 15.5%;
     }
   }
 }

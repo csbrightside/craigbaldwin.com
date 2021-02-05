@@ -108,18 +108,20 @@
           {{ else }}
             role="presentation"
           {{ end }}
+          height="600"
           {{ if (ne .Params.weight 1) }}
             loading="lazy"
           {{ end }}
           src="/images/{{ .Params.block_type }}/{{ .Params.handle }}.jpg"
           {{ if .Params.srcset }}
-            sizes="auto"
+            sizes="(min-width: 768px) 700px, 100vw"
             srcset="
               /images/{{ .Params.block_type }}/{{ .Params.handle }}_600x.jpg 600w,
               /images/{{ .Params.block_type }}/{{ .Params.handle }}.jpg 900w,
               /images/{{ .Params.block_type }}/{{ .Params.handle }}_1200x.jpg 1200w,
             "
           {{ end }}
+          width="900"
         >
       {{ end }}
 

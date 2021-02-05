@@ -7,6 +7,7 @@ This changelog only provides headline changes, see the commit history for all ch
 * Added TP Toys to work page
 * Updated existing clients on work page
 * Updated existing blog posts' link formatting
+* Fixed block image sizes and layout shift
 * Dependencies versions update
 
 ## 12.3.0 - 2021-01-01

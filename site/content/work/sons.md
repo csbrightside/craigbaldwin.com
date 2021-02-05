@@ -3,7 +3,7 @@ block_type: "clients"
 title: "Sons"
 handle: "sons"
 link: "https://sons.co.uk"
-weight: 3
+weight: 5
 copyright: "Image © Sons 2019"
 ---
 

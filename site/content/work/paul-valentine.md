@@ -3,7 +3,7 @@ block_type: "clients"
 title: "Paul Valentine"
 handle: "paul-valentine"
 link: "https://uk.paul-valentine.com/"
-weight: 2
+weight: 3
 copyright: "Image © Paul Valentine 2020"
 srcset: true
 ---

@@ -8,7 +8,7 @@ excerpt: "Happy to announce that my latest build at We Make Websites has just la
 
 {{<
   link
-  title="SofaSofa.co.uk"
+  title="sofasofa.co.uk"
   subtitle="A great British manufacturer since 1981."
   url="https://sofasofa.co.uk"
 >}}

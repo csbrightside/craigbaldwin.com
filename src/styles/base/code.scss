@@ -16,6 +16,7 @@ $COLOR_CODE_DARK_YELLOW: #d7ba7d;
 $COLOR_CODE_LIGHT_YELLOW: #dcdcaa;
 $COLOR_CODE_PURPLE: #c586c0;
 $COLOR_CODE_WHITE: #fff;
+$COLOR_CODE_DARK_GREY: #808080;
 
 .highlight {
   background-color: $COLOR_CODE_BLACK;
@@ -70,6 +71,31 @@ code {
     font-size: 1.3rem;
     line-height: inherit;
     padding: 0 $SPACING_2XS;
+  }
+}
+
+/**
+ * HTML.
+ */
+.language-html {
+  // Element
+  .nt {
+    color: $COLOR_CODE_DARK_BLUE;
+  }
+
+  // Chevron
+  .p {
+    color: $COLOR_CODE_DARK_GREY;
+  }
+
+  // Attribute
+  .na, .err {
+    color: $COLOR_CODE_LIGHT_BLUE;
+  }
+
+  // Value
+  .s {
+    color: $COLOR_CODE_ORANGE;
   }
 }
 

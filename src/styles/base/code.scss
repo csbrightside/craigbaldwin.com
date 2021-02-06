@@ -65,7 +65,8 @@ code {
    * Inline code.
    */
   &:not([class]) {
-    background-color: transparent;
+    background-color: rgba($COLOR_CODE_DARK_GREY, 0.1);
+    border-radius: 3px;
     color: $COLOR_RED;
     display: inline-block;
     font-size: 1.3rem;
@@ -97,6 +98,13 @@ code {
   .s {
     color: $COLOR_CODE_ORANGE;
   }
+}
+
+/**
+ * Used for Liquid.
+ */
+.language-htm {
+  color: $COLOR_CODE_LIGHT_BLUE;
 }
 
 /**
@@ -149,7 +157,7 @@ code {
   }
 
   // Functions, boolean, operators
-  .kd, .kc, .operator {
+  .kd, .kc, .kr, .operator {
     color: $COLOR_CODE_DARK_BLUE;
   }
 
@@ -158,7 +166,7 @@ code {
     color: $COLOR_CODE_LIGHT_BLUE;
   }
 
-  // If
+  // If, this
   .k {
     color: $COLOR_CODE_PURPLE;
   }
@@ -169,7 +177,7 @@ code {
   }
 
   // Numbers
-  .mi {
+  .mi, .mf {
     color: $COLOR_CODE_LIGHT_GREEN;
   }
 

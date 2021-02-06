@@ -8,7 +8,7 @@
 
 $COLOR_CODE_BLACK: #1e1e1e;
 $COLOR_CODE_DARK_GREEN: #529949;
-$COLOR_CODE_LIGHT_GREEN: #93cea8;
+$COLOR_CODE_LIGHT_GREEN: #4ebb7d;
 $COLOR_CODE_DARK_BLUE: #569cd6;
 $COLOR_CODE_LIGHT_BLUE: #9cdcfe;
 $COLOR_CODE_ORANGE: #ce9178;
@@ -105,6 +105,32 @@ code {
  */
 .language-htm {
   color: $COLOR_CODE_LIGHT_BLUE;
+
+  .start, .end {
+    color: $COLOR_CODE_LIGHT_YELLOW;
+  }
+
+  .percent {
+    color: $COLOR_CODE_DARK_GREY;
+  }
+
+  .set {
+    color: $COLOR_CODE_DARK_BLUE;
+  }
+
+  // Operators (=, |, > etc.)
+  .p {
+    color: $COLOR_CODE_WHITE;
+  }
+
+  // Filters, objects, sub-objects
+  .fo, .so {
+    color: $COLOR_CODE_LIGHT_GREEN;
+  }
+
+  .string {
+    color: $COLOR_CODE_ORANGE;
+  }
 }
 
 /**

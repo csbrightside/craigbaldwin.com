@@ -1,7 +1,7 @@
 ---
 title: "TP Toys launches"
 date: 2021-02-05
-tags: ["Launches"]
+tags: ["Launches", "TP Toys"]
 draft: false
 excerpt: "A new We Make Websites build launched this week."
 ---

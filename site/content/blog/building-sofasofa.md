@@ -1,7 +1,7 @@
 ---
 title: "Building SofaSofa"
 date: 2020-10-03
-tags: ["Development"]
+tags: ["Development", "SofaSofa"]
 draft: false
 excerpt: "A look at the headline features and how they were built."
 ---

@@ -2,6 +2,13 @@
 
 This changelog only provides headline changes, see the commit history for all changes.
 
+## 12.3.2 - 2021-02-08
+* Added _3D models and variants in Shopify_ blog post
+* Added blog post Liquid code formatting
+* Updated existing blog post code formatting
+* Updated previous blog post tags
+* Updated work page to link to tagged blog posts
+
 ## 12.3.1 - 2021-02-05
 * Added _TP Toys launches_ blog post
 * Added TP Toys to work page

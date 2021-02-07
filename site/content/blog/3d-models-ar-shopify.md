@@ -2,7 +2,7 @@
 title: "3D models and variants in Shopify"
 date: 2021-02-08
 tags: ["Development", "TP Toys"]
-draft: true
+draft: false
 excerpt: "How we solved seamless 3D model switching for TP Toys."
 ---
 

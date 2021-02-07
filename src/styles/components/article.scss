@@ -54,6 +54,10 @@
       align-items: flex-end;
       margin-left: auto;
 
+      .sub-text {
+        text-align: right;
+      }
+
       &::before,
       &::after {
         left: inherit;

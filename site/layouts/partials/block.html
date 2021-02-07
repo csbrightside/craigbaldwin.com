@@ -139,9 +139,19 @@
 
   <div class="{{ $contentRowClasses }}">
     <div class="{{ $contentClasses }}">
-      <div class="block__content ">
+      <div class="block__content">
         {{ .Content }}
       </div>
+
+      {{ if .Params.articles }}
+        <div class="block__content">
+          <p>
+            <a class="block__articles" href="/tags/{{ .Params.handle }}">
+              Read related blog posts
+            </a>
+          </p>
+        </div>
+      {{ end }}
 
       {{ if .Params.copyright }}
         <div class="block__copyright block__copyright--mobile sub-text">

@@ -6,7 +6,7 @@
  */
 .card {
   $parent: &;
-  margin-bottom: $SPACING_L;
+  margin-bottom: $SPACING_ML;
   width: 100%;
 
   &__subtitle {
@@ -86,5 +86,12 @@
     #{$parent}__subtitle a {
       color: $COLOR_DARK_MODE_WHITE;
     }
+  }
+
+  /**
+   * Media queries.
+   */
+  @include mq($from: large) {
+    margin-bottom: $SPACING_L;
   }
 }

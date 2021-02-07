@@ -18,6 +18,7 @@ import {pageHandle} from './helpers/utils';
  */
 import accordion from './components/accordion';
 import charts from './components/charts';
+import code from './components/code';
 import counter from './components/counter';
 import darkMode from './components/dark-mode';
 import header from './components/header';
@@ -53,6 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
     case 'mountains':
       map().init();
       progress().init();
+      break;
+
+    case 'article':
+      code().init();
       break;
 
     default:

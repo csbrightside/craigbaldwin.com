@@ -2,7 +2,7 @@
 
 This changelog only provides headline changes, see the commit history for all changes.
 
-## 12.3.2 - 2021-02-08
+## 12.3.2 - 2021-02-07
 * Added _3D models and variants in Shopify_ blog post
 * Added blog post Liquid code formatting
 * Updated existing blog post code formatting

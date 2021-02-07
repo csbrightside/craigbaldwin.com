@@ -5,6 +5,7 @@ handle: "tp-toys"
 link: "https://www.tptoys.com/"
 weight: 2
 copyright: "Image © TP Toys 2021"
+articles: true
 srcset: true
 ---
 

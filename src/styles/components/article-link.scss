@@ -43,6 +43,10 @@
     margin-bottom: $SPACING_2XS;
   }
 
+  + h2 {
+    margin-top: $SPACING_ML;
+  }
+
   &:hover,
   &:focus {
     background-color: rgba($COLOR_BLUE, 0.25);

@@ -5,6 +5,6 @@ Posted {{ .PublishDate.Format "02 January 2006" }} &nbsp; | &nbsp;
 {{ with .Params.tags }}
   {{ range . }}
     {{ $href := print (absURL "tags/") (urlize .) }}
-    <a href="{{ $href }}">{{ . }}</a>
+    <a class="articles__tag" href="{{ $href }}">{{ . }}</a>
   {{ end }}
 {{ end }}

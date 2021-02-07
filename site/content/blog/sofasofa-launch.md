@@ -1,7 +1,7 @@
 ---
 title: "SofaSofa launches"
 date: 2020-09-18
-tags: ["Launches"]
+tags: ["Launches", "SofaSofa"]
 draft: false
 excerpt: "Happy to announce that my latest build at We Make Websites has just launched."
 ---

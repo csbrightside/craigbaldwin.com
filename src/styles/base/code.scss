@@ -8,7 +8,7 @@
 
 $COLOR_CODE_BLACK: #1e1e1e;
 $COLOR_CODE_DARK_GREEN: #529949;
-$COLOR_CODE_LIGHT_GREEN: #93cea8;
+$COLOR_CODE_LIGHT_GREEN: #4ebb7d;
 $COLOR_CODE_DARK_BLUE: #569cd6;
 $COLOR_CODE_LIGHT_BLUE: #9cdcfe;
 $COLOR_CODE_ORANGE: #ce9178;
@@ -16,6 +16,7 @@ $COLOR_CODE_DARK_YELLOW: #d7ba7d;
 $COLOR_CODE_LIGHT_YELLOW: #dcdcaa;
 $COLOR_CODE_PURPLE: #c586c0;
 $COLOR_CODE_WHITE: #fff;
+$COLOR_CODE_DARK_GREY: #808080;
 
 .highlight {
   background-color: $COLOR_CODE_BLACK;
@@ -64,12 +65,71 @@ code {
    * Inline code.
    */
   &:not([class]) {
-    background-color: transparent;
+    background-color: rgba($COLOR_CODE_DARK_GREY, 0.1);
+    border-radius: 3px;
     color: $COLOR_RED;
     display: inline-block;
     font-size: 1.3rem;
     line-height: inherit;
     padding: 0 $SPACING_2XS;
+  }
+}
+
+/**
+ * HTML.
+ */
+.language-html {
+  // Element
+  .nt {
+    color: $COLOR_CODE_DARK_BLUE;
+  }
+
+  // Chevron
+  .p {
+    color: $COLOR_CODE_DARK_GREY;
+  }
+
+  // Attribute
+  .na, .err {
+    color: $COLOR_CODE_LIGHT_BLUE;
+  }
+
+  // Value
+  .s {
+    color: $COLOR_CODE_ORANGE;
+  }
+}
+
+/**
+ * Used for Liquid.
+ */
+.language-htm {
+  color: $COLOR_CODE_LIGHT_BLUE;
+
+  .start, .end {
+    color: $COLOR_CODE_LIGHT_YELLOW;
+  }
+
+  .percent {
+    color: $COLOR_CODE_DARK_GREY;
+  }
+
+  .set {
+    color: $COLOR_CODE_DARK_BLUE;
+  }
+
+  // Operators (=, |, > etc.)
+  .p {
+    color: $COLOR_CODE_WHITE;
+  }
+
+  // Filters, objects, sub-objects
+  .fo, .so {
+    color: $COLOR_CODE_LIGHT_GREEN;
+  }
+
+  .string {
+    color: $COLOR_CODE_ORANGE;
   }
 }
 
@@ -123,7 +183,7 @@ code {
   }
 
   // Functions, boolean, operators
-  .kd, .kc, .operator {
+  .kd, .kc, .kr, .operator {
     color: $COLOR_CODE_DARK_BLUE;
   }
 
@@ -132,7 +192,7 @@ code {
     color: $COLOR_CODE_LIGHT_BLUE;
   }
 
-  // If
+  // If, this
   .k {
     color: $COLOR_CODE_PURPLE;
   }
@@ -143,7 +203,7 @@ code {
   }
 
   // Numbers
-  .mi {
+  .mi, .mf {
     color: $COLOR_CODE_LIGHT_GREEN;
   }
 

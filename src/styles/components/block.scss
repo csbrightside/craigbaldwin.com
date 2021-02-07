@@ -92,6 +92,10 @@
   &__content {
     border-left: 3px solid currentColor;
     padding-left: $SPACING_S;
+
+    + #{$parent}__content {
+      margin-top: $SPACING_S;
+    }
   }
 
   /**

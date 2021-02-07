@@ -68,7 +68,21 @@ export function debounce(fn) {
 
 /**
  * Determine page handle to load correct JS.
+ * @returns {String}
  */
 export function pageHandle() {
-  return document.querySelector('[js-page="handle"]').getAttribute('content');
+  const pageHandle = document.querySelector('[js-page="handle"]').getAttribute('content');
+
+  if (pageHandle) {
+    return pageHandle;
+  }
+
+  const blog = location.pathname.includes('/blog/');
+  const parts = location.pathname.split('/');
+
+  if (blog && parts.length > 3) {
+    return 'article'
+  }
+
+  return '';
 }

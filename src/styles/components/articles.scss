@@ -15,6 +15,12 @@
     }
   }
 
+  &__tag {
+    &:not(:last-child) {
+      margin-right: $SPACING_3XS;
+    }
+  }
+
   &#{&}--large {
     &:not(:last-child) {
       // Desired margin - grid gap

@@ -5,13 +5,118 @@
  *
  */
 .entries {
+  $parent: &;
+
   &__title {
     margin-bottom: $SPACING_P;
   }
 
+  &__timeline {
+    display: grid;
+    gap: $SPACING_M $SPACING_S;
+    grid-template-columns: 4px 1fr;
+    position: relative;
+
+    &::before {
+      background-color: $COLOR_GREEN;
+      border-radius: 2px;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 5px;
+      width: 4px;
+    }
+  }
+
   &__entry {
-    &:not(:last-child) {
-      margin-bottom: $SPACING_P;
+    grid-column: 2;
+    position: relative;
+
+    &::before {
+      @include transition(background-color, border-color);
+      background-color: $COLOR_BLACK;
+      border: 3px solid rgb(203, 242, 219);
+      border-radius: 100%;
+      content: '';
+      height: 16px;
+      // Margin - centre dot over timeline
+      left: calc(-#{$SPACING_S} - 13px);
+      position: absolute;
+      top: 4px;
+      transform: translateX(3px);
+      width: 16px;
+      z-index: $LAYER_RAISED;
+    }
+
+    &::after {
+      @include transition(background-color);
+      background-color: $COLOR_BLACK;
+      content: '';
+      height: 2px;
+      left: -$SPACING_2XS;
+      position: absolute;
+      top: 11px;
+      transform: translateX(-100%);
+      width: 7px;
+      z-index: $LAYER_BASE;
+    }
+  }
+
+  /**
+   * Dark mode.
+   */
+  .is-dark & {
+    #{$parent}__entry {
+      &::before {
+        background-color: $COLOR_DARK_MODE_WHITE;
+        border-color: rgb(32, 76, 59);
+      }
+
+      &::after {
+        background-color: $COLOR_DARK_MODE_WHITE;
+      }
+    }
+  }
+
+  /**
+   * Media queries.
+   */
+  @include mq($from: medium) {
+    &__timeline {
+      grid-template-columns: 1fr 4px 1fr;
+
+      &::before {
+        left: calc(50% - 2px);
+      }
+    }
+
+    &__entry {
+      &:nth-child(odd) {
+        grid-column: 1;
+        margin-top: -$SPACING_M;
+        text-align: right;
+      }
+
+      &:nth-child(odd)::before {
+        left: unset;
+        right: calc(-#{$SPACING_S} - 7px);
+      }
+
+      &:nth-child(odd)::after {
+        left: unset;
+        right: -$SPACING_2XS;
+        transform: translateX(100%);
+      }
+
+      &:nth-child(even) {
+        grid-column: 3;
+        margin-top: $SPACING_XL;
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
     }
   }
 }

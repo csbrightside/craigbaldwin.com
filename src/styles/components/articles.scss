@@ -15,12 +15,43 @@
     }
   }
 
+  &__meta-title {
+    display: inline;
+    margin-right: $SPACING_3XS;
+  }
+
   &__tag {
     &:not(:last-child) {
-      margin-right: $SPACING_3XS;
+      margin-right: $SPACING_2XS;
     }
   }
 
+  /**
+   * Homepage.
+   */
+  &__homepage-link {
+    text-decoration: none;
+
+    &:hover {
+      #{$parent}__homepage-title {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__homepage-title {
+    display: block;
+    margin-bottom: $SPACING_2XS;
+    text-decoration: underline;
+  }
+
+  &__homepage-excerpt {
+    display: block;
+  }
+
+  /**
+   * Modifiers.
+   */
   &#{&}--large {
     &:not(:last-child) {
       // Desired margin - grid gap
@@ -31,6 +62,16 @@
   &#{&}--small {
     #{$parent}__title {
       margin-bottom: $SPACING_2XS;
+    }
+  }
+
+  /**
+   * Template customisation.
+   */
+  .template--blog & {
+    #{$parent}__meta-title,
+    #{$parent}__return-link {
+      display: none;
     }
   }
 }

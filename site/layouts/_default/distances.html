@@ -39,35 +39,27 @@
     </div>
 
     <!-- Year summaries -->
-    <div id="SummariesAccordion" class="blocks__block entries">
+    <div class="blocks__block entries">
       <h2 class="entries__title">Year in review</h2>
 
-      {{ range (.Pages.ByParam "handle").Reverse }}
-        <div class="entries__entry entry" js-accordion="container">
-          <button
-            class="entry__button"
-            aria-expanded="false"
-            js-accordion="button"
-          >
+      <div class="entries__timeline">
+        {{ range (.Pages.ByParam "handle").Reverse }}
+          <div class="entries__entry entry">
             <h3 class="entry__title body-1">{{ .Params.Handle }}</h3>
-          </button>
 
-          <div
-            class="entry__content body-1"
-            aria-hidden="true"
-            js-accordion="content"
-          >
-            {{ .Content }}
+            <div class="entry__content">
+              {{ .Content }}
 
-            <p class="body-2">
-              <strong>Data in full:</strong>
-              <a href="https://daytum.com/CraigBaldwin/page/{{ .Params.Page }}">
-                {{ .Params.Handle }}
-              </a>
-            </p>
+              <p class="body-2">
+                <strong>Data in full:</strong>
+                <a href="https://daytum.com/CraigBaldwin/page/{{ .Params.Page }}">
+                  {{ .Params.Handle }}
+                </a>
+              </p>
+            </div>
           </div>
-        </div>
-      {{ end }}
+        {{ end }}
+      </div>
     </div>
   </div>
 

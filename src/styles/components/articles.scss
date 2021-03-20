@@ -15,7 +15,8 @@
     }
   }
 
-  &__meta {
+  &__meta-title {
+    display: inline;
     margin-right: $SPACING_3XS;
   }
 
@@ -56,6 +57,16 @@
   &#{&}--small {
     #{$parent}__title {
       margin-bottom: $SPACING_2XS;
+    }
+  }
+
+  /**
+   * Template customisation.
+   */
+  .template--blog & {
+    #{$parent}__meta-title,
+    #{$parent}__return-link {
+      display: none;
     }
   }
 }

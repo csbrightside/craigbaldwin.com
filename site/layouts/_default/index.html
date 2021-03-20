@@ -5,10 +5,10 @@
 
   <p class="body-1">
     {{ range first 1 ($.Site.GetPage "section" "blog").Pages.ByPublishDate.Reverse }}
-      <a class="articles__homepage-link" href="{{ .Permalink }}">
+      <a class="articles__homepage-link text-link" href="{{ .Permalink }}">
         <span class="articles__homepage-title">{{ .Title }}</span>
         <span class="articles__homepage-excerpt body-2">{{ .Params.Excerpt }}</span>
       </a>
     {{ end }}
-  </p>
+    </p>
 {{ end }}

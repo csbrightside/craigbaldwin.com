@@ -1,6 +1,6 @@
 ---
 title: "About"
-description: "We Make Websites' Development Lead, living in London. Front-end developer, pod development lead, Shopify expert, avid runner and walker."
+description: "Principal developer at We Make Websites, Shopify expert, avid runner and walker, living in London."
 handle: "about"
 layout: "text"
 colour: "orange"
@@ -9,10 +9,10 @@ colour: "orange"
 {{<
   card
   title="Hello"
-  copy="I'm Craig Baldwin, We Make Websites' Development Lead, living in London. Front-end developer, Shopify expert, avid runner and walker."
+  copy="I'm Craig Baldwin, principal developer at We Make Websites, Shopify expert, avid runner and walker, living in London."
 >}}
 
-I've worked at [We Make Websites](https://wemakewebsites.com/) for over three years, specialising in the front-end development of Shopify e-commerce stores. I'm the Development Lead and, alongside the DevOps Lead and Head of Technology, I support a team of over 25 developers. I've led the development of seven stores and supported the ongoing development of many more.
+I've worked at [We Make Websites](https://wemakewebsites.com/) for over three years, specialising in the front-end development of Shopify e-commerce stores. I'm a principal developer and work on key client accounts as well as develop our internal framework. I've led the development and launch of seven stores and supported the ongoing development of many more.
 
 <!-- TP Toys, SofaSofa, This Works, Sons, Autonative, Underalls, Direct Doors -->
 
@@ -23,9 +23,9 @@ Regularly code in HTML, SCSS, vanilla JavaScript, Vue.js, and Shopify Liquid. Ex
 
 ## Responsibilities
 
-As Development Lead I'm responsible for company development standards, tools, and documentation with a shared responsibility for code quality, excellence of technical solutions, and helping to drive best-in-class development.
+As a principal developer my responsibilities include company development standards, tools, and documentation with a shared responsibility for code quality, excellence of technical solutions, and helping to drive best-in-class development.
 
-As a senior front-end developer I also provide code review feedback and developmental guidance which ensures continued code quality. I work with product owners to create briefs, solve technical hurdles, provide quotes, maintain client documentation, and write technical specifications.
+Day-to-day I lead the development of Pangaia's store, working with product owners to create briefs, solve technical hurdles, provide quotes, maintain client documentation, and write technical specifications.
 
 ## Experience
 Studied Graphic Design and Photography at the [Winchester School of Art](http://www.southampton.ac.uk/wsa/index.page), graduated in 2010 with a 2:1. In 2017 started working at We Make Websites as a front-end developer. Previously worked for Intermedia Solutions for six years; a print and digital marketing agency. For more details view my [LinkedIn](http://uk.linkedin.com/in/craigbaldwin/) page.

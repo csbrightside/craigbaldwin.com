@@ -9,9 +9,9 @@
   width: 62%;
 
   &#{&}--direct-doors,
+  &#{&}--pangaia,
   &#{&}--paul-valentine,
-  &#{&}--sofasofa,
-  &#{&}--sons {
+  &#{&}--sofasofa {
     color: $COLOR_WHITE;
   }
 
@@ -32,6 +32,10 @@
     width: 70%;
   }
 
+  &#{&}--pangaia {
+    width: 39%;
+  }
+
   &#{&}--paul-valentine {
     width: 20%;
   }
@@ -41,7 +45,7 @@
   }
 
   &#{&}--sons {
-    width: 35%;
+    width: 50%;
   }
 
   &#{&}--this-works {
@@ -60,16 +64,16 @@
       width: 46%;
     }
 
+    &#{&}--pangaia {
+      width: 25%;
+    }
+
     &#{&}--paul-valentine {
       width: 12%;
     }
 
     &#{&}--sofasofa {
       width: 30%;
-    }
-
-    &#{&}--sons {
-      width: 20%;
     }
 
     &#{&}--tp-toys {

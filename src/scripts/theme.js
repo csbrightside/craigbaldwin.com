@@ -16,7 +16,6 @@ import {pageHandle} from './helpers/utils';
 /**
  * Global component imports.
  */
-import accordion from './components/accordion';
 import charts from './components/charts';
 import code from './components/code';
 import counter from './components/counter';
@@ -47,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
       break;
 
     case 'distances':
-      accordion('#SummariesAccordion').init();
       charts().init();
       break;
 

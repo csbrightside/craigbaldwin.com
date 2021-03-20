@@ -41,7 +41,12 @@
 
   &__homepage-title {
     display: block;
+    margin-bottom: $SPACING_2XS;
     text-decoration: underline;
+  }
+
+  &__homepage-excerpt {
+    display: block;
   }
 
   /**

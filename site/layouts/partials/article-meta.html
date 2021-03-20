@@ -1,10 +1,13 @@
 <!-- Partials > Article meta. -->
 <!-- Blog article meta content. -->
-Posted {{ .PublishDate.Format "02 January 2006" }} &nbsp; | &nbsp;
+<strong class="articles__meta">Posted</strong> {{ .PublishDate.Format "02 January 2006" }} &nbsp; | &nbsp;
 
+<strong class="articles__meta">Tags</strong>
 {{ with .Params.tags }}
   {{ range . }}
     {{ $href := print (absURL "tags/") (urlize .) }}
     <a class="articles__tag" href="{{ $href }}">{{ . }}</a>
   {{ end }}
 {{ end }}
+
+&nbsp; | &nbsp; <a href="/blog">Back to blog</a>

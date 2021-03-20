@@ -15,12 +15,37 @@
     }
   }
 
+  &__meta {
+    margin-right: $SPACING_3XS;
+  }
+
   &__tag {
     &:not(:last-child) {
-      margin-right: $SPACING_3XS;
+      margin-right: $SPACING_2XS;
     }
   }
 
+  /**
+   * Homepage.
+   */
+  &__homepage-link {
+    text-decoration: none;
+
+    &:hover {
+      #{$parent}__homepage-title {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__homepage-title {
+    display: block;
+    text-decoration: underline;
+  }
+
+  /**
+   * Modifiers.
+   */
   &#{&}--large {
     &:not(:last-child) {
       // Desired margin - grid gap

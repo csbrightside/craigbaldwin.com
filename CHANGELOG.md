@@ -2,6 +2,13 @@
 
 This changelog only provides headline changes, see the commit history for all changes.
 
+## 12.4.0 - 2021-03-20
+* Added Pangaia to work page
+* Updated distances year in review design
+* Updated role description on homepage and about page
+* Updated homepage latest post design
+* Updated articles meta design
+
 ## 12.3.2 - 2021-02-07
 * Added _3D models and variants in Shopify_ blog post
 * Added blog post Liquid code formatting

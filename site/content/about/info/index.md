@@ -1,6 +1,6 @@
 ---
 title: "Info"
-description: "You are viewing version 12.3.2 of the site."
+description: "You are viewing version 12.4.0 of the site."
 handle: "info"
 layout: "text"
 colour: "orange"
@@ -9,7 +9,7 @@ colour: "orange"
 {{<
   card
   title="Info"
-  copy="You are viewing version 12.3.2 of the site."
+  copy="You are viewing version 12.4.0 of the site."
 >}}
 
 Version 12 has been online for {{< counter >}}. It launched on 16/11/2019.

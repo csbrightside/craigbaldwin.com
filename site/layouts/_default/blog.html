@@ -1,33 +1,35 @@
 {{ define "main" }}
-  {{- .Content -}}
-
   <div class="row">
-    {{ range $index, $element := .Pages.ByPublishDate.Reverse }}
-      {{ if (eq $index 0) }}
-        <div class="articles articles--large s8">
-          <h2 class="articles__title">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-          </h2>
+    <div class="col s4 l3-8">
+      {{- .Content -}}
 
-          <p class="articles__excerpt body-1">
-            {{ .Params.Excerpt }}
-          </p>
+      {{ range $index, $element := .Pages.ByPublishDate.Reverse }}
+        {{ if (eq $index 0) }}
+          <div class="articles articles--large">
+            <h2 class="articles__title">
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h2>
 
-          <p class="articles__meta sub-text">
-            {{ partial "article-meta.html" . }}
-          </p>
-        </div>
-      {{ else }}
-        <div class="articles articles--small s8">
-          <h2 class="articles__title h2-5">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-          </h2>
+            <p class="articles__excerpt body-1">
+              {{ .Params.Excerpt }}
+            </p>
 
-          <p class="articles__meta sub-text">
-            {{ partial "article-meta.html" . }}
-          </p>
-        </div>
+            <p class="articles__meta sub-text">
+              {{ partial "article-meta.html" . }}
+            </p>
+          </div>
+        {{ else }}
+          <div class="articles articles--small s8">
+            <h2 class="articles__title h2-5">
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h2>
+
+            <p class="articles__meta sub-text">
+              {{ partial "article-meta.html" . }}
+            </p>
+          </div>
+        {{ end }}
       {{ end }}
-    {{ end }}
+    </div>
   </div>
 {{ end }}

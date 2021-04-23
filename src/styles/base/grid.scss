@@ -75,6 +75,11 @@ $LAYER_POPUP: 5;
       grid-column: 3 / 9;
     }
 
+    .l5 {
+      grid-column: unset;
+      grid-column-end: span 5;
+    }
+
     &#{&}--l6 {
       grid-template-columns: repeat(6, 1fr);
     }

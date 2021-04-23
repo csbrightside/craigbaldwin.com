@@ -62,12 +62,21 @@ $LAYER_POPUP: 5;
   @include mq($from: large) {
     grid-template-columns: repeat(10, 1fr);
 
-    .l3-6 {
-      grid-column: 3 / 7;
+    .l2 {
+      grid-column: unset;
+      grid-column-end: span 2;
+    }
+
+    .l2-9 {
+      grid-column: 2 / 10;
     }
 
     .l3-8 {
       grid-column: 3 / 9;
+    }
+
+    &#{&}--l6 {
+      grid-template-columns: repeat(6, 1fr);
     }
   }
 }

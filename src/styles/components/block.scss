@@ -71,7 +71,6 @@
 
   &__image {
     height: auto;
-    margin-bottom: $SPACING_S;
     max-width: 100%;
     order: 1;
   }
@@ -143,46 +142,15 @@
   }
 
   /**
-   * Template colours.
-   */
-  .template--green & {
-    &__meta {
-      background-color: mix($COLOR_GREEN, $COLOR_WHITE, 25%);
-    }
-
-    &__content {
-      border-color: $COLOR_GREEN;
-    }
-  }
-
-  .template--purple & {
-    &__meta {
-      background-color: mix($COLOR_PURPLE, $COLOR_WHITE, 25%);
-    }
-
-    &__content {
-      border-color: $COLOR_PURPLE;
-    }
-  }
-
-  /**
    * Dark mode.
    */
   .is-dark & {
+    &__meta {
+      background-color: mix($COLOR_MID_GREY, $COLOR_BLACK, 25%);
+    }
+
     &__link {
       color: $COLOR_DARK_MODE_WHITE;
-    }
-  }
-
-  .is-dark .template--green & {
-    &__meta {
-      background-color: mix($COLOR_GREEN, $COLOR_BLACK, 25%);
-    }
-  }
-
-  .is-dark .template--purple & {
-    &__meta {
-      background-color: mix($COLOR_PURPLE, $COLOR_BLACK, 25%);
     }
   }
 
@@ -216,6 +184,7 @@
     }
 
     &__meta {
+      background-color: mix($COLOR_MID_GREY, $COLOR_WHITE, 25%);
       padding-bottom: $SPACING_M;
       padding-right: $SPACING_M;
     }
@@ -236,10 +205,6 @@
       &#{&}--desktop {
         display: block;
       }
-    }
-
-    &__image {
-      margin-bottom: $SPACING_M;
     }
 
     &__logo {

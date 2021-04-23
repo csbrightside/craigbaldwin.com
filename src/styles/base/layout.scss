@@ -56,22 +56,6 @@ html {
   margin: $SPACING_S;
   min-height: calc(100vh - (2 * #{$SPACING_S}));
   padding: 0 $SPACING_S;
-
-  &#{&}--orange {
-    background-color: rgba($COLOR_ORANGE, 0.25);
-  }
-
-  &#{&}--purple {
-    background-color: rgba($COLOR_PURPLE, 0.25);
-  }
-
-  &#{&}--green {
-    background-color: rgba($COLOR_GREEN, 0.25);
-  }
-
-  &#{&}--red {
-    background-color: rgba($COLOR_RED, 0.25);
-  }
 }
 
 .container {

@@ -23,8 +23,8 @@
 
   <div class="block__image-container">
     {{ if (ne .Params.block_type "logos")}}
-      <div class="block__meta-container row row--l6">
-        <div class="block__meta col s4 l2">
+      <div class="block__meta-container row  row--m10 row--l6">
+        <div class="block__meta col s4 m3 l2">
           <h2 class="block__title">{{ .Title }}</h2>
 
           {{ if or (eq .Params.block_type "clients") (eq .Params.block_type "mountains")}}

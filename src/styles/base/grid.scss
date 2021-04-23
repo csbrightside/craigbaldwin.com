@@ -55,24 +55,54 @@ $LAYER_POPUP: 5;
   gap: $SPACING_S;
   grid-template-columns: repeat(4, 1fr);
 
+  .content-col,
+  .wide-col,
   .s4 {
     grid-column: span 4;
   }
 
-  @include mq($from: large) {
+  @include mq($from: medium) {
     grid-template-columns: repeat(10, 1fr);
+
+    .content-col {
+      grid-column: 2 / 10;
+    }
+
+    .wide-col {
+      grid-column: 1 / 11;
+    }
+
+    .m3 {
+      grid-column: unset;
+      grid-column-end: span 3;
+    }
+
+    .m6 {
+      grid-column: unset;
+      grid-column-end: span 6;
+    }
+
+    &#{&}--m8 {
+      grid-template-columns: repeat(8, 1fr);
+    }
+
+    &#{&}--m10 {
+      grid-template-columns: repeat(10, 1fr);
+    }
+  }
+
+  @include mq($from: large) {
+    .content-col {
+      grid-column: 3 / 9;
+    }
+
+    .wide-col {
+      grid-column: 2 / 10;
+    }
 
     .l2 {
       grid-column: unset;
       grid-column-end: span 2;
-    }
-
-    .l2-9 {
-      grid-column: 2 / 10;
-    }
-
-    .l3-8 {
-      grid-column: 3 / 9;
     }
 
     .l5 {

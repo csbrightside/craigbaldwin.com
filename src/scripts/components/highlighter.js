@@ -53,7 +53,8 @@ export default () => {
    * Initialise component.
    */
   function init() {
-    start = performance.now();
+    // start = performance.now();
+
     nodeSelectors.code.forEach((element) => {
       const language = element.dataset.lang;
 
@@ -93,7 +94,7 @@ export default () => {
       }
     });
 
-    window.console.log('Performance:', (performance.now() - start));
+    // window.console.log('Performance:', (performance.now() - start));
   }
 
   /**

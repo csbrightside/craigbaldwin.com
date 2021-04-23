@@ -55,6 +55,7 @@ html {
   flex-direction: column;
   margin: $SPACING_S;
   min-height: calc(100vh - (2 * #{$SPACING_S}));
+  padding: 0 $SPACING_S;
 
   &#{&}--orange {
     background-color: rgba($COLOR_ORANGE, 0.25);
@@ -75,14 +76,8 @@ html {
 
 .container {
   margin: 0 auto;
-  max-width: ($SITE_WIDTH + (2 * $SPACING_S));
-  padding: 0 $SPACING_S;
+  max-width: $SITE_WIDTH;
   width: 100%;
-
-  @include mq($from: medium) {
-    max-width: ($SITE_WIDTH + (2 * $SPACING_M));
-    padding: 0 $SPACING_M;
-  }
 }
 
 .main {

@@ -8,6 +8,9 @@
   margin-top: auto;
 
   &__footnotes {
+    display: grid;
+    gap: $SPACING_S;
+    grid-template-columns: repeat(2, 1fr);
     margin-bottom: $SPACING_M;
   }
 
@@ -25,6 +28,10 @@
   }
 
   @include mq($from: medium) {
+    &__footnotes {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
     &__item {
       margin-bottom: $SPACING_M;
 

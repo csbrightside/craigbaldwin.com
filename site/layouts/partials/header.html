@@ -3,65 +3,69 @@
 {{ $url := .Permalink }}
 {{ $page := .Title }}
 
-<header class="header" role="banner">
-  <div class="header__container container">
-    <a class="skip-link" href="{{ .Permalink }}#MainContent">
-      Skip to content
-    </a>
+<div class="container">
+  <div class="row">
+    <header class="header col s4 l3-8" role="banner">
+      <div class="header__container">
+        <a class="skip-link" href="{{ .Permalink }}#MainContent">
+          Skip to content
+        </a>
 
-    {{ if (eq $page "Index") }}
-      <h1 class="header__heading">
-    {{ end }}
-
-    <a class="header__logo text-link" href="{{ "/" | relURL }}">
-      {{ $.Site.Params.siteTitle }}
-    </a>
-
-    {{ if (eq $page "Index") }}
-      </h1>
-    {{ end }}
-
-    <button
-      class="header__menu"
-      aria-expanded="true"
-      js-header="menuButton"
-    >
-      <span class="burger burger--middle"></span>
-      <span class="burger burger--outside"></span>
-
-      <span class="visually-hidden">Menu</span>
-    </button>
-
-    <nav
-      class="header__navigation"
-      role="navigation"
-      aria-hidden="false"
-      js-header="navigationDrawer"
-    >
-      <ul class="header__list">
-        {{ range .Site.Menus.main }}
-          <li class="header__list-item header__list-item--{{ .Identifier }}">
-            <a
-              class="
-                header__link
-                navigation
-                {{ if in $url .URL }}is-active{{ end }}
-                {{ if and (in $url "/tags/") (eq .Title "Blog") }}is-active{{ end }}
-              "
-              href="{{ .URL }}"
-              js-header="navigationLink"
-            >
-              {{ .Title }}
-
-              <span class="visually-hidden"> {{ .Post }}</span>
-            </a>
-          </li>
+        {{ if (eq $page "Index") }}
+          <h1 class="header__heading">
         {{ end }}
-      </ul>
 
-      <div class="header__dark-mode">
-        {{ partial "dark-mode" . }}
+        <a class="header__logo text-link" href="{{ "/" | relURL }}">
+          {{ $.Site.Params.siteTitle }}
+        </a>
+
+        {{ if (eq $page "Index") }}
+          </h1>
+        {{ end }}
+
+        <button
+          class="header__menu"
+          aria-expanded="true"
+          js-header="menuButton"
+        >
+          <span class="burger burger--middle"></span>
+          <span class="burger burger--outside"></span>
+
+          <span class="visually-hidden">Menu</span>
+        </button>
+
+        <nav
+          class="header__navigation"
+          role="navigation"
+          aria-hidden="false"
+          js-header="navigationDrawer"
+        >
+          <ul class="header__list">
+            {{ range .Site.Menus.main }}
+              <li class="header__list-item header__list-item--{{ .Identifier }}">
+                <a
+                  class="
+                    header__link
+                    navigation
+                    {{ if in $url .URL }}is-active{{ end }}
+                    {{ if and (in $url "/tags/") (eq .Title "Blog") }}is-active{{ end }}
+                  "
+                  href="{{ .URL }}"
+                  js-header="navigationLink"
+                >
+                  {{ .Title }}
+
+                  <span class="visually-hidden"> {{ .Post }}</span>
+                </a>
+              </li>
+            {{ end }}
+          </ul>
+
+          <div class="header__dark-mode">
+            {{ partial "dark-mode" . }}
+          </div>
+        </nav>
       </div>
-    </nav>
+    </header>
   </div>
-</header>
+</div>

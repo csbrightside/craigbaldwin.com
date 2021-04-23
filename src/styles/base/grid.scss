@@ -20,7 +20,7 @@ $mq-breakpoints: (
 /**
  * Grid.
  */
-$SITE_WIDTH: 70rem;
+$SITE_WIDTH: 120rem;
 
 /**
  * Spacing.
@@ -53,39 +53,21 @@ $LAYER_POPUP: 5;
 .row {
   display: grid;
   gap: $SPACING_S;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
   .s4 {
-    grid-column-end: span 4;
+    grid-column: span 4;
   }
 
-  .s6 {
-    grid-column-end: span 6;
-  }
+  @include mq($from: large) {
+    grid-template-columns: repeat(10, 1fr);
 
-  .s8 {
-    grid-column-end: span 8;
-  }
-
-  @include mq($from: medium) {
-    .m2 {
-      grid-column-end: span 2;
+    .l3-6 {
+      grid-column: 3 / 7;
     }
 
-    .m3 {
-      grid-column-end: span 3;
-    }
-
-    .m4 {
-      grid-column-end: span 4;
-    }
-
-    .m6 {
-      grid-column-end: span 6;
-    }
-
-    .offset-m2 {
-      grid-column-start: 3;
+    .l3-8 {
+      grid-column: 3 / 9;
     }
   }
 }

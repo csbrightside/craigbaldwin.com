@@ -1,14 +1,18 @@
 {{ define "main" }}
-  {{- .Content -}}
+  <div class="row">
+    <div class="content-col">
+      {{- .Content -}}
 
-  <h2>Latest from the blog</h2>
+      <h2>Latest from the blog</h2>
 
-  <p class="body-1">
-    {{ range first 1 ($.Site.GetPage "section" "blog").Pages.ByPublishDate.Reverse }}
-      <a class="articles__homepage-link text-link" href="{{ .Permalink }}">
-        <span class="articles__homepage-title">{{ .Title }}</span>
-        <span class="articles__homepage-excerpt body-2">{{ .Params.Excerpt }}</span>
-      </a>
-    {{ end }}
-    </p>
+      <p class="body-1">
+        {{ range first 1 ($.Site.GetPage "section" "blog").Pages.ByPublishDate.Reverse }}
+          <a class="articles__homepage-link text-link" href="{{ .Permalink }}">
+            <span class="articles__homepage-title">{{ .Title }}</span>
+            <span class="articles__homepage-excerpt body-2">{{ .Params.Excerpt }}</span>
+          </a>
+        {{ end }}
+      </p>
+    </div>
+  </div>
 {{ end }}

@@ -7,6 +7,10 @@
 .articles {
   $parent: &;
 
+  &:not(:last-child) {
+    margin-bottom: $SPACING_S;
+  }
+
   &__excerpt {
     position: relative;
 
@@ -54,8 +58,7 @@
    */
   &#{&}--large {
     &:not(:last-child) {
-      // Desired margin - grid gap
-      margin-bottom: ($SPACING_L - $SPACING_S);
+      margin-bottom: $SPACING_L;
     }
   }
 

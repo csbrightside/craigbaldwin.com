@@ -71,7 +71,6 @@
 
   &__image {
     height: auto;
-    margin-bottom: $SPACING_S;
     max-width: 100%;
     order: 1;
   }
@@ -91,6 +90,7 @@
 
   &__content {
     border-left: 3px solid currentColor;
+    margin-top: $SPACING_S;
     padding-left: $SPACING_S;
 
     + #{$parent}__content {
@@ -143,23 +143,9 @@
   }
 
   /**
-   * Template colours.
+   * Colours.
    */
-  .template--green & {
-    &__meta {
-      background-color: mix($COLOR_GREEN, $COLOR_WHITE, 25%);
-    }
-
-    &__content {
-      border-color: $COLOR_GREEN;
-    }
-  }
-
   .template--purple & {
-    &__meta {
-      background-color: mix($COLOR_PURPLE, $COLOR_WHITE, 25%);
-    }
-
     &__content {
       border-color: $COLOR_PURPLE;
     }
@@ -169,20 +155,12 @@
    * Dark mode.
    */
   .is-dark & {
+    &__meta {
+      background-color: mix($COLOR_MID_GREY, $COLOR_BLACK, 25%);
+    }
+
     &__link {
       color: $COLOR_DARK_MODE_WHITE;
-    }
-  }
-
-  .is-dark .template--green & {
-    &__meta {
-      background-color: mix($COLOR_GREEN, $COLOR_BLACK, 25%);
-    }
-  }
-
-  .is-dark .template--purple & {
-    &__meta {
-      background-color: mix($COLOR_PURPLE, $COLOR_BLACK, 25%);
     }
   }
 
@@ -216,10 +194,31 @@
     }
 
     &__meta {
+      background-color: mix($COLOR_MID_GREY, $COLOR_WHITE, 25%);
       padding-bottom: $SPACING_M;
       padding-right: $SPACING_M;
     }
 
+    &__logo {
+      bottom: $SPACING_M;
+      // Height - image bottom margin
+      height: calc(100% - #{$SPACING_M});
+    }
+
+    &__content {
+      margin-top: $SPACING_M;
+      padding-left: $SPACING_M;
+    }
+
+    &#{&}--logos {
+      #{$parent}__logo {
+        bottom: 0;
+        height: 100%;
+      }
+    }
+  }
+
+  @include mq($from: large) {
     &__copyright {
       margin-top: 0;
       padding-bottom: $SPACING_2XS;
@@ -235,27 +234,6 @@
 
       &#{&}--desktop {
         display: block;
-      }
-    }
-
-    &__image {
-      margin-bottom: $SPACING_M;
-    }
-
-    &__logo {
-      bottom: $SPACING_M;
-      // Height - image bottom margin
-      height: calc(100% - #{$SPACING_M});
-    }
-
-    &__content {
-      padding-left: $SPACING_M;
-    }
-
-    &#{&}--logos {
-      #{$parent}__logo {
-        bottom: 0;
-        height: 100%;
       }
     }
   }

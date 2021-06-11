@@ -1,64 +1,72 @@
 {{ define "main" }}
-  {{- .Content -}}
+  <div class="row">
+    <div class="content-col">
+      {{- .Content -}}
+    </div>
+  </div>
 
   <div class="blocks">
-    <div class="blocks__block chart">
-      <h2 class="chart__title">Distance by foot (miles)</h2>
+    <div class="row">
+      <div class="col wide-col">
+        <div class="blocks__block chart">
+          <h2 class="chart__title">Distance by foot (miles)</h2>
 
-      <div class="chart__chart">
-        <canvas js-chart="walking"></canvas>
-      </div>
-
-      <p class="chart__details sub-text">
-        <strong>Note:</strong> Only partial distance data exists for 2009.
-      </p>
-    </div>
-
-    <div class="blocks__block chart">
-      <h2 class="chart__title">Elevation gain (metres)</h2>
-
-      <div class="chart__chart">
-        <canvas js-chart="elevation"></canvas>
-      </div>
-
-      <p class="chart__details sub-text">
-        <strong>Note:</strong> No elevation data exists before 2012, no running elevation data exists before 2015, and only partial running data exists for 2015.
-      </p>
-    </div>
-
-    <div class="blocks__block chart">
-      <h2 class="chart__title">Total distances (miles)</h2>
-
-      <div class="chart__chart">
-        <canvas js-chart="total"></canvas>
-      </div>
-
-      <p class="chart__details sub-text">
-        <strong>Note:</strong> Only partial distance data exists for 2009.
-      </p>
-    </div>
-
-    <!-- Year summaries -->
-    <div class="blocks__block entries">
-      <h2 class="entries__title">Year in review</h2>
-
-      <div class="entries__timeline">
-        {{ range (.Pages.ByParam "handle").Reverse }}
-          <div class="entries__entry entry">
-            <h3 class="entry__title body-1">{{ .Params.Handle }}</h3>
-
-            <div class="entry__content">
-              {{ .Content }}
-
-              <p class="body-2">
-                <strong>Data in full:</strong>
-                <a href="https://daytum.com/CraigBaldwin/page/{{ .Params.Page }}">
-                  {{ .Params.Handle }}
-                </a>
-              </p>
-            </div>
+          <div class="chart__chart">
+            <canvas js-chart="walking"></canvas>
           </div>
-        {{ end }}
+
+          <p class="chart__details sub-text">
+            <strong>Note:</strong> Only partial distance data exists for 2009.
+          </p>
+        </div>
+
+        <div class="blocks__block chart">
+          <h2 class="chart__title">Elevation gain (metres)</h2>
+
+          <div class="chart__chart">
+            <canvas js-chart="elevation"></canvas>
+          </div>
+
+          <p class="chart__details sub-text">
+            <strong>Note:</strong> No elevation data exists before 2012, no running elevation data exists before 2015, and only partial running data exists for 2015.
+          </p>
+        </div>
+
+        <div class="blocks__block chart">
+          <h2 class="chart__title">Total distances (miles)</h2>
+
+          <div class="chart__chart">
+            <canvas js-chart="total"></canvas>
+          </div>
+
+          <p class="chart__details sub-text">
+            <strong>Note:</strong> Only partial distance data exists for 2009.
+          </p>
+        </div>
+
+        <!-- Year summaries -->
+        <div class="blocks__block entries">
+          <h2 class="entries__title">Year in review</h2>
+
+          <div class="entries__timeline">
+            {{ range (.Pages.ByParam "handle").Reverse }}
+              <div class="entries__entry entry">
+                <h3 class="entry__title body-1">{{ .Params.Handle }}</h3>
+
+                <div class="entry__content">
+                  {{ .Content }}
+
+                  <p class="body-2">
+                    <strong>Data in full:</strong>
+                    <a href="https://daytum.com/CraigBaldwin/page/{{ .Params.Page }}">
+                      {{ .Params.Handle }}
+                    </a>
+                  </p>
+                </div>
+              </div>
+            {{ end }}
+          </div>
+        </div>
       </div>
     </div>
   </div>

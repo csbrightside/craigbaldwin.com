@@ -94,6 +94,10 @@ $LAYER_POPUP: 5;
     &#{&}--m6 {
       grid-template-columns: repeat(6, minmax(10px, 1fr));
     }
+
+    &#{&}--m8 {
+      grid-template-columns: repeat(8, minmax(10px, 1fr));
+    }
   }
 
   @include mq($from: large) {

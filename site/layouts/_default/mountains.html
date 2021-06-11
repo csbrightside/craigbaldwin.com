@@ -1,11 +1,20 @@
 {{ define "main" }}
-  {{- .Content -}}
-  {{ partial "map" . }}
+  <div class="row">
+    <div class="content-col">
+      {{- .Content -}}
+    </div>
+  </div>
 
-  <div class="blocks row">
-    {{ range (.Pages.ByParam "handle").Reverse }}
-      {{ partial "block" . }}
-    {{ end }}
+  <div class="row">
+    <div class="col wide-col">
+      {{ partial "map" . }}
+
+      <div class="blocks">
+        {{ range (.Pages.ByParam "handle").Reverse }}
+          {{ partial "block" . }}
+        {{ end }}
+      </div>
+    </div>
   </div>
 
   <link href="/vendors/leaflet.min.css" rel="stylesheet">

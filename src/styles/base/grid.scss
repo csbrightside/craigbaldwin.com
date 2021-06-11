@@ -20,7 +20,7 @@ $mq-breakpoints: (
 /**
  * Grid.
  */
-$SITE_WIDTH: 70rem;
+$SITE_WIDTH: 120rem;
 
 /**
  * Spacing.
@@ -53,39 +53,84 @@ $LAYER_POPUP: 5;
 .row {
   display: grid;
   gap: $SPACING_S;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(4, minmax(10px, 1fr));
 
+  .s2 {
+    grid-column: span 2;
+  }
+
+  .content-col,
+  .wide-col,
   .s4 {
-    grid-column-end: span 4;
-  }
-
-  .s6 {
-    grid-column-end: span 6;
-  }
-
-  .s8 {
-    grid-column-end: span 8;
+    grid-column: span 4;
   }
 
   @include mq($from: medium) {
-    .m2 {
-      grid-column-end: span 2;
+    grid-template-columns: repeat(8, minmax(10px, 1fr));
+
+    .content-col {
+      grid-column: 2 / 8;
+    }
+
+    .wide-col {
+      grid-column: 1 / 9;
     }
 
     .m3 {
+      grid-column: unset;
       grid-column-end: span 3;
     }
 
-    .m4 {
-      grid-column-end: span 4;
-    }
-
     .m6 {
+      grid-column: unset;
       grid-column-end: span 6;
     }
 
-    .offset-m2 {
-      grid-column-start: 3;
+    .m8 {
+      grid-column: unset;
+      grid-column-end: span 8;
+    }
+
+    &#{&}--m6 {
+      grid-template-columns: repeat(6, minmax(10px, 1fr));
+    }
+
+    &#{&}--m8 {
+      grid-template-columns: repeat(8, minmax(10px, 1fr));
+    }
+  }
+
+  @include mq($from: large) {
+    grid-template-columns: repeat(10, minmax(10px, 1fr));
+
+    .content-col {
+      grid-column: 3 / 9;
+    }
+
+    .wide-col {
+      grid-column: 2 / 10;
+    }
+
+    .l2 {
+      grid-column: unset;
+      grid-column-end: span 2;
+    }
+
+    .l5 {
+      grid-column: unset;
+      grid-column-end: span 5;
+    }
+
+    .l5-10 {
+      grid-column: 4 / 9;
+    }
+
+    &#{&}--l6 {
+      grid-template-columns: repeat(6, minmax(10px, 1fr));
+    }
+
+    &#{&}--l8 {
+      grid-template-columns: repeat(8, minmax(10px, 1fr));
     }
   }
 }

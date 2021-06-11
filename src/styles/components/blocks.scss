@@ -7,16 +7,14 @@
 .blocks {
   &__block {
     &:not(:last-child) {
-      // Desired margin - grid gap
-      margin-bottom: ($SPACING_L - $SPACING_S);
+      margin-bottom: $SPACING_L;
     }
   }
 
   @include mq($from: medium) {
     &__block {
       &:not(:last-child) {
-        // Desired margin - grid gap
-        margin-bottom: ($SPACING_XL - $SPACING_S);
+        margin-bottom: $SPACING_XL;
       }
     }
   }

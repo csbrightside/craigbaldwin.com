@@ -36,7 +36,7 @@
     &::before {
       @include transition(background-color, border-color);
       background-color: $COLOR_BLACK;
-      border: 3px solid rgb(203, 242, 219);
+      border: 3px solid rgb(229, 229, 229);
       border-radius: 100%;
       content: '';
       height: 16px;

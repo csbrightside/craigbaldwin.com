@@ -90,6 +90,7 @@
 
   &__content {
     border-left: 3px solid currentColor;
+    margin-top: $SPACING_S;
     padding-left: $SPACING_S;
 
     + #{$parent}__content {
@@ -142,6 +143,15 @@
   }
 
   /**
+   * Colours.
+   */
+  .template--purple & {
+    &__content {
+      border-color: $COLOR_PURPLE;
+    }
+  }
+
+  /**
    * Dark mode.
    */
   .is-dark & {
@@ -189,6 +199,26 @@
       padding-right: $SPACING_M;
     }
 
+    &__logo {
+      bottom: $SPACING_M;
+      // Height - image bottom margin
+      height: calc(100% - #{$SPACING_M});
+    }
+
+    &__content {
+      margin-top: $SPACING_M;
+      padding-left: $SPACING_M;
+    }
+
+    &#{&}--logos {
+      #{$parent}__logo {
+        bottom: 0;
+        height: 100%;
+      }
+    }
+  }
+
+  @include mq($from: large) {
     &__copyright {
       margin-top: 0;
       padding-bottom: $SPACING_2XS;
@@ -204,23 +234,6 @@
 
       &#{&}--desktop {
         display: block;
-      }
-    }
-
-    &__logo {
-      bottom: $SPACING_M;
-      // Height - image bottom margin
-      height: calc(100% - #{$SPACING_M});
-    }
-
-    &__content {
-      padding-left: $SPACING_M;
-    }
-
-    &#{&}--logos {
-      #{$parent}__logo {
-        bottom: 0;
-        height: 100%;
       }
     }
   }

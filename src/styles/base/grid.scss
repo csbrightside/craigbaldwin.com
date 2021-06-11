@@ -53,18 +53,24 @@ $LAYER_POPUP: 5;
 .row {
   display: grid;
   gap: $SPACING_S;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(10px, 1fr));
+
+  .s2 {
+    grid-column: span 2;
+  }
 
   .content-col,
   .wide-col,
+  .logo-col,
   .s4 {
     grid-column: span 4;
   }
 
   @include mq($from: medium) {
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(10, minmax(10px, 1fr));
 
-    .content-col {
+    .content-col,
+    .logo-col {
       grid-column: 2 / 10;
     }
 
@@ -82,12 +88,17 @@ $LAYER_POPUP: 5;
       grid-column-end: span 6;
     }
 
+    .m8 {
+      grid-column: unset;
+      grid-column-end: span 8;
+    }
+
     &#{&}--m8 {
-      grid-template-columns: repeat(8, 1fr);
+      grid-template-columns: repeat(8, minmax(10px, 1fr));
     }
 
     &#{&}--m10 {
-      grid-template-columns: repeat(10, 1fr);
+      grid-template-columns: repeat(10, minmax(10px, 1fr));
     }
   }
 
@@ -96,7 +107,8 @@ $LAYER_POPUP: 5;
       grid-column: 3 / 9;
     }
 
-    .wide-col {
+    .wide-col,
+    .logo-col {
       grid-column: 2 / 10;
     }
 
@@ -110,8 +122,16 @@ $LAYER_POPUP: 5;
       grid-column-end: span 5;
     }
 
+    .l5-10 {
+      grid-column: 4 / 9;
+    }
+
     &#{&}--l6 {
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(6, minmax(10px, 1fr));
+    }
+
+    &#{&}--l8 {
+      grid-template-columns: repeat(8, minmax(10px, 1fr));
     }
   }
 }

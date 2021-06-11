@@ -19,7 +19,7 @@ I've worked at [We Make Websites](https://wemakewebsites.com/) for over three ye
 I enjoy technically challenging briefs which require a degree of complex problem solving and have a tendency for perfectism in my code. My background in Graphic Design gives me an attention for detail and an eye for design. I'm at my best when I have agency over the solution.
 
 ## Skills
-Regularly code in HTML, SCSS, vanilla JavaScript, Vue.js, and Shopify Liquid. Responsible for maintaining our internal compiler built using webpack, node, browser sync, and theme kit.
+Regularly code in HTML, SCSS, vanilla JavaScript, Vue.js, and Shopify Liquid. Responsible for maintaining our compiler built using webpack, node, browser sync, and theme kit.
 
 Experienced using Bitbucket, DeployBot, Git, Figma, GraphQL, Contentful, and data layers. The company workflow follows the agile methodology and includes the use of Asana, GSuite, Notion, Slack, and VS Code.
 

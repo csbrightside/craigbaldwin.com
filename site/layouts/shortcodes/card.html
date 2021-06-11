@@ -2,18 +2,20 @@
 <!-- Card title block. -->
 {{ $page := $.Page.Title }}
 
-<div class="card card--{{ lower $.Page.Title }}">
-  {{ if .Get "title" }}
-    {{ if (eq $page "Index") }}
-      <h2 class="card__title h1">{{ .Get "title" }}</h2>
-    {{ else }}
-      <h1 class="card__title">{{ .Get "title" }}</h1>
-    {{ end }}
-  {{ end }}
+<div class="row row--m6">
+  <div class="col s4 m6 l5">
+    <div class="card card--{{ lower $.Page.Title }}">
+      {{ if .Get "title" }}
+        {{ if (eq $page "Index") }}
+          <h2 class="card__title h1">{{ .Get "title" }}</h2>
+        {{ else }}
+          <h1 class="card__title">{{ .Get "title" }}</h1>
+        {{ end }}
+      {{ end }}
 
-  <div class="row">
-    <p class="card__copy standfirst col s8 m6">
-      {{ .Get "copy" }}
-    </p>
+      <p class="card__copy standfirst">
+        {{ .Get "copy" }}
+      </p>
+    </div>
   </div>
 </div>

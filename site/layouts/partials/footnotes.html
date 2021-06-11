@@ -3,30 +3,33 @@
 {{ $url := .Permalink }}
 {{ $page := .Title }}
 
-<div class="footer__footnotes container row">
-  <h2 class="visually-hidden">Other pages</h2>
+<div class="row">
+  <div class="content-col">
+    <h2 class="visually-hidden">Other pages</h2>
 
-  {{ range .Site.Menus.main }}
-    <a
-      class="
-        footer__footnote
-        footnote footnote--{{ .Identifier}}
-        s4 m2
-        {{ if (eq $url .URL) }}is-active{{ end }}
-        {{ if (eq .Title "Contact")}}is-hidden{{ end }}
-        {{ if and (eq $page "Distances") (eq .Title "Stats") }}is-active{{ end }}
-        {{ if and (eq $page "Mountains") (eq .Title "Stats") }}is-active{{ end }}
-        {{ if and (in $url "/tags/") (eq .Title "Blog") }}is-active{{ end }}
-      "
-      href="{{ .URL }}"
-    >
-      <span class="footnote__content">
-        <h3 class="footnote__title">{{ .Title }}</h3>
+    <div class="footer__footnotes">
+      {{ range .Site.Menus.main }}
+        <a
+          class="
+            footer__footnote
+            footnote footnote--{{ .Identifier}}
+            {{ if (eq $url .URL) }}is-active{{ end }}
+            {{ if (eq .Title "Contact")}}is-hidden{{ end }}
+            {{ if and (eq $page "Distances") (eq .Title "Stats") }}is-active{{ end }}
+            {{ if and (eq $page "Mountains") (eq .Title "Stats") }}is-active{{ end }}
+            {{ if and (in $url "/tags/") (eq .Title "Blog") }}is-active{{ end }}
+          "
+          href="{{ .URL }}"
+        >
+          <span class="footnote__content">
+            <h3 class="footnote__title">{{ .Title }}</h3>
 
-        <p class="footnote__copy sub-text">
-          {{ .Post }}
-        </p>
-      </span>
-    </a>
-  {{ end }}
+            <p class="footnote__copy sub-text">
+              {{ .Post }}
+            </p>
+          </span>
+        </a>
+      {{ end }}
+    </div>
+  </div>
 </div>

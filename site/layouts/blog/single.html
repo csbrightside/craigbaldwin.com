@@ -4,37 +4,43 @@
     rel="stylesheet"
   >
 
-  <div class="card card--{{ lower $.Page.Title }}">
-    <h1 class="card__title">{{ .Params.Title }}</h1>
+  <div class="row">
+    <div class="content-col">
+      <div class="row row--m6">
+        <div class="col s4 m6 l5">
+          <div class="card card--{{ lower $.Page.Title }}">
+            <h1 class="card__title">{{ .Params.Title }}</h1>
 
-    <div class="row">
-      <p class="card__copy standfirst col s8 m6">
-        {{ .Params.Excerpt }}
-      </p>
+            <p class="card__copy standfirst">
+              {{ .Params.Excerpt }}
+            </p>
 
-      <p class="card__meta sub-text col s8 m6">
-        {{ partial "article-meta.html" . }}
-      </p>
+            <p class="card__meta sub-text col">
+              {{ partial "article-meta.html" . }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="article__content rte">
+        {{- .Content -}}
+      </div>
+
+      <div class="article__navigation">
+        {{ with .NextInSection }}
+          <a class="article__link article__link--next" href="{{ .Permalink }}">
+            <span class="h3">Next article</span>
+            <span class="sub-text">{{ .Title }}</span>
+          </a>
+        {{ end }}
+
+        {{ with .PrevInSection }}
+          <a class="article__link" href="{{ .Permalink }}">
+            <span class="h3">Previous article</span>
+            <span class="sub-text">{{ .Title }}</span>
+          </a>
+        {{ end }}
+      </div>
     </div>
-  </div>
-
-  <div class="article__content rte">
-    {{- .Content -}}
-  </div>
-
-  <div class="article__navigation">
-    {{ with .NextInSection }}
-      <a class="article__link article__link--next" href="{{ .Permalink }}">
-        <span class="h3">Next article</span>
-        <span class="sub-text">{{ .Title }}</span>
-      </a>
-    {{ end }}
-
-    {{ with .PrevInSection }}
-      <a class="article__link" href="{{ .Permalink }}">
-        <span class="h3">Previous article</span>
-        <span class="sub-text">{{ .Title }}</span>
-      </a>
-    {{ end }}
   </div>
 {{ end }}

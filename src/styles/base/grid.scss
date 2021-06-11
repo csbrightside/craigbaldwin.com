@@ -61,21 +61,19 @@ $LAYER_POPUP: 5;
 
   .content-col,
   .wide-col,
-  .logo-col,
   .s4 {
     grid-column: span 4;
   }
 
   @include mq($from: medium) {
-    grid-template-columns: repeat(10, minmax(10px, 1fr));
+    grid-template-columns: repeat(8, minmax(10px, 1fr));
 
-    .content-col,
-    .logo-col {
-      grid-column: 2 / 10;
+    .content-col {
+      grid-column: 2 / 8;
     }
 
     .wide-col {
-      grid-column: 1 / 11;
+      grid-column: 1 / 9;
     }
 
     .m3 {
@@ -93,22 +91,19 @@ $LAYER_POPUP: 5;
       grid-column-end: span 8;
     }
 
-    &#{&}--m8 {
-      grid-template-columns: repeat(8, minmax(10px, 1fr));
-    }
-
-    &#{&}--m10 {
-      grid-template-columns: repeat(10, minmax(10px, 1fr));
+    &#{&}--m6 {
+      grid-template-columns: repeat(6, minmax(10px, 1fr));
     }
   }
 
   @include mq($from: large) {
+    grid-template-columns: repeat(10, minmax(10px, 1fr));
+
     .content-col {
       grid-column: 3 / 9;
     }
 
-    .wide-col,
-    .logo-col {
+    .wide-col {
       grid-column: 2 / 10;
     }
 

@@ -5,6 +5,7 @@ This changelog only provides headline changes, see the commit history for all ch
 ## 12.5.0 - 2021-06-11
 * New grid layout for all pages
 * Updated role description in homepage title
+* Updated about page content
 * Updated Pangaia's work description
 * Dependencies versions update
 
